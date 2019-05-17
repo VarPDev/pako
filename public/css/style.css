@@ -282,6 +282,10 @@ button:focus {
   background: #ffffff;
 }
 
+.header_area img {
+  max-height: 30px;
+}
+
 .header_area .menu_nav {
   width: 100%;
 }
