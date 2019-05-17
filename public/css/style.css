@@ -875,6 +875,7 @@ button:focus {
 
 .feature_item img {
   margin-bottom: 35px;
+  max-width: 150px;
 }
 
 .feature_item h4 {
@@ -975,7 +976,7 @@ button:focus {
 }
 
 .client-info:before {
-  content: '';
+  content: "";
   position: absolute;
   top: -25px;
   left: -50px;
