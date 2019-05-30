@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app",
-    "publish": "node app.js",
-    "postinstall": "node app.js"
+    "publish": "node app.js"
   },
   "author": "Pasquale De Lucia",
   "license": "ISC",
