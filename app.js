@@ -29,7 +29,9 @@ const emailSubSchema = new mongoose.Schema({
 var EmailSub = mongoose.model("User", emailSubSchema);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile("index.html", {
+    root: path.join(__dirname, "./public/")
+  });
 });
 
 app.post("/subscribe", (req, res) => {
