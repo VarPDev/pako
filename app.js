@@ -96,6 +96,8 @@ app.post("/contact", (req, res) => {
   });
 });
 
-const server = app.listen(port, () => {
-  console.log("Server started at http://localhost:%s", port);
-});
+app.listen(process.env.PORT || port);
+
+// const server = app.listen(port, () => {
+//   console.log("Server started at http://localhost:%s", port);
+// });
