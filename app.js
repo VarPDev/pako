@@ -1,11 +1,11 @@
+require("newrelic");
+
 const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
-require("newrelic");
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
