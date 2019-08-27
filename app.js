@@ -5,6 +5,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+require("newrelic");
+
 mongoose.Promise = global.Promise;
 mongoose.connect(
   "mongodb://varp:stefasquale2306@ds217092.mlab.com:17092/website"
