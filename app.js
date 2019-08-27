@@ -21,7 +21,7 @@ app.use("/img", express.static(__dirname + "/img"));
 const port = 8081;
 
 const GMAIL_USER = "pasquale.delucia96@gmail.com";
-const GMAIL_PASS = "Pasquanico23";
+const GMAIL_PASS = "stefasquale2306";
 
 const emailSubSchema = new mongoose.Schema({
   email: String

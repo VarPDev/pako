@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "strat:dev": "nodemon app"
+    "start:dev": "nodemon app"
   },
   "author": "Pasquale De Lucia",
   "license": "ISC",
