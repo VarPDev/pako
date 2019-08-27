@@ -84,6 +84,7 @@ app.post("/contact", (req, res) => {
     text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
   };
   transporter.sendMail(mailOpts, (error, response) => {
+    console.log("email send error: " + JSON.stringify(error));
     if (error) {
       res.sendFile("404.html", {
         root: path.join(__dirname, "./public/")
