@@ -6,6 +6,11 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const http = require("http");
+
+setInterval(() => {
+  http.get("http://pako-web-developer.herokuapp.com");
+}, 300000); // 5 minutes
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
