@@ -1091,6 +1091,12 @@ button:focus {
           justify-content: center;
 }
 
+.portfolio_area .v-brands .v-flex.desc {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .portfolio_area .v-brands img {
   width: 320px;
   padding: 20px;
@@ -1211,6 +1217,18 @@ button:focus {
   visibility: visible;
   top: 50%;
   left: 50%;
+}
+
+.black-bg {
+  background: #000;
+}
+
+.black-bg:hover {
+  background: #000;
+}
+
+.black-bg img {
+  background: #000 !important;
 }
 
 .portfolio_details_inner .row {
