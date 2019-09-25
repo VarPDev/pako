@@ -10,7 +10,7 @@ const http = require("http");
 
 setInterval(() => {
   http.get("http://pako-web-developer.herokuapp.com");
-}, 300000); // 5 minutes
+}, 3600000); // 1 hour
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
