@@ -129,6 +129,10 @@ button:focus {
   }
 }
 
+.section_gap_contact {
+  padding: 100px 0 0 0;
+}
+
 /* Main Title Area css
 ============================================================================================ */
 .main_title {
@@ -179,7 +183,7 @@ button:focus {
 
 .main_title.white p {
   color: #fff;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 /* End Main Title Area css
