@@ -15,7 +15,7 @@
     "express": "^4.16.4",
     "mongoose": "^5.7.5",
     "newrelic": "^5.11.0",
-    "nodemailer": "^5.1.1"
+    "nodemailer": "^6.4.16"
   },
   "devDependencies": {
     "nodemon": "^1.18.10",
