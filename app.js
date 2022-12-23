@@ -6,10 +6,6 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const http = require("http");
 
-setInterval(() => {
-  http.get("http://pako-web-developer.herokuapp.com");
-}, 1000 * 60 * 60 * 2); // 2 hours
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
