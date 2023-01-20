@@ -18,16 +18,28 @@
   <!-- main css -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-89T4G4DF9T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-    gtag('config', 'G-89T4G4DF9T');
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBk2ntauwadpkaocat23CebnVBuJ5s_-mg",
+      authDomain: "pako-10ff9.firebaseapp.com",
+      projectId: "pako-10ff9",
+      storageBucket: "pako-10ff9.appspot.com",
+      messagingSenderId: "319525405914",
+      appId: "1:319525405914:web:513b072ef857a9f9c051e3",
+      measurementId: "G-32G0Q24P0P"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
   </script>
 </head>
 
