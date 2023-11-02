@@ -1,5 +1,7 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, useSignal } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { Cat } from "~/components/cat/cat";
+import { CatWalk } from "~/components/cat/cat-walk";
 import { Footer } from "~/components/footer/footer";
 import { Header } from "~/components/header/header";
 
@@ -15,14 +17,17 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
+  const show = useSignal(false);
+
   return (
     <>
-    <Header />
-    <main>
-      <Slot />
-    </main>
-    <Footer />
+      <Header show={show} />
+      <main>
+        {show.value && <Cat />}
+        <Slot />
+        {show.value && <CatWalk />}
+      </main>
+      <Footer />
     </>
-  )
-  ;
+  );
 });

@@ -1,20 +1,21 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Hero } from "~/components/hero/hero";
-import { Cards } from "~/components/cards/cards";
 import { Articles } from "~/components/articles/articles";
+import { Cards } from "~/components/cards/cards";
 
 export default component$(() => {
+
   return (
     <>
-      <section>
-        <Hero />
+      <section class="text-center">
+        <h1>
+          Projects
+        </h1>
+        <h3>Some of my projects</h3>
       </section>
+
       <section class="inner-section">
-        <Cards limit={3} title="Recently projects" />
-      </section>
-      <section class="inner-section">
-        <Articles limit={4} title="Recently articles" />
+        <Cards title="" />
       </section>
     </>
   );
