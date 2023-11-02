@@ -12,10 +12,10 @@ export const Stacks = component$<ItemProps>((props) => {
     <>
       <div class={'container mx-auto ' + styles.container}>
         <h2 class="text-center">{props.title}</h2>
-        <div class="flex justify-center gap-12">
+        <div class="flex flex-wrap justify-center gap-12">
           {
             props.stacks.map(s => (
-              <Link href={s.href} target="_blank" key={s.id} class="w-full max-w-[3rem]">
+              <Link href={s.href} target="_blank" key={s.id} class="w-full max-w-[3rem] min-w-[2rem]">
                 <div dangerouslySetInnerHTML={s.svg}></div>
               </Link>
             ))
