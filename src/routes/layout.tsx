@@ -24,8 +24,9 @@ export default component$(() => {
       <Header show={show} />
       <main>
         {show.value && <Cat />}
-        <Slot />
+        {/* If I move this after the Slot, on value change slot reload */}
         {show.value && <CatWalk />}
+        <Slot />
       </main>
       <Footer />
     </>

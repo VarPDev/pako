@@ -14,7 +14,7 @@ export const Hero = component$(() => {
     <>
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
-          <ImgPako class="max-w-sm rounded-lg shadow-2xl" />
+          <ImgPako class="xs:max-w-[12rem] sm:max-w-[18rem] md:max-w-sm rounded-lg shadow-2xl" />
           <div class="prose">
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
             <p>Web Wizard and JavaScript Lover</p>

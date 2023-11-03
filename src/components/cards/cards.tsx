@@ -24,7 +24,7 @@ export const Cards = component$<ItemProps>((props) => {
       description: "An app built in flutter to share own resume",
       altImage: "Resume me app logo",
       image: "/resume_me.png",
-      action: "Try it",
+      action: "Download",
       type: "APP",
       color: "orange-600",
       href: "https://play.google.com/store/apps/details?id=com.pako.resume_me&pli=1",
