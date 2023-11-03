@@ -62,9 +62,11 @@ export const Header = component$<ItemProps>((props) => {
           </Link>
         </div>
         <div class="navbar-end">
+          {/* <label for="cat-spawn"></label> */}
           <input
             type="checkbox"
             class="toggle"
+            id="cat-spawn"
             onClick$={() => (props.show.value = !props.show.value)}
           />
 

@@ -10,15 +10,15 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#80ed5c",
-          secondary: "#5cd18e",
-          accent: "#7cefe4",
-          neutral: "#272830",
-          "base-100": "#312848",
-          info: "#7c92e9",
-          success: "#2dd78d",
-          warning: "#eed059",
-          error: "#e73127",
+          primary: "#cc37ce",
+          secondary: "#e0977d",
+          accent: "#8edadb",
+          neutral: "#252b3c",
+          "base-100": "#292546",
+          info: "#8c9ad9",
+          success: "#43d6c5",
+          warning: "#f2c264",
+          error: "#f44e59",
         },
       },
     ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]

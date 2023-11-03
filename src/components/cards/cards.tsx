@@ -72,6 +72,7 @@ export const Cards = component$<ItemProps>((props) => {
                 <p>
                   {c.description}
                   <br />
+                  {/* TODO: bg-color non wor dynamically */}
                   <span class={`bg-${c.color} rounded-3xl p-1 text-xs`}>
                     {c.type}
                   </span>

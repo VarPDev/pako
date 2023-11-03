@@ -1,0 +1,7 @@
+.icon {
+  @apply text-3xl absolute left-0 top-0 bottom-0 pl-3 flex items-center;
+}
+
+.icon svg {
+  @apply w-full h-full;
+}
