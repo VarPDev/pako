@@ -11,7 +11,7 @@ export const Stacks = component$<ItemProps>((props) => {
   return (
     <>
       <div class={"container mx-auto " + styles.container}>
-        <h4 class="text-center">{props.title}</h4>
+        <h4 class="text-center mb-4 text-xl font-bold">{props.title}</h4>
         <div class="flex flex-wrap justify-center gap-12">
           {props.stacks.map((s) => (
             <Link

@@ -1,0 +1,36 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Rick & Morty",
+    description: "Wiki about rick and morty anime",
+    altImage: "rick and morty",
+    image: "/rick_and_morty.png",
+    action: "Try it",
+    type: "Angular",
+    color: "orange-600",
+    href: "https://rick-and-morty-e.web.app/",
+  },
+  {
+    id: 2,
+    title: "Resume me",
+    description: "An app built in flutter to share own resume",
+    altImage: "Resume me app logo",
+    image: "/resume_me.png",
+    action: "Download",
+    type: "APP",
+    color: "orange-600",
+    href: "https://play.google.com/store/apps/details?id=com.pako.resume_me&pli=1",
+  },
+  {
+    id: 3,
+    title: "Tab sync",
+    description:
+      "Npm library that allow you tu communicate between multiple tabs",
+    altImage: "Tab sync logo",
+    // image: "/rick_and_morty.png",
+    action: "Try it",
+    type: "NPM",
+    color: "orange-600",
+    href: "https://www.npmjs.com/package/@devhobby/tab-sync",
+  },
+];

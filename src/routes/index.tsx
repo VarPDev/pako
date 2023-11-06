@@ -8,6 +8,7 @@ import { Stacks } from "~/components/stacks/stacks";
 import { LinkItem } from "~/components/linkItem/linkItem";
 import { links } from "~/repository/links";
 import { works } from "~/repository/work";
+import { projects } from "~/repository/projects";
 import { frontEnd, backEnd, tools } from "~/repository/stack";
 import { format } from "date-fns";
 
@@ -44,15 +45,15 @@ export default component$(() => {
         <Hero />
       </section>
 
-      <section class="text-center">
+      <section class="title-section text-center">
         <h2>Recently projects</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
       <section class="inner-section">
-        <Cards limit={3} />
+        <Cards items={projects} limit={3} />
       </section>
 
-      <section class="text-center">
+      <section class="title-section text-center">
         <h2>Recently articles</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
@@ -60,15 +61,15 @@ export default component$(() => {
         <Articles articles={articles.value} limit={4} />
       </section>
 
-      <section class="text-center">
+      <section class="title-section text-center">
         <h2>History</h2>
         <h3>All my jobs</h3>
       </section>
-      <section class="lg:w-2/3 sticky">
+      <section class="lg:w-5/6 sticky">
         <Timeline items={works}></Timeline>
       </section>
 
-      <section class="text-center">
+      <section class="title-section text-center">
         <h2>Stack</h2>
         <h3>My tecnology stack</h3>
       </section>
@@ -87,7 +88,7 @@ export default component$(() => {
         <Stacks title="Tools" stacks={tools} />
       </section>
 
-      <section class="text-center">
+      <section class="title-section text-center">
         <h2>Links</h2>
         <h3>Some of my socials</h3>
       </section>
