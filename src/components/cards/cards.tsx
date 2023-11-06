@@ -6,7 +6,7 @@ interface ItemProps {
 }
 
 export const Cards = component$<ItemProps>((props) => {
-  let cards = props.items;
+  let cards = [...props.items];
 
   if (props.limit) {
     cards = cards.splice(0, props.limit);
@@ -37,7 +37,10 @@ export const Cards = component$<ItemProps>((props) => {
                   {c.description}
                   <br />
                   {/* TODO: bg-color non wor dynamically */}
-                  <span class={`bg-${c.color} rounded-3xl p-1 text-xs`}>
+                  {/* ${c.color} */}
+                  <span
+                    class={`bg-secondary text-black rounded-3xl p-1 text-xs`}
+                  >
                     {c.type}
                   </span>
                 </p>

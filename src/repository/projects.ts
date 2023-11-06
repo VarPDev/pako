@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    title: "This website",
+    description: "Feel free to check how I developed this website",
+    altImage: "Pasquale De Lucia picture",
+    image: "/Pako.jpg",
+    action: "Check code",
+    type: "Qwik",
+    color: "orange-600",
+    href: "https://github.com/VarPDev/pako",
+  },
+  {
+    id: 2,
     title: "Rick & Morty",
     description: "Wiki about rick and morty anime",
     altImage: "rick and morty",
@@ -11,7 +22,7 @@ export const projects = [
     href: "https://rick-and-morty-e.web.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Resume me",
     description: "An app built in flutter to share own resume",
     altImage: "Resume me app logo",
@@ -22,7 +33,7 @@ export const projects = [
     href: "https://play.google.com/store/apps/details?id=com.pako.resume_me&pli=1",
   },
   {
-    id: 3,
+    id: 4,
     title: "Tab sync",
     description:
       "Npm library that allow you tu communicate between multiple tabs",

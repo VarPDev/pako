@@ -1,8 +1,35 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
+import { format } from "date-fns";
 import { Articles } from "~/components/articles/articles";
 
+function getLang(lang: Array<string>): string {
+  switch (true) {
+    case lang.includes("ita"):
+      return "ITA";
+    default:
+      return "ENG";
+  }
+}
+
+export const useArticles = routeLoader$(async () => {
+  const res = await fetch("https://dev.to/api/articles?username=nyruchi");
+  const articles = await res.json();
+  return articles.map((a: any) => {
+    return {
+      id: a.id,
+      href: a.url,
+      title: a.title,
+      description: a.description,
+      date: format(new Date(a.published_timestamp), "PP"),
+      lang: getLang(a.tag_list),
+    };
+  }) as Array<any>;
+});
+
 export default component$(() => {
+  const articles = useArticles();
+
   return (
     <>
       <section class="text-center">
@@ -10,9 +37,9 @@ export default component$(() => {
         <h3>Some of my articles</h3>
       </section>
 
-      {/* <section class="inner-section">
-        <Articles />
-      </section> */}
+      <section class="inner-section">
+        <Articles articles={articles.value} />
+      </section>
     </>
   );
 });

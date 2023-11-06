@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Cards } from "~/components/cards/cards";
+import { projects } from "~/repository/projects";
 
 export default component$(() => {
   return (
@@ -10,9 +11,9 @@ export default component$(() => {
         <h3>Some of my projects</h3>
       </section>
 
-      {/* <section class="inner-section">
-        <Cards />
-      </section> */}
+      <section class="5/6 lg:w-5/6">
+        <Cards items={projects} />
+      </section>
     </>
   );
 });
