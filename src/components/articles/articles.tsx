@@ -17,11 +17,11 @@ export const Articles = component$<ItemProps>((props) => {
     },
     {
       id: 2,
-      title: "Rick & Morty",
+      title: "I started using Qwik",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-      date: "16 Jan 2018",
-      href: "https://rick-and-morty-e.web.app/",
+        "I embarked on my Qwik journey and wish to share my initial experiences in using it to build my personal website",
+      date: "6 Nov 2023",
+      href: "https://dev.to/nyruchi/i-started-using-qwik-1n5n",
     },
     {
       id: 3,
