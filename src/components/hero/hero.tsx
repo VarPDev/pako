@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import ImgPako from "/src/media/Pako-cropped.jpeg?jsx";
-import * as converter from "number-to-words";
+import converter from "number-to-words";
 import { Link } from "@builder.io/qwik-city";
 
 export const Hero = component$(() => {
