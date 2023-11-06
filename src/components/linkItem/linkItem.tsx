@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./linkItem.module.css";
+import { Link } from "@builder.io/qwik-city";
 
 interface ItemProps {
   links: Array<any>;
@@ -11,7 +12,7 @@ export const LinkItem = component$<ItemProps>((props) => {
       <ul>
         {props.links.map((link) => (
           <li key={link.id} class="mb-4">
-            <a
+            <Link
               class="relative transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-4 w-100 block text-center text-neutral rounded-lg pl-12 md:px-12"
               href={link.url}
               target="_blank"
@@ -22,7 +23,7 @@ export const LinkItem = component$<ItemProps>((props) => {
                 dangerouslySetInnerHTML={link.svg}
               ></span>
               <span>{link.title}</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -45,10 +45,10 @@ export default component$(() => {
   return (
     <>
       <section class="text-center">
-        <h1>Buttom game</h1>
+        <h1 class="mb-2">Buttom game</h1>
         <h3>
-          This game require no skills but only LUCK. If you win at this game,
-          think to try lottery!
+          This game requires no skills but only LUCK. If you win at this game,
+          think to try the lottery!
         </h3>
       </section>
 
@@ -57,8 +57,8 @@ export default component$(() => {
           <p>
             Percentege of success in this level: {percentageOfSuccess.value}%
           </p>
-          <p>Percentege of win {percentageOfSuccessGlobal}%</p>
           <p>Percentege of win from now: {percentageOfSuccessFromNow.value}%</p>
+          <p>Percentege of win {percentageOfSuccessGlobal}%</p>
 
           <div
             onClick$={tryPassLevel}
@@ -74,7 +74,7 @@ export default component$(() => {
             </span>
           </div>
 
-          <p>You pass at {level.value} level</p>
+          <p>You are at level {level.value}</p>
         </div>
       </section>
     </>

@@ -5,8 +5,9 @@ export const works = [
     endDate: "Current",
     title: "ScuolaZoo",
     slug: "The voice of the new generations",
-    description:
-      "ScuolaZoo is one of the companies of OneDay Group, a business and community builder, whose goal is to test, implement and spread a new and engaging way of experiencing work and doing business! What makes us different from the others is our approach: we mix digital and on field activities, we go from memes to community creation, always having at the center our vision, that is to put the new generations at the center!",
+    description: `I started in this company as a full-stack developer, in the first year I developed a new mobile app for IOS and Android, 
+      stabilized a platform to create and print your own diary and started to think about the future technology which could be used in ScuolaZoo. 
+      In the second year I projected the architecture of all new systems that will replace the old ecosystem, reaching the full-stack engineer promotion.`,
     role: "Full-stack engineer",
   },
   {
@@ -14,18 +15,19 @@ export const works = [
     startDate: "Mar 2019",
     endDate: "Gen 2022",
     title: "Semantyca",
-    description:
-      "We create web systems that can import any number of documents and all types into a database, we correlate them with each other, we recognize the entities based on what your data contains, we organize them into taxonomies. Finally we allow searching for them, full text or for concepts through neural networks",
+    description: `Worked in Milan based company Semantyca in a team of 7 people.
+    During this three years I taught my colleagues the front-end best practices and new frameworks or new tools, becoming a front-end tech lead.
+    I also interacted with customers, to decide on the specifications and for post production.`,
     slug: "A software house with twenty years of experience in building databases",
-    role: "Lead fron-end",
+    role: "Lead front-end",
   },
   {
     id: 3,
     startDate: "Jul 2018",
     endDate: "Mar 2019",
     title: "Botsociety",
-    description:
-      "Botsociety allows you to design conversations for any platform, including WhatsApp, Messenger, the Google Assistant, Alexa, Slack, and more. Each platform is customized for that tool specifically, so you can be sure that all of your designs will flow as intended.",
+    description: `I started to did some new features to the existings web products and bug fixing. 
+      After showing my potential to the team, I was included in the refactoring of all Botsociety ecosystem.`,
     slug: "",
     role: "Full-stack JavaScript developer",
   },
@@ -34,8 +36,8 @@ export const works = [
     startDate: "Jun 2017",
     endDate: "Jul 2018",
     title: "MainStreaming",
-    description:
-      "MainStreaming is a video delivery network created to distribute video streaming in an intelligent and sustainable way available to industries who need an evolved service of both video hosting and live streaming on a global level. The first Video Delivery Network (VDN) designed to deliver the highest quality & performance in live video and on demand globally",
+    description: `I created a library that allows customers to use a full customizable video editor using pure javascript and
+    developed the MainStreaming backoffice with Angular framework`,
     slug: "",
     role: "Full-stack developer",
   },
@@ -44,8 +46,8 @@ export const works = [
     startDate: "Feb 2016",
     endDate: "Jun 2017",
     title: "Zinformatica",
-    description:
-      "Zinformatica provide IT services that exceed customer expectations, maintaining a high standard of excellence through quality work and total commitment.",
+    description: `After demonstrating my aptitude for development, a tech lead selected me to initiate and lead a new AngularJS 
+    project, this product allowed our client to drive sales to new heights.`,
     slug: "",
     role: "Full-stack developer",
   },

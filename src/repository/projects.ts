@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "This website",
-    description: "Feel free to check how I developed this website",
+    description: "Feel free to check out how I developed this website",
     altImage: "Pasquale De Lucia picture",
     image: "/Pako.jpg",
     action: "Check code",
@@ -13,7 +13,8 @@ export const projects = [
   {
     id: 2,
     title: "Rick & Morty",
-    description: "Wiki about rick and morty anime",
+    description:
+      "Wiki about Rick and Morty, an adult animated science fiction sitcom",
     altImage: "rick and morty",
     image: "/rick_and_morty.png",
     action: "Try it",
@@ -24,7 +25,7 @@ export const projects = [
   {
     id: 3,
     title: "Resume me",
-    description: "An app built in flutter to share own resume",
+    description: "An app built with Flutter to share your own resume",
     altImage: "Resume me app logo",
     image: "/resume_me.png",
     action: "Download",
@@ -36,7 +37,7 @@ export const projects = [
     id: 4,
     title: "Tab sync",
     description:
-      "Npm library that allow you tu communicate between multiple tabs",
+      "Npm library that allows you to communicate between multiple browser tabs",
     altImage: "Tab sync logo",
     // image: "/rick_and_morty.png",
     action: "Try it",

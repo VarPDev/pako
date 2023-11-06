@@ -46,7 +46,7 @@ export default component$(() => {
       </section>
 
       <section class="title-section text-center">
-        <h2>Recently projects</h2>
+        <h2>Recent projects</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
       <section class="inner-section">
@@ -54,7 +54,7 @@ export default component$(() => {
       </section>
 
       <section class="title-section text-center">
-        <h2>Recently articles</h2>
+        <h2>Recent articles</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
       <section class="inner-section">
