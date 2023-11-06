@@ -4,7 +4,7 @@ export const projects = [
     title: "This website",
     description: "Feel free to check out how I developed this website",
     altImage: "Pasquale De Lucia picture",
-    image: "/Pako.jpg",
+    image: "/Pako.jpeg",
     action: "Check code",
     type: "Qwik",
     color: "orange-600",
