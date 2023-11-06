@@ -6,7 +6,7 @@ interface ItemProps {
 }
 
 export const Articles = component$<ItemProps>((props) => {
-  let articles = props.articles;
+  let articles = [...props.articles];
 
   if (props.limit) {
     articles = articles.splice(0, props.limit);
