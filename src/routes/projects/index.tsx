@@ -10,9 +10,9 @@ export default component$(() => {
         <h3>Some of my projects</h3>
       </section>
 
-      <section class="inner-section">
-        <Cards title="" />
-      </section>
+      {/* <section class="inner-section">
+        <Cards />
+      </section> */}
     </>
   );
 });

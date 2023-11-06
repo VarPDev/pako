@@ -3,19 +3,16 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Articles } from "~/components/articles/articles";
 
 export default component$(() => {
-
   return (
     <>
       <section class="text-center">
-        <h1>
-          Blog
-        </h1>
+        <h1>Blog</h1>
         <h3>Some of my articles</h3>
       </section>
 
-      <section class="inner-section">
-        <Articles title="" />
-      </section>
+      {/* <section class="inner-section">
+        <Articles />
+      </section> */}
     </>
   );
 });
