@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 interface ItemProps {
   limit?: number;
-  title: string;
 }
 
 export const Cards = component$<ItemProps>((props) => {
@@ -50,7 +49,6 @@ export const Cards = component$<ItemProps>((props) => {
   return (
     <>
       <div class="container mx-auto">
-        <h2 class="text-center">{props.title}</h2>
         <div class="grid md:grid-cols-3 justify-items-center gap-12">
           {cards.map((c) => (
             <div

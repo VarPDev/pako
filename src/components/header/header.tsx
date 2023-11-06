@@ -33,21 +33,21 @@ export const Header = component$<ItemProps>((props) => {
               <li>
                 <Link href="/">Homepage</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/stack">Stack</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
                 <Link href="/projects">Projects</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/history">History</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link href="/links">Links</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/Pasquale_De_Lucia-Resume.pdf" target="_blank">
                   Resume

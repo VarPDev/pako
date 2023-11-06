@@ -1,36 +1,64 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
+import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+function probabilityOfSuccess(levelNumber: number) {
+  let probability = 1;
+  for (let i = 0; i < levelNumber; i++) {
+    probability *= (100 - i) / 100;
+  }
+  return probability;
+}
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
 }
 
 export default component$(() => {
-  const percentageOfSuccess = useSignal(100);
+  const startSuccess = 100;
+  const percentageOfSuccess = useSignal(startSuccess);
+  const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess);
+  const percentageOfSuccessFromNow = useSignal(
+    probabilityOfSuccess(percentageOfSuccess.value)
+  );
+  // useTask$(() => {
+  //   percentageOfSuccessFromNow.value = probabilityOfSuccess(
+  //     percentageOfSuccess.value
+  //   );
+  // });
 
   const level = useSignal(0);
   const tryPassLevel = $(() => {
-    const random = getRandomInt(100);
+    const random = getRandomInt(startSuccess);
 
     if (random <= percentageOfSuccess.value) {
       level.value++;
       percentageOfSuccess.value--;
     } else {
       level.value = 0;
-      percentageOfSuccess.value = 100;
+      percentageOfSuccess.value = startSuccess;
     }
+    percentageOfSuccessFromNow.value = probabilityOfSuccess(
+      percentageOfSuccess.value
+    );
   });
 
   return (
     <>
       <section class="text-center">
         <h1>Buttom game</h1>
-        <h3>This game require no skills but only LUCK</h3>
+        <h3>
+          This game require no skills but only LUCK. If you win at this game,
+          think to try lottery!
+        </h3>
       </section>
 
       <section class="link-section">
-        <div class="grid grid-cols-1 gap-12 justify-items-center">
-          <p>Percentege of success {percentageOfSuccess.value}%</p>
+        <div class="grid grid-cols-1 gap-6 justify-items-center">
+          <p>
+            Percentege of success in this level: {percentageOfSuccess.value}%
+          </p>
+          <p>Percentege of win {percentageOfSuccessGlobal}%</p>
+          <p>Percentege of win from now: {percentageOfSuccessFromNow.value}%</p>
 
           <div
             onClick$={tryPassLevel}

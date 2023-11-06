@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Timeline } from "~/components/timeline/timeline";
 
 export default component$(() => {
   const works = [
@@ -61,60 +62,8 @@ export default component$(() => {
         <h3>All my jobs</h3>
       </section>
 
-      <section class="ml-0 md:ml-12 lg:w-2/3 sticky">
-        <div class="container mx-auto w-full h-full">
-          <div class="relative wrap overflow-hidden p-10 h-full">
-            <div
-              class="border-2-2 border-secondary absolute h-full border"
-              style="right: 50%; border-radius: 1%;"
-            ></div>
-            <div
-              class="border-2-2 border-secondary absolute h-full border"
-              style="left: 50%; border-radius: 1%;"
-            ></div>
-            {works.map((w, index) => {
-              if (index % 2 === 0) {
-                return (
-                  <div
-                    key={w.id}
-                    class="mb-8 flex justify-between items-center w-full flex-row-reverse left-timeline"
-                  >
-                    <div class="order-1 w-5/12"></div>
-                    <div class="order-1 w-5/12 px-1 py-4 text-right">
-                      <p class="mb-3 text-base text-secondary">{w.startDate}</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl">
-                        {w.title}
-                      </h4>
-                      <p class="mb-3 font-bold text-md md:text-xl">{w.slug}</p>
-                      <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                        {w.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={w.id}
-                    class="mb-8 flex justify-between items-center w-full right-timeline"
-                  >
-                    <div class="order-1 w-5/12"></div>
-                    <div class="order-1  w-5/12 px-1 py-4 text-left">
-                      <p class="mb-3 text-base text-secondary">{w.startDate}</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl">
-                        {w.title}
-                      </h4>
-                      <p class="mb-3 font-bold text-md md:text-xl">{w.slug}</p>
-                      <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                        {w.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              }
-            })}
-          </div>
-        </div>
+      <section class="lg:w-2/3 sticky">
+        <Timeline items={works}></Timeline>
       </section>
     </>
   );

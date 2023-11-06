@@ -25,9 +25,10 @@ export const Footer = component$(() => {
           <Link href="https://qwik.builder.io/" target="_blank">
             made with qwik
           </Link>
+          <Link href="/">Homepage</Link>
           <Link href="/blog">Blog</Link>
-          <Link href="/stack">Stack</Link>
-          <Link href="/links">Links</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/button-game">Try this game</Link>
         </nav>
       </footer>
     </>
