@@ -30,7 +30,7 @@ export const Hero = component$(() => {
             </p>
             <p>
               <Link href="/Pasquale_De_Lucia-Resume.pdf" target="_blank">
-                <button class="btn btn-primary">Get resume</button>
+                <button class="btn btn-primary text-black">Get resume</button>
               </Link>
             </p>
           </div>
