@@ -18,7 +18,7 @@ export const Hero = component$(() => {
             alt="Pasquale De Lucia picture"
             class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
           />
-          <div class="prose">
+          <div class="prose m-6 md:my-0">
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
             <p>Web Wizard and JavaScript Lover</p>
             <p>

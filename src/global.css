@@ -62,7 +62,7 @@ h3 {
 }
 
 .inner-section {
-  @apply w-4/6 md:w-11/12 lg:w-2/3;
+  @apply w-10/12 md:w-11/12 lg:w-2/3;
 }
 
 .link-section {

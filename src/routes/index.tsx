@@ -54,6 +54,14 @@ export default component$(() => {
       </section>
 
       <section class="title-section text-center">
+        <h2>History</h2>
+        <h3>All my jobs</h3>
+      </section>
+      <section class="w-11/12 lg:w-5/6 sticky">
+        <Timeline items={works}></Timeline>
+      </section>
+
+      <section class="title-section text-center">
         <h2>Recent articles</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
@@ -62,29 +70,21 @@ export default component$(() => {
       </section>
 
       <section class="title-section text-center">
-        <h2>History</h2>
-        <h3>All my jobs</h3>
-      </section>
-      <section class="lg:w-5/6 sticky">
-        <Timeline items={works}></Timeline>
-      </section>
-
-      <section class="title-section text-center">
         <h2>Stack</h2>
         <h3>My tecnology stack</h3>
       </section>
       {/* front end */}
-      <section>
+      <section class="inner-section">
         <Stacks title="Front end" stacks={frontEnd} />
       </section>
 
       {/* back end */}
-      <section>
+      <section class="inner-section">
         <Stacks title="Back end" stacks={backEnd} />
       </section>
 
       {/* tools end */}
-      <section>
+      <section class="inner-section">
         <Stacks title="Tools" stacks={tools} />
       </section>
 
