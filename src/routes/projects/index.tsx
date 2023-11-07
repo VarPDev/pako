@@ -11,7 +11,7 @@ export default component$(() => {
         <h3>Some of my projects</h3>
       </section>
 
-      <section class="5/6 lg:w-5/6">
+      <section class="inner-section">
         <Cards items={projects} />
       </section>
     </>

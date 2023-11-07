@@ -14,7 +14,7 @@ export const Cards = component$<ItemProps>((props) => {
 
   return (
     <>
-      <div class="md:container mx-12 md:mx-auto">
+      <div>
         <div class="grid md:grid-cols-3 justify-items-center gap-12">
           {cards.map((c) => (
             <div
