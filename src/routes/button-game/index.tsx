@@ -14,7 +14,7 @@ function getRandomInt(max: number) {
 }
 
 export default component$(() => {
-  const startSuccess = 1;
+  const startSuccess = 100;
   const totalLevel = 100;
   const percentageOfSuccess = useSignal(startSuccess);
   const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess);
