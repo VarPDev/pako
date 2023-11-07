@@ -1,5 +1,6 @@
 .icon {
-  @apply text-3xl absolute left-0 top-0 bottom-0 pl-3 flex items-center;
+  /* absolute */
+  @apply left-0 top-0 bottom-0 pl-3 flex items-center h-12;
 }
 
 .icon svg {

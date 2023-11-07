@@ -13,7 +13,7 @@ export const LinkItem = component$<ItemProps>((props) => {
         {props.links.map((link) => (
           <li key={link.id} class="mb-4">
             <Link
-              class="relative transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-4 w-100 block text-center text-neutral rounded-lg pl-12 md:px-12"
+              class="flex items-center justify-between transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-2 w-100 block text-neutral rounded-lg pl-4 md:px-4"
               href={link.url}
               target="_blank"
               rel="noopener"
@@ -23,6 +23,10 @@ export const LinkItem = component$<ItemProps>((props) => {
                 dangerouslySetInnerHTML={link.svg}
               ></span>
               <span>{link.title}</span>
+              <span
+                class={styles.icon + " p-2 opacity-0 invisible"}
+                dangerouslySetInnerHTML={link.svg}
+              ></span>
             </Link>
           </li>
         ))}

@@ -14,12 +14,12 @@ export const Cards = component$<ItemProps>((props) => {
 
   return (
     <>
-      <div class="container mx-auto">
+      <div class="md:container mx-12 md:mx-auto">
         <div class="grid md:grid-cols-3 justify-items-center gap-12">
           {cards.map((c) => (
             <div
               key={c.id}
-              class="card w-80 bg-base-100 shadow-xl image-full w-full"
+              class="card w-80 bg-base-100 shadow-xl image-full w-full max-w-[18rem]"
             >
               {c.image && (
                 <figure>
