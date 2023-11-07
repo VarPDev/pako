@@ -16,7 +16,7 @@ export const Hero = component$(() => {
         <div class="hero-content flex-col lg:flex-row">
           <ImgPako
             alt="Pasquale De Lucia picture"
-            class="xs:max-w-[12rem] sm:max-w-[18rem] md:max-w-sm rounded-lg shadow-2xl"
+            class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
           />
           <div class="prose">
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>

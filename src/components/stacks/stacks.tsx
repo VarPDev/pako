@@ -18,6 +18,7 @@ export const Stacks = component$<ItemProps>((props) => {
               href={s.href}
               target="_blank"
               key={s.id}
+              aria-label={s.href}
               class="w-full max-w-[3rem] min-w-[2rem]"
             >
               <div dangerouslySetInnerHTML={s.svg}></div>
