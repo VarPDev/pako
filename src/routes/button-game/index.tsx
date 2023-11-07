@@ -14,7 +14,8 @@ function getRandomInt(max: number) {
 }
 
 export default component$(() => {
-  const startSuccess = 100;
+  const startSuccess = 1;
+  const totalLevel = 100;
   const percentageOfSuccess = useSignal(startSuccess);
   const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess);
   const percentageOfSuccessFromNow = useSignal(
@@ -28,18 +29,23 @@ export default component$(() => {
 
   const level = useSignal(0);
   const tryPassLevel = $(() => {
-    const random = getRandomInt(startSuccess);
+    const random = getRandomInt(totalLevel);
 
-    if (random <= percentageOfSuccess.value) {
-      level.value++;
-      percentageOfSuccess.value--;
-    } else {
+    if (level.value === totalLevel) {
       level.value = 0;
       percentageOfSuccess.value = startSuccess;
+    } else {
+      if (random <= percentageOfSuccess.value) {
+        level.value++;
+        percentageOfSuccess.value--;
+      } else {
+        level.value = 0;
+        percentageOfSuccess.value = startSuccess;
+      }
+      percentageOfSuccessFromNow.value = probabilityOfSuccess(
+        percentageOfSuccess.value
+      );
     }
-    percentageOfSuccessFromNow.value = probabilityOfSuccess(
-      percentageOfSuccess.value
-    );
   });
 
   return (
@@ -62,12 +68,15 @@ export default component$(() => {
 
           <div
             onClick$={tryPassLevel}
-            class="button w-48 h-48 md:w-72 md:h-72 bg-red-500 rounded-full cursor-pointer select-none
-    active:translate-y-4  active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841]
+            class={`button w-48 h-48 md:w-72 md:h-72 rounded-full cursor-pointer select-none
+    active:translate-y-4
     active:border-b-[0px]
-    transition-all duration-150 [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]
-    border-[5px] border-red-400
-  "
+    transition-all duration-150
+    border-[5px] ${
+      level.value === startSuccess
+        ? "border-green-400 bg-green-500 active:[box-shadow:0_0px_0_0_#298a09,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#298a09,0_13px_0_0_#1b70f841]"
+        : "border-red-400 bg-red-500 active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]"
+    }`}
           >
             <span class="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
               Press this button
@@ -75,6 +84,7 @@ export default component$(() => {
           </div>
 
           <p>You are at level {level.value}</p>
+          <p>{level.value === startSuccess ? "HAI VINTO" : ""}</p>
         </div>
       </section>
     </>
