@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$, type DocumentHead, Link } from "@builder.io/qwik-city";
 import { Hero } from "~/components/hero/hero";
 import { Cards } from "~/components/cards/cards";
 import { Articles } from "~/components/articles/articles";
@@ -51,6 +51,12 @@ export default component$(() => {
       </section>
       <section class="inner-section">
         <Cards items={projects} limit={3} />
+
+        <p class="flex justify-center pt-6">
+          <Link href="/projects">
+            <button class="btn btn-primary">See more</button>
+          </Link>
+        </p>
       </section>
 
       <section class="title-section text-center">
@@ -67,6 +73,12 @@ export default component$(() => {
       </section>
       <section class="inner-section">
         <Articles articles={articles.value} limit={4} />
+
+        <p class="flex justify-center pt-6">
+          <Link href="/blog">
+            <button class="btn btn-primary">Read more</button>
+          </Link>
+        </p>
       </section>
 
       <section class="title-section text-center">
