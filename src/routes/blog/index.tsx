@@ -13,7 +13,6 @@ function getLang(lang: Array<string>): string {
 }
 
 export const useArticles = routeLoader$(async () => {
-  console.log('routeLoader$ blog')
   const res = await fetch("https://dev.to/api/articles?username=nyruchi");
   const articles = await res.json();
   return articles.map((a: any) => {
