@@ -18,6 +18,14 @@ export default component$(() => {
           {/* width="498"
           height="280" */}
           <ImgAliensAlien alt="Binary aliens" />
+          <img
+            decoding="async"
+            loading="lazy"
+            srcSet="
+              /aliens-alien.gif"
+            width="1200"
+            height="1200"
+          ></img>
         </div>
       </section>
     </>
