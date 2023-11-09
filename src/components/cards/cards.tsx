@@ -46,10 +46,12 @@ export const Cards = component$<ItemProps>((props) => {
                   </span>
                 </p>
                 <div class="card-actions justify-end">
-                  <Link href={c.href} target="_blank">
-                    <button class="btn btn-primary text-black">
-                      {c.action}
-                    </button>
+                  <Link
+                    class="btn btn-primary text-black"
+                    href={c.href}
+                    target="_blank"
+                  >
+                    {c.action}
                   </Link>
                 </div>
               </div>

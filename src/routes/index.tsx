@@ -53,10 +53,12 @@ export default component$(() => {
         <Cards items={projects} limit={3} />
 
         <p class="flex justify-center pt-6">
-          <Link href="/projects" aria-label="Page that show all my projects">
-            <button class="btn btn-primary text-black">
-              See more projects
-            </button>
+          <Link
+            href="/projects"
+            aria-label="Page that show all my projects"
+            class="btn btn-primary text-black"
+          >
+            See more projects
           </Link>
         </p>
       </section>
@@ -77,10 +79,12 @@ export default component$(() => {
         <Articles articles={articles.value} limit={4} />
 
         <p class="flex justify-center pt-6">
-          <Link href="/blog" aria-label="Page that show all my articles">
-            <button class="btn btn-primary text-black">
-              Read more articles
-            </button>
+          <Link
+            href="/blog"
+            aria-label="Page that show all my articles"
+            class="btn btn-primary text-black"
+          >
+            Read more articles
           </Link>
         </p>
       </section>
