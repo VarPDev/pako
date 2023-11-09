@@ -12,8 +12,12 @@ function getLang(lang: Array<string>): string {
   }
 }
 
-export const useArticles = routeLoader$(async () => {
-  const res = await fetch("https://dev.to/api/articles?username=nyruchi");
+export const useArticles = routeLoader$(async (requestEvent) => {
+  const res = await fetch("https://dev.to/api/articles/me/published", {
+    headers: new Headers({
+      "api-key": requestEvent.env.get("DEV_TO_API_KEY"),
+    } as any),
+  });
   const articles = await res.json();
   return articles.map((a: any) => {
     return {
