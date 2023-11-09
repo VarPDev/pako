@@ -46,7 +46,7 @@ export default component$(() => {
   return (
     <>
       <section>
-        <Hero />
+        <Hero role={works[0].role} company={works[0].company} />
       </section>
 
       <section class="title-section text-center">

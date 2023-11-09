@@ -3,7 +3,12 @@ import ImgPako from "/src/media/Pako-cropped.jpeg?jsx";
 import converter from "number-to-words";
 import { Link } from "@builder.io/qwik-city";
 
-export const Hero = component$(() => {
+interface ItemProps {
+  role: string;
+  company: string;
+}
+
+export const Hero = component$<ItemProps>((props) => {
   const currentYear = new Date().getFullYear();
   const startYear = new Date("1/1/2015").getFullYear();
   const yearWorked = converter.toWords(currentYear - startYear);
@@ -22,7 +27,7 @@ export const Hero = component$(() => {
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
             <p>Web Wizard and JavaScript Lover</p>
             <p>
-              I craft digital wonders as a Full-Stack Engineer at ScuolaZoo.
+              I craft digital wonders as a {props.role} at {props.company}.
             </p>
             <p>
               With a solid {yearWorked} years of web development under my belt,
