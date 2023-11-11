@@ -59,7 +59,7 @@ export default component$(() => {
         <p class="flex justify-center pt-6">
           <Link
             href="/projects"
-            aria-label="Page that show all my projects"
+            aria-label="See more projects"
             class="btn btn-primary text-black"
           >
             See more projects
@@ -85,7 +85,7 @@ export default component$(() => {
         <p class="flex justify-center pt-6">
           <Link
             href="/blog"
-            aria-label="Page that show all my articles"
+            aria-label="Read more articles"
             class="btn btn-primary text-black"
           >
             Read more articles
