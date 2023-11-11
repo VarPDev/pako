@@ -5,10 +5,10 @@ export const projects = [
     description: "I joined this open source project as a contributor",
     altImage: "Qwik logo picture",
     image: "/qwik-logo.png",
-    action: "See repo",
+    action: "Check framework",
     type: "Qwik",
     color: "orange-600",
-    href: "https://github.com/BuilderIO/qwik",
+    href: "https://qwik.builder.io/",
   },
   {
     id: 2,
