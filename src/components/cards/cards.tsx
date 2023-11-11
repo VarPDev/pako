@@ -32,7 +32,7 @@ export const Cards = component$<ItemProps>((props) => {
                 </figure>
               )}
               <div class="card-body">
-                <h2 class="card-title">{c.company}</h2>
+                <h2 class="card-title">{c.title}</h2>
                 <p>
                   {c.description}
                   <br />

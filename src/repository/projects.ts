@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    title: "Qwik",
+    description: "I joined this open source project as a contributor",
+    altImage: "Qwik logo picture",
+    image: "/qwik-logo.png",
+    action: "See repo",
+    type: "Qwik",
+    color: "orange-600",
+    href: "https://github.com/BuilderIO/qwik",
+  },
+  {
+    id: 2,
     title: "This website",
     description: "Feel free to check out how I developed this website",
     altImage: "Pasquale De Lucia picture",
@@ -11,7 +22,7 @@ export const projects = [
     href: "https://github.com/VarPDev/pako",
   },
   {
-    id: 2,
+    id: 3,
     title: "Rick & Morty",
     description:
       "Wiki about Rick and Morty, an adult animated science fiction sitcom",
@@ -23,7 +34,7 @@ export const projects = [
     href: "https://rick-and-morty-e.web.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Resume me",
     description: "An app built with Flutter to share your own resume",
     altImage: "Resume me app logo",
@@ -34,7 +45,7 @@ export const projects = [
     href: "https://play.google.com/store/apps/details?id=com.pako.resume_me&pli=1",
   },
   {
-    id: 4,
+    id: 5,
     title: "Tab sync",
     description:
       "Npm library that allows you to communicate between multiple browser tabs",
