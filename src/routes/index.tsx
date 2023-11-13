@@ -11,6 +11,7 @@ import { works } from "~/repository/work";
 import { projects } from "~/repository/projects";
 import { frontEnd, backEnd, tools } from "~/repository/stack";
 import { format } from "date-fns";
+import ImgPR from "/src/media/badge-first-pr.webp?jsx";
 
 function getLang(lang: Array<string>): string {
   switch (true) {
@@ -110,6 +111,20 @@ export default component$(() => {
       {/* tools end */}
       <section class="inner-section">
         <Stacks title="Tools" stacks={tools} />
+      </section>
+
+      <section class="title-section text-center">
+        <h2>Open source world</h2>
+        <h3>My first accepted PR | Qwik</h3>
+      </section>
+
+      <section class="inner-section">
+        <div class="flex items-center justify-center">
+          <ImgPR
+            alt="My first PR"
+            class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
+          />
+        </div>
       </section>
 
       <section class="title-section text-center">
