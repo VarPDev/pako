@@ -20,9 +20,8 @@ import ImgPR from "/src/media/badge-first-pr.webp?jsx";
 
 interface Refs {
   el: Signal<Element | undefined>;
-  isVisible: Signal<Boolean>;
+  isVisible: Signal<boolean>;
   observer: any;
-  countVisible: number;
 }
 
 function getLang(lang: Array<string>): string {
@@ -57,141 +56,123 @@ export default component$(() => {
   const articles = useArticles();
 
   const projectTitleRef = useSignal<Element>();
-  const projectTitleIsVisible = useSignal<Boolean>(true);
+  const projectTitleIsVisible = useSignal<boolean>(true);
 
   const projectRef = useSignal<Element>();
-  const projectIsVisible = useSignal<Boolean>(true);
+  const projectIsVisible = useSignal<boolean>(true);
 
   const historyTitleRef = useSignal<Element>();
-  const historyTitleIsVisible = useSignal<Boolean>(true);
+  const historyTitleIsVisible = useSignal<boolean>(true);
 
   const historyeRef = useSignal<Element>();
-  const historyIsVisible = useSignal<Boolean>(true);
+  const historyIsVisible = useSignal<boolean>(true);
 
   const articlesTitleRef = useSignal<Element>();
-  const articlesTitleIsVisible = useSignal<Boolean>(true);
+  const articlesTitleIsVisible = useSignal<boolean>(true);
 
   const articlesRef = useSignal<Element>();
-  const articlesIsVisible = useSignal<Boolean>(true);
+  const articlesIsVisible = useSignal<boolean>(true);
 
   const stackTitleRef = useSignal<Element>();
-  const stackTitleIsVisible = useSignal<Boolean>(true);
+  const stackTitleIsVisible = useSignal<boolean>(true);
 
   const stackFeRef = useSignal<Element>();
-  const stackFeIsVisible = useSignal<Boolean>(true);
+  const stackFeIsVisible = useSignal<boolean>(true);
 
   const stackBeRef = useSignal<Element>();
-  const stackBeIsVisible = useSignal<Boolean>(true);
+  const stackBeIsVisible = useSignal<boolean>(true);
 
   const stackToRef = useSignal<Element>();
-  const stackToIsVisible = useSignal<Boolean>(true);
+  const stackToIsVisible = useSignal<boolean>(true);
 
   const openTitleRef = useSignal<Element>();
-  const openTitleIsVisible = useSignal<Boolean>(true);
+  const openTitleIsVisible = useSignal<boolean>(true);
 
   const openRef = useSignal<Element>();
-  const openIsVisible = useSignal<Boolean>(true);
+  const openIsVisible = useSignal<boolean>(true);
 
   const linksTitleRef = useSignal<Element>();
-  const linksTitleIsVisible = useSignal<Boolean>(true);
+  const linksTitleIsVisible = useSignal<boolean>(true);
 
   const linksRef = useSignal<Element>();
-  const linksIsVisible = useSignal<Boolean>(true);
+  const linksIsVisible = useSignal<boolean>(true);
 
   const refs: Array<Refs> = [
     {
       el: projectTitleRef,
       isVisible: projectTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: projectRef,
       isVisible: projectIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: historyTitleRef,
       isVisible: historyTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: historyeRef,
       isVisible: historyIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: articlesTitleRef,
       isVisible: articlesTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: articlesRef,
       isVisible: articlesIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: stackTitleRef,
       isVisible: stackTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: stackFeRef,
       isVisible: stackFeIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: stackBeRef,
       isVisible: stackBeIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: stackToRef,
       isVisible: stackToIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: openTitleRef,
       isVisible: openTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
-    { el: openRef, isVisible: openIsVisible, observer: null, countVisible: 0 },
+    { el: openRef, isVisible: openIsVisible, observer: null },
     {
       el: linksTitleRef,
       isVisible: linksTitleIsVisible,
       observer: null,
-      countVisible: 0,
     },
     {
       el: linksRef,
       isVisible: linksIsVisible,
       observer: null,
-      countVisible: 0,
     },
   ];
 
-  useVisibleTask$(() => {
+  useVisibleTask$(({ track }) => {
     refs.forEach((ref) => {
       if (ref.el.value) {
-        // TODO: when isVisible became true remove observer
         ref.observer = new IntersectionObserver(([entry]) => {
           ref.isVisible.value = entry.isIntersecting;
-          ref.countVisible = entry.intersectionRatio
-            ? ref.countVisible + 1
-            : ref.countVisible;
 
-          console.log("🚀 ~ entry.isIntersecting:", entry.isIntersecting);
-          if (ref.isVisible.value && ref.countVisible > 0) {
+          if (ref.isVisible.value) {
             ref.observer.disconnect();
           }
         });
