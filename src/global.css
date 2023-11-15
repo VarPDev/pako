@@ -73,6 +73,14 @@ h3 {
   @apply fill-primary;
 }
 
+section.animation {
+  @apply opacity-0 transition-opacity ease-in duration-700;
+}
+
+section.animation.isVisible {
+  @apply opacity-100;
+}
+
 /* CAT BACKGROUND */
 
 .cat-background {
