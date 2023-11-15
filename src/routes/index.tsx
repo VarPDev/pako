@@ -166,7 +166,7 @@ export default component$(() => {
     },
   ];
 
-  useVisibleTask$(({ track }) => {
+  useVisibleTask$(() => {
     refs.forEach((ref) => {
       if (ref.el.value) {
         ref.observer = new IntersectionObserver(([entry]) => {
