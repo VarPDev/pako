@@ -1,10 +1,26 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { Ref, observeElement } from "~/utils/helpers";
 
 interface ItemProps {
   items: Array<any>;
 }
 
 export const Timeline = component$<ItemProps>((props) => {
+  // if I move useSignal inside map vite wirte a warning in console
+  const createSignal = useSignal;
+
+  const refs: Array<Ref> = props.items.map((item) => {
+    return {
+      el: createSignal<Element>(),
+      isVisible: createSignal<boolean>(true),
+      observer: null,
+    };
+  });
+
+  useVisibleTask$(() => {
+    observeElement(refs);
+  });
+
   return (
     <>
       <div class="container mx-auto w-full h-full">
@@ -22,7 +38,10 @@ export const Timeline = component$<ItemProps>((props) => {
               return (
                 <div
                   key={w.id}
-                  class="mb-8 flex justify-between items-center w-full flex-row-reverse left-timeline"
+                  ref={refs[index].el}
+                  class={`mb-8 flex justify-between items-center w-full flex-row-reverse left-timeline
+                  animation
+                  ${refs[index].isVisible.value && "isVisible"}`}
                 >
                   <div class="order-1 w-0 md:w-5/12"></div>
                   <div class="order-1 w-full md:w-5/12 px-1 py-4 text-left md:text-right">
@@ -41,7 +60,9 @@ export const Timeline = component$<ItemProps>((props) => {
               return (
                 <div
                   key={w.id}
-                  class="mb-8 flex justify-between items-center w-full right-timeline"
+                  ref={refs[index].el}
+                  class={`mb-8 flex justify-between items-center w-full right-timeline animation
+                  ${refs[index].isVisible.value && "isVisible"}`}
                 >
                   <div class="order-1 w-0 md:w-5/12"></div>
                   <div class="order-1  w-full md:w-5/12 px-1 py-4 text-left">

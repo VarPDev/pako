@@ -73,11 +73,11 @@ h3 {
   @apply fill-primary;
 }
 
-section.animation {
+.animation {
   @apply opacity-0 transition-opacity ease-in duration-700 delay-150;
 }
 
-section.animation.isVisible {
+.animation.isVisible {
   @apply opacity-100;
 }
 

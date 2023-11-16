@@ -17,12 +17,7 @@ import { projects } from "~/repository/projects";
 import { frontEnd, backEnd, tools } from "~/repository/stack";
 import { format } from "date-fns";
 import ImgPR from "/src/media/badge-first-pr.webp?jsx";
-
-interface Refs {
-  el: Signal<Element | undefined>;
-  isVisible: Signal<boolean>;
-  observer: any;
-}
+import { Ref, observeElement } from "~/utils/helpers";
 
 function getLang(lang: Array<string>): string {
   switch (true) {
@@ -97,7 +92,7 @@ export default component$(() => {
   const linksRef = useSignal<Element>();
   const linksIsVisible = useSignal<boolean>(true);
 
-  const refs: Array<Refs> = [
+  const refs: Array<Ref> = [
     {
       el: projectTitleRef,
       isVisible: projectTitleIsVisible,
@@ -167,19 +162,7 @@ export default component$(() => {
   ];
 
   useVisibleTask$(() => {
-    refs.forEach((ref) => {
-      if (ref.el.value) {
-        ref.observer = new IntersectionObserver(([entry]) => {
-          ref.isVisible.value = entry.isIntersecting;
-
-          if (ref.isVisible.value) {
-            ref.observer.disconnect();
-          }
-        });
-
-        ref.observer.observe(ref.el.value);
-      }
-    });
+    observeElement(refs);
   });
 
   return (
