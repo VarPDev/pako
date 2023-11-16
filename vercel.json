@@ -11,7 +11,7 @@
     }
   ],
   "crons": [{
-    "path": "/server/cron/vercel-deploy",
-    "schedule": "10 * * * *"
+    "path": "/cron/vercel-deploy",
+    "schedule": "20 * * * *"
   }]
 }
