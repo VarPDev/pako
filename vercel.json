@@ -9,9 +9,5 @@
         }
       ]
     }
-  ],
-  "crons": [{
-    "path": "/cron/vercel-deploy",
-    "schedule": "20 * * * *"
-  }]
+  ]
 }
