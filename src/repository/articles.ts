@@ -9,6 +9,23 @@ function getLang(lang: Array<string>): string {
   }
 }
 
+export const getArticle = async (slug: string, username: string) => {
+  const res = await fetch(`https://dev.to/api/articles/${username}/${slug}`);
+  if (res.status !== 200) {
+    throw Error(res.status.toString());
+  }
+  return await res.json();
+};
+
+export const getUser = async (userId: number) => {
+  const res = await fetch(`https://dev.to/api/users/${userId}`);
+  if (res.status !== 200) {
+    throw Error(res.status.toString());
+  }
+  const user = await res.json();
+  return user.username;
+};
+
 export const getArticles = async ({ devToApiKey, limit }: any) => {
   const res = await fetch(
     `https://dev.to/api/articles/me/published?per_page=${limit || 30}`,

@@ -6,24 +6,7 @@ import {
   StaticGenerateHandler,
 } from "@builder.io/qwik-city";
 import { Articles } from "~/components/articles/articles";
-import { getArticles } from "~/repository/articles";
-
-const getUser = async (userId: number) => {
-  const res = await fetch(`https://dev.to/api/users/${userId}`);
-  if (res.status !== 200) {
-    throw Error(res.status.toString());
-  }
-  const user = await res.json();
-  return user.username;
-};
-
-const getArticle = async (slug: string, username: string) => {
-  const res = await fetch(`https://dev.to/api/articles/${username}/${slug}`);
-  if (res.status !== 200) {
-    throw Error(res.status.toString());
-  }
-  return await res.json();
-};
+import { getArticle, getArticles, getUser } from "~/repository/articles";
 
 export const useArticles = routeLoader$(async (requestEvent) => {
   const username = await getUser(1198163);
