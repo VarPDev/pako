@@ -1,9 +1,4 @@
-import {
-  Signal,
-  component$,
-  useSignal,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { routeLoader$, type DocumentHead, Link } from "@builder.io/qwik-city";
 import { Hero } from "~/components/hero/hero";
 import { Cards } from "~/components/cards/cards";
@@ -42,6 +37,8 @@ export const useArticles = routeLoader$(async (requestEvent) => {
       title: a.title,
       description: a.description,
       bodyMarkdown: a.body_markdown,
+      username: a.user.username,
+      slug: a.slug,
       date: format(new Date(a.published_timestamp), "PP"),
       lang: getLang(a.tag_list),
     };

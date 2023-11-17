@@ -50,7 +50,7 @@ export default component$(() => {
 
   return (
     <>
-      <section class="text-center">
+      <section class="title-section text-center">
         <h1 class="mb-2">Buttom game</h1>
         <h3>
           This game requires no skills but only LUCK. If you win at this game,

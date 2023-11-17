@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
-import ImgAliensAlien from "~/media/aliens-alien.gif?jsx";
+// import ImgAliensAlien from "~/media/aliens-alien.gif?jsx";
 
 export default component$(() => {
   return (
@@ -17,7 +17,15 @@ export default component$(() => {
           </p>
           {/* width="498"
           height="280" */}
-          <ImgAliensAlien alt="Binary aliens" />
+          {/* <ImgAliensAlien alt="Binary aliens" /> */}
+          <img
+            decoding="async"
+            loading="lazy"
+            srcSet="
+              /aliens-alien.gif"
+            width="1200"
+            height="1200"
+          ></img>
         </div>
       </section>
     </>

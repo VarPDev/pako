@@ -19,6 +19,7 @@ export const useArticles = routeLoader$(async (requestEvent) => {
     } as any),
   });
   const articles = await res.json();
+  console.log("🚀 ~ file: index.tsx:22 ~ useArticles ~ articles:", articles[0]);
   return articles.map((a: any) => {
     return {
       id: a.id,
@@ -26,6 +27,8 @@ export const useArticles = routeLoader$(async (requestEvent) => {
       title: a.title,
       description: a.description,
       bodyMarkdown: a.body_markdown,
+      username: a.user.username,
+      slug: a.slug,
       date: format(new Date(a.published_timestamp), "PP"),
       lang: getLang(a.tag_list),
     };
@@ -37,7 +40,7 @@ export default component$(() => {
 
   return (
     <>
-      <section class="text-center">
+      <section class="title-section text-center">
         <h1>Blog</h1>
         <h3>Some of my articles</h3>
       </section>

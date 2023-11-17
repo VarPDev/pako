@@ -45,7 +45,11 @@ section {
 }
 
 section.title-section {
-  @apply pb-12;
+  @apply w-10/12 md:w-11/12 lg:w-2/3 pb-12;
+}
+
+section.title-section.small {
+  @apply w-10/12 md:w-7/12 pb-12;
 }
 
 h1 {
@@ -61,8 +65,12 @@ h3 {
   @apply text-2xl;
 }
 
-.inner-section {
+section.inner-section {
   @apply w-10/12 md:w-11/12 lg:w-2/3;
+}
+
+section.inner-section.small {
+  @apply w-10/12 md:w-7/12 pb-12;
 }
 
 .link-section {
@@ -79,6 +87,36 @@ h3 {
 
 .animation.isVisible {
   @apply opacity-100;
+}
+
+/* HTML BLOG */
+
+.article {
+  @apply text-lg;
+}
+
+.article h2 {
+  @apply mt-4 mb-2;
+}
+
+pre {
+  @apply overflow-auto text-base;
+}
+
+div.highlight {
+  @apply my-6 bg-black p-2 rounded-lg;
+}
+
+.highlight__panel {
+  @apply hidden;
+}
+
+.tags {
+  @apply flex gap-2;
+}
+
+.article a {
+  @apply underline text-secondary;
 }
 
 /* CAT BACKGROUND */

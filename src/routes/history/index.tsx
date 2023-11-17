@@ -57,7 +57,7 @@ export default component$(() => {
 
   return (
     <>
-      <section class="text-center">
+      <section class="title-section text-center">
         <h1>History</h1>
         <h3>All my jobs</h3>
       </section>

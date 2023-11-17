@@ -6,7 +6,7 @@ import { projects } from "~/repository/projects";
 export default component$(() => {
   return (
     <>
-      <section class="text-center">
+      <section class="title-section text-center">
         <h1>Projects</h1>
         <h3>Some of my projects</h3>
       </section>

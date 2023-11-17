@@ -43,7 +43,7 @@ export default component$(() => {
   ];
   return (
     <>
-      <section class="text-center">
+      <section class="title-section text-center">
         <h1>Links</h1>
         <h3>Some of my socials</h3>
       </section>
