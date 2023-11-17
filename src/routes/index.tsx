@@ -41,6 +41,7 @@ export const useArticles = routeLoader$(async (requestEvent) => {
       href: a.url,
       title: a.title,
       description: a.description,
+      bodyMarkdown: a.body_markdown,
       date: format(new Date(a.published_timestamp), "PP"),
       lang: getLang(a.tag_list),
     };

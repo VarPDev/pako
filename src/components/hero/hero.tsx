@@ -20,6 +20,7 @@ export const Hero = component$<ItemProps>((props) => {
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
           <ImgPako
+            loading="eager"
             alt="Pasquale De Lucia picture"
             class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
           />
