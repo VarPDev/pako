@@ -5,6 +5,7 @@ import {
   Link,
   RequestEventLoader,
   StaticGenerateHandler,
+  useLocation,
 } from "@builder.io/qwik-city";
 import { format } from "date-fns";
 import { Articles } from "~/components/articles/articles";
@@ -46,20 +47,18 @@ const getUser = async (userId: number) => {
   return user.username;
 };
 
-const getArticle = async (
-  requestEvent: RequestEventLoader<QwikCityPlatform>,
-  username: string
-) => {
-  const res = await fetch(
-    `https://dev.to/api/articles/${username}/${requestEvent.params.slug}`
-  );
+const getArticle = async (slug: string, username: string) => {
+  const res = await fetch(`https://dev.to/api/articles/${username}/${slug}`);
   return await res.json();
 };
 
 export const useArticles = routeLoader$(async (requestEvent) => {
   const username = await getUser(1198163);
 
-  let article = await getArticle(requestEvent, username ?? "nyruchi");
+  let article = await getArticle(
+    requestEvent.params.slug,
+    username ?? "nyruchi"
+  );
 
   if (!article || article.status === 404) {
     article = null;
@@ -113,7 +112,6 @@ export default component$(() => {
 
       <section class="title-section text-center">
         <h2>Recent articles</h2>
-        {/* <h3>All my jobs</h3> */}
       </section>
       <section class="inner-section">
         <Articles articles={result.value.articles} limit={4} />
