@@ -19,7 +19,6 @@ export const useArticles = routeLoader$(async (requestEvent) => {
     } as any),
   });
   const articles = await res.json();
-  console.log("🚀 ~ file: index.tsx:22 ~ useArticles ~ articles:", articles[0]);
   return articles.map((a: any) => {
     return {
       id: a.id,
