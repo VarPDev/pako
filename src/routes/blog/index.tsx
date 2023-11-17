@@ -3,19 +3,10 @@ import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 import { format } from "date-fns";
 import { Articles } from "~/components/articles/articles";
 
-function getLang(lang: Array<string>): string {
-  switch (true) {
-    case lang.includes("ita"):
-      return "ITA";
-    default:
-      return "ENG";
-  }
-}
-
-export const useArticles = routeLoader$(async (requestEvent) => {
+const getArticles = async ({ devToApiKey }: any) => {
   const res = await fetch("https://dev.to/api/articles/me/published", {
     headers: new Headers({
-      "api-key": requestEvent.env.get("DEV_TO_API_KEY"),
+      "api-key": devToApiKey,
     } as any),
   });
   const articles = await res.json();
@@ -32,6 +23,21 @@ export const useArticles = routeLoader$(async (requestEvent) => {
       lang: getLang(a.tag_list),
     };
   }) as Array<any>;
+};
+
+function getLang(lang: Array<string>): string {
+  switch (true) {
+    case lang.includes("ita"):
+      return "ITA";
+    default:
+      return "ENG";
+  }
+}
+
+export const useArticles = routeLoader$(async (requestEvent) => {
+  return await getArticles({
+    devToApiKey: requestEvent.env.get("DEV_TO_API_KEY"),
+  });
 });
 
 export default component$(() => {

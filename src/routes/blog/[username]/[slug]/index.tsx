@@ -133,16 +133,20 @@ export const head: DocumentHead = {
   ],
 };
 
-export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
-  // example of loading params for this use case
-  // every implementation will be different
-  const articles = await getArticles({
-    devToApiKey: env.get("DEV_TO_API_KEY"),
-  });
+// export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
+//   // example of loading params for this use case
+//   // every implementation will be different
+//   const articles = await getArticles({
+//     devToApiKey: env.get("DEV_TO_API_KEY"),
+//   });
 
-  return {
-    params: articles.map((article) => {
-      return { username: articles[0].username, slug: article.slug };
-    }),
-  };
-};
+//   return {
+//     params: [{ username: articles[0].username, slug: articles[0].slug }],
+//   };
+
+//   return {
+//     params: articles.map((article) => {
+//       return { username: article.username, slug: article.slug };
+//     }),
+//   };
+// };
