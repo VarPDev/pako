@@ -5,48 +5,23 @@ import {
   Link,
   StaticGenerateHandler,
 } from "@builder.io/qwik-city";
-import { format } from "date-fns";
 import { Articles } from "~/components/articles/articles";
-
-function getLang(lang: Array<string>): string {
-  switch (true) {
-    case lang.includes("ita"):
-      return "ITA";
-    default:
-      return "ENG";
-  }
-}
-
-const getArticles = async ({ devToApiKey }: any) => {
-  const res = await fetch("https://dev.to/api/articles/me/published", {
-    headers: new Headers({
-      "api-key": devToApiKey,
-    } as any),
-  });
-  const articles = await res.json();
-  return articles.map((a: any) => {
-    return {
-      id: a.id,
-      href: a.url,
-      title: a.title,
-      description: a.description,
-      bodyMarkdown: a.body_markdown,
-      username: a.user.username,
-      slug: a.slug,
-      date: format(new Date(a.published_timestamp), "PP"),
-      lang: getLang(a.tag_list),
-    };
-  }) as Array<any>;
-};
+import { getArticles } from "~/repository/articles";
 
 const getUser = async (userId: number) => {
   const res = await fetch(`https://dev.to/api/users/${userId}`);
+  if (res.status !== 200) {
+    throw Error(res.status.toString());
+  }
   const user = await res.json();
   return user.username;
 };
 
 const getArticle = async (slug: string, username: string) => {
   const res = await fetch(`https://dev.to/api/articles/${username}/${slug}`);
+  if (res.status !== 200) {
+    throw Error(res.status.toString());
+  }
   return await res.json();
 };
 
@@ -66,6 +41,7 @@ export const useArticles = routeLoader$(async (requestEvent) => {
 
   const articles = await getArticles({
     devToApiKey: requestEvent.env.get("DEV_TO_API_KEY"),
+    limit: 4,
   });
 
   return article
@@ -109,10 +85,10 @@ export default component$(() => {
       </section>
 
       <section class="title-section text-center mt-20">
-        <h2>Recent articles</h2>
+        <h2>Latest articles</h2>
       </section>
       <section class="inner-section">
-        <Articles articles={result.value.articles} limit={4} />
+        <Articles articles={result.value.articles} />
 
         <p class="flex justify-center pt-6">
           <Link

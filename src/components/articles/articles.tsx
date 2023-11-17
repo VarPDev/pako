@@ -1,16 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 interface ItemProps {
-  limit?: number;
   articles: Array<any>;
 }
 
 export const Articles = component$<ItemProps>((props) => {
   let articles = [...props.articles];
-
-  if (props.limit) {
-    articles = articles.splice(0, props.limit);
-  }
 
   return (
     <>

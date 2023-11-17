@@ -74,7 +74,7 @@ section.inner-section {
 }
 
 .animation {
-  @apply opacity-0 transition-opacity ease-in duration-700 delay-150;
+  @apply opacity-0 transition-opacity ease-in duration-700;
 }
 
 .animation.isVisible {
@@ -101,6 +101,14 @@ section.inner-section.small {
 
 pre {
   @apply overflow-auto text-base;
+}
+
+pre > code {
+  @apply px-0;
+}
+
+code {
+  @apply bg-black/50 rounded-lg px-1;
 }
 
 div.highlight {

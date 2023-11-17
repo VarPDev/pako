@@ -10,39 +10,15 @@ import { links } from "~/repository/links";
 import { works } from "~/repository/work";
 import { projects } from "~/repository/projects";
 import { frontEnd, backEnd, tools } from "~/repository/stack";
-import { format } from "date-fns";
 import ImgPR from "/src/media/badge-first-pr.webp?jsx";
 import { Ref, observeElement } from "~/utils/helpers";
-
-function getLang(lang: Array<string>): string {
-  switch (true) {
-    case lang.includes("ita"):
-      return "ITA";
-    default:
-      return "ENG";
-  }
-}
+import { getArticles } from "~/repository/articles";
 
 export const useArticles = routeLoader$(async (requestEvent) => {
-  const res = await fetch("https://dev.to/api/articles/me/published", {
-    headers: new Headers({
-      "api-key": requestEvent.env.get("DEV_TO_API_KEY"),
-    } as any),
+  return await getArticles({
+    devToApiKey: requestEvent.env.get("DEV_TO_API_KEY"),
+    limit: 4,
   });
-  const articles = await res.json();
-  return articles.map((a: any) => {
-    return {
-      id: a.id,
-      href: a.url,
-      title: a.title,
-      description: a.description,
-      bodyMarkdown: a.body_markdown,
-      username: a.user.username,
-      slug: a.slug,
-      date: format(new Date(a.published_timestamp), "PP"),
-      lang: getLang(a.tag_list),
-    };
-  }) as Array<any>;
 });
 
 export default component$(() => {
@@ -177,7 +153,7 @@ export default component$(() => {
       ${projectTitleIsVisible.value && "isVisible"}
     `}
       >
-        <h2>Recent projects</h2>
+        <h2>Latest projects</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
       <section
@@ -226,7 +202,7 @@ export default component$(() => {
       ${articlesTitleIsVisible.value && "isVisible"}
     `}
       >
-        <h2>Recent articles</h2>
+        <h2>Latest articles</h2>
         {/* <h3>All my jobs</h3> */}
       </section>
       <section
@@ -235,7 +211,7 @@ export default component$(() => {
       animation
       ${articlesIsVisible.value && "isVisible"}`}
       >
-        <Articles articles={articles.value} limit={4} />
+        <Articles articles={articles.value} />
 
         <p class="flex justify-center pt-6">
           <Link
