@@ -57,7 +57,7 @@ const getArticle = async (
 };
 
 export const useArticles = routeLoader$(async (requestEvent) => {
-  let user = await getUser(1198163);
+  const user = await getUser(1198163);
 
   let article = await getArticle(
     requestEvent,
