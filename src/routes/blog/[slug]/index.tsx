@@ -3,9 +3,7 @@ import {
   routeLoader$,
   type DocumentHead,
   Link,
-  RequestEventLoader,
   StaticGenerateHandler,
-  useLocation,
 } from "@builder.io/qwik-city";
 import { format } from "date-fns";
 import { Articles } from "~/components/articles/articles";
@@ -110,7 +108,7 @@ export default component$(() => {
         <div dangerouslySetInnerHTML={result.value.article.body_html}></div>
       </section>
 
-      <section class="title-section text-center">
+      <section class="title-section text-center mt-20">
         <h2>Recent articles</h2>
       </section>
       <section class="inner-section">

@@ -48,10 +48,6 @@ section.title-section {
   @apply w-10/12 md:w-11/12 lg:w-2/3 pb-12;
 }
 
-section.title-section.small {
-  @apply w-10/12 md:w-7/12 pb-12;
-}
-
 h1 {
   @apply text-5xl font-bold;
 }
@@ -67,10 +63,6 @@ h3 {
 
 section.inner-section {
   @apply w-10/12 md:w-11/12 lg:w-2/3;
-}
-
-section.inner-section.small {
-  @apply w-10/12 md:w-7/12 pb-12;
 }
 
 .link-section {
@@ -96,7 +88,15 @@ section.inner-section.small {
 }
 
 .article h2 {
-  @apply mt-4 mb-2;
+  @apply mt-8 mb-6;
+}
+
+section.title-section.small {
+  @apply w-10/12 md:w-7/12 pb-12;
+}
+
+section.inner-section.small {
+  @apply w-10/12 md:w-7/12 pb-12;
 }
 
 pre {
