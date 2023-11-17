@@ -142,8 +142,7 @@ export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
 
   return {
     params: articles.map((article) => {
-      // username: article.username,
-      return { slug: article.slug };
+      return { username: article.username, slug: article.slug };
     }),
   };
 };
