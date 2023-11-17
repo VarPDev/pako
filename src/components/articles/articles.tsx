@@ -5,7 +5,7 @@ interface ItemProps {
 }
 
 export const Articles = component$<ItemProps>((props) => {
-  let articles = [...props.articles];
+  const articles = [...props.articles];
 
   return (
     <>
