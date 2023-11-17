@@ -35,24 +35,24 @@ export default component$(() => {
   return <p>Example: {params.username}</p>;
 });
 
-// export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
-//   const username = await getUser();
-
-//   return {
-//     params: [{ username }],
-//   };
-// };
-
 export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
-  // example of loading params for this use case
-  // every implementation will be different
-  const articles = await getArticles({
-    devToApiKey: env.get("DEV_TO_API_KEY"),
-  });
+  const username = await getUser();
 
   return {
-    params: articles.map((article) => {
-      return { username: article.username, slug: article.slug };
-    }),
+    params: [{ username }],
   };
 };
+
+// export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
+//   // example of loading params for this use case
+//   // every implementation will be different
+//   const articles = await getArticles({
+//     devToApiKey: env.get("DEV_TO_API_KEY"),
+//   });
+
+//   return {
+//     params: articles.map((article) => {
+//       return { username: article.username, slug: article.slug };
+//     }),
+//   };
+// };
