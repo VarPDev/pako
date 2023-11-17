@@ -57,12 +57,9 @@ const getArticle = async (
 };
 
 export const useArticles = routeLoader$(async (requestEvent) => {
-  const user = await getUser(1198163);
+  const username = await getUser(1198163);
 
-  let article = await getArticle(
-    requestEvent,
-    user ? user.username : "nyruchi"
-  );
+  let article = await getArticle(requestEvent, username ?? "nyruchi");
 
   if (!article || article.status === 404) {
     article = null;
