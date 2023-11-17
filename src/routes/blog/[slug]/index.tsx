@@ -40,17 +40,29 @@ const getArticles = async ({ devToApiKey }: any) => {
   }) as Array<any>;
 };
 
+const getUser = async (userId: number) => {
+  const res = await fetch(`https://dev.to/api/users/${userId}`);
+  const user = await res.json();
+  return user.username;
+};
+
 const getArticle = async (
-  requestEvent: RequestEventLoader<QwikCityPlatform>
+  requestEvent: RequestEventLoader<QwikCityPlatform>,
+  username: string
 ) => {
   const res = await fetch(
-    `https://dev.to/api/articles/${requestEvent.params.username}/${requestEvent.params.slug}`
+    `https://dev.to/api/articles/${username}/${requestEvent.params.slug}`
   );
   return await res.json();
 };
 
 export const useArticles = routeLoader$(async (requestEvent) => {
-  let article = await getArticle(requestEvent);
+  let user = await getUser(1198163);
+
+  let article = await getArticle(
+    requestEvent,
+    !!user ? user.username : "nyruchi"
+  );
 
   if (!article || article.status === 404) {
     article = null;
@@ -142,7 +154,7 @@ export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
 
   return {
     params: articles.map((article) => {
-      return { username: article.username, slug: article.slug };
+      return { slug: article.slug };
     }),
   };
 };
