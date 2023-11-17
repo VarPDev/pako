@@ -61,7 +61,7 @@ export const useArticles = routeLoader$(async (requestEvent) => {
 
   let article = await getArticle(
     requestEvent,
-    !!user ? user.username : "nyruchi"
+    user ? user.username : "nyruchi"
   );
 
   if (!article || article.status === 404) {
