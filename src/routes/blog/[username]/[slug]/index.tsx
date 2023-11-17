@@ -132,3 +132,17 @@ export const head: DocumentHead = {
     },
   ],
 };
+
+export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
+  // example of loading params for this use case
+  // every implementation will be different
+  const articles = await getArticles({
+    devToApiKey: env.get("DEV_TO_API_KEY"),
+  });
+
+  return {
+    params: articles.map((article) => {
+      return { slug: article.slug };
+    }),
+  };
+};
