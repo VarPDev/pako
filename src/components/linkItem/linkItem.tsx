@@ -11,7 +11,7 @@ export const LinkItem = component$<ItemProps>((props) => {
     <>
       <ul>
         {props.links.map((link) => (
-          <li key={link.id} class="mb-4">
+          <li key={link.title} class="mb-4">
             <Link
               class="link-container flex items-center justify-between transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-2 w-100 block text-black rounded-lg pl-4 md:px-4"
               href={link.url}

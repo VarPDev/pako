@@ -1,4 +1,4 @@
-const staticPaths = new Set(["/","/.DS_Store","/404.html/","/OLD_OLD_Pako.jpeg","/OLD_Pako.jpeg","/OLD_resume_me.png","/OLD_rick_and_morty.png","/Pako.jpeg","/Pako.jpg","/Pasquale_De_Lucia-Resume.pdf","/aliens-alien.gif","/blog/","/blog/how-to-create-a-fade-animation-css-with-qwik-1hie/","/button-game/","/favicon.ico","/favicon.svg","/history/","/links/","/manifest.json","/pako-cartoon.png","/projects/","/q-manifest.json","/qwik-logo.png","/resume_me.png","/rick_and_morty.png","/robots.txt","/service-worker.js","/sitemap.xml","/stack/","/test/"]);
+const staticPaths = new Set(["/.DS_Store","/OLD_OLD_Pako.jpeg","/OLD_Pako.jpeg","/OLD_resume_me.png","/OLD_rick_and_morty.png","/Pako.jpeg","/Pako.jpg","/Pasquale_De_Lucia-Resume.pdf","/aliens-alien.gif","/favicon.ico","/favicon.svg","/manifest.json","/pako-cartoon.png","/q-manifest.json","/qwik-logo.png","/resume_me.png","/rick_and_morty.png","/robots.txt","/service-worker.js","/sitemap.xml"]);
 function isStaticPath(method, url) {
   if (method.toUpperCase() !== 'GET') {
     return false;

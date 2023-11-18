@@ -1,6 +1,5 @@
 export const links = [
   {
-    id: 1,
     title: "Github",
     url: "https://github.com/VarPDev",
     svg: `
@@ -8,7 +7,6 @@ export const links = [
     `,
   },
   {
-    id: 2,
     title: "Linkedin",
     url: "https://www.linkedin.com/in/pasquale-de-lucia-web-dev/",
     svg: `
@@ -16,7 +14,6 @@ export const links = [
     `,
   },
   {
-    id: 3,
     title: "Stack Overflow",
     url: "https://stackoverflow.com/users/8172268/pasquale-de-lucia",
     svg: `
@@ -24,7 +21,6 @@ export const links = [
     `,
   },
   {
-    id: 4,
     title: "DEV.to",
     url: "https://dev.to/varpdev",
     svg: `
@@ -32,7 +28,6 @@ export const links = [
     `,
   },
   {
-    id: 5,
     title: "Resume",
     url: "/Pasquale_De_Lucia-Resume.pdf",
     svg: `

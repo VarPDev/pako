@@ -31,23 +31,20 @@ export const Header = component$<ItemProps>((props) => {
               class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
+                {/* reload={true}
+                prefetch={true}
+                replaceState={true} */}
                 <Link href="/">Homepage</Link>
               </li>
-              {/* <li>
-                <Link href="/stack">Stack</Link>
-              </li> */}
               <li>
+                {/* reload={true}
+                prefetch={true}
+                replaceState={true} */}
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
                 <Link href="/projects">Projects</Link>
               </li>
-              {/* <li>
-                <Link href="/history">History</Link>
-              </li> */}
-              {/* <li>
-                <Link href="/links">Links</Link>
-              </li> */}
               <li>
                 <Link href="/Pasquale_De_Lucia-Resume.pdf" target="_blank">
                   Resume
