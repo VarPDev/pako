@@ -12,7 +12,8 @@ export const Articles = component$<ItemProps>((props) => {
       <div class="container mx-auto">
         <div class="grid md:grid-cols-2 justify-items-center gap-12">
           {articles.map((c) => (
-            <Link href={`/blog/${c.slug}`} key={c.id}>
+            // <Link href={`/blog/${c.slug}`} key={c.id}>
+            <Link href={c.href} target="_blank" key={c.id}>
               <article class="prose">
                 <h3>{c.title}</h3>
                 <p class="flex items-center gap-2">
