@@ -1,5 +1,6 @@
 import { component$, Slot, useSignal } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { isWithinInterval, set } from "date-fns";
 import { Cat } from "~/components/cat/cat";
 import { CatWalk } from "~/components/cat/cat-walk";
 import { Footer } from "~/components/footer/footer";
@@ -19,8 +20,34 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 export default component$(() => {
   const show = useSignal(false);
 
+  const today = new Date();
+  const start = set(today, {
+    month: 11,
+    date: 15,
+  });
+  const end = set(today, {
+    year: today.getFullYear() + 1,
+    month: 0,
+    date: 15,
+  });
+
+  const inRange = isWithinInterval(today, {
+    start,
+    end,
+  });
+
+  const snows = inRange ? new Array(200).fill(0) : null;
+
   return (
     <>
+      {snows && (
+        <div class="snow-container">
+          {snows.map((item, index) => (
+            <div key={index} class="snow"></div>
+          ))}
+        </div>
+      )}
+
       <Header show={show} />
       <main>
         {show.value && <Cat />}
