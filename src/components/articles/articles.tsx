@@ -9,7 +9,7 @@ export const Articles = component$<ItemProps>((props) => {
 
   return (
     <>
-      <article class="container mx-auto">
+      <div class="container mx-auto">
         <div class="grid md:grid-cols-2 justify-items-center gap-12">
           {articles.map((c) => (
             // <Link href={`/blog/${c.slug}`} key={c.id}>
@@ -27,7 +27,7 @@ export const Articles = component$<ItemProps>((props) => {
             </Link>
           ))}
         </div>
-      </article>
+      </div>
     </>
   );
 });
