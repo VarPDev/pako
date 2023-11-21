@@ -8,7 +8,7 @@ export default component$(() => {
     <>
       <section class="title-section text-center">
         <h1>Projects</h1>
-        <h3>Some of my projects</h3>
+        <h2>Check out my projects</h2>
       </section>
 
       <section class="inner-section">

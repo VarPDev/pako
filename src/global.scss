@@ -49,12 +49,15 @@ section.title-section {
 }
 
 h1 {
-  @apply text-5xl font-bold;
+  @apply text-5xl font-bold mb-2;
+}
+
+.homepage h2 {
+  @apply text-3xl font-bold uppercase;
 }
 
 h2 {
-  @apply text-3xl font-bold;
-  text-transform: uppercase;
+  @apply text-2xl;
 }
 
 h3 {

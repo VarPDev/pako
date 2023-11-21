@@ -1,4 +1,9 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import {
+  component$,
+  useSignal,
+  useVisibleTask$,
+  useStylesScoped$,
+} from "@builder.io/qwik";
 import { routeLoader$, type DocumentHead, Link } from "@builder.io/qwik-city";
 import { Hero } from "~/components/hero/hero";
 import { Cards } from "~/components/cards/cards";
@@ -13,6 +18,7 @@ import { frontEnd, backEnd, tools } from "~/repository/stack";
 import ImgPR from "/src/media/badge-first-pr.webp?jsx";
 import { Ref, observeElement } from "~/utils/helpers";
 import { getArticles } from "~/repository/articles";
+import styles from "./index.css?inline";
 
 export const useArticles = routeLoader$(async (requestEvent) => {
   return await getArticles({
@@ -22,6 +28,8 @@ export const useArticles = routeLoader$(async (requestEvent) => {
 });
 
 export default component$(() => {
+  useStylesScoped$(styles);
+
   const articles = useArticles();
 
   const projectTitleRef = useSignal<Element>();
@@ -184,7 +192,7 @@ export default component$(() => {
     `}
       >
         <h2>History</h2>
-        <h3>All my jobs</h3>
+        <h3>All my experiences</h3>
       </section>
       <section
         ref={historyeRef}
@@ -230,8 +238,8 @@ export default component$(() => {
       animation
       ${stackTitleIsVisible.value && "isVisible"}`}
       >
-        <h2>Stack</h2>
-        <h3>My tecnology stack</h3>
+        <h2>Tecnology stack</h2>
+        {/* <h3>My tecnology stack</h3> */}
       </section>
 
       {/* front end */}
@@ -270,8 +278,7 @@ export default component$(() => {
       animation
       ${openTitleIsVisible.value && "isVisible"}`}
       >
-        <h2>Open source world</h2>
-        <h3>My first accepted PR | Qwik</h3>
+        <h2>Open source | My first accepted PR | Qwik</h2>
       </section>
 
       <section
@@ -295,7 +302,7 @@ export default component$(() => {
       ${linksIsVisible.value && "isVisible"}`}
       >
         <h2>Links</h2>
-        <h3>Some of my socials</h3>
+        <h3>Stay updated or get in touch on my socials</h3>
       </section>
       <section
         ref={linksRef}

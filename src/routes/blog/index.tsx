@@ -16,7 +16,7 @@ export default component$(() => {
     <>
       <section class="title-section text-center">
         <h1>Blog</h1>
-        <h3>Some of my articles</h3>
+        <h2>Find out what I write about</h2>
       </section>
 
       <section class="inner-section">
