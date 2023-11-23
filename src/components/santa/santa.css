@@ -1,13 +1,21 @@
 .santa-container {
   position: fixed;
-  z-index: -1;
-  opacity: 0.2;
+  z-index: 9999;
+  opacity: 1;
+  transform-origin: right bottom;
+  animation:
+    /* init-santa-zig-zag 7s ease-in-out 0ms 1, */
+    init-santa 3s linear 1,
+    walk-around 20s linear 3.2s infinite;
 
   height: 46.875em;
   width: 37.5em;
-  transform: translate(-50%, -50%) scale(0.5);
+  /* transform: translate(-50%, -50%) scale(0.5);
   top: 50%;
-  left: 50%;
+  left: 50%; */
+  right: 0;
+  bottom: 0;
+  transform: scale(0.1);
 }
 .santa-container .santa {
   background-color: #edbb93;
@@ -161,5 +169,139 @@
 @media screen and (max-width: 800px) {
   .santa-container .container {
     font-size: 0.75em;
+  }
+}
+
+@keyframes init-santa {
+  0% {
+    bottom: 83%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes init-santa-zig-zag {
+  0% {
+    bottom: 83%;
+    right: 0;
+  }
+  10% {
+    right: 10%;
+  }
+  20% {
+    right: 2%;
+  }
+  30% {
+    right: 15%;
+  }
+  40% {
+    right: 7%;
+  }
+  50% {
+    right: 12%;
+  }
+  60% {
+    right: 0;
+  }
+  70% {
+    right: 8%;
+  }
+  80% {
+    right: 0%;
+  }
+  90% {
+    right: 10%;
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@keyframes walk-around {
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  5% {
+    right: 4%;
+    bottom: 5px;
+  }
+  10% {
+    right: 8%;
+    bottom: 0;
+  }
+  15% {
+    right: 12%;
+    bottom: 5px;
+  }
+  20% {
+    right: 16%;
+    bottom: 0;
+  }
+  25% {
+    right: 20%;
+    bottom: 5px;
+  }
+  30% {
+    right: 24%;
+    bottom: 0;
+  }
+  35% {
+    right: 28%;
+    bottom: 5px;
+  }
+  40% {
+    right: 32%;
+    bottom: 0;
+  }
+  45% {
+    right: 36%;
+    bottom: 5px;
+  }
+  50% {
+    right: 40%;
+    bottom: 0;
+  }
+  55% {
+    right: 36%;
+    bottom: 5px;
+  }
+  60% {
+    right: 32%;
+    bottom: 0;
+  }
+  65% {
+    right: 28%;
+    bottom: 5px;
+  }
+  70% {
+    right: 24%;
+    bottom: 0;
+  }
+  75% {
+    right: 20%;
+    bottom: 5px;
+  }
+  80% {
+    right: 16%;
+    bottom: 0;
+  }
+  85% {
+    right: 12%;
+    bottom: 5px;
+  }
+  90% {
+    right: 8%;
+    bottom: 0;
+  }
+  95% {
+    right: 4%;
+    bottom: 5px;
+  }
+  100% {
+    right: 0;
+    bottom: 0;
   }
 }

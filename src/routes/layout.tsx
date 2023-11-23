@@ -5,6 +5,7 @@ import { Cat } from '~/components/cat/cat'
 import { CatWalk } from '~/components/cat/cat-walk'
 import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
+import { Rudolph } from '~/components/rudolph/rudolph'
 import { Santa } from '~/components/santa/santa'
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -55,6 +56,7 @@ export default component$(() => {
         {/* If I move this after the Slot, on value change slot reload */}
         {show.value && !snows && <CatWalk />}
         {show.value && snows && <Santa />}
+        {show.value && snows && <Rudolph />}
         <Slot />
       </main>
       <Footer />
