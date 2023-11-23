@@ -33,11 +33,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Pasquale De Lucia - Full-stack engineer",
+  title: "Pasquale De Lucia - Full-stack engineer - 404",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content:
+        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
     },
   ],
 };

@@ -31,7 +31,8 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content:
+        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
     },
   ],
 };
