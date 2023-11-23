@@ -5,6 +5,7 @@ import { Cat } from "~/components/cat/cat";
 import { CatWalk } from "~/components/cat/cat-walk";
 import { Footer } from "~/components/footer/footer";
 import { Header } from "~/components/header/header";
+import { Santa } from "~/components/santa/santa";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -40,7 +41,7 @@ export default component$(() => {
 
   return (
     <>
-      {snows && (
+      {show.value && snows && (
         <div class="snow-container">
           {snows.map((item, index) => (
             <div key={index} class="snow"></div>
@@ -50,9 +51,11 @@ export default component$(() => {
 
       <Header show={show} />
       <main>
-        {show.value && <Cat />}
+        {show.value && !snows && <Cat />}
         {/* If I move this after the Slot, on value change slot reload */}
-        {show.value && <CatWalk />}
+        {show.value && !snows && <CatWalk />}
+        {show.value && snows && <Santa />}
+        <Santa />
         <Slot />
       </main>
       <Footer />

@@ -32,6 +32,7 @@ export default component$(() => {
 
   const articles = useArticles();
 
+  // #region signals
   const projectTitleRef = useSignal<Element>();
   const projectTitleIsVisible = useSignal<boolean>(true);
 
@@ -73,6 +74,7 @@ export default component$(() => {
 
   const linksRef = useSignal<Element>();
   const linksIsVisible = useSignal<boolean>(true);
+  // #endregion
 
   const refs: Array<Ref> = [
     {
