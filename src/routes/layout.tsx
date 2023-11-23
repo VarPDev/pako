@@ -55,7 +55,6 @@ export default component$(() => {
         {/* If I move this after the Slot, on value change slot reload */}
         {show.value && !snows && <CatWalk />}
         {show.value && snows && <Santa />}
-        <Santa />
         <Slot />
       </main>
       <Footer />
