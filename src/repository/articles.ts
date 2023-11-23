@@ -16,7 +16,7 @@ export const getArticles = async ({ devToApiKey, limit }: any) => {
       headers: new Headers({
         "api-key": devToApiKey,
       } as any),
-    }
+    },
   );
   if (res.status !== 200) {
     throw Error(res.status.toString());

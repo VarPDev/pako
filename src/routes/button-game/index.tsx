@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { $, component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 function probabilityOfSuccess(levelNumber: number) {
@@ -19,7 +19,7 @@ export default component$(() => {
   const percentageOfSuccess = useSignal(startSuccess);
   const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess);
   const percentageOfSuccessFromNow = useSignal(
-    probabilityOfSuccess(percentageOfSuccess.value)
+    probabilityOfSuccess(percentageOfSuccess.value),
   );
   // useTask$(() => {
   //   percentageOfSuccessFromNow.value = probabilityOfSuccess(
@@ -47,7 +47,7 @@ export default component$(() => {
         percentageOfSuccess.value = startSuccess;
       }
       percentageOfSuccessFromNow.value = probabilityOfSuccess(
-        percentageOfSuccess.value
+        percentageOfSuccess.value,
       );
     }
   });

@@ -45,7 +45,7 @@ section {
 }
 
 section.title-section {
-  @apply w-10/12 md:w-11/12 lg:w-2/3 pb-12;
+  @apply w-10/12 md:w-11/12 lg:w-2/3 pb-12 mx-auto;
 }
 
 h1 {
@@ -65,11 +65,11 @@ h3 {
 }
 
 section.inner-section {
-  @apply w-10/12 md:w-11/12 lg:w-2/3;
+  @apply w-10/12 md:w-11/12 lg:w-2/3 mx-auto;
 }
 
 .link-section {
-  @apply w-5/6 md:w-2/3 lg:w-1/3;
+  @apply w-5/6 md:w-2/3 lg:w-1/3 mx-auto;
 }
 
 .link-container:hover svg {

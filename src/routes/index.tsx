@@ -19,6 +19,7 @@ import ImgPR from "/src/media/badge-first-pr.webp?jsx";
 import { Ref, observeElement } from "~/utils/helpers";
 import { getArticles } from "~/repository/articles";
 import styles from "./index.css?inline";
+import { AnimatedComp } from "~/components/animated-component/animated-component";
 
 export const useArticles = routeLoader$(async (requestEvent) => {
   return await getArticles({
@@ -32,288 +33,124 @@ export default component$(() => {
 
   const articles = useArticles();
 
-  // #region signals
-  const projectTitleRef = useSignal<Element>();
-  const projectTitleIsVisible = useSignal<boolean>(true);
-
-  const projectRef = useSignal<Element>();
-  const projectIsVisible = useSignal<boolean>(true);
-
-  const historyTitleRef = useSignal<Element>();
-  const historyTitleIsVisible = useSignal<boolean>(true);
-
-  const historyeRef = useSignal<Element>();
-  const historyIsVisible = useSignal<boolean>(true);
-
-  const articlesTitleRef = useSignal<Element>();
-  const articlesTitleIsVisible = useSignal<boolean>(true);
-
-  const articlesRef = useSignal<Element>();
-  const articlesIsVisible = useSignal<boolean>(true);
-
-  const stackTitleRef = useSignal<Element>();
-  const stackTitleIsVisible = useSignal<boolean>(true);
-
-  const stackFeRef = useSignal<Element>();
-  const stackFeIsVisible = useSignal<boolean>(true);
-
-  const stackBeRef = useSignal<Element>();
-  const stackBeIsVisible = useSignal<boolean>(true);
-
-  const stackToRef = useSignal<Element>();
-  const stackToIsVisible = useSignal<boolean>(true);
-
-  const openTitleRef = useSignal<Element>();
-  const openTitleIsVisible = useSignal<boolean>(true);
-
-  const openRef = useSignal<Element>();
-  const openIsVisible = useSignal<boolean>(true);
-
-  const linksTitleRef = useSignal<Element>();
-  const linksTitleIsVisible = useSignal<boolean>(true);
-
-  const linksRef = useSignal<Element>();
-  const linksIsVisible = useSignal<boolean>(true);
-  // #endregion
-
-  const refs: Array<Ref> = [
-    {
-      el: projectTitleRef,
-      isVisible: projectTitleIsVisible,
-      observer: null,
-    },
-    {
-      el: projectRef,
-      isVisible: projectIsVisible,
-      observer: null,
-    },
-    {
-      el: historyTitleRef,
-      isVisible: historyTitleIsVisible,
-      observer: null,
-    },
-    {
-      el: historyeRef,
-      isVisible: historyIsVisible,
-      observer: null,
-    },
-    {
-      el: articlesTitleRef,
-      isVisible: articlesTitleIsVisible,
-      observer: null,
-    },
-    {
-      el: articlesRef,
-      isVisible: articlesIsVisible,
-      observer: null,
-    },
-    {
-      el: stackTitleRef,
-      isVisible: stackTitleIsVisible,
-      observer: null,
-    },
-    {
-      el: stackFeRef,
-      isVisible: stackFeIsVisible,
-      observer: null,
-    },
-    {
-      el: stackBeRef,
-      isVisible: stackBeIsVisible,
-      observer: null,
-    },
-    {
-      el: stackToRef,
-      isVisible: stackToIsVisible,
-      observer: null,
-    },
-    {
-      el: openTitleRef,
-      isVisible: openTitleIsVisible,
-      observer: null,
-    },
-    { el: openRef, isVisible: openIsVisible, observer: null },
-    {
-      el: linksTitleRef,
-      isVisible: linksTitleIsVisible,
-      observer: null,
-    },
-    {
-      el: linksRef,
-      isVisible: linksIsVisible,
-      observer: null,
-    },
-  ];
-
-  useVisibleTask$(() => {
-    observeElement(refs);
-  });
-
   return (
     <>
       <section>
         <Hero role={works[0].role} company={works[0].company} />
       </section>
 
-      <section
-        ref={projectTitleRef}
-        class={`
-      title-section text-center
-      animation
-      ${projectTitleIsVisible.value && "isVisible"}
-    `}
-      >
-        <h2>Latest projects</h2>
-        {/* <h3>All my jobs</h3> */}
-      </section>
-      <section
-        ref={projectRef}
-        class={`inner-section
-      animation
-      ${projectIsVisible.value && "isVisible"}`}
-      >
-        <Cards items={projects} limit={3} />
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>Latest projects</h2>
+          {/* <h3>All my jobs</h3> */}
+        </section>
+      </AnimatedComp>
+      <AnimatedComp>
+        <section class="inner-section">
+          <Cards items={projects} limit={3} />
 
-        <p class="flex justify-center pt-6">
-          <Link
-            href="/projects"
-            aria-label="See more projects"
-            class="btn btn-primary text-black"
-          >
-            See more projects
-          </Link>
-        </p>
-      </section>
+          <p class="flex justify-center pt-6">
+            <Link
+              href="/projects"
+              aria-label="See more projects"
+              class="btn btn-primary text-black"
+            >
+              See more projects
+            </Link>
+          </p>
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={historyTitleRef}
-        class={`
-      title-section text-center
-      animation
-      ${historyTitleIsVisible.value && "isVisible"}
-    `}
-      >
-        <h2>History</h2>
-        <h3>All my experiences</h3>
-      </section>
-      <section
-        ref={historyeRef}
-        class={`w-11/12 lg:w-5/6 sticky animation
-      ${historyIsVisible.value && "isVisible"}`}
-      >
-        <Timeline items={works}></Timeline>
-      </section>
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>History</h2>
+          <h3>All my experiences</h3>
+        </section>
+      </AnimatedComp>
+      <AnimatedComp>
+        <section class="w-11/12 lg:w-5/6 sticky mx-auto">
+          <Timeline items={works}></Timeline>
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={articlesTitleRef}
-        class={`
-      title-section text-center
-      animation
-      ${articlesTitleIsVisible.value && "isVisible"}
-    `}
-      >
-        <h2>Latest articles</h2>
-        {/* <h3>All my jobs</h3> */}
-      </section>
-      <section
-        ref={articlesRef}
-        class={`inner-section
-      animation
-      ${articlesIsVisible.value && "isVisible"}`}
-      >
-        <Articles articles={articles.value} />
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>Latest articles</h2>
+          {/* <h3>All my jobs</h3> */}
+        </section>
+      </AnimatedComp>
+      <AnimatedComp>
+        <section class="inner-section">
+          <Articles articles={articles.value} />
 
-        <p class="flex justify-center pt-6">
-          <Link
-            href="/blog"
-            aria-label="Read more articles"
-            class="btn btn-primary text-black"
-          >
-            Read more articles
-          </Link>
-        </p>
-      </section>
+          <p class="flex justify-center pt-6">
+            <Link
+              href="/blog"
+              aria-label="Read more articles"
+              class="btn btn-primary text-black"
+            >
+              Read more articles
+            </Link>
+          </p>
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={stackTitleRef}
-        class={`title-section text-center
-      animation
-      ${stackTitleIsVisible.value && "isVisible"}`}
-      >
-        <h2>Tecnology stack</h2>
-        {/* <h3>My tecnology stack</h3> */}
-      </section>
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>Tecnology stack</h2>
+          {/* <h3>My tecnology stack</h3> */}
+        </section>
+      </AnimatedComp>
 
       {/* front end */}
-      <section
-        ref={stackFeRef}
-        class={`inner-section
-        animation
-        ${stackFeIsVisible.value && "isVisible"}`}
-      >
-        <Stacks title="Front end" stacks={frontEnd} />
-      </section>
+      <AnimatedComp>
+        <section class="inner-section">
+          <Stacks title="Front end" stacks={frontEnd} />
+        </section>
+      </AnimatedComp>
 
       {/* back end */}
-      <section
-        ref={stackBeRef}
-        class={`inner-section
-        animation
-        ${stackBeIsVisible.value && "isVisible"}`}
-      >
-        <Stacks title="Back end" stacks={backEnd} />
-      </section>
+      <AnimatedComp>
+        <section class="inner-section">
+          <Stacks title="Back end" stacks={backEnd} />
+        </section>
+      </AnimatedComp>
 
       {/* tools end */}
-      <section
-        ref={stackToRef}
-        class={`inner-section
-        animation
-        ${stackToIsVisible.value && "isVisible"}`}
-      >
-        <Stacks title="Tools" stacks={tools} />
-      </section>
+      <AnimatedComp>
+        <section class="inner-section">
+          <Stacks title="Tools" stacks={tools} />
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={openTitleRef}
-        class={`title-section text-center
-      animation
-      ${openTitleIsVisible.value && "isVisible"}`}
-      >
-        <h2>Open source | My first accepted PR | Qwik</h2>
-      </section>
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>Open source | My first accepted PR | Qwik</h2>
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={openRef}
-        class={`inner-section
-        animation
-        ${openIsVisible.value && "isVisible"}`}
-      >
-        <div class="flex items-center justify-center">
-          <ImgPR
-            alt="My first PR"
-            class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
-          />
-        </div>
-      </section>
+      <AnimatedComp>
+        <section class="inner-section">
+          <div class="flex items-center justify-center">
+            <ImgPR
+              alt="My first PR"
+              class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
+            />
+          </div>
+        </section>
+      </AnimatedComp>
 
-      <section
-        ref={linksTitleRef}
-        class={`title-section text-center
-      animation
-      ${linksIsVisible.value && "isVisible"}`}
-      >
-        <h2>Links</h2>
-        <h3>Stay updated or get in touch on my socials</h3>
-      </section>
-      <section
-        ref={linksRef}
-        class={`link-section
-        animation
-        ${linksIsVisible.value && "isVisible"}`}
-      >
-        <LinkItem links={links}></LinkItem>
-      </section>
+      <AnimatedComp>
+        <section class="title-section text-center">
+          <h2>Links</h2>
+          <h3>Stay updated or get in touch on my socials</h3>
+        </section>
+      </AnimatedComp>
+      <AnimatedComp>
+        <section class="link-section">
+          <LinkItem links={links}></LinkItem>
+        </section>
+      </AnimatedComp>
     </>
   );
 });

@@ -21,3 +21,17 @@ export const observeElement = (refs: Array<Ref>) => {
     }
   });
 };
+
+export const observeSingleElement = (ref: Ref) => {
+  if (ref.el.value) {
+    ref.observer = new IntersectionObserver(([entry]) => {
+      ref.isVisible.value = entry.isIntersecting;
+
+      if (ref.isVisible.value) {
+        ref.observer.disconnect();
+      }
+    });
+
+    ref.observer.observe(ref.el.value);
+  }
+};
