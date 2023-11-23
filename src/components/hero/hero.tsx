@@ -35,11 +35,7 @@ export const Hero = component$<ItemProps>(props => {
               I'm here to make your online dreams a reality.
             </p>
             <p>
-              <Link
-                href="/Pasquale_De_Lucia-Resume.pdf"
-                target="_blank"
-                class="btn btn-primary text-black"
-              >
+              <Link href="#links" class="btn btn-primary text-black">
                 Get resume
               </Link>
             </p>

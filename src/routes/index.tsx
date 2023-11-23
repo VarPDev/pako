@@ -14,6 +14,7 @@ import ImgPR from '/src/media/badge-first-pr.webp?jsx'
 import { getArticles } from '~/repository/articles'
 import styles from './index.css?inline'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
+import { Contact } from '~/components/contact/contact'
 
 export const useArticles = routeLoader$(async requestEvent => {
   return await getArticles({
@@ -135,7 +136,7 @@ export default component$(() => {
       </AnimatedComp>
 
       <AnimatedComp>
-        <section class="title-section text-center">
+        <section id="links" class="title-section text-center">
           <h2>Links</h2>
           <h3>Stay updated or get in touch on my socials</h3>
         </section>

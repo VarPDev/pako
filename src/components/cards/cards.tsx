@@ -19,7 +19,7 @@ export const Cards = component$<ItemProps>(props => {
           {cards.map(c => (
             <div
               key={c.id}
-              class="card w-80 bg-base-100 shadow-xl image-full w-full max-w-[18rem]"
+              class="card bg-base-100 shadow-xl image-full w-full max-w-[18rem]"
             >
               {c.image && (
                 <figure>

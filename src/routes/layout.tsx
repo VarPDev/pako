@@ -1,8 +1,10 @@
 import { component$, Slot, useSignal } from '@builder.io/qwik'
 import type { RequestHandler } from '@builder.io/qwik-city'
 import { isWithinInterval, set } from 'date-fns'
+import { AnimatedComp } from '~/components/animated-component/animated-component'
 import { Cat } from '~/components/cat/cat'
 import { CatWalk } from '~/components/cat/cat-walk'
+import { Contact } from '~/components/contact/contact'
 import { Eggs } from '~/components/eggs/eggs'
 import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
@@ -75,6 +77,12 @@ export default component$(() => {
         {show.value && snows && <Rudolph />}
         {show.value && easterInRange && <Eggs />}
         <Slot />
+
+        <AnimatedComp>
+          <section class="inner-section">
+            <Contact></Contact>
+          </section>
+        </AnimatedComp>
       </main>
       <Footer />
     </>
