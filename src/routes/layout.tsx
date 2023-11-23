@@ -51,12 +51,10 @@ export default component$(() => {
     date: 5,
   })
 
-  let easterInRange = isWithinInterval(today, {
+  const easterInRange = isWithinInterval(today, {
     start: easterStart,
     end: easterEnd,
   })
-
-  easterInRange = true
 
   return (
     <>
