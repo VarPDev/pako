@@ -1,19 +1,19 @@
-import { component$ } from "@builder.io/qwik";
-import ImgPako from "/src/media/Pako-cropped.jpeg?jsx";
-import converter from "number-to-words";
-import { Link } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import ImgPako from '/src/media/Pako-cropped.jpeg?jsx'
+import converter from 'number-to-words'
+import { Link } from '@builder.io/qwik-city'
 
 interface ItemProps {
-  role: string;
-  company: string;
+  role: string
+  company: string
 }
 
-export const Hero = component$<ItemProps>((props) => {
-  const currentYear = new Date().getFullYear();
-  const startYear = new Date("1/1/2015").getFullYear();
-  const yearWorked = converter.toWords(currentYear - startYear);
+export const Hero = component$<ItemProps>(props => {
+  const currentYear = new Date().getFullYear()
+  const startYear = new Date('1/1/2015').getFullYear()
+  const yearWorked = converter.toWords(currentYear - startYear)
   const yearWorkedFormatted =
-    yearWorked.charAt(0).toUpperCase() + yearWorked.slice(1);
+    yearWorked.charAt(0).toUpperCase() + yearWorked.slice(1)
 
   return (
     <>
@@ -47,5 +47,5 @@ export const Hero = component$<ItemProps>((props) => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

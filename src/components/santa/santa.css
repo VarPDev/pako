@@ -29,7 +29,7 @@
   border-radius: 3.12em;
 }
 .santa-container .santa:before {
-  content: "";
+  content: '';
   position: absolute;
   height: 1.56em;
   width: 1.56em;
@@ -50,7 +50,7 @@
 }
 .santa-container .moustache:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 4.37em;
   width: 11.25em;
   background-color: #e3e1ed;
@@ -59,7 +59,7 @@
   border-radius: 0 3.12em;
 }
 .santa-container .beard:after {
-  content: "";
+  content: '';
   background-color: #e3e1ed;
   height: 20.62em;
   width: 6.25em;
@@ -74,7 +74,7 @@
   width: 6.87em;
   border-radius: 6.87em;
   position: absolute;
-  content: "";
+  content: '';
   top: 1.87em;
   right: 5em;
   z-index: 0;
@@ -101,7 +101,7 @@
   overflow: hidden;
 }
 .santa-container .mouth:before {
-  content: "";
+  content: '';
   position: absolute;
   background-color: #ea385f;
   height: 2.81em;
@@ -122,7 +122,7 @@
 }
 .santa-container .hair:before {
   position: absolute;
-  content: "";
+  content: '';
   width: 25.62em;
   background-color: #d2d3e6;
   height: 6.25em;
@@ -132,7 +132,7 @@
 }
 .santa-container .hair:after {
   position: absolute;
-  content: "";
+  content: '';
   height: 10em;
   width: 23.75em;
   background-color: #ea385d;
@@ -150,7 +150,7 @@
 }
 .santa-container .hat:before {
   position: absolute;
-  content: "";
+  content: '';
   background-color: #e1e0ec;
   height: 11.25em;
   width: 11.25em;

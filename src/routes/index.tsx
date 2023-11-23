@@ -1,31 +1,31 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { routeLoader$, type DocumentHead, Link } from "@builder.io/qwik-city";
-import { Hero } from "~/components/hero/hero";
-import { Cards } from "~/components/cards/cards";
-import { Articles } from "~/components/articles/articles";
-import { Timeline } from "~/components/timeline/timeline";
-import { Stacks } from "~/components/stacks/stacks";
-import { LinkItem } from "~/components/linkItem/linkItem";
-import { links } from "~/repository/links";
-import { works } from "~/repository/work";
-import { projects } from "~/repository/projects";
-import { frontEnd, backEnd, tools } from "~/repository/stack";
-import ImgPR from "/src/media/badge-first-pr.webp?jsx";
-import { getArticles } from "~/repository/articles";
-import styles from "./index.css?inline";
-import { AnimatedComp } from "~/components/animated-component/animated-component";
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import { routeLoader$, type DocumentHead, Link } from '@builder.io/qwik-city'
+import { Hero } from '~/components/hero/hero'
+import { Cards } from '~/components/cards/cards'
+import { Articles } from '~/components/articles/articles'
+import { Timeline } from '~/components/timeline/timeline'
+import { Stacks } from '~/components/stacks/stacks'
+import { LinkItem } from '~/components/linkItem/linkItem'
+import { links } from '~/repository/links'
+import { works } from '~/repository/work'
+import { projects } from '~/repository/projects'
+import { frontEnd, backEnd, tools } from '~/repository/stack'
+import ImgPR from '/src/media/badge-first-pr.webp?jsx'
+import { getArticles } from '~/repository/articles'
+import styles from './index.css?inline'
+import { AnimatedComp } from '~/components/animated-component/animated-component'
 
-export const useArticles = routeLoader$(async (requestEvent) => {
+export const useArticles = routeLoader$(async requestEvent => {
   return await getArticles({
-    devToApiKey: requestEvent.env.get("DEV_TO_API_KEY"),
+    devToApiKey: requestEvent.env.get('DEV_TO_API_KEY'),
     limit: 4,
-  });
-});
+  })
+})
 
 export default component$(() => {
-  useStylesScoped$(styles);
+  useStylesScoped$(styles)
 
-  const articles = useArticles();
+  const articles = useArticles()
 
   return (
     <>
@@ -146,16 +146,16 @@ export default component$(() => {
         </section>
       </AnimatedComp>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "Pasquale De Lucia - Full-stack engineer",
+  title: 'Pasquale De Lucia - Full-stack engineer',
   meta: [
     {
-      name: "description",
+      name: 'description',
       content:
-        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
+        'Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover',
     },
   ],
-};
+}

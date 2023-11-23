@@ -1,8 +1,8 @@
-import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 
 export const Footer = component$(() => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <>
@@ -31,5 +31,5 @@ export const Footer = component$(() => {
         </nav>
       </footer>
     </>
-  );
-});
+  )
+})

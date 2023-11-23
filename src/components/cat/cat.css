@@ -18,7 +18,7 @@
 }
 .cat-background .ear::before,
 .cat-background .ear::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 24%;
   height: 10%;
@@ -69,7 +69,7 @@
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 .cat-background .eye::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -100,7 +100,7 @@
   }
 }
 .cat-background .eye::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 60%;
   height: 10%;
@@ -159,7 +159,7 @@
   left: 30%;
 }
 .cat-background .eye-pupil::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 30%;
   right: -5%;

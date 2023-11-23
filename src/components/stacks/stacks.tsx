@@ -1,19 +1,19 @@
-import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
-import styles from "./stacks.module.css";
+import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
+import styles from './stacks.module.css'
 
 interface ItemProps {
-  title: string;
-  stacks: Array<any>;
+  title: string
+  stacks: Array<any>
 }
 
-export const Stacks = component$<ItemProps>((props) => {
+export const Stacks = component$<ItemProps>(props => {
   return (
     <>
-      <div class={"container mx-auto " + styles.container}>
+      <div class={'container mx-auto ' + styles.container}>
         <h3 class="text-center mb-4 text-xl font-bold">{props.title}</h3>
         <div class="flex flex-wrap justify-center gap-12">
-          {props.stacks.map((s) => (
+          {props.stacks.map(s => (
             <Link
               href={s.href}
               target="_blank"
@@ -27,5 +27,5 @@ export const Stacks = component$<ItemProps>((props) => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

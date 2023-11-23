@@ -1,56 +1,56 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { $, component$, useSignal } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
 
 function probabilityOfSuccess(levelNumber: number) {
-  let probability = 1;
+  let probability = 1
   for (let i = 0; i < levelNumber; i++) {
-    probability *= (100 - i) / 100;
+    probability *= (100 - i) / 100
   }
-  return probability;
+  return probability
 }
 
 function getRandomInt(max: number) {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * max)
 }
 
 export default component$(() => {
-  const startSuccess = 100;
-  const totalLevel = 100;
-  const percentageOfSuccess = useSignal(startSuccess);
-  const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess);
+  const startSuccess = 100
+  const totalLevel = 100
+  const percentageOfSuccess = useSignal(startSuccess)
+  const percentageOfSuccessGlobal = probabilityOfSuccess(startSuccess)
   const percentageOfSuccessFromNow = useSignal(
     probabilityOfSuccess(percentageOfSuccess.value),
-  );
+  )
   // useTask$(() => {
   //   percentageOfSuccessFromNow.value = probabilityOfSuccess(
   //     percentageOfSuccess.value
   //   );
   // });
 
-  const level = useSignal(0);
-  const maxLevel = useSignal(0);
+  const level = useSignal(0)
+  const maxLevel = useSignal(0)
   const tryPassLevel = $(() => {
-    const random = getRandomInt(totalLevel);
+    const random = getRandomInt(totalLevel)
 
     if (level.value === totalLevel) {
-      level.value = 0;
-      percentageOfSuccess.value = startSuccess;
+      level.value = 0
+      percentageOfSuccess.value = startSuccess
     } else {
       if (random <= percentageOfSuccess.value) {
-        level.value++;
-        percentageOfSuccess.value--;
+        level.value++
+        percentageOfSuccess.value--
         if (level.value > maxLevel.value) {
-          maxLevel.value = level.value;
+          maxLevel.value = level.value
         }
       } else {
-        level.value = 0;
-        percentageOfSuccess.value = startSuccess;
+        level.value = 0
+        percentageOfSuccess.value = startSuccess
       }
       percentageOfSuccessFromNow.value = probabilityOfSuccess(
         percentageOfSuccess.value,
-      );
+      )
     }
-  });
+  })
 
   return (
     <>
@@ -99,8 +99,8 @@ export default component$(() => {
     transition-all duration-150
     border-[5px] ${
       level.value === startSuccess
-        ? "border-green-400 bg-green-500 active:[box-shadow:0_0px_0_0_#298a09,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#298a09,0_13px_0_0_#1b70f841]"
-        : "border-red-400 bg-red-500 active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]"
+        ? 'border-green-400 bg-green-500 active:[box-shadow:0_0px_0_0_#298a09,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#298a09,0_13px_0_0_#1b70f841]'
+        : 'border-red-400 bg-red-500 active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]'
     }`}
           >
             <span class="flex flex-col justify-center items-center h-full text-white font-bold text-[5rem] opacity-50">
@@ -110,20 +110,20 @@ export default component$(() => {
           </div>
 
           <p class="text-xl mt-6">MAX {maxLevel.value}</p>
-          <p>{level.value === startSuccess ? "HAI VINTO" : ""}</p>
+          <p>{level.value === startSuccess ? 'HAI VINTO' : ''}</p>
         </div>
       </section>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "Pasquale De Lucia - Full-stack engineer",
+  title: 'Pasquale De Lucia - Full-stack engineer',
   meta: [
     {
-      name: "description",
+      name: 'description',
       content:
-        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
+        'Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover',
     },
   ],
-};
+}

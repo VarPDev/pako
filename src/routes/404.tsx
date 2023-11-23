@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import { Link, type DocumentHead } from '@builder.io/qwik-city'
 // import ImgAliensAlien from "~/media/aliens-alien.gif?jsx";
 
 export default component$(() => {
@@ -12,7 +12,7 @@ export default component$(() => {
             Uh-oh! It looks like you've wandered into the cosmic void of
             cyberspace. Our binary aliens are throwing a rave just around the
             corner. Hurry back before they invite you to dance in zeros and
-            ones! Alternatively, try our game at this{" "}
+            ones! Alternatively, try our game at this{' '}
             <Link href="../button-game">link</Link>.
           </p>
           {/* width="498"
@@ -29,16 +29,16 @@ export default component$(() => {
         </div>
       </section>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "Pasquale De Lucia - Full-stack engineer - 404",
+  title: 'Pasquale De Lucia - Full-stack engineer - 404',
   meta: [
     {
-      name: "description",
+      name: 'description',
       content:
-        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
+        'Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover',
     },
   ],
-};
+}

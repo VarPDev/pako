@@ -1,8 +1,8 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import styles from "./cat.css?inline";
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import styles from './cat.css?inline'
 
 export const Cat = component$(() => {
-  useStylesScoped$(styles);
+  useStylesScoped$(styles)
 
   return (
     <>
@@ -20,5 +20,5 @@ export const Cat = component$(() => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

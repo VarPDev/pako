@@ -1,22 +1,22 @@
-import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 interface ItemProps {
-  limit?: number;
-  items: Array<any>;
+  limit?: number
+  items: Array<any>
 }
 
-export const Cards = component$<ItemProps>((props) => {
-  let cards = [...props.items];
+export const Cards = component$<ItemProps>(props => {
+  let cards = [...props.items]
 
   if (props.limit) {
-    cards = cards.splice(0, props.limit);
+    cards = cards.splice(0, props.limit)
   }
 
   return (
     <>
       <div>
         <div class="grid md:grid-cols-3 justify-items-center gap-12">
-          {cards.map((c) => (
+          {cards.map(c => (
             <div
               key={c.id}
               class="card w-80 bg-base-100 shadow-xl image-full w-full max-w-[18rem]"
@@ -76,5 +76,5 @@ export const Cards = component$<ItemProps>((props) => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

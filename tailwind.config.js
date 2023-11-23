@@ -1,24 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   // daisyUI config (optional - here are the default values)
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#cc37ce",
-          secondary: "#e0977d",
-          accent: "#8edadb",
-          neutral: "#252b3c",
-          "base-100": "#292546",
-          info: "#8c9ad9",
-          success: "#43d6c5",
-          warning: "#f2c264",
-          error: "#f44e59",
+          primary: '#cc37ce',
+          secondary: '#e0977d',
+          accent: '#8edadb',
+          neutral: '#252b3c',
+          'base-100': '#292546',
+          info: '#8c9ad9',
+          success: '#43d6c5',
+          warning: '#f2c264',
+          error: '#f44e59',
         },
       },
     ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
@@ -30,4 +30,4 @@ module.exports = {
     // prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
     // logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
   },
-};
+}

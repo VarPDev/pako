@@ -1,16 +1,16 @@
-import { component$ } from "@builder.io/qwik";
-import styles from "./linkItem.module.css";
-import { Link } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import styles from './linkItem.module.css'
+import { Link } from '@builder.io/qwik-city'
 
 interface ItemProps {
-  links: Array<any>;
+  links: Array<any>
 }
 
-export const LinkItem = component$<ItemProps>((props) => {
+export const LinkItem = component$<ItemProps>(props => {
   return (
     <>
       <ul>
-        {props.links.map((link) => (
+        {props.links.map(link => (
           <li key={link.id} class="mb-4">
             <Link
               class="link-container flex items-center justify-between transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-2 w-100 block text-black rounded-lg pl-4 md:px-4"
@@ -19,12 +19,12 @@ export const LinkItem = component$<ItemProps>((props) => {
               rel="noopener"
             >
               <span
-                class={styles.icon + " p-2"}
+                class={styles.icon + ' p-2'}
                 dangerouslySetInnerHTML={link.svg}
               ></span>
               <span>{link.title}</span>
               <span
-                class={styles.icon + " p-2 invisible opacity-0"}
+                class={styles.icon + ' p-2 invisible opacity-0'}
                 dangerouslySetInnerHTML={link.svg}
               ></span>
             </Link>
@@ -32,5 +32,5 @@ export const LinkItem = component$<ItemProps>((props) => {
         ))}
       </ul>
     </>
-  );
-});
+  )
+})

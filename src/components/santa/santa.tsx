@@ -1,8 +1,8 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import styles from "./santa.css?inline";
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import styles from './santa.css?inline'
 
 export const Santa = component$(() => {
-  useStylesScoped$(styles);
+  useStylesScoped$(styles)
 
   return (
     <>
@@ -17,5 +17,5 @@ export const Santa = component$(() => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

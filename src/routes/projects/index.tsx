@@ -1,7 +1,7 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { Cards } from "~/components/cards/cards";
-import { projects } from "~/repository/projects";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import { Cards } from '~/components/cards/cards'
+import { projects } from '~/repository/projects'
 
 export default component$(() => {
   return (
@@ -15,16 +15,16 @@ export default component$(() => {
         <Cards items={projects} />
       </section>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "Pasquale De Lucia - Full-stack engineer",
+  title: 'Pasquale De Lucia - Full-stack engineer',
   meta: [
     {
-      name: "description",
+      name: 'description',
       content:
-        "Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover",
+        'Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover',
     },
   ],
-};
+}

@@ -1,10 +1,10 @@
-import { Signal, component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Signal, component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 interface ItemProps {
-  show: Signal<boolean>;
+  show: Signal<boolean>
 }
 
-export const Header = component$<ItemProps>((props) => {
+export const Header = component$<ItemProps>(props => {
   return (
     <>
       <div class="navbar bg-base-100">
@@ -65,5 +65,5 @@ export const Header = component$<ItemProps>((props) => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

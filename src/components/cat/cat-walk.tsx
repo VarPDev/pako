@@ -1,8 +1,8 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import styles from "./cat-walk.css?inline";
+import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import styles from './cat-walk.css?inline'
 
 export const CatWalk = component$(() => {
-  useStylesScoped$(styles);
+  useStylesScoped$(styles)
 
   return (
     <>
@@ -67,5 +67,5 @@ export const CatWalk = component$(() => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

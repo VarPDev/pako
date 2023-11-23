@@ -1,11 +1,11 @@
-import { component$ } from "@builder.io/qwik";
-import { AnimatedComp } from "../animated-component/animated-component";
+import { component$ } from '@builder.io/qwik'
+import { AnimatedComp } from '../animated-component/animated-component'
 
 interface ItemProps {
-  items: Array<any>;
+  items: Array<any>
 }
 
-export const Timeline = component$<ItemProps>((props) => {
+export const Timeline = component$<ItemProps>(props => {
   return (
     <>
       <div class="container mx-auto w-full h-full">
@@ -32,7 +32,7 @@ export const Timeline = component$<ItemProps>((props) => {
                     </div>
                   </div>
                 </AnimatedComp>
-              );
+              )
             } else {
               return (
                 <AnimatedComp pop={true} key={w.id}>
@@ -50,11 +50,11 @@ export const Timeline = component$<ItemProps>((props) => {
                     </div>
                   </div>
                 </AnimatedComp>
-              );
+              )
             }
           })}
         </div>
       </div>
     </>
-  );
-});
+  )
+})
