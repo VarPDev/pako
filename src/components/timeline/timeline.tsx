@@ -17,7 +17,7 @@ export const Timeline = component$<ItemProps>((props) => {
           {props.items.map((w, index) => {
             if (index % 2 === 0) {
               return (
-                <AnimatedComp key={w.id}>
+                <AnimatedComp pop={true} key={w.id}>
                   <div class="mb-8 flex justify-between items-center w-full flex-row-reverse left-timeline">
                     <div class="order-1 w-0 md:w-5/12"></div>
                     <div class="order-1 w-full md:w-5/12 px-1 py-4 text-left md:text-right">
@@ -35,7 +35,7 @@ export const Timeline = component$<ItemProps>((props) => {
               );
             } else {
               return (
-                <AnimatedComp key={w.id}>
+                <AnimatedComp pop={true} key={w.id}>
                   <div class="mb-8 flex justify-between items-center w-full right-timeline">
                     <div class="order-1 w-0 md:w-5/12"></div>
                     <div class="order-1  w-full md:w-5/12 px-1 py-4 text-left">

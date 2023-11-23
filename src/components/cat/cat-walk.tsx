@@ -1,6 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import styles from "./cat-walk.css?inline";
 
 export const CatWalk = component$(() => {
+  useStylesScoped$(styles);
+
   return (
     <>
       <div class="cat-walk-container">

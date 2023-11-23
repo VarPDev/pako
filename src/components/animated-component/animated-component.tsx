@@ -1,7 +1,11 @@
 import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { observeSingleElement } from "~/utils/helpers";
 
-export const AnimatedComp = component$(() => {
+interface ItemProp {
+  pop?: boolean;
+}
+
+export const AnimatedComp = component$<ItemProp>((props) => {
   const ref = useSignal<Element>();
   const isVisible = useSignal<boolean>(false);
 
@@ -19,7 +23,7 @@ export const AnimatedComp = component$(() => {
     <>
       <div
         ref={refObj.el}
-        class={`w-full animation
+        class={`w-full animation ${props.pop && "pop"}
       ${refObj.isVisible.value && "isVisible"}`}
       >
         <Slot />

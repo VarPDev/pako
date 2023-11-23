@@ -1,0 +1,180 @@
+.cat-background {
+  position: fixed;
+  height: 170px;
+  width: 192.1px;
+  top: 50%;
+  left: 50%;
+  margin-top: -85px; /* Negative half of height. */
+  margin-left: -96px; /* Negative half of width. */
+  z-index: -1;
+  opacity: 0.2;
+}
+.cat-background .ear {
+  position: absolute;
+  top: -30%;
+  height: 60%;
+  width: 25%;
+  background: #fff;
+}
+.cat-background .ear::before,
+.cat-background .ear::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: #161616;
+}
+.cat-background .ear::after {
+  transform-origin: 50% 100%;
+}
+.cat-background .ear--left {
+  left: -7%;
+  border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+  transform: rotate(-15deg);
+}
+.cat-background .ear--left::before,
+.cat-background .ear--left::after {
+  right: 10%;
+}
+.cat-background .ear--left::after {
+  transform: rotate(-45deg);
+}
+.cat-background .ear--right {
+  right: -7%;
+  border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+  transform: rotate(15deg);
+}
+.cat-background .ear--right::before,
+.cat-background .ear--right::after {
+  left: 10%;
+}
+.cat-background .ear--right::after {
+  transform: rotate(45deg);
+}
+.cat-background .face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #161616;
+  border-radius: 50%;
+}
+.cat-background .eye {
+  position: absolute;
+  top: 35%;
+  height: 30%;
+  width: 31%;
+  background: #fff;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+.cat-background .eye::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  border-radius: 0 0 50% 50Array/0Array 0 40% 40%;
+  background: #161616;
+  animation: blink 4s infinite ease-in;
+}
+@keyframes blink {
+  0% {
+    height: 0;
+  }
+  90% {
+    height: 0;
+  }
+  92.5% {
+    height: 100%;
+  }
+  95% {
+    height: 0;
+  }
+  97.5% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+.cat-background .eye::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  height: 10%;
+  width: 15%;
+  background: #fff;
+  border-radius: 50%;
+}
+.cat-background .eye--left {
+  left: 0;
+}
+.cat-background .eye--left::before {
+  right: -5%;
+}
+.cat-background .eye--right {
+  right: 0;
+}
+.cat-background .eye--right::before {
+  left: -5%;
+}
+.cat-background .eye-pupil {
+  position: absolute;
+  top: 25%;
+  height: 50%;
+  width: 20%;
+  background: #161616;
+  border-radius: 50%;
+  animation: look-around 4s infinite;
+}
+@keyframes look-around {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translate(50%, -25%);
+  }
+  10% {
+    transform: translate(50%, -25%);
+  }
+  15% {
+    transform: translate(-100%, -25%);
+  }
+  20% {
+    transform: translate(-100%, -25%);
+  }
+  25% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.cat-background .eye--left .eye-pupil {
+  right: 30%;
+}
+.cat-background .eye--right .eye-pupil {
+  left: 30%;
+}
+.cat-background .eye-pupil::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  height: 20%;
+  width: 35%;
+  border-radius: 50%;
+  background: #fff;
+}
+.cat-background .muzzle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 6%;
+  width: 10%;
+  background: #fff;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+}

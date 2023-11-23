@@ -1,9 +1,4 @@
-import {
-  component$,
-  useSignal,
-  useVisibleTask$,
-  useStylesScoped$,
-} from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { routeLoader$, type DocumentHead, Link } from "@builder.io/qwik-city";
 import { Hero } from "~/components/hero/hero";
 import { Cards } from "~/components/cards/cards";
@@ -16,7 +11,6 @@ import { works } from "~/repository/work";
 import { projects } from "~/repository/projects";
 import { frontEnd, backEnd, tools } from "~/repository/stack";
 import ImgPR from "/src/media/badge-first-pr.webp?jsx";
-import { Ref, observeElement } from "~/utils/helpers";
 import { getArticles } from "~/repository/articles";
 import styles from "./index.css?inline";
 import { AnimatedComp } from "~/components/animated-component/animated-component";
