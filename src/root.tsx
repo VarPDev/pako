@@ -21,6 +21,11 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <script
+          data-goatcounter="https://pako.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
         <RouterHead />
       </head>
       <body lang="en">
