@@ -26,6 +26,7 @@ export default component$(() => {
           async
           src="//gc.zgo.at/count.js"
         ></script>
+        <link rel="preload" as="font" />
         <RouterHead />
       </head>
       <body lang="en">
