@@ -7,9 +7,9 @@ export const Contact = component$(() => {
       <div class="container mx-auto">
         <div class="card bg-base-100 shadow-xl image-full w-full">
           <div class="card-body">
-            <div class="flex justify-between items-center gap-8">
+            <div class="flex justify-between items-center gap-8 flex-col md:flex-row">
               <svg
-                class="w-48 rotate-[270deg]"
+                class="w-24 md:w-48 rotate-[270deg]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 323.057 323.057"
                 xml:space="preserve"
@@ -25,10 +25,10 @@ export const Contact = component$(() => {
               </svg>
 
               <div>
-                <h2 class="card-title text-3xl mb-6">
+                <h2 class="card-title text-l md:text-3xl mb-6">
                   Do you want to build castles? Let's do it together!
                 </h2>
-                <p class="text-2xl flex gap-2 items-center">
+                <p class="text-m md:text-2xl flex gap-2 items-center flex-wrap">
                   pasquale.delucia96@gmail.com{' '}
                   <Link
                     class="btn btn-square btn-outline"
