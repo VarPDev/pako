@@ -18,7 +18,7 @@ export const projects = [
     altImage: 'price list maker',
     image: '/price-list.jpeg',
     action: 'Try it',
-    type: 'Angular',
+    type: 'NextJS | Angular',
     color: 'orange-600',
     href: 'https://plmaker.dejizen.com/',
   },
