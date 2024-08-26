@@ -54,7 +54,7 @@ export const projects = [
     action: 'Download',
     type: 'APP',
     color: 'orange-600',
-    href: 'https://play.google.com/store/apps/details?id=com.pako.resume_me&pli=1',
+    href: 'https://apps.apple.com/it/app/resume-me/id1663622782',
   },
   {
     id: 5,
