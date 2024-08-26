@@ -52,7 +52,7 @@ export const projects = [
     altImage: 'Resume me app logo',
     image: '/resume_me.png',
     action: 'Download',
-    type: 'APP',
+    type: 'Flutter',
     color: 'orange-600',
     href: 'https://apps.apple.com/it/app/resume-me/id1663622782',
   },
