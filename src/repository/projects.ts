@@ -13,8 +13,7 @@ export const projects = [
   {
     id: 2,
     title: 'PLMaker',
-    description:
-      'Price list generator with some utilities',
+    description: 'Price list generator with some utilities',
     altImage: 'price list maker',
     image: '/price-list.jpeg',
     action: 'Try it',

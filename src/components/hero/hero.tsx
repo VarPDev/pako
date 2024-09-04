@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik'
-import ImgPako from '/src/media/Pako-cropped.jpeg?jsx'
-import converter from 'number-to-words'
 import { Link } from '@builder.io/qwik-city'
+import converter from 'number-to-words'
+import ImgPako from '/src/media/Pako-cropped.jpeg?jsx'
 
 interface ItemProps {
   role: string
@@ -17,7 +17,7 @@ export const Hero = component$<ItemProps>(props => {
 
   return (
     <>
-      <div class="hero min-h-screen bg-base-200">
+      <div class="hero min-h-[calc(100vh-64px)] bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
           <ImgPako
             loading="eager"
@@ -26,16 +26,25 @@ export const Hero = component$<ItemProps>(props => {
           />
           <div class="prose m-6 md:my-0">
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
-            <p>Web Wizard and JavaScript Lover</p>
+            <p class="text-xl text-gradient">
+              Web Wizard and <strong>JavaScript Lover</strong>
+            </p>
             <p>
               I craft digital wonders as a {props.role} at {props.company}.
             </p>
             <p>
-              With a solid {yearWorked} years of web development under my belt,
-              I'm here to make your online dreams a reality.
+              With a solid {yearWorked} years of{' '}
+              <strong>web development</strong> under my belt, I'm here to make
+              your online dreams a reality.
             </p>
             <p>
-              <Link href="#links" class="btn btn-primary text-black">
+              <Link
+                href="#links"
+                class="btn btn-primary text-white"
+                data-goatcounter-click="get-resume"
+                data-goatcounter-title="Get Resume"
+                data-goatcounter-referrer="index-hero"
+              >
                 Get resume
               </Link>
             </p>

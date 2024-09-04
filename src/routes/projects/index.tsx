@@ -12,7 +12,7 @@ export default component$(() => {
       </section>
 
       <section class="inner-section">
-        <Cards items={projects} />
+        <Cards items={projects} referrer="page-projects" />
       </section>
     </>
   )

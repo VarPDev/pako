@@ -68,7 +68,7 @@ export default component$(() => {
         </div>
       )}
 
-      <Header show={show} />
+      <Header />
       <main>
         {show.value && !snows && !easterInRange && <Cat />}
         {/* If I move this after the Slot, on value change slot reload */}
@@ -84,7 +84,7 @@ export default component$(() => {
           </section>
         </AnimatedComp>
       </main>
-      <Footer />
+      <Footer show={show} />
     </>
   )
 })

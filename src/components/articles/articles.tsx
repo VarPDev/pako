@@ -2,6 +2,7 @@ import { component$ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 interface ItemProps {
   articles: Array<any>
+  referrer?: string
 }
 
 export const Articles = component$<ItemProps>(props => {
@@ -13,7 +14,14 @@ export const Articles = component$<ItemProps>(props => {
         <div class="grid md:grid-cols-2 justify-items-center gap-12">
           {articles.map(c => (
             // <Link href={`/blog/${c.slug}`} key={c.id}>
-            <Link href={c.href} target="_blank" key={c.id}>
+            <Link
+              href={c.href}
+              target="_blank"
+              key={c.id}
+              data-goatcounter-click="open-article"
+              data-goatcounter-title="Open Article"
+              data-goatcounter-referrer={props.referrer || 'referrer'}
+            >
               <article class="prose">
                 <h3>{c.title}</h3>
                 <p class="flex items-center gap-2">
