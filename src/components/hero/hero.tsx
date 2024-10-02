@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 import converter from 'number-to-words'
-import ImgPako from '/src/media/pako_compressed.JPG?jsx'
+import ImgPako from '/src/media/pako_cropped.jpg?jsx'
 
 interface ItemProps {
   role: string
