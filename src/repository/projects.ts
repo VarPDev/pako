@@ -22,6 +22,17 @@ export const projects = [
     href: 'https://plmaker.dejizen.com/',
   },
   {
+    id: 2,
+    title: 'Dejizen',
+    description: 'A brand that build many things',
+    altImage: 'dejizen',
+    image: '/dejizen.svg',
+    action: 'Try it',
+    type: 'NodeJS | pug',
+    color: 'orange-600',
+    href: 'https://dejizen.com/',
+  },
+  {
     id: 3,
     title: 'Rick & Morty',
     description:
