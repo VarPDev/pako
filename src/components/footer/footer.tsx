@@ -21,13 +21,19 @@ export const Footer = component$(() => {
           </svg>
           <p>Copyright {currentYear} - All right reserved</p>
         </aside>
-        <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <nav class="w-full flex flex-col items-center md:w-auto md:flex-row gap-4 md:place-self-center md:justify-self-end">
           <Link href="https://qwik.builder.io/" target="_blank">
             made with qwik
           </Link>
           <Link href="/blog">Blog</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/button-game">Try this game</Link>
+          <Link
+            href="https://www.amazon.it/hz/wishlist/ls/2JT4PUEODMY27?ref_=wl_share"
+            target="_blank"
+          >
+            Wishlist
+          </Link>
         </nav>
       </footer>
     </>
