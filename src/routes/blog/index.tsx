@@ -20,7 +20,7 @@ export default component$(() => {
       </section>
 
       <section class="inner-section">
-        <Articles articles={articles.value} />
+        <Articles articles={articles.value} referrer="page-articles" />
       </section>
     </>
   )

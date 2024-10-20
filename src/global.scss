@@ -93,6 +93,20 @@ h3 {
   @apply text-2xl;
 }
 
+.text-gradient {
+  background-image: linear-gradient(
+    90deg,
+    #ff52d9 4%,
+    color-mix(in oklch, #ff52d9, #ff5861) 22%,
+    #7480ff 45%,
+    color-mix(in oklch, #7480ff, #00cdb8) 67%,
+    #00cdb8 100.2%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .link-section {
   @apply w-5/6 md:w-2/3 lg:w-1/3 mx-auto;
 }

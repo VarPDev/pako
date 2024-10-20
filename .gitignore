@@ -36,6 +36,7 @@ testem.log
 /typings
 
 .env.local
+.env
 
 # System Files
 .DS_Store

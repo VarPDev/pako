@@ -1,7 +1,11 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, Signal } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 
-export const Footer = component$(() => {
+interface ItemProps {
+  show: Signal<boolean>
+}
+
+export const Footer = component$<ItemProps>(props => {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -22,18 +26,59 @@ export const Footer = component$(() => {
           <p>Copyright {currentYear} - All right reserved</p>
         </aside>
         <nav class="w-full flex flex-col items-center md:w-auto md:flex-row gap-4 md:place-self-center md:justify-self-end">
-          <Link href="https://qwik.builder.io/" target="_blank">
+          <Link
+            href="https://qwik.builder.io/"
+            target="_blank"
+            data-goatcounter-click="open-quik"
+            data-goatcounter-title="Open Quik"
+            data-goatcounter-referrer="referrer"
+          >
             made with qwik
           </Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/button-game">Try this game</Link>
+          <Link
+            href="/blog"
+            data-goatcounter-click="open-articles"
+            data-goatcounter-title="Open Articles"
+            data-goatcounter-referrer="footer"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/projects"
+            data-goatcounter-click="open-projects"
+            data-goatcounter-title="Open Projects"
+            data-goatcounter-referrer="footer"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/button-game"
+            data-goatcounter-click="open-game"
+            data-goatcounter-title="Open Game"
+            data-goatcounter-referrer="referrer"
+          >
+            Try this game
+          </Link>
           <Link
             href="https://www.amazon.it/hz/wishlist/ls/2JT4PUEODMY27?ref_=wl_share"
+            data-goatcounter-click="open-wishlist"
+            data-goatcounter-title="Open Wishilist"
+            data-goatcounter-referrer="referrer"
             target="_blank"
           >
             Wishlist
           </Link>
+          <label
+            class="cursor-pointer"
+            onClick$={() => (props.show.value = !props.show.value)}
+            data-goatcounter-click={
+              'cat-mode-' + props.show.value ? 'open' : 'close'
+            }
+            data-goatcounter-title="Cat Mode"
+            data-goatcounter-referrer="referrer"
+          >
+            Cat mode
+          </label>
         </nav>
       </footer>
     </>

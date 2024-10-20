@@ -1,20 +1,19 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead, Link } from '@builder.io/qwik-city'
-import { Hero } from '~/components/hero/hero'
-import { Cards } from '~/components/cards/cards'
-import { Articles } from '~/components/articles/articles'
-import { Timeline } from '~/components/timeline/timeline'
-import { Stacks } from '~/components/stacks/stacks'
-import { LinkItem } from '~/components/linkItem/linkItem'
-import { links } from '~/repository/links'
-import { works } from '~/repository/work'
-import { projects } from '~/repository/projects'
-import { frontEnd, backEnd, tools } from '~/repository/stack'
-import ImgPR from '/src/media/badge-first-pr.webp?jsx'
-import { getArticles } from '~/repository/articles'
-import styles from './index.css?inline'
+import { Link, routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
-import { Contact } from '~/components/contact/contact'
+import { Articles } from '~/components/articles/articles'
+import { Cards } from '~/components/cards/cards'
+import { Hero } from '~/components/hero/hero'
+import { LinkItem } from '~/components/linkItem/linkItem'
+import { Stacks } from '~/components/stacks/stacks'
+import { Timeline } from '~/components/timeline/timeline'
+import { getArticles } from '~/repository/articles'
+import { links } from '~/repository/links'
+import { projects } from '~/repository/projects'
+import { backEnd, frontEnd, tools } from '~/repository/stack'
+import { works } from '~/repository/work'
+import styles from './index.css?inline'
+import ImgPR from '/src/media/badge-first-pr.webp?jsx'
 
 export const useArticles = routeLoader$(async requestEvent => {
   return await getArticles({
@@ -42,13 +41,16 @@ export default component$(() => {
       </AnimatedComp>
       <AnimatedComp>
         <section class="inner-section">
-          <Cards items={projects} limit={3} />
+          <Cards items={projects} limit={3} referrer="index-project" />
 
           <p class="flex justify-center pt-6">
             <Link
               href="/projects"
               aria-label="See more projects"
-              class="btn btn-primary text-black"
+              class="btn btn-primary text-white"
+              data-goatcounter-click="more-projects"
+              data-goatcounter-title="More Projects"
+              data-goatcounter-referrer="referrer"
             >
               See more projects
             </Link>
@@ -76,13 +78,16 @@ export default component$(() => {
       </AnimatedComp>
       <AnimatedComp>
         <section class="inner-section">
-          <Articles articles={articles.value} />
+          <Articles articles={articles.value} referrer="index-article" />
 
           <p class="flex justify-center pt-6">
             <Link
               href="/blog"
               aria-label="Read more articles"
-              class="btn btn-primary text-black"
+              class="btn btn-primary text-white"
+              data-goatcounter-click="more-articles"
+              data-goatcounter-title="More Articles"
+              data-goatcounter-referrer="referrer"
             >
               Read more articles
             </Link>
@@ -143,7 +148,7 @@ export default component$(() => {
       </AnimatedComp>
       <AnimatedComp>
         <section class="link-section">
-          <LinkItem links={links}></LinkItem>
+          <LinkItem links={links} referrer="index"></LinkItem>
         </section>
       </AnimatedComp>
     </>

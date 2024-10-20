@@ -7,9 +7,9 @@ export const Contact = component$(() => {
       <div class="container mx-auto">
         <div class="card bg-base-100 shadow-xl image-full w-full">
           <div class="card-body">
-            <div class="flex justify-between items-center gap-8 flex-col md:flex-row">
+            <div class="flex items-center gap-8 flex-col md:flex-row">
               <svg
-                class="w-24 md:w-48 rotate-[270deg]"
+                class="w-16 md:w-40 rotate-[270deg]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 323.057 323.057"
                 xml:space="preserve"
@@ -25,16 +25,19 @@ export const Contact = component$(() => {
               </svg>
 
               <div>
-                <h2 class="card-title text-l md:text-3xl mb-6">
+                <h2 class="card-title text-l md:text-2xl mb-6">
                   Do you want to build castles? Let's do it together!
                 </h2>
-                <p class="text-m md:text-2xl flex gap-2 items-center flex-wrap">
+                <p class="text-m md:text-1xl flex gap-2 items-center flex-wrap">
                   pasquale.delucia96@gmail.com{' '}
                   <Link
-                    class="btn btn-square btn-outline"
+                    class="btn btn-square btn-outline btn-xs"
                     href="mailto:pasquale.delucia96@gmail.com"
                     target="_blank"
                     aria-label="pasquale.delucia96@gmail.com"
+                    data-goatcounter-click="send-email"
+                    data-goatcounter-title="Send Email"
+                    data-goatcounter-referrer="referrer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +49,7 @@ export const Contact = component$(() => {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="feather feather-external-link"
+                      class="feather feather-external-link w-3 h-3"
                     >
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>

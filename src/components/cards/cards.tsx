@@ -3,6 +3,7 @@ import { Link } from '@builder.io/qwik-city'
 interface ItemProps {
   limit?: number
   items: Array<any>
+  referrer?: string
 }
 
 export const Cards = component$<ItemProps>(props => {
@@ -17,9 +18,15 @@ export const Cards = component$<ItemProps>(props => {
       <div>
         <div class="grid md:grid-cols-3 justify-items-center gap-12">
           {cards.map(c => (
-            <div
+            <Link
               key={c.id}
+              href={c.href}
+              target="_blank"
+              aria-label={c.action}
               class="card bg-base-100 shadow-xl image-full w-full max-w-[18rem]"
+              data-goatcounter-click="click-card"
+              data-goatcounter-title={c.title}
+              data-goatcounter-referrer={props.referrer || 'referrer'}
             >
               {c.image && (
                 <figure>
@@ -46,32 +53,27 @@ export const Cards = component$<ItemProps>(props => {
                   </span>
                 </p>
                 <div class="card-actions justify-end">
-                  <Link
-                    class="btn btn-square btn-outline"
-                    href={c.href}
-                    target="_blank"
-                    aria-label={c.action}
-                  >
+                  <label class="btn btn-square btn-outline btn-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
                       fill="none"
                       stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="feather feather-external-link"
+                      class="feather feather-external-link h-3 w-3"
                     >
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>
                       <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
-                  </Link>
+                  </label>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

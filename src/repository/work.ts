@@ -13,7 +13,7 @@ export const works = [
   {
     id: 2,
     startDate: 'Mar 2019',
-    endDate: 'Gen 2022',
+    endDate: 'Jan 2022',
     company: 'Semantyca',
     description: `Worked in Milan based company Semantyca in a team of 7 people.
     During this three years I taught my colleagues the front-end best practices and new frameworks or new tools, becoming a front-end tech lead.
