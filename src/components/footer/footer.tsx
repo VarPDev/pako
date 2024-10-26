@@ -1,11 +1,10 @@
-import { component$, Signal } from '@builder.io/qwik'
+import { component$, useContext } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
+import { ShowContext } from '~/services/common.service'
 
-interface ItemProps {
-  show: Signal<boolean>
-}
+export const Footer = component$(() => {
+  const show = useContext(ShowContext)
 
-export const Footer = component$<ItemProps>(props => {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -70,10 +69,8 @@ export const Footer = component$<ItemProps>(props => {
           </Link>
           <label
             class="cursor-pointer"
-            onClick$={() => (props.show.value = !props.show.value)}
-            data-goatcounter-click={
-              'cat-mode-' + props.show.value ? 'open' : 'close'
-            }
+            onClick$={() => (show.value = !show.value)}
+            data-goatcounter-click={'cat-mode-' + show.value ? 'open' : 'close'}
             data-goatcounter-title="Cat Mode"
             data-goatcounter-referrer="referrer"
           >

@@ -1,6 +1,8 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, useContext } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 import converter from 'number-to-words'
+import { ShowContext, SnowContext } from '~/services/common.service'
+import { SantaHat } from '../santa-hat/santa-hat'
 import ImgPako from '/src/media/pako_cropped.jpg?jsx'
 
 interface ItemProps {
@@ -9,6 +11,9 @@ interface ItemProps {
 }
 
 export const Hero = component$<ItemProps>(props => {
+  const show = useContext(ShowContext)
+  const snows = useContext(SnowContext)
+
   const currentYear = new Date().getFullYear()
   const startYear = new Date('1/1/2015').getFullYear()
   const yearWorked = converter.toWords(currentYear - startYear)
@@ -19,11 +24,20 @@ export const Hero = component$<ItemProps>(props => {
     <>
       <div class="hero min-h-[calc(100vh-64px)] bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
-          <ImgPako
-            loading="eager"
-            alt="Pasquale De Lucia picture"
-            class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
-          />
+          <div class="relative">
+            <ImgPako
+              loading="eager"
+              alt="Pasquale De Lucia picture"
+              class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
+            />
+            {show.value && snows.value && (
+              <>
+                <div class="absolute top-[-34px] right-[-48px] w-[100px] rotate-[26deg]">
+                  <SantaHat />
+                </div>
+              </>
+            )}
+          </div>
           <div class="prose m-6 md:my-0">
             <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
             <p class="text-xl text-gradient">

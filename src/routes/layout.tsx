@@ -1,4 +1,9 @@
-import { component$, Slot, useSignal } from '@builder.io/qwik'
+import {
+  component$,
+  Slot,
+  useContextProvider,
+  useSignal,
+} from '@builder.io/qwik'
 import type { RequestHandler } from '@builder.io/qwik-city'
 import { isWithinInterval, set } from 'date-fns'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
@@ -10,6 +15,7 @@ import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
 import { Rudolph } from '~/components/rudolph/rudolph'
 import { Santa } from '~/components/santa/santa'
+import { ShowContext, SnowContext } from '~/services/common.service'
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -24,6 +30,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   const show = useSignal(false)
+  useContextProvider(ShowContext, show)
 
   const today = new Date()
   const snowStart = set(today, {
@@ -41,7 +48,8 @@ export default component$(() => {
     end: snowEnd,
   })
 
-  const snows = snowInRange ? new Array(200).fill(0) : null
+  const snows = useSignal(snowInRange ? new Array(200).fill(0) : null)
+  useContextProvider(SnowContext, snows)
 
   const easterStart = set(today, {
     month: 2,
@@ -60,9 +68,9 @@ export default component$(() => {
 
   return (
     <>
-      {show.value && snows && (
+      {show.value && snows.value && (
         <div class="snow-container">
-          {snows.map((item, index) => (
+          {snows.value.map((item, index) => (
             <div key={index} class="snow"></div>
           ))}
         </div>
@@ -70,11 +78,11 @@ export default component$(() => {
 
       <Header />
       <main>
-        {show.value && !snows && !easterInRange && <Cat />}
+        {show.value && !snows.value && !easterInRange && <Cat />}
         {/* If I move this after the Slot, on value change slot reload */}
-        {show.value && !snows && !easterInRange && <CatWalk />}
-        {show.value && snows && <Santa />}
-        {show.value && snows && <Rudolph />}
+        {show.value && !snows.value && !easterInRange && <CatWalk />}
+        {show.value && snows.value && <Santa />}
+        {show.value && snows.value && <Rudolph />}
         {show.value && easterInRange && <Eggs />}
         <Slot />
 
@@ -84,7 +92,7 @@ export default component$(() => {
           </section>
         </AnimatedComp>
       </main>
-      <Footer show={show} />
+      <Footer />
     </>
   )
 })
