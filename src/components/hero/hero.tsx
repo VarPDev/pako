@@ -2,6 +2,7 @@ import { component$, useContext } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 import converter from 'number-to-words'
 import { ShowContext, SnowContext } from '~/services/common.service'
+import { Bubble } from '../bubble/bubble'
 import { SantaHat } from '../santa-hat/santa-hat'
 import ImgPako from '/src/media/pako_cropped.jpg?jsx'
 
@@ -22,7 +23,7 @@ export const Hero = component$<ItemProps>(props => {
 
   return (
     <>
-      <div class="hero min-h-[calc(100vh-64px)] bg-base-200">
+      <div class="relative hero h-[calc(100vh-64px)] bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
           <div class="relative">
             <ImgPako
@@ -64,6 +65,7 @@ export const Hero = component$<ItemProps>(props => {
             </p>
           </div>
         </div>
+        <Bubble />
       </div>
     </>
   )
