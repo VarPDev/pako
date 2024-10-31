@@ -74,7 +74,7 @@ export const Footer = component$(() => {
             data-goatcounter-title="Cat Mode"
             data-goatcounter-referrer="referrer"
           >
-            Cat mode
+            CLick me
           </label>
         </nav>
       </footer>
