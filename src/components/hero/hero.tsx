@@ -23,7 +23,7 @@ export const Hero = component$<ItemProps>(props => {
 
   return (
     <>
-      <div class="relative hero h-[calc(100vh-64px)] bg-base-200">
+      <div class="hero min-h-[calc(100vh-64px)] bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
           <div class="relative">
             <ImgPako
