@@ -23,7 +23,7 @@ export const Timeline = component$<ItemProps>(props => {
                     <div class="order-1 w-full md:w-5/12 px-1 py-4 text-left md:text-right">
                       <p class="mb-3 text-base text-secondary">{w.startDate}</p>
                       <h3 class="mb-3 font-bold text-lg md:text-2xl">
-                        {w.title}
+                        {w.company}
                       </h3>
                       <p class="mb-3 font-bold text-md md:text-xl">{w.role}</p>
                       <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
@@ -41,7 +41,7 @@ export const Timeline = component$<ItemProps>(props => {
                     <div class="order-1  w-full md:w-5/12 px-1 py-4 text-left">
                       <p class="mb-3 text-base text-secondary">{w.startDate}</p>
                       <h3 class="mb-3 font-bold text-lg md:text-2xl">
-                        {w.title}
+                        {w.company}
                       </h3>
                       <p class="mb-3 font-bold text-md md:text-xl">{w.role}</p>
                       <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">

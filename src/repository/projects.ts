@@ -65,5 +65,5 @@ export const projects = [
     type: 'Flutter',
     color: 'orange-600',
     href: 'https://apps.apple.com/it/app/resume-me/id1663622782',
-  }
+  },
 ]
