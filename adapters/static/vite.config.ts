@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: 'https://deluciapasquale.it',
+        origin: 'https://pasqualedelucia.com',
       }),
     ],
   }
