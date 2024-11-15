@@ -24,6 +24,7 @@ export const Hero = component$<ItemProps>(props => {
   return (
     <>
       <div class="hero min-h-[calc(100vh-64px)] bg-base-200">
+        <Bubble />
         <div class="hero-content flex-col lg:flex-row">
           <div class="relative">
             <ImgPako
@@ -65,7 +66,6 @@ export const Hero = component$<ItemProps>(props => {
             </p>
           </div>
         </div>
-        <Bubble />
       </div>
     </>
   )
