@@ -28,7 +28,7 @@ export const Contact = component$(() => {
                 <h2 class="card-title text-l md:text-2xl mb-6">
                   Do you want to build castles? Let's do it together!
                 </h2>
-                <p class="text-m md:text-1xl flex gap-2 items-center flex-wrap">
+                <p class="text-xs md:text-xl flex gap-2 items-center flex-wrap">
                   pasquale.delucia96@gmail.com{' '}
                   <Link
                     class="btn btn-square btn-outline btn-xs"
