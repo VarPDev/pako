@@ -1,5 +1,6 @@
 import { component$, useSignal, useStyles$ } from '@builder.io/qwik'
 import { Link, routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
 import { articleDetailApi, latestAsrticles } from '~/services/graph-ql.service'
 import styles from './finance.css?inline'
@@ -26,6 +27,10 @@ export default component$(() => {
       <section class="title-section text-center">
         <h1>{article.value.data.page.title}</h1>
         <h2>{article.value.data.page.subtitle}</h2>
+      </section>
+
+      <section class="title-section">
+        <NoTips />
       </section>
 
       <section class="inner-section finance">
