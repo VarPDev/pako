@@ -17,8 +17,8 @@ export default component$(() => {
   return (
     <>
       <section class="title-section text-center">
-        <h1>Finance</h1>
-        <h2>Find out what I write about</h2>
+        <h1>{article.value.data.page.title}</h1>
+        <h2>{article.value.data.page.subtitle}</h2>
       </section>
 
       <section class="inner-section finance">

@@ -1,4 +1,4 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, useSignal, useStyles$ } from '@builder.io/qwik'
 import { Link, routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { QDatoText } from '~/integrations/react/QDatoText'
 import { articleDetailApi, latestAsrticles } from '~/services/graph-ql.service'
@@ -19,11 +19,13 @@ export default component$(() => {
   const article = useArticle()
   const latestArticle = useLatestArticles()
 
+  const showAlert = useSignal(true)
+
   return (
     <>
       <section class="title-section text-center">
-        <h1>Finance</h1>
-        <h2>Find out what I write about</h2>
+        <h1>{article.value.data.page.title}</h1>
+        <h2>{article.value.data.page.subtitle}</h2>
       </section>
 
       <section class="inner-section finance">
@@ -39,7 +41,7 @@ export default component$(() => {
                 <h2 class="card-title">{a.title}</h2>
                 <div class="card-actions justify-end">
                   <Link href={a.slug} class="btn">
-                    Read more
+                    Scopri di più
                   </Link>
                 </div>
               </div>
@@ -47,6 +49,36 @@ export default component$(() => {
           ))}
         </div>
       </section>
+
+      {showAlert.value && (
+        <div
+          role="alert"
+          class="alert alert-info z-[999] fixed bottom-2 w-[98%]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="h-6 w-6 shrink-0 stroke-current"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <span>Italian content</span>
+          <div>
+            <button
+              class="btn btn-sm btn-primary"
+              onClick$={() => (showAlert.value = false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 })

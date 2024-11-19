@@ -3,6 +3,7 @@ export const articleDetailApi = async (slug: string, token: string) => {
     page (filter: { slug: { eq: "${slug}" } }) {
       title
       slug
+      subtitle
       content {
         value
       }
