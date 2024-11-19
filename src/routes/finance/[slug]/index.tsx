@@ -1,7 +1,8 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, useStyles$ } from '@builder.io/qwik'
 import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { QDatoText } from '~/integrations/react/QDatoText'
 import { articleDetailApi } from '~/services/graph-ql.service'
+import styles from '../finance.css?inline'
 
 export const useArticle = routeLoader$(async requestEvent => {
   const { slug } = requestEvent.params
@@ -10,6 +11,7 @@ export const useArticle = routeLoader$(async requestEvent => {
 })
 
 export default component$(() => {
+  useStyles$(styles)
   const article = useArticle()
 
   return (
@@ -19,7 +21,7 @@ export default component$(() => {
         <h2>Find out what I write about</h2>
       </section>
 
-      <section class="inner-section">
+      <section class="inner-section finance">
         <QDatoText data={article.value.data.page.content} />
       </section>
     </>

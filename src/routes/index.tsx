@@ -61,7 +61,7 @@ export default component$(() => {
       <AnimatedComp>
         <section class="title-section text-center">
           <h2>History</h2>
-          <h3>All my experiences</h3>
+          <p class="text-xl">All my experiences</p>
         </section>
       </AnimatedComp>
       <AnimatedComp>
@@ -143,7 +143,7 @@ export default component$(() => {
       <AnimatedComp>
         <section id="links" class="title-section text-center">
           <h2>Links</h2>
-          <h3>Stay updated or get in touch on my socials</h3>
+          <p class="text-xl">Stay updated or get in touch on my socials</p>
         </section>
       </AnimatedComp>
       <AnimatedComp>

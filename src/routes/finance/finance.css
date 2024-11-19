@@ -1,0 +1,5 @@
+.finance {
+  p {
+    @apply mb-4 mt-4;
+  }
+}

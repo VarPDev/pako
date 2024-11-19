@@ -6,6 +6,11 @@ export const articleDetailApi = async (slug: string, token: string) => {
       content {
         value
       }
+      seo: _seoMetaTags {
+        attributes
+        content
+        tag
+      }
     }
   }`
 
@@ -15,6 +20,29 @@ export const articleDetailApi = async (slug: string, token: string) => {
     },
     method: 'POST',
     body: JSON.stringify({ query: STORY_QUERY }),
+  })
+
+  const responseBody = await response.json()
+  return responseBody
+}
+
+export const latestAsrticles = async (token: string) => {
+  const LATEST_QUERY = `{
+    allPages(first: 8, filter: { slug: { neq: "finance" } }) {
+      id
+      title
+      slug
+      _status
+      _firstPublishedAt
+    }
+  }`
+
+  const response = await fetch('https://graphql.datocms.com/', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method: 'POST',
+    body: JSON.stringify({ query: LATEST_QUERY }),
   })
 
   const responseBody = await response.json()
