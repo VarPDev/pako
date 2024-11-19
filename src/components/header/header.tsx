@@ -61,6 +61,16 @@ export const Header = component$(() => {
                   Resume
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/finance"
+                  data-goatcounter-click="open-finance"
+                  data-goatcounter-title="Open Finance"
+                  data-goatcounter-referrer="header"
+                >
+                  Personal finance
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
