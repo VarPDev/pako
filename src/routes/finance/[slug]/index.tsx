@@ -1,7 +1,11 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import {
+  routeLoader$,
+  StaticGenerateHandler,
+  type DocumentHead,
+} from '@builder.io/qwik-city'
 import { QDatoText } from '~/integrations/react/QDatoText'
-import { articleDetailApi } from '~/services/graph-ql.service'
+import { articleDetailApi, pagesSlugsApi } from '~/services/graph-ql.service'
 import styles from '../finance.css?inline'
 
 export const useArticle = routeLoader$(async requestEvent => {
@@ -9,6 +13,17 @@ export const useArticle = routeLoader$(async requestEvent => {
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
   return articleDetailApi(slug, token || '')
 })
+
+export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
+  const token = env.get('DATO_CMS_TOKEN')
+  const slugs = await pagesSlugsApi(token ?? '')
+
+  return {
+    params: slugs.data.allPages.map((a: any) => {
+      return { slug: a.slug }
+    }),
+  }
+}
 
 export default component$(() => {
   useStyles$(styles)

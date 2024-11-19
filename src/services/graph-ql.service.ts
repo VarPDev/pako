@@ -49,3 +49,22 @@ export const latestAsrticles = async (token: string) => {
   const responseBody = await response.json()
   return responseBody
 }
+
+export const pagesSlugsApi = async (token: string) => {
+  const PAGES_QUERY = `{
+        allPages(filter: { slug: { neq: "finance" } }) {
+          slug
+        }
+      }`
+
+  const response = await fetch('https://graphql.datocms.com/', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method: 'POST',
+    body: JSON.stringify({ query: PAGES_QUERY }),
+  })
+
+  const responseBody = await response.json()
+  return responseBody
+}

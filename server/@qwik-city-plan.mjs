@@ -1,52 +1,53 @@
 import {
   c as d,
   i as o,
-  u as f,
-  a as ce,
-  _ as r,
+  u as b,
+  a as he,
+  _ as a,
   b as e,
-  S,
-  F as c,
-  d as $,
+  S as M,
+  F as u,
+  d as B,
   e as _,
   L as g,
   f as t,
-  g as U,
-  h as T,
-  j as p,
+  g as V,
+  h as D,
+  j as m,
   k as P,
-  l as R,
+  l as H,
   m as h,
-  n as y,
-  r as F,
-  o as A,
-  p as ue,
-  R as B,
-  q as de,
-  s as j,
-  t as E,
-  v as he,
-  w as I,
-} from './q-f5c7d7d3.js'
-import { set as C, isWithinInterval as W, format as ge } from 'date-fns'
-import me from 'number-to-words'
+  n as x,
+  r as j,
+  o as O,
+  p as ge,
+  R as U,
+  q as me,
+  s as C,
+  t as W,
+  v as pe,
+  w as T,
+  x as J,
+} from './q-dcf4b8bd.js'
+import { set as q, isWithinInterval as Z, format as fe } from 'date-fns'
+import be from 'number-to-words'
 import {
-  createContext as pe,
-  Component as fe,
-  createRef as be,
-  createElement as q,
+  createContext as ve,
+  Component as we,
+  createRef as xe,
+  createElement as A,
 } from 'react'
-import { renderToString as ve } from 'react-dom/server'
-import { jsx as we } from 'react/jsx-runtime'
-import { StructuredText as xe } from 'react-datocms/structured-text'
-const ke = n => {
-    const l = f(),
-      a = f(!1),
-      i = { el: l, isVisible: a, observer: null }
+import { renderToString as ke } from 'react-dom/server'
+import { jsx as ye } from 'react/jsx-runtime'
+import { StructuredText as _e } from 'react-datocms/structured-text'
+const ze = n => {
+    const l = b(),
+      r = b(!1),
+      i = { el: l, isVisible: r, observer: null }
     return (
-      ce($('s_CHnWD2D8Ibg', [i])),
-      r(
-        c,
+      he(B('s_CHnWD2D8Ibg', [i])),
+      a(
+        u,
         {
           children: e(
             'div',
@@ -56,7 +57,7 @@ const ke = n => {
       ${i.isVisible.value && 'isVisible'}`,
             },
             null,
-            r(S, null, 3, '09_0'),
+            a(M, null, 3, '09_0'),
             1,
             null,
           ),
@@ -66,13 +67,13 @@ const ke = n => {
       )
     )
   },
-  m = d(o(ke, 's_sdm0n9ZoKr0')),
-  ye = `.cat-background{position:fixed;height:170px;width:192.1px;top:50%;left:50%;margin-top:-85px;margin-left:-96px;z-index:-1;opacity:.2}.cat-background .ear{position:absolute;top:-30%;height:60%;width:25%;background:#fff}.cat-background .ear:before,.cat-background .ear:after{content:"";position:absolute;bottom:24%;height:10%;width:5%;border-radius:50%;background:#161616}.cat-background .ear:after{transform-origin:50% 100%}.cat-background .ear--left{left:-7%;border-radius:70% 30% 0% 0%/100% 100% 0% 0%;transform:rotate(-15deg)}.cat-background .ear--left:before,.cat-background .ear--left:after{right:10%}.cat-background .ear--left:after{transform:rotate(-45deg)}.cat-background .ear--right{right:-7%;border-radius:30% 70% 0% 0%/100% 100% 0% 0%;transform:rotate(15deg)}.cat-background .ear--right:before,.cat-background .ear--right:after{left:10%}.cat-background .ear--right:after{transform:rotate(45deg)}.cat-background .face{position:absolute;height:100%;width:100%;background:#161616;border-radius:50%}.cat-background .eye{position:absolute;top:35%;height:30%;width:31%;background:#fff;border-radius:50%/60% 60% 40% 40%}.cat-background .eye:after{content:"";position:absolute;top:0;left:0;height:0;width:100%;border-radius:0 0 50% 50Array/0Array 0 40% 40%;background:#161616;animation:blink 4s infinite ease-in}@keyframes blink{0%{height:0}90%{height:0}92.5%{height:100%}95%{height:0}97.5%{height:100%}to{height:0}}.cat-background .eye:before{content:"";position:absolute;top:60%;height:10%;width:15%;background:#fff;border-radius:50%}.cat-background .eye--left{left:0}.cat-background .eye--left:before{right:-5%}.cat-background .eye--right{right:0}.cat-background .eye--right:before{left:-5%}.cat-background .eye-pupil{position:absolute;top:25%;height:50%;width:20%;background:#161616;border-radius:50%;animation:look-around 4s infinite}@keyframes look-around{0%{transform:translate(0)}5%{transform:translate(50%,-25%)}10%{transform:translate(50%,-25%)}15%{transform:translate(-100%,-25%)}20%{transform:translate(-100%,-25%)}25%{transform:translate(0)}to{transform:translate(0)}}.cat-background .eye--left .eye-pupil{right:30%}.cat-background .eye--right .eye-pupil{left:30%}.cat-background .eye-pupil:after{content:"";position:absolute;top:30%;right:-5%;height:20%;width:35%;border-radius:50%;background:#fff}.cat-background .muzzle{position:absolute;top:60%;left:50%;height:6%;width:10%;background:#fff;transform:translate(-50%);border-radius:50%/30% 30% 70% 70%}
+  f = d(o(ze, 's_sdm0n9ZoKr0')),
+  Se = `.cat-background{position:fixed;height:170px;width:192.1px;top:50%;left:50%;margin-top:-85px;margin-left:-96px;z-index:-1;opacity:.2}.cat-background .ear{position:absolute;top:-30%;height:60%;width:25%;background:#fff}.cat-background .ear:before,.cat-background .ear:after{content:"";position:absolute;bottom:24%;height:10%;width:5%;border-radius:50%;background:#161616}.cat-background .ear:after{transform-origin:50% 100%}.cat-background .ear--left{left:-7%;border-radius:70% 30% 0% 0%/100% 100% 0% 0%;transform:rotate(-15deg)}.cat-background .ear--left:before,.cat-background .ear--left:after{right:10%}.cat-background .ear--left:after{transform:rotate(-45deg)}.cat-background .ear--right{right:-7%;border-radius:30% 70% 0% 0%/100% 100% 0% 0%;transform:rotate(15deg)}.cat-background .ear--right:before,.cat-background .ear--right:after{left:10%}.cat-background .ear--right:after{transform:rotate(45deg)}.cat-background .face{position:absolute;height:100%;width:100%;background:#161616;border-radius:50%}.cat-background .eye{position:absolute;top:35%;height:30%;width:31%;background:#fff;border-radius:50%/60% 60% 40% 40%}.cat-background .eye:after{content:"";position:absolute;top:0;left:0;height:0;width:100%;border-radius:0 0 50% 50Array/0Array 0 40% 40%;background:#161616;animation:blink 4s infinite ease-in}@keyframes blink{0%{height:0}90%{height:0}92.5%{height:100%}95%{height:0}97.5%{height:100%}to{height:0}}.cat-background .eye:before{content:"";position:absolute;top:60%;height:10%;width:15%;background:#fff;border-radius:50%}.cat-background .eye--left{left:0}.cat-background .eye--left:before{right:-5%}.cat-background .eye--right{right:0}.cat-background .eye--right:before{left:-5%}.cat-background .eye-pupil{position:absolute;top:25%;height:50%;width:20%;background:#161616;border-radius:50%;animation:look-around 4s infinite}@keyframes look-around{0%{transform:translate(0)}5%{transform:translate(50%,-25%)}10%{transform:translate(50%,-25%)}15%{transform:translate(-100%,-25%)}20%{transform:translate(-100%,-25%)}25%{transform:translate(0)}to{transform:translate(0)}}.cat-background .eye--left .eye-pupil{right:30%}.cat-background .eye--right .eye-pupil{left:30%}.cat-background .eye-pupil:after{content:"";position:absolute;top:30%;right:-5%;height:20%;width:35%;border-radius:50%;background:#fff}.cat-background .muzzle{position:absolute;top:60%;left:50%;height:6%;width:10%;background:#fff;transform:translate(-50%);border-radius:50%/30% 30% 70% 70%}
 `,
-  _e = () => (
-    _(o(ye, 's_xTYSAGLBrBU')),
-    r(
-      c,
+  Me = () => (
+    _(o(Se, 's_xTYSAGLBrBU')),
+    a(
+      u,
       {
         children: e(
           'div',
@@ -116,13 +117,13 @@ const ke = n => {
       'ev_0',
     )
   ),
-  ze = d(o(_e, 's_k9rs7QcCFAU')),
-  Me = `.cat-walk-container{position:fixed;z-index:9999;transform:scale(.5);transform-origin:right bottom;animation:init-cat 3s linear 1,walk-around 20s linear 3.2s infinite;right:0;bottom:0}@keyframes init-cat{0%{bottom:83%}to{bottom:0}}@keyframes init-cat-zig-zag{0%{bottom:83%;right:0}10%{right:10%}20%{right:2%}30%{right:15%}40%{right:7%}50%{right:12%}60%{right:0}70%{right:8%}80%{right:0%}90%{right:10%}to{bottom:0;right:0}}@keyframes walk-around{0%{right:0;bottom:0}5%{right:4%;bottom:5px}10%{right:8%;bottom:0}15%{right:12%;bottom:5px}20%{right:16%;bottom:0}25%{right:20%;bottom:5px}30%{right:24%;bottom:0}35%{right:28%;bottom:5px}40%{right:32%;bottom:0}45%{right:36%;bottom:5px}50%{right:40%;bottom:0}55%{right:36%;bottom:5px}60%{right:32%;bottom:0}65%{right:28%;bottom:5px}70%{right:24%;bottom:0}75%{right:20%;bottom:5px}80%{right:16%;bottom:0}85%{right:12%;bottom:5px}90%{right:8%;bottom:0}95%{right:4%;bottom:5px}to{right:0;bottom:0}}.cat-walk-container #tail{position:absolute;margin-left:40px;margin-top:40px;height:60px;width:80px;border:15px solid #d3b897;border-radius:50px;display:inline-block;z-index:0}.cat-walk-container #tail-mask{position:absolute;margin-top:40px;margin-left:100px;height:30px;width:75px;background-color:#fff;z-index:0;text-align:center;padding-top:2px;padding-left:7px;color:#000}.cat-walk-container #tail-end{position:absolute;margin-top:63px;margin-left:130px;height:17px;width:17px;border-radius:50%;background-color:#d3b897;z-index:1}.cat-walk-container #body{position:relative;height:130px;width:110px;background-color:#e9cba7;border-radius:22px;display:inline-block;overflow:hide;z-index:1}.cat-walk-container .ear{position:relative;margin-top:-20px;height:45px;width:50px;background-color:#e9cba7;display:inline-block;z-index:2}.cat-walk-container #ear-left{clip-path:polygon(0 0,0% 100%,100% 60%)}.cat-walk-container #ear-right{margin-left:6px;clip-path:polygon(100% 0,0% 60%,100% 100%)}.cat-walk-container .ear-inner{position:relative;height:30px;width:50px;background-color:#d3b897;z-index:3}.cat-walk-container #ear-inner-left{margin-top:8px;margin-left:5px;clip-path:polygon(0 0,100% 90%,0 100%)}.cat-walk-container #ear-inner-right{margin-top:8px;margin-left:-4px;clip-path:polygon(100% 0%,100% 100%,0 90%)}.cat-walk-container #mask{position:relative;background-color:#e9cba7;margin-top:-29px;height:50px;width:110px;border-radius:50%;z-index:4}.cat-walk-container #patch{position:relative;margin-top:-50px;z-index:5}.cat-walk-container .fur{width:5px;background-color:#c0a98b;display:inline-block}.cat-walk-container .fur:first-of-type{margin-left:40%;height:15px;float:left}.cat-walk-container .fur:nth-of-type(2){margin-left:4px;height:5px;float:left}.cat-walk-container .fur:nth-of-type(3){margin-left:4px;height:10px;float:left}.cat-walk-container #eyes{position:relative;margin-top:30%;z-index:5}.cat-walk-container .eye{height:18px;width:18px;border-radius:50%;background-color:#554d44;display:inline-block}.cat-walk-container #eye-left{margin-left:27%}.cat-walk-container #eye-right{margin-left:10%}.cat-walk-container .shine{height:7px;width:7px;border-radius:50%;background-color:#fff;margin-top:2px;margin-left:1px}.cat-walk-container #whisk-left{display:inline-block}.cat-walk-container .whisker{height:3px;width:25px;background-color:#d3b897;margin-bottom:6px}.cat-walk-container #whisk-one{transform:rotate(15deg)}.cat-walk-container #whisk-three{transform:rotate(-15deg)}.cat-walk-container #nose{position:absolute;margin-left:15%;height:17px;width:18px;background-color:#554d44;clip-path:ellipse(40% 22% at 50% 50%);display:inline-block;z-index:6}.cat-walk-container #whisk-right{display:inline-block;margin-left:56px}.cat-walk-container #whisk-four{transform:rotate(-15deg)}.cat-walk-container #whisk-six{transform:rotate(15deg)}.cat-walk-container #smile{position:relative;margin-left:29%;margin-top:-22%;z-index:5}.cat-walk-container #smile-left-align{display:inline-block;position:absolute}.cat-walk-container #smile-left{height:10px;width:20px;border-radius:0 0 10px 10px;background-color:#e9cba7;border:2px solid #554d44}.cat-walk-container #mask-left{margin-top:-58%;height:4px;width:20px;background-color:#e9cba7}.cat-walk-container #smile-right-align{display:inline-block;margin-left:22px;position:absolute}.cat-walk-container #smile-right{height:10px;width:20px;border-radius:0 0 10px 10px;background-color:#e9cba7;border:2px solid #554d44}.cat-walk-container #mask-right{margin-top:-58%;height:4px;width:24px;background-color:#e9cba7}.cat-walk-container #tongue{position:relative;margin-top:7px;margin-left:auto;margin-right:auto;height:17px;width:15px;border-radius:25px;background-color:#fc90a5;z-index:4}.cat-walk-container #tummy{margin-top:13%;margin-left:auto;margin-right:auto;height:30px;width:60px;border-radius:50px 50px 0 0;background-color:#f4e7d1}.cat-walk-container #credit{position:absolute;font-family:sans-serif;font-size:12px;color:#b9b9b9;margin-top:70px;left:20px}
+  je = d(o(Me, 's_k9rs7QcCFAU')),
+  Ce = `.cat-walk-container{position:fixed;z-index:9999;transform:scale(.5);transform-origin:right bottom;animation:init-cat 3s linear 1,walk-around 20s linear 3.2s infinite;right:0;bottom:0}@keyframes init-cat{0%{bottom:83%}to{bottom:0}}@keyframes init-cat-zig-zag{0%{bottom:83%;right:0}10%{right:10%}20%{right:2%}30%{right:15%}40%{right:7%}50%{right:12%}60%{right:0}70%{right:8%}80%{right:0%}90%{right:10%}to{bottom:0;right:0}}@keyframes walk-around{0%{right:0;bottom:0}5%{right:4%;bottom:5px}10%{right:8%;bottom:0}15%{right:12%;bottom:5px}20%{right:16%;bottom:0}25%{right:20%;bottom:5px}30%{right:24%;bottom:0}35%{right:28%;bottom:5px}40%{right:32%;bottom:0}45%{right:36%;bottom:5px}50%{right:40%;bottom:0}55%{right:36%;bottom:5px}60%{right:32%;bottom:0}65%{right:28%;bottom:5px}70%{right:24%;bottom:0}75%{right:20%;bottom:5px}80%{right:16%;bottom:0}85%{right:12%;bottom:5px}90%{right:8%;bottom:0}95%{right:4%;bottom:5px}to{right:0;bottom:0}}.cat-walk-container #tail{position:absolute;margin-left:40px;margin-top:40px;height:60px;width:80px;border:15px solid #d3b897;border-radius:50px;display:inline-block;z-index:0}.cat-walk-container #tail-mask{position:absolute;margin-top:40px;margin-left:100px;height:30px;width:75px;background-color:#fff;z-index:0;text-align:center;padding-top:2px;padding-left:7px;color:#000}.cat-walk-container #tail-end{position:absolute;margin-top:63px;margin-left:130px;height:17px;width:17px;border-radius:50%;background-color:#d3b897;z-index:1}.cat-walk-container #body{position:relative;height:130px;width:110px;background-color:#e9cba7;border-radius:22px;display:inline-block;overflow:hide;z-index:1}.cat-walk-container .ear{position:relative;margin-top:-20px;height:45px;width:50px;background-color:#e9cba7;display:inline-block;z-index:2}.cat-walk-container #ear-left{clip-path:polygon(0 0,0% 100%,100% 60%)}.cat-walk-container #ear-right{margin-left:6px;clip-path:polygon(100% 0,0% 60%,100% 100%)}.cat-walk-container .ear-inner{position:relative;height:30px;width:50px;background-color:#d3b897;z-index:3}.cat-walk-container #ear-inner-left{margin-top:8px;margin-left:5px;clip-path:polygon(0 0,100% 90%,0 100%)}.cat-walk-container #ear-inner-right{margin-top:8px;margin-left:-4px;clip-path:polygon(100% 0%,100% 100%,0 90%)}.cat-walk-container #mask{position:relative;background-color:#e9cba7;margin-top:-29px;height:50px;width:110px;border-radius:50%;z-index:4}.cat-walk-container #patch{position:relative;margin-top:-50px;z-index:5}.cat-walk-container .fur{width:5px;background-color:#c0a98b;display:inline-block}.cat-walk-container .fur:first-of-type{margin-left:40%;height:15px;float:left}.cat-walk-container .fur:nth-of-type(2){margin-left:4px;height:5px;float:left}.cat-walk-container .fur:nth-of-type(3){margin-left:4px;height:10px;float:left}.cat-walk-container #eyes{position:relative;margin-top:30%;z-index:5}.cat-walk-container .eye{height:18px;width:18px;border-radius:50%;background-color:#554d44;display:inline-block}.cat-walk-container #eye-left{margin-left:27%}.cat-walk-container #eye-right{margin-left:10%}.cat-walk-container .shine{height:7px;width:7px;border-radius:50%;background-color:#fff;margin-top:2px;margin-left:1px}.cat-walk-container #whisk-left{display:inline-block}.cat-walk-container .whisker{height:3px;width:25px;background-color:#d3b897;margin-bottom:6px}.cat-walk-container #whisk-one{transform:rotate(15deg)}.cat-walk-container #whisk-three{transform:rotate(-15deg)}.cat-walk-container #nose{position:absolute;margin-left:15%;height:17px;width:18px;background-color:#554d44;clip-path:ellipse(40% 22% at 50% 50%);display:inline-block;z-index:6}.cat-walk-container #whisk-right{display:inline-block;margin-left:56px}.cat-walk-container #whisk-four{transform:rotate(-15deg)}.cat-walk-container #whisk-six{transform:rotate(15deg)}.cat-walk-container #smile{position:relative;margin-left:29%;margin-top:-22%;z-index:5}.cat-walk-container #smile-left-align{display:inline-block;position:absolute}.cat-walk-container #smile-left{height:10px;width:20px;border-radius:0 0 10px 10px;background-color:#e9cba7;border:2px solid #554d44}.cat-walk-container #mask-left{margin-top:-58%;height:4px;width:20px;background-color:#e9cba7}.cat-walk-container #smile-right-align{display:inline-block;margin-left:22px;position:absolute}.cat-walk-container #smile-right{height:10px;width:20px;border-radius:0 0 10px 10px;background-color:#e9cba7;border:2px solid #554d44}.cat-walk-container #mask-right{margin-top:-58%;height:4px;width:24px;background-color:#e9cba7}.cat-walk-container #tongue{position:relative;margin-top:7px;margin-left:auto;margin-right:auto;height:17px;width:15px;border-radius:25px;background-color:#fc90a5;z-index:4}.cat-walk-container #tummy{margin-top:13%;margin-left:auto;margin-right:auto;height:30px;width:60px;border-radius:50px 50px 0 0;background-color:#f4e7d1}.cat-walk-container #credit{position:absolute;font-family:sans-serif;font-size:12px;color:#b9b9b9;margin-top:70px;left:20px}
 `,
-  Se = () => (
-    _(o(Me, 's_ik8BQrQgw9g')),
-    r(
-      c,
+  qe = () => (
+    _(o(Ce, 's_ik8BQrQgw9g')),
+    a(
+      u,
       {
         children: e(
           'div',
@@ -318,10 +319,10 @@ const ke = n => {
       'wM_0',
     )
   ),
-  je = d(o(Se, 's_0DhRUxBQU40')),
-  Ce = () =>
-    r(
-      c,
+  Ae = d(o(qe, 's_0DhRUxBQU40')),
+  Le = () =>
+    a(
+      u,
       {
         children: e(
           'div',
@@ -399,7 +400,7 @@ const ke = n => {
                         [
                           'pasquale.delucia96@gmail.com',
                           ' ',
-                          r(
+                          a(
                             g,
                             {
                               class: 'btn btn-square btn-outline btn-xs',
@@ -494,13 +495,13 @@ const ke = n => {
       1,
       'N9_1',
     ),
-  qe = d(o(Ce, 's_pCebMzCWV9M')),
-  Le = `.eggs{margin:1em auto;text-align:center;position:fixed;transform:translate(-50%,-50%);top:50%;left:50%;opacity:.2}.egg{width:140px;height:200px;margin:1em auto;background:#fbe9e7;border-radius:50%/60% 60% 40% 40%;overflow:hidden;display:inline-block}.stripe{height:20%}.stripe:not(:first-child){border-top:2px solid #fff}.stripe:nth-child(1){background-color:#ffbde8}.stripe:nth-child(2){background-color:#bde8ff}.stripe:nth-child(3){background-color:#e8ffbd}.stripe:nth-child(4){background-color:#ffe8bd}.stripe:nth-child(5){background-color:#e8bdff}@keyframes egg-left-animation{0%{transform:rotate(-15deg)}to{transform:rotate(-10deg)}}@keyframes egg-right-animation{0%{transform:rotate(30deg)}to{transform:rotate(25deg)}}.egg-left{transform:rotate(-10deg);animation:egg-left-animation .8s linear 0s infinite alternate}.egg-right{transform:rotate(25deg);animation:egg-right-animation .7s linear 0s infinite alternate;background-color:#ec407a;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23FFFFFF' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")}
+  Pe = d(o(Le, 's_pCebMzCWV9M')),
+  Oe = `.eggs{margin:1em auto;text-align:center;position:fixed;transform:translate(-50%,-50%);top:50%;left:50%;opacity:.2}.egg{width:140px;height:200px;margin:1em auto;background:#fbe9e7;border-radius:50%/60% 60% 40% 40%;overflow:hidden;display:inline-block}.stripe{height:20%}.stripe:not(:first-child){border-top:2px solid #fff}.stripe:nth-child(1){background-color:#ffbde8}.stripe:nth-child(2){background-color:#bde8ff}.stripe:nth-child(3){background-color:#e8ffbd}.stripe:nth-child(4){background-color:#ffe8bd}.stripe:nth-child(5){background-color:#e8bdff}@keyframes egg-left-animation{0%{transform:rotate(-15deg)}to{transform:rotate(-10deg)}}@keyframes egg-right-animation{0%{transform:rotate(30deg)}to{transform:rotate(25deg)}}.egg-left{transform:rotate(-10deg);animation:egg-left-animation .8s linear 0s infinite alternate}.egg-right{transform:rotate(25deg);animation:egg-right-animation .7s linear 0s infinite alternate;background-color:#ec407a;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23FFFFFF' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")}
 `,
-  Pe = () => (
-    _(o(Le, 's_M7JMtWmYWDA')),
-    r(
-      c,
+  Te = () => (
+    _(o(Oe, 's_M7JMtWmYWDA')),
+    a(
+      u,
       {
         children: e(
           'div',
@@ -531,14 +532,14 @@ const ke = n => {
       'vR_0',
     )
   ),
-  Fe = d(o(Pe, 's_tC1zfRJh9xU')),
-  H = U('common.show'),
-  V = U('common.snow'),
-  Ae = () => {
-    const n = T(H),
+  Fe = d(o(Te, 's_tC1zfRJh9xU')),
+  E = V('common.show'),
+  Q = V('common.snow'),
+  Ie = () => {
+    const n = D(E),
       l = new Date().getFullYear()
-    return r(
-      c,
+    return a(
+      u,
       {
         children: e(
           'footer',
@@ -595,7 +596,7 @@ const ke = n => {
                   'w-full flex flex-col items-center md:w-auto md:flex-row gap-4 md:place-self-center md:justify-self-end',
               },
               [
-                r(
+                a(
                   g,
                   {
                     href: 'https://qwik.builder.io/',
@@ -615,7 +616,7 @@ const ke = n => {
                   3,
                   'yk_0',
                 ),
-                r(
+                a(
                   g,
                   {
                     href: '/blog',
@@ -633,7 +634,7 @@ const ke = n => {
                   3,
                   'yk_1',
                 ),
-                r(
+                a(
                   g,
                   {
                     href: '/projects',
@@ -651,7 +652,7 @@ const ke = n => {
                   3,
                   'yk_2',
                 ),
-                r(
+                a(
                   g,
                   {
                     href: '/button-game',
@@ -669,7 +670,7 @@ const ke = n => {
                   3,
                   'yk_3',
                 ),
-                r(
+                a(
                   g,
                   {
                     href: 'https://www.amazon.it/hz/wishlist/ls/2JT4PUEODMY27?ref_=wl_share',
@@ -694,14 +695,14 @@ const ke = n => {
                   null,
                   {
                     class: 'cursor-pointer',
-                    'data-goatcounter-click': p(
-                      a => (a.value, 'open'),
+                    'data-goatcounter-click': m(
+                      r => (r.value, 'open'),
                       [n],
                       '"cat-mode-"+p0.value?"open":"close"',
                     ),
                     'data-goatcounter-title': 'Cat Mode',
                     'data-goatcounter-referrer': 'referrer',
-                    onClick$: $('s_jWy0aWw4FvU', [n]),
+                    onClick$: B('s_jWy0aWw4FvU', [n]),
                   },
                   'CLick me',
                   3,
@@ -720,10 +721,10 @@ const ke = n => {
       'yk_5',
     )
   },
-  Ie = d(o(Ae, 's_GvPhUJ5Kg9Q')),
-  Oe = () =>
-    r(
-      c,
+  De = d(o(Ie, 's_GvPhUJ5Kg9Q')),
+  Be = () =>
+    a(
+      u,
       {
         children: e(
           'div',
@@ -785,7 +786,7 @@ const ke = n => {
                         'li',
                         null,
                         null,
-                        r(
+                        a(
                           g,
                           { href: '/', children: 'Homepage', [t]: { href: t } },
                           3,
@@ -798,7 +799,7 @@ const ke = n => {
                         'li',
                         null,
                         null,
-                        r(
+                        a(
                           g,
                           {
                             href: '/blog',
@@ -823,7 +824,7 @@ const ke = n => {
                         'li',
                         null,
                         null,
-                        r(
+                        a(
                           g,
                           {
                             href: '/projects',
@@ -848,7 +849,7 @@ const ke = n => {
                         'li',
                         null,
                         null,
-                        r(
+                        a(
                           g,
                           {
                             href: '/Pasquale_De_Lucia-Resume.pdf',
@@ -871,6 +872,31 @@ const ke = n => {
                         1,
                         null,
                       ),
+                      e(
+                        'li',
+                        null,
+                        null,
+                        a(
+                          g,
+                          {
+                            href: '/finance',
+                            'data-goatcounter-click': 'open-finance',
+                            'data-goatcounter-title': 'Open Finance',
+                            'data-goatcounter-referrer': 'header',
+                            children: 'Personal finance',
+                            [t]: {
+                              href: t,
+                              'data-goatcounter-click': t,
+                              'data-goatcounter-title': t,
+                              'data-goatcounter-referrer': t,
+                            },
+                          },
+                          3,
+                          '8h_4',
+                        ),
+                        1,
+                        null,
+                      ),
                     ],
                     1,
                     null,
@@ -886,7 +912,7 @@ const ke = n => {
               'div',
               null,
               { class: 'navbar-center' },
-              r(
+              a(
                 g,
                 {
                   href: '/',
@@ -895,7 +921,7 @@ const ke = n => {
                   [t]: { href: t, class: t },
                 },
                 3,
-                '8h_4',
+                '8h_5',
               ),
               1,
               null,
@@ -907,15 +933,15 @@ const ke = n => {
         ),
       },
       1,
-      '8h_5',
+      '8h_6',
     ),
-  De = d(o(Oe, 's_o4ccBuvIYCs')),
-  Te = `.reindeer{--rudolph-antler: #ddb892;--rudolph-body: #9d6b53;--rudolph-body-dark: #946651;--rudolph-nose: #8c6351;--rudolph-nose-red: #690500;--rudolph-eye: #432818;--rudolph-ear: #774936;--rudolph-belly: #ede0d4;--rudolph-leg: #432818;position:fixed;transform:translate(-50%,-50%);top:50%;left:50%;width:16rem;height:16rem;z-index:-1;opacity:.2}.reindeer .antler{position:absolute;margin:2.7rem 0 0 2.3rem;width:5rem;height:.7rem;border-radius:.35rem;background-color:var(--rudolph-antler);transform-origin:5.7rem 0;transform:translate(-1rem,2.5rem) rotate(20deg)}.reindeer .antler.antler--right{transform:scaleX(-1) translate(-1rem,2.5rem) rotate(20deg)}.reindeer .antler .hook:first-child{position:absolute;top:-2.3rem;left:-2.3rem;width:3rem;height:3rem;background:radial-gradient(circle at 100% 0,transparent,transparent 2.3rem,var(--rudolph-antler) 2.3rem,var(--rudolph-antler) 3rem,transparent 3rem)}.reindeer .antler .hook:nth-child(2){position:absolute;top:-1.7rem;width:2.4rem;height:2.4rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.7rem,var(--rudolph-antler) 1.7rem,var(--rudolph-antler) 2.4rem,transparent 2.4rem)}.reindeer .antler .hook:nth-child(3){position:absolute;top:-1.3rem;left:1.5rem;width:2rem;height:2rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.3rem,var(--rudolph-antler) 1.3rem,var(--rudolph-antler) 2rem,transparent 2rem)}.reindeer .antler .hook:before{content:"";display:block;position:absolute;top:-.35rem;width:.7rem;height:.7rem;background-color:var(--rudolph-antler);border-radius:.35rem}.reindeer .head{position:absolute;z-index:3;top:4rem;left:5rem;width:6rem;height:6rem}.reindeer .head .face{position:absolute;width:6rem;height:6rem;background:var(--rudolph-body);border-radius:50%/50% 50% 60% 60%}.reindeer .head .face:after{content:"";display:block;position:absolute;top:.05rem;left:.5rem;width:5rem;height:5.4rem;border-radius:50%;background:radial-gradient(circle at center,transparent,transparent 2.5rem,var(--rudolph-body-dark) 2.5rem,var(--rudolph-body-dark) 5rem);background-position:0 .2rem;transform:scaleX(1.1) rotate(45deg) scaleX(1.1) scale(.9)}.reindeer .ear{position:absolute;left:-2.6rem;top:1.5rem;width:5rem;height:2rem;background:var(--rudolph-body);border-radius:50% 50% 60% 40%/50% 40% 40% 50%;transform:rotate(-10deg) scale(.8)}.reindeer .ear:after{content:"";display:block;position:absolute;left:1rem;top:.5rem;width:3rem;height:1.2rem;background:var(--rudolph-ear);border-radius:50% 50% 50% 40%/50% 40% 60% 50%}.reindeer .ear.ear--right{left:auto;right:-2.6rem;transform:rotate(10deg) scaleX(-1) scale(.8)}.reindeer .eye{position:absolute;top:2.5rem;left:2rem;width:.6rem;height:.8rem;border-radius:50%;background-color:var(--rudolph-eye);transform:rotate(10deg)}.reindeer .eye.eye--right{left:3.4rem;transform:rotate(-10deg)}.reindeer .nose{position:absolute;top:3.5rem;left:.7rem;width:4.6rem;height:3.6rem;border-radius:50%;background-color:var(--rudolph-nose)}.reindeer .nose:before{content:"";display:block;position:absolute;top:.3rem;left:.6rem;width:3.4rem;height:2.6rem;border-radius:50%;background-color:var(--rudolph-nose-red)}.reindeer .nose:after{content:"";display:block;position:absolute;top:.6rem;left:1.6rem;width:1.8rem;height:1.2rem;border-radius:50%;background-color:#ffffff1a}.reindeer .body{position:absolute;top:9.6rem;left:5rem;width:6rem;height:6rem;background:var(--rudolph-body);border-radius:3rem 3rem 0 0/4rem 4rem 0 0}.reindeer .body:after{content:"";display:block;position:absolute;width:3rem;height:4rem;background-color:var(--rudolph-belly);border-radius:50%;top:0rem;left:1.5rem}.reindeer .hand{position:absolute;z-index:2;top:1rem;left:.8rem;width:2rem;height:2rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.15rem,var(--rudolph-leg) 1.2rem,var(--rudolph-leg) 2rem,transparent 2.05rem);transform:scaleX(.7) rotate(10deg)}.reindeer .hand:after{content:"";display:block;position:absolute;top:1.2rem;left:1.6rem;width:.8rem;height:.8rem;background-color:var(--rudolph-leg);border-radius:50%}.reindeer .hand.hand--right{left:3.2rem;transform:scaleX(-1) scaleX(.7) rotate(10deg)}.reindeer .legs{position:absolute;left:-1rem;top:2rem;width:8rem;height:4rem;overflow:hidden}.reindeer .legs:before{content:"";display:block;position:absolute;top:1rem;left:.3rem;width:2rem;height:3.4rem;background-color:var(--rudolph-body);border-radius:50%;transform:rotate(-20deg)}.reindeer .legs:after{content:"";display:block;position:absolute;top:1rem;right:.3rem;width:2rem;height:3.4rem;background-color:var(--rudolph-body);border-radius:50%;transform:rotate(20deg)}.reindeer .foot{position:absolute;width:3rem;height:1.5rem;background-color:var(--rudolph-leg);border-radius:1.5rem 1.5rem 0 0;top:4.5rem}.reindeer .foot.foot--right{left:3rem}
+  Ee = d(o(Be, 's_o4ccBuvIYCs')),
+  Re = `.reindeer{--rudolph-antler: #ddb892;--rudolph-body: #9d6b53;--rudolph-body-dark: #946651;--rudolph-nose: #8c6351;--rudolph-nose-red: #690500;--rudolph-eye: #432818;--rudolph-ear: #774936;--rudolph-belly: #ede0d4;--rudolph-leg: #432818;position:fixed;transform:translate(-50%,-50%);top:50%;left:50%;width:16rem;height:16rem;z-index:-1;opacity:.2}.reindeer .antler{position:absolute;margin:2.7rem 0 0 2.3rem;width:5rem;height:.7rem;border-radius:.35rem;background-color:var(--rudolph-antler);transform-origin:5.7rem 0;transform:translate(-1rem,2.5rem) rotate(20deg)}.reindeer .antler.antler--right{transform:scaleX(-1) translate(-1rem,2.5rem) rotate(20deg)}.reindeer .antler .hook:first-child{position:absolute;top:-2.3rem;left:-2.3rem;width:3rem;height:3rem;background:radial-gradient(circle at 100% 0,transparent,transparent 2.3rem,var(--rudolph-antler) 2.3rem,var(--rudolph-antler) 3rem,transparent 3rem)}.reindeer .antler .hook:nth-child(2){position:absolute;top:-1.7rem;width:2.4rem;height:2.4rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.7rem,var(--rudolph-antler) 1.7rem,var(--rudolph-antler) 2.4rem,transparent 2.4rem)}.reindeer .antler .hook:nth-child(3){position:absolute;top:-1.3rem;left:1.5rem;width:2rem;height:2rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.3rem,var(--rudolph-antler) 1.3rem,var(--rudolph-antler) 2rem,transparent 2rem)}.reindeer .antler .hook:before{content:"";display:block;position:absolute;top:-.35rem;width:.7rem;height:.7rem;background-color:var(--rudolph-antler);border-radius:.35rem}.reindeer .head{position:absolute;z-index:3;top:4rem;left:5rem;width:6rem;height:6rem}.reindeer .head .face{position:absolute;width:6rem;height:6rem;background:var(--rudolph-body);border-radius:50%/50% 50% 60% 60%}.reindeer .head .face:after{content:"";display:block;position:absolute;top:.05rem;left:.5rem;width:5rem;height:5.4rem;border-radius:50%;background:radial-gradient(circle at center,transparent,transparent 2.5rem,var(--rudolph-body-dark) 2.5rem,var(--rudolph-body-dark) 5rem);background-position:0 .2rem;transform:scaleX(1.1) rotate(45deg) scaleX(1.1) scale(.9)}.reindeer .ear{position:absolute;left:-2.6rem;top:1.5rem;width:5rem;height:2rem;background:var(--rudolph-body);border-radius:50% 50% 60% 40%/50% 40% 40% 50%;transform:rotate(-10deg) scale(.8)}.reindeer .ear:after{content:"";display:block;position:absolute;left:1rem;top:.5rem;width:3rem;height:1.2rem;background:var(--rudolph-ear);border-radius:50% 50% 50% 40%/50% 40% 60% 50%}.reindeer .ear.ear--right{left:auto;right:-2.6rem;transform:rotate(10deg) scaleX(-1) scale(.8)}.reindeer .eye{position:absolute;top:2.5rem;left:2rem;width:.6rem;height:.8rem;border-radius:50%;background-color:var(--rudolph-eye);transform:rotate(10deg)}.reindeer .eye.eye--right{left:3.4rem;transform:rotate(-10deg)}.reindeer .nose{position:absolute;top:3.5rem;left:.7rem;width:4.6rem;height:3.6rem;border-radius:50%;background-color:var(--rudolph-nose)}.reindeer .nose:before{content:"";display:block;position:absolute;top:.3rem;left:.6rem;width:3.4rem;height:2.6rem;border-radius:50%;background-color:var(--rudolph-nose-red)}.reindeer .nose:after{content:"";display:block;position:absolute;top:.6rem;left:1.6rem;width:1.8rem;height:1.2rem;border-radius:50%;background-color:#ffffff1a}.reindeer .body{position:absolute;top:9.6rem;left:5rem;width:6rem;height:6rem;background:var(--rudolph-body);border-radius:3rem 3rem 0 0/4rem 4rem 0 0}.reindeer .body:after{content:"";display:block;position:absolute;width:3rem;height:4rem;background-color:var(--rudolph-belly);border-radius:50%;top:0rem;left:1.5rem}.reindeer .hand{position:absolute;z-index:2;top:1rem;left:.8rem;width:2rem;height:2rem;background:radial-gradient(circle at 100% 0,transparent,transparent 1.15rem,var(--rudolph-leg) 1.2rem,var(--rudolph-leg) 2rem,transparent 2.05rem);transform:scaleX(.7) rotate(10deg)}.reindeer .hand:after{content:"";display:block;position:absolute;top:1.2rem;left:1.6rem;width:.8rem;height:.8rem;background-color:var(--rudolph-leg);border-radius:50%}.reindeer .hand.hand--right{left:3.2rem;transform:scaleX(-1) scaleX(.7) rotate(10deg)}.reindeer .legs{position:absolute;left:-1rem;top:2rem;width:8rem;height:4rem;overflow:hidden}.reindeer .legs:before{content:"";display:block;position:absolute;top:1rem;left:.3rem;width:2rem;height:3.4rem;background-color:var(--rudolph-body);border-radius:50%;transform:rotate(-20deg)}.reindeer .legs:after{content:"";display:block;position:absolute;top:1rem;right:.3rem;width:2rem;height:3.4rem;background-color:var(--rudolph-body);border-radius:50%;transform:rotate(20deg)}.reindeer .foot{position:absolute;width:3rem;height:1.5rem;background-color:var(--rudolph-leg);border-radius:1.5rem 1.5rem 0 0;top:4.5rem}.reindeer .foot.foot--right{left:3rem}
 `,
   He = () => (
-    _(o(Te, 's_0HhqKOJuYCM')),
-    r(
-      c,
+    _(o(Re, 's_0HhqKOJuYCM')),
+    a(
+      u,
       {
         children: e(
           'div',
@@ -984,13 +1010,13 @@ const ke = n => {
       'cm_0',
     )
   ),
-  Re = d(o(He, 's_0Bd6yCHL7MI')),
-  Be = `.santa-container{position:fixed;z-index:9999;opacity:1;transform-origin:right bottom;animation:init-santa 3s linear 1,walk-around 20s linear 3.2s infinite;height:46.875em;width:37.5em;right:0;bottom:0;transform:scale(.1)}.santa-container .santa{background-color:#edbb93;height:6.25em;width:18.75em;position:absolute;transform:translate(-50%);left:50%;top:17.5em}.santa-container .ears{position:absolute;height:4.37em;width:23.75em;background-color:#e59076;transform:translate(-50%);left:50%;top:18.75em;border-radius:3.12em}.santa-container .santa:before{content:"";position:absolute;height:1.56em;width:1.56em;background-color:#0c2137;border-radius:50%;top:2.5em;left:5em;box-shadow:6.25em 0 #0c2137}.santa-container .moustache{position:absolute;height:4.37em;width:11.25em;background-color:#e3e1ed;left:-2.18em;top:5em;border-radius:3.12em 0}.santa-container .moustache:before{position:absolute;content:"";height:4.37em;width:11.25em;background-color:#e3e1ed;left:11.25em;top:0;border-radius:0 3.12em}.santa-container .beard:after{content:"";background-color:#e3e1ed;height:20.62em;width:6.25em;border-radius:6.87em;position:absolute;top:3.12em;right:9.68em}.santa-container .beard:before{background-color:#d3d2e8;height:17.5em;width:6.87em;border-radius:6.87em;position:absolute;content:"";top:1.87em;right:5em;z-index:0;box-shadow:-8.75em 0 #d3d2e8}.santa-container .beard{background-color:#bfc2e0;height:15.62em;width:6.25em;border-radius:6.87em;position:absolute;top:21.25em;left:25em;box-shadow:-18.75em 0 #bfc2e0}.santa-container .mouth{background:linear-gradient(#ffffff 1.87em,#0c2137 1.87em);height:5.62em;width:4.37em;position:absolute;top:23.75em;left:16.25em;border-radius:0 0 4.375em 4.37em;overflow:hidden}.santa-container .mouth:before{content:"";position:absolute;background-color:#ea385f;height:2.81em;width:3.43em;top:3.43em;left:-.62em;border-radius:.62em}.santa-container .hair{height:5em;width:23.12em;background-color:#c3c1df;position:absolute;transform:translate(-50%);left:50%;top:15em;border-radius:5em}.santa-container .hair:before{position:absolute;content:"";width:25.62em;background-color:#d2d3e6;height:6.25em;left:-1.25em;bottom:2.5em;border-radius:1.25em}.santa-container .hair:after{position:absolute;content:"";height:10em;width:23.75em;background-color:#ea385d;bottom:8.75em;border-radius:16.25em 0 0}.santa-container .hat{position:absolute;background-color:#c82a50;height:6.25em;width:3.12em;left:30.81em;top:1.25em;border-radius:0 2.5em 0 0}.santa-container .hat:before{position:absolute;content:"";background-color:#e1e0ec;height:11.25em;width:11.25em;top:4.37em;left:-1.87em;border-radius:50%}@media screen and (max-width: 800px){.santa-container .container{font-size:.75em}}@keyframes init-santa{0%{bottom:83%}to{bottom:0}}@keyframes init-santa-zig-zag{0%{bottom:83%;right:0}10%{right:10%}20%{right:2%}30%{right:15%}40%{right:7%}50%{right:12%}60%{right:0}70%{right:8%}80%{right:0%}90%{right:10%}to{bottom:0;right:0}}@keyframes walk-around{0%{right:0;bottom:0}5%{right:4%;bottom:5px}10%{right:8%;bottom:0}15%{right:12%;bottom:5px}20%{right:16%;bottom:0}25%{right:20%;bottom:5px}30%{right:24%;bottom:0}35%{right:28%;bottom:5px}40%{right:32%;bottom:0}45%{right:36%;bottom:5px}50%{right:40%;bottom:0}55%{right:36%;bottom:5px}60%{right:32%;bottom:0}65%{right:28%;bottom:5px}70%{right:24%;bottom:0}75%{right:20%;bottom:5px}80%{right:16%;bottom:0}85%{right:12%;bottom:5px}90%{right:8%;bottom:0}95%{right:4%;bottom:5px}to{right:0;bottom:0}}
+  Ue = d(o(He, 's_0Bd6yCHL7MI')),
+  We = `.santa-container{position:fixed;z-index:9999;opacity:1;transform-origin:right bottom;animation:init-santa 3s linear 1,walk-around 20s linear 3.2s infinite;height:46.875em;width:37.5em;right:0;bottom:0;transform:scale(.1)}.santa-container .santa{background-color:#edbb93;height:6.25em;width:18.75em;position:absolute;transform:translate(-50%);left:50%;top:17.5em}.santa-container .ears{position:absolute;height:4.37em;width:23.75em;background-color:#e59076;transform:translate(-50%);left:50%;top:18.75em;border-radius:3.12em}.santa-container .santa:before{content:"";position:absolute;height:1.56em;width:1.56em;background-color:#0c2137;border-radius:50%;top:2.5em;left:5em;box-shadow:6.25em 0 #0c2137}.santa-container .moustache{position:absolute;height:4.37em;width:11.25em;background-color:#e3e1ed;left:-2.18em;top:5em;border-radius:3.12em 0}.santa-container .moustache:before{position:absolute;content:"";height:4.37em;width:11.25em;background-color:#e3e1ed;left:11.25em;top:0;border-radius:0 3.12em}.santa-container .beard:after{content:"";background-color:#e3e1ed;height:20.62em;width:6.25em;border-radius:6.87em;position:absolute;top:3.12em;right:9.68em}.santa-container .beard:before{background-color:#d3d2e8;height:17.5em;width:6.87em;border-radius:6.87em;position:absolute;content:"";top:1.87em;right:5em;z-index:0;box-shadow:-8.75em 0 #d3d2e8}.santa-container .beard{background-color:#bfc2e0;height:15.62em;width:6.25em;border-radius:6.87em;position:absolute;top:21.25em;left:25em;box-shadow:-18.75em 0 #bfc2e0}.santa-container .mouth{background:linear-gradient(#ffffff 1.87em,#0c2137 1.87em);height:5.62em;width:4.37em;position:absolute;top:23.75em;left:16.25em;border-radius:0 0 4.375em 4.37em;overflow:hidden}.santa-container .mouth:before{content:"";position:absolute;background-color:#ea385f;height:2.81em;width:3.43em;top:3.43em;left:-.62em;border-radius:.62em}.santa-container .hair{height:5em;width:23.12em;background-color:#c3c1df;position:absolute;transform:translate(-50%);left:50%;top:15em;border-radius:5em}.santa-container .hair:before{position:absolute;content:"";width:25.62em;background-color:#d2d3e6;height:6.25em;left:-1.25em;bottom:2.5em;border-radius:1.25em}.santa-container .hair:after{position:absolute;content:"";height:10em;width:23.75em;background-color:#ea385d;bottom:8.75em;border-radius:16.25em 0 0}.santa-container .hat{position:absolute;background-color:#c82a50;height:6.25em;width:3.12em;left:30.81em;top:1.25em;border-radius:0 2.5em 0 0}.santa-container .hat:before{position:absolute;content:"";background-color:#e1e0ec;height:11.25em;width:11.25em;top:4.37em;left:-1.87em;border-radius:50%}@media screen and (max-width: 800px){.santa-container .container{font-size:.75em}}@keyframes init-santa{0%{bottom:83%}to{bottom:0}}@keyframes init-santa-zig-zag{0%{bottom:83%;right:0}10%{right:10%}20%{right:2%}30%{right:15%}40%{right:7%}50%{right:12%}60%{right:0}70%{right:8%}80%{right:0%}90%{right:10%}to{bottom:0;right:0}}@keyframes walk-around{0%{right:0;bottom:0}5%{right:4%;bottom:5px}10%{right:8%;bottom:0}15%{right:12%;bottom:5px}20%{right:16%;bottom:0}25%{right:20%;bottom:5px}30%{right:24%;bottom:0}35%{right:28%;bottom:5px}40%{right:32%;bottom:0}45%{right:36%;bottom:5px}50%{right:40%;bottom:0}55%{right:36%;bottom:5px}60%{right:32%;bottom:0}65%{right:28%;bottom:5px}70%{right:24%;bottom:0}75%{right:20%;bottom:5px}80%{right:16%;bottom:0}85%{right:12%;bottom:5px}90%{right:8%;bottom:0}95%{right:4%;bottom:5px}to{right:0;bottom:0}}
 `,
-  Ee = () => (
-    _(o(Be, 's_BsrO2LM87qo')),
-    r(
-      c,
+  Ze = () => (
+    _(o(We, 's_BsrO2LM87qo')),
+    a(
+      u,
       {
         children: e(
           'div',
@@ -1019,59 +1045,59 @@ const ke = n => {
       'gI_0',
     )
   ),
-  We = d(o(Ee, 's_o6tPurUTJPc')),
-  Ze = async ({ cacheControl: n }) => {
+  $e = d(o(Ze, 's_o6tPurUTJPc')),
+  Ve = async ({ cacheControl: n }) => {
     n({ staleWhileRevalidate: 604800, maxAge: 5 })
   },
-  $e = () => {
+  Je = () => {
     P()
-    const n = f(!1)
-    R(H, n)
+    const n = b(!1)
+    H(E, n)
     const l = new Date(),
-      a = C(l, { month: 11, date: 5 }),
-      i = C(l, { year: l.getFullYear() + 1, month: 0, date: 15 }),
-      s = W(l, { start: a, end: i }),
-      u = f(s ? new Array(200).fill(0) : null)
-    R(V, u)
-    const b = C(l, { month: 2, date: 5 }),
-      z = C(l, { month: 3, date: 5 }),
-      v = W(l, { start: b, end: z })
-    return r(
-      c,
+      r = q(l, { month: 11, date: 5 }),
+      i = q(l, { year: l.getFullYear() + 1, month: 0, date: 15 }),
+      s = Z(l, { start: r, end: i }),
+      c = b(s ? new Array(200).fill(0) : null)
+    H(Q, c)
+    const p = q(l, { month: 2, date: 5 }),
+      z = q(l, { month: 3, date: 5 }),
+      v = Z(l, { start: p, end: z })
+    return a(
+      u,
       {
         children: [
           n.value &&
-            u.value &&
+            c.value &&
             e(
               'div',
               null,
               { class: 'snow-container' },
-              u.value.map((w, x) =>
-                e('div', null, { class: 'snow' }, null, 3, x),
+              c.value.map((w, k) =>
+                e('div', null, { class: 'snow' }, null, 3, k),
               ),
               1,
               'q8_0',
             ),
-          r(De, null, 3, 'q8_1'),
+          a(Ee, null, 3, 'q8_1'),
           e(
             'main',
             null,
             null,
             [
-              n.value && !u.value && !v && r(ze, null, 3, 'q8_2'),
-              n.value && !u.value && !v && r(je, null, 3, 'q8_3'),
-              n.value && u.value && r(We, null, 3, 'q8_4'),
-              n.value && u.value && r(Re, null, 3, 'q8_5'),
-              n.value && v && r(Fe, null, 3, 'q8_6'),
-              r(S, null, 3, 'q8_7'),
-              r(
-                m,
+              n.value && !c.value && !v && a(je, null, 3, 'q8_2'),
+              n.value && !c.value && !v && a(Ae, null, 3, 'q8_3'),
+              n.value && c.value && a($e, null, 3, 'q8_4'),
+              n.value && c.value && a(Ue, null, 3, 'q8_5'),
+              n.value && v && a(Fe, null, 3, 'q8_6'),
+              a(M, null, 3, 'q8_7'),
+              a(
+                f,
                 {
                   children: e(
                     'section',
                     null,
                     { class: 'inner-section' },
-                    r(qe, null, 3, 'q8_8'),
+                    a(Pe, null, 3, 'q8_8'),
                     1,
                     null,
                   ),
@@ -1083,25 +1109,25 @@ const ke = n => {
             1,
             null,
           ),
-          r(Ie, null, 3, 'q8_10'),
+          a(De, null, 3, 'q8_10'),
         ],
       },
       1,
       'q8_11',
     )
   },
-  Ue = d(o($e, 's_6Y0uFrvPmQs')),
-  Ve = Object.freeze(
+  Qe = d(o(Je, 's_6Y0uFrvPmQs')),
+  Ne = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: Ue, onGet: Ze },
+      { __proto__: null, default: Qe, onGet: Ve },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  Je = n => {
+  Ye = n => {
     const l = [...n.articles]
-    return r(
-      c,
+    return a(
+      u,
       {
         children: e(
           'div',
@@ -1111,12 +1137,12 @@ const ke = n => {
             'div',
             null,
             { class: 'grid md:grid-cols-2 justify-items-center gap-12' },
-            l.map(a =>
-              r(
+            l.map(r =>
+              a(
                 g,
                 {
                   get href() {
-                    return a.href
+                    return r.href
                   },
                   target: '_blank',
                   'data-goatcounter-click': 'open-article',
@@ -1129,13 +1155,13 @@ const ke = n => {
                     null,
                     { class: 'prose' },
                     [
-                      e('h3', null, null, h(a, 'title'), 1, null),
+                      e('h3', null, null, h(r, 'title'), 1, null),
                       e(
                         'p',
                         null,
                         { class: 'flex items-center gap-2' },
                         [
-                          h(a, 'date'),
+                          h(r, 'date'),
                           ' ',
                           e(
                             'span',
@@ -1144,7 +1170,7 @@ const ke = n => {
                               class:
                                 'bg-secondary text-black p-1 text-xs rounded',
                             },
-                            h(a, 'lang'),
+                            h(r, 'lang'),
                             1,
                             null,
                           ),
@@ -1152,17 +1178,17 @@ const ke = n => {
                         1,
                         null,
                       ),
-                      e('p', null, null, h(a, 'description'), 1, null),
+                      e('p', null, null, h(r, 'description'), 1, null),
                     ],
                     1,
                     null,
                   ),
                   [t]: {
-                    href: y(a, 'href'),
+                    href: x(r, 'href'),
                     target: t,
                     'data-goatcounter-click': t,
                     'data-goatcounter-title': t,
-                    'data-goatcounter-referrer': p(
+                    'data-goatcounter-referrer': m(
                       i => i.referrer || 'referrer',
                       [n],
                       'p0.referrer||"referrer"',
@@ -1170,7 +1196,7 @@ const ke = n => {
                   },
                 },
                 1,
-                a.id,
+                r.id,
               ),
             ),
             1,
@@ -1184,13 +1210,13 @@ const ke = n => {
       'VS_0',
     )
   },
-  J = d(o(Je, 's_aHaxQW3gUTM')),
-  Qe = n => {
+  N = d(o(Ye, 's_aHaxQW3gUTM')),
+  Ge = n => {
     let l = [...n.items]
     return (
       n.limit && (l = l.splice(0, n.limit)),
-      r(
-        c,
+      a(
+        u,
         {
           children: e(
             'div',
@@ -1200,35 +1226,35 @@ const ke = n => {
               'div',
               null,
               { class: 'grid md:grid-cols-3 justify-items-center gap-12' },
-              l.map(a =>
-                r(
+              l.map(r =>
+                a(
                   g,
                   {
                     get href() {
-                      return a.href
+                      return r.href
                     },
                     target: '_blank',
                     get 'aria-label'() {
-                      return a.action
+                      return r.action
                     },
                     class:
                       'card bg-base-100 shadow-xl image-full w-full max-w-[18rem]',
                     'data-goatcounter-click': 'click-card',
                     get 'data-goatcounter-title'() {
-                      return a.title
+                      return r.title
                     },
                     get 'data-goatcounter-referrer'() {
                       return n.referrer || 'referrer'
                     },
                     children: [
-                      a.image &&
+                      r.image &&
                         e(
                           'figure',
                           null,
                           null,
                           e(
                             'img',
-                            { src: h(a, 'image'), alt: h(a, 'altImage') },
+                            { src: h(r, 'image'), alt: h(r, 'altImage') },
                             { height: 250, width: 250 },
                             null,
                             3,
@@ -1246,7 +1272,7 @@ const ke = n => {
                             'h2',
                             null,
                             { class: 'card-title' },
-                            h(a, 'title'),
+                            h(r, 'title'),
                             1,
                             null,
                           ),
@@ -1255,7 +1281,7 @@ const ke = n => {
                             null,
                             null,
                             [
-                              h(a, 'description'),
+                              h(r, 'description'),
                               e('br', null, null, null, 3, null),
                               e('br', null, null, null, 3, null),
                               e(
@@ -1265,7 +1291,7 @@ const ke = n => {
                                   class:
                                     'bg-secondary text-black rounded-3xl p-1 text-xs',
                                 },
-                                h(a, 'type'),
+                                h(r, 'type'),
                                 1,
                                 null,
                               ),
@@ -1340,13 +1366,13 @@ const ke = n => {
                       ),
                     ],
                     [t]: {
-                      href: y(a, 'href'),
+                      href: x(r, 'href'),
                       target: t,
-                      'aria-label': y(a, 'action'),
+                      'aria-label': x(r, 'action'),
                       class: t,
                       'data-goatcounter-click': t,
-                      'data-goatcounter-title': y(a, 'title'),
-                      'data-goatcounter-referrer': p(
+                      'data-goatcounter-title': x(r, 'title'),
+                      'data-goatcounter-referrer': m(
                         i => i.referrer || 'referrer',
                         [n],
                         'p0.referrer||"referrer"',
@@ -1354,7 +1380,7 @@ const ke = n => {
                     },
                   },
                   1,
-                  a.id,
+                  r.id,
                 ),
               ),
               1,
@@ -1369,13 +1395,13 @@ const ke = n => {
       )
     )
   },
-  Q = d(o(Qe, 's_Yj7Oj0dysis')),
-  Ge = `.area{background:#4e54c8;background:-webkit-linear-gradient(to left,#8f94fb,#4e54c8);width:100%;height:100vh}.circles{position:absolute;bottom:0;left:0;width:100%;height:calc(100vh - 64px);overflow:hidden}.circles li{position:absolute;display:block;list-style:none;width:20px;height:20px;background:rgba(255,255,255,.2);animation:animate 25s linear infinite;bottom:-150px}.circles li:nth-child(1){left:25%;width:80px;height:80px;animation-delay:0s}.circles li:nth-child(2){left:10%;width:20px;height:20px;animation-delay:2s;animation-duration:12s}.circles li:nth-child(3){left:70%;width:20px;height:20px;animation-delay:4s}.circles li:nth-child(4){left:40%;width:60px;height:60px;animation-delay:0s;animation-duration:18s}.circles li:nth-child(5){left:65%;width:20px;height:20px;animation-delay:0s}.circles li:nth-child(6){left:75%;width:110px;height:110px;animation-delay:3s}.circles li:nth-child(7){left:35%;width:150px;height:150px;animation-delay:7s}.circles li:nth-child(8){left:50%;width:25px;height:25px;animation-delay:15s;animation-duration:45s}.circles li:nth-child(9){left:20%;width:15px;height:15px;animation-delay:2s;animation-duration:35s}.circles li:nth-child(10){left:85%;width:150px;height:150px;animation-delay:0s;animation-duration:11s}@keyframes animate{0%{transform:translateY(0) rotate(0);opacity:1;border-radius:0}to{transform:translateY(-1000px) rotate(720deg);opacity:0;border-radius:50%}}
+  Y = d(o(Ge, 's_Yj7Oj0dysis')),
+  Ke = `.area{background:#4e54c8;background:-webkit-linear-gradient(to left,#8f94fb,#4e54c8);width:100%;height:100vh}.circles{position:absolute;bottom:0;left:0;width:100%;height:calc(100vh - 64px);overflow:hidden}.circles li{position:absolute;display:block;list-style:none;width:20px;height:20px;background:rgba(255,255,255,.2);animation:animate 25s linear infinite;bottom:-150px}.circles li:nth-child(1){left:25%;width:80px;height:80px;animation-delay:0s}.circles li:nth-child(2){left:10%;width:20px;height:20px;animation-delay:2s;animation-duration:12s}.circles li:nth-child(3){left:70%;width:20px;height:20px;animation-delay:4s}.circles li:nth-child(4){left:40%;width:60px;height:60px;animation-delay:0s;animation-duration:18s}.circles li:nth-child(5){left:65%;width:20px;height:20px;animation-delay:0s}.circles li:nth-child(6){left:75%;width:110px;height:110px;animation-delay:3s}.circles li:nth-child(7){left:35%;width:150px;height:150px;animation-delay:7s}.circles li:nth-child(8){left:50%;width:25px;height:25px;animation-delay:15s;animation-duration:45s}.circles li:nth-child(9){left:20%;width:15px;height:15px;animation-delay:2s;animation-duration:35s}.circles li:nth-child(10){left:85%;width:150px;height:150px;animation-delay:0s;animation-duration:11s}@keyframes animate{0%{transform:translateY(0) rotate(0);opacity:1;border-radius:0}to{transform:translateY(-1000px) rotate(720deg);opacity:0;border-radius:50%}}
 `,
-  Ne = () => (
-    _(o(Ge, 's_CkFs2bTI3Zs')),
-    r(
-      c,
+  Xe = () => (
+    _(o(Ke, 's_CkFs2bTI3Zs')),
+    a(
+      u,
       {
         children: e(
           'ul',
@@ -1401,10 +1427,10 @@ const ke = n => {
       'HG_0',
     )
   ),
-  Ye = d(o(Ne, 's_0hvFUpzGAyM')),
-  Ke = () =>
-    r(
-      c,
+  et = d(o(Xe, 's_0hvFUpzGAyM')),
+  tt = () =>
+    a(
+      u,
       {
         children: e(
           'svg',
@@ -1583,41 +1609,41 @@ const ke = n => {
       3,
       'Fg_0',
     ),
-  Xe = d(o(Ke, 's_F4XGSf5645s')),
-  et =
+  lt = d(o(tt, 's_F4XGSf5645s')),
+  nt =
     '/assets/664d087c-pako_cropped.webp 200w, /assets/f00be9d3-pako_cropped.webp 400w, /assets/bdec0c37-pako_cropped.webp 600w, /assets/a93cfc9e-pako_cropped.webp 800w, /assets/65b6374b-pako_cropped.webp 1200w',
-  tt = 1200,
-  lt = 1200,
-  nt = { srcSet: et, width: tt, height: lt }
-function rt(n, l, a, i) {
+  at = 1200,
+  rt = 1200,
+  it = { srcSet: nt, width: at, height: rt }
+function ot(n, l, r, i) {
   return e(
     'img',
     { decoding: 'async', loading: 'lazy', ...n },
-    nt,
+    it,
     void 0,
     3,
     l,
   )
 }
-const at = n => {
+const st = n => {
     P()
-    const l = T(H),
-      a = T(V),
+    const l = D(E),
+      r = D(Q),
       i = new Date().getFullYear(),
       s = new Date('1/1/2015').getFullYear(),
-      u = me.toWords(i - s)
+      c = be.toWords(i - s)
     return (
-      u.charAt(0).toUpperCase(),
-      u.slice(1),
-      r(
-        c,
+      c.charAt(0).toUpperCase(),
+      c.slice(1),
+      a(
+        u,
         {
           children: e(
             'div',
             null,
             { class: 'hero min-h-[calc(100vh-64px)] bg-base-200' },
             [
-              r(Ye, null, 3, 'ED_0'),
+              a(et, null, 3, 'ED_0'),
               e(
                 'div',
                 null,
@@ -1628,8 +1654,8 @@ const at = n => {
                     null,
                     { class: 'relative' },
                     [
-                      r(
-                        rt,
+                      a(
+                        ot,
                         {
                           loading: 'eager',
                           alt: 'Pasquale De Lucia picture',
@@ -1641,9 +1667,9 @@ const at = n => {
                         'ED_1',
                       ),
                       l.value &&
-                        a.value &&
-                        r(
-                          c,
+                        r.value &&
+                        a(
+                          u,
                           {
                             children: e(
                               'div',
@@ -1652,7 +1678,7 @@ const at = n => {
                                 class:
                                   'absolute top-[-34px] right-[-48px] w-[100px] rotate-[26deg]',
                               },
-                              r(Xe, null, 3, 'ED_2'),
+                              a(lt, null, 3, 'ED_2'),
                               1,
                               null,
                             ),
@@ -1694,9 +1720,9 @@ const at = n => {
                         null,
                         [
                           'I craft digital wonders as a ',
-                          p(b => b.role, [n], 'p0.role'),
+                          m(p => p.role, [n], 'p0.role'),
                           ' at ',
-                          p(b => b.company, [n], 'p0.company'),
+                          m(p => p.company, [n], 'p0.company'),
                           '.',
                         ],
                         3,
@@ -1708,7 +1734,7 @@ const at = n => {
                         null,
                         [
                           'With a solid ',
-                          u,
+                          c,
                           ' years of',
                           ' ',
                           e('strong', null, null, 'web development', 3, null),
@@ -1721,7 +1747,7 @@ const at = n => {
                         'p',
                         null,
                         null,
-                        r(
+                        a(
                           g,
                           {
                             href: '#links',
@@ -1762,12 +1788,12 @@ const at = n => {
       )
     )
   },
-  it = d(o(at, 's_Jevt7v9CDh4')),
-  ot = '_icon_mcn59_1',
-  Z = { icon: ot },
-  st = n =>
-    r(
-      c,
+  ct = d(o(st, 's_Jevt7v9CDh4')),
+  ut = '_icon_mcn59_1',
+  $ = { icon: ut },
+  dt = n =>
+    a(
+      u,
       {
         children: e(
           'ul',
@@ -1778,11 +1804,11 @@ const at = n => {
               'li',
               null,
               { class: 'mb-4' },
-              r(
+              a(
                 g,
                 {
                   class:
-                    'link-container flex items-center justify-between transition duration-200 font-bold bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-2 w-100 text-white rounded-lg pl-4 md:px-4',
+                    'link-container flex items-center justify-between transition duration-200 bg-primary border-primary border-2 hover:bg-transparent hover:text-primary py-2 w-100 text-white rounded-lg pl-4 md:px-4',
                   get href() {
                     return l.url
                   },
@@ -1799,7 +1825,7 @@ const at = n => {
                     e(
                       'span',
                       { dangerouslySetInnerHTML: h(l, 'svg') },
-                      { class: Z.icon + ' p-2' },
+                      { class: $.icon + ' p-2' },
                       null,
                       3,
                       null,
@@ -1808,7 +1834,7 @@ const at = n => {
                     e(
                       'span',
                       { dangerouslySetInnerHTML: h(l, 'svg') },
-                      { class: Z.icon + ' p-2 invisible opacity-0' },
+                      { class: $.icon + ' p-2 invisible opacity-0' },
                       null,
                       3,
                       null,
@@ -1816,13 +1842,13 @@ const at = n => {
                   ],
                   [t]: {
                     class: t,
-                    href: y(l, 'url'),
+                    href: x(l, 'url'),
                     target: t,
                     rel: t,
                     'data-goatcounter-click': t,
-                    'data-goatcounter-title': y(l, 'title'),
-                    'data-goatcounter-referrer': p(
-                      a => a.referrer || 'referrer',
+                    'data-goatcounter-title': x(l, 'title'),
+                    'data-goatcounter-referrer': m(
+                      r => r.referrer || 'referrer',
                       [n],
                       'p0.referrer||"referrer"',
                     ),
@@ -1842,23 +1868,23 @@ const at = n => {
       1,
       'YJ_1',
     ),
-  ct = d(o(st, 's_x0jeNTb2iQc')),
-  ut = '_container_q7mvx_1',
-  dt = { container: ut },
-  ht = n =>
-    r(
-      c,
+  ht = d(o(dt, 's_x0jeNTb2iQc')),
+  gt = '_container_q7mvx_1',
+  mt = { container: gt },
+  pt = n =>
+    a(
+      u,
       {
         children: e(
           'div',
           null,
-          { class: 'container mx-auto ' + dt.container },
+          { class: 'container mx-auto ' + mt.container },
           [
             e(
               'h3',
               null,
-              { class: 'text-center mb-4 text-xl font-bold' },
-              p(l => l.title, [n], 'p0.title'),
+              { class: 'text-center mb-4 text-xl' },
+              m(l => l.title, [n], 'p0.title'),
               3,
               null,
             ),
@@ -1867,7 +1893,7 @@ const at = n => {
               null,
               { class: 'flex flex-wrap justify-center gap-12' },
               n.stacks.map(l =>
-                r(
+                a(
                   g,
                   {
                     get href() {
@@ -1887,9 +1913,9 @@ const at = n => {
                       null,
                     ),
                     [t]: {
-                      href: y(l, 'href'),
+                      href: x(l, 'href'),
                       target: t,
-                      'aria-label': y(l, 'href'),
+                      'aria-label': x(l, 'href'),
                       class: t,
                     },
                   },
@@ -1908,10 +1934,10 @@ const at = n => {
       1,
       'uZ_0',
     ),
-  O = d(o(ht, 's_o91wC8IGdho')),
-  gt = n =>
-    r(
-      c,
+  F = d(o(pt, 's_o91wC8IGdho')),
+  ft = n =>
+    a(
+      u,
       {
         children: e(
           'div',
@@ -1935,11 +1961,11 @@ const at = n => {
                 null,
               ),
               n.items.map(
-                (l, a) => (
+                (l, r) => (
                   P(),
-                  a % 2 === 0
-                    ? r(
-                        m,
+                  r % 2 === 0
+                    ? a(
+                        f,
                         {
                           pop: !0,
                           children: e(
@@ -1988,10 +2014,7 @@ const at = n => {
                                   e(
                                     'p',
                                     null,
-                                    {
-                                      class:
-                                        'mb-3 font-bold text-md md:text-xl',
-                                    },
+                                    { class: 'mb-3 text-md md:text-xl' },
                                     h(l, 'role'),
                                     1,
                                     null,
@@ -2001,7 +2024,7 @@ const at = n => {
                                     null,
                                     {
                                       class:
-                                        'text-sm md:text-base leading-snug text-gray-50 text-opacity-100',
+                                        'text-sm md:text-base leading-snug',
                                     },
                                     h(l, 'description'),
                                     1,
@@ -2020,8 +2043,8 @@ const at = n => {
                         1,
                         l.id,
                       )
-                    : r(
-                        m,
+                    : a(
+                        f,
                         {
                           pop: !0,
                           children: e(
@@ -2070,10 +2093,7 @@ const at = n => {
                                   e(
                                     'p',
                                     null,
-                                    {
-                                      class:
-                                        'mb-3 font-bold text-md md:text-xl',
-                                    },
+                                    { class: 'mb-3 text-md md:text-xl' },
                                     h(l, 'role'),
                                     1,
                                     null,
@@ -2083,7 +2103,7 @@ const at = n => {
                                     null,
                                     {
                                       class:
-                                        'text-sm md:text-base leading-snug text-gray-50 text-opacity-100',
+                                        'text-sm md:text-base leading-snug',
                                     },
                                     h(l, 'description'),
                                     1,
@@ -2115,8 +2135,8 @@ const at = n => {
       1,
       'VS_0',
     ),
-  mt = d(o(gt, 's_sZIPqDBaEpc'))
-function pt(n) {
+  bt = d(o(ft, 's_sZIPqDBaEpc'))
+function vt(n) {
   switch (!0) {
     case n.includes('ita'):
       return 'ITA'
@@ -2125,12 +2145,12 @@ function pt(n) {
   }
 }
 const G = async ({ devToApiKey: n, limit: l }) => {
-    const a = await fetch(
+    const r = await fetch(
       `https://dev.to/api/articles/me/published?per_page=${l || 30}`,
       { headers: new Headers({ 'api-key': n }) },
     )
-    if (a.status !== 200) throw Error(a.status.toString())
-    return (await a.json()).map(s => ({
+    if (r.status !== 200) throw Error(r.status.toString())
+    return (await r.json()).map(s => ({
       id: s.id,
       href: s.url,
       title: s.title,
@@ -2138,11 +2158,11 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       bodyMarkdown: s.body_markdown,
       username: s.user.username,
       slug: s.slug,
-      date: ge(new Date(s.published_timestamp), 'PP'),
-      lang: pt(s.tag_list),
+      date: fe(new Date(s.published_timestamp), 'PP'),
+      lang: vt(s.tag_list),
     }))
   },
-  ft = [
+  wt = [
     {
       id: 1,
       title: 'Github',
@@ -2184,7 +2204,7 @@ const G = async ({ devToApiKey: n, limit: l }) => {
     `,
     },
   ],
-  N = [
+  K = [
     {
       id: 6,
       title: 'Qwik',
@@ -2253,7 +2273,7 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       href: 'https://apps.apple.com/it/app/resume-me/id1663622782',
     },
   ],
-  bt = [
+  xt = [
     {
       id: 1,
       svg: `
@@ -2304,7 +2324,7 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       href: 'https://qwik.builder.io/',
     },
   ],
-  vt = [
+  kt = [
     {
       id: 1,
       svg: `
@@ -2327,7 +2347,7 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       href: 'https://dotnet.microsoft.com/en-us/',
     },
   ],
-  wt = [
+  yt = [
     {
       id: 1,
       svg: `
@@ -2357,7 +2377,7 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       href: 'https://tailwindcss.com/',
     },
   ],
-  D = [
+  I = [
     {
       id: 1,
       startDate: 'Jan 2022',
@@ -2411,45 +2431,45 @@ const G = async ({ devToApiKey: n, limit: l }) => {
       role: 'Full-stack developer',
     },
   ],
-  xt = `h2{font-size:1.875rem;line-height:2.25rem;font-weight:700;text-transform:uppercase}
+  _t = `h2{font-size:1.875rem;line-height:2.25rem;font-weight:700;text-transform:uppercase}
 `,
-  kt =
+  zt =
     '/assets/b6ff3ea8-badge-first-pr.webp 200w, /assets/fd499dfb-badge-first-pr.webp 400w, /assets/afd2a267-badge-first-pr.webp 600w, /assets/8e87c3b5-badge-first-pr.webp 800w, /assets/59cf075d-badge-first-pr.webp 896w',
-  yt = 896,
-  _t = 768,
-  zt = { srcSet: kt, width: yt, height: _t }
-function Mt(n, l, a, i) {
+  St = 896,
+  Mt = 768,
+  jt = { srcSet: zt, width: St, height: Mt }
+function Ct(n, l, r, i) {
   return e(
     'img',
     { decoding: 'async', loading: 'lazy', ...n },
-    zt,
+    jt,
     void 0,
     3,
     l,
   )
 }
-const St = async n =>
+const qt = async n =>
     await G({ devToApiKey: n.env.get('DEV_TO_API_KEY'), limit: 4 }),
-  Y = F(o(St, 's_7CjMt5KkVcg')),
-  jt = () => {
-    _(o(xt, 's_0w9yJ3mmM7E'))
-    const n = Y()
-    return r(
-      c,
+  X = j(o(qt, 's_7CjMt5KkVcg')),
+  At = () => {
+    _(o(_t, 's_0w9yJ3mmM7E'))
+    const n = X()
+    return a(
+      u,
       {
         children: [
           e(
             'section',
             null,
             null,
-            r(
-              it,
+            a(
+              ct,
               {
                 get role() {
-                  return D[0].role
+                  return I[0].role
                 },
                 get company() {
-                  return D[0].company
+                  return I[0].company
                 },
                 [t]: { role: t, company: t },
               },
@@ -2459,8 +2479,8 @@ const St = async n =>
             1,
             null,
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2474,18 +2494,18 @@ const St = async n =>
             3,
             'eZ_1',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'inner-section' },
                 [
-                  r(
-                    Q,
+                  a(
+                    Y,
                     {
-                      items: N,
+                      items: K,
                       limit: 3,
                       referrer: 'index-project',
                       [t]: { items: t, limit: t, referrer: t },
@@ -2497,7 +2517,7 @@ const St = async n =>
                     'p',
                     null,
                     { class: 'flex justify-center pt-6' },
-                    r(
+                    a(
                       g,
                       {
                         href: '/projects',
@@ -2530,8 +2550,8 @@ const St = async n =>
             1,
             'eZ_4',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2539,7 +2559,14 @@ const St = async n =>
                 { class: 'title-section text-center' },
                 [
                   e('h2', null, null, 'History', 3, null),
-                  e('h3', null, null, 'All my experiences', 3, null),
+                  e(
+                    'p',
+                    null,
+                    { class: 'text-xl' },
+                    'All my experiences',
+                    3,
+                    null,
+                  ),
                 ],
                 3,
                 null,
@@ -2548,14 +2575,14 @@ const St = async n =>
             3,
             'eZ_5',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'w-11/12 lg:w-5/6 sticky mx-auto' },
-                r(mt, { items: D, [t]: { items: t } }, 3, 'eZ_6'),
+                a(bt, { items: I, [t]: { items: t } }, 3, 'eZ_6'),
                 1,
                 null,
               ),
@@ -2563,8 +2590,8 @@ const St = async n =>
             1,
             'eZ_7',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2578,23 +2605,23 @@ const St = async n =>
             3,
             'eZ_8',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'inner-section' },
                 [
-                  r(
-                    J,
+                  a(
+                    N,
                     {
                       get articles() {
                         return n.value
                       },
                       referrer: 'index-article',
                       [t]: {
-                        articles: p(l => l.value, [n], 'p0.value'),
+                        articles: m(l => l.value, [n], 'p0.value'),
                         referrer: t,
                       },
                     },
@@ -2605,7 +2632,7 @@ const St = async n =>
                     'p',
                     null,
                     { class: 'flex justify-center pt-6' },
-                    r(
+                    a(
                       g,
                       {
                         href: '/blog',
@@ -2638,8 +2665,8 @@ const St = async n =>
             1,
             'eZ_11',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2653,18 +2680,18 @@ const St = async n =>
             3,
             'eZ_12',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'inner-section' },
-                r(
-                  O,
+                a(
+                  F,
                   {
                     title: 'Front end',
-                    stacks: bt,
+                    stacks: xt,
                     [t]: { title: t, stacks: t },
                   },
                   3,
@@ -2677,18 +2704,18 @@ const St = async n =>
             1,
             'eZ_14',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'inner-section' },
-                r(
-                  O,
+                a(
+                  F,
                   {
                     title: 'Back end',
-                    stacks: vt,
+                    stacks: kt,
                     [t]: { title: t, stacks: t },
                   },
                   3,
@@ -2701,16 +2728,16 @@ const St = async n =>
             1,
             'eZ_16',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'inner-section' },
-                r(
-                  O,
-                  { title: 'Tools', stacks: wt, [t]: { title: t, stacks: t } },
+                a(
+                  F,
+                  { title: 'Tools', stacks: yt, [t]: { title: t, stacks: t } },
                   3,
                   'eZ_17',
                 ),
@@ -2721,8 +2748,8 @@ const St = async n =>
             1,
             'eZ_18',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2743,8 +2770,8 @@ const St = async n =>
             3,
             'eZ_19',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2754,8 +2781,8 @@ const St = async n =>
                   'div',
                   null,
                   { class: 'flex items-center justify-center' },
-                  r(
-                    Mt,
+                  a(
+                    Ct,
                     {
                       alt: 'My first PR',
                       class:
@@ -2775,8 +2802,8 @@ const St = async n =>
             1,
             'eZ_21',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
@@ -2785,9 +2812,9 @@ const St = async n =>
                 [
                   e('h2', null, null, 'Links', 3, null),
                   e(
-                    'h3',
+                    'p',
                     null,
-                    null,
+                    { class: 'text-xl' },
                     'Stay updated or get in touch on my socials',
                     3,
                     null,
@@ -2800,17 +2827,17 @@ const St = async n =>
             3,
             'eZ_22',
           ),
-          r(
-            m,
+          a(
+            f,
             {
               children: e(
                 'section',
                 null,
                 { class: 'link-section' },
-                r(
-                  ct,
+                a(
+                  ht,
                   {
-                    links: ft,
+                    links: wt,
                     referrer: 'index',
                     [t]: { links: t, referrer: t },
                   },
@@ -2830,8 +2857,8 @@ const St = async n =>
       'eZ_25',
     )
   },
-  Ct = d(o(jt, 's_tstUEhxLUWc')),
-  qt = {
+  Lt = d(o(At, 's_tstUEhxLUWc')),
+  Pt = {
     title: 'Pasquale De Lucia - Full-stack engineer',
     meta: [
       {
@@ -2841,16 +2868,16 @@ const St = async n =>
       },
     ],
   },
-  Lt = Object.freeze(
+  Ot = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: Ct, head: qt, useArticles: Y },
+      { __proto__: null, default: Lt, head: Pt, useArticles: X },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  Pt = () =>
-    r(
-      c,
+  Tt = () =>
+    a(
+      u,
       {
         children: e(
           'section',
@@ -2869,7 +2896,7 @@ const St = async n =>
                 [
                   "Uh-oh! It looks like you've wandered into the cosmic void of cyberspace. Our binary aliens are throwing a rave just around the corner. Hurry back before they invite you to dance in zeros and ones! Alternatively, try our game at this",
                   ' ',
-                  r(
+                  a(
                     g,
                     {
                       href: '../button-game',
@@ -2909,8 +2936,8 @@ const St = async n =>
       1,
       'OH_1',
     ),
-  Ft = d(o(Pt, 's_bavVtvgbxHE')),
-  At = {
+  Ft = d(o(Tt, 's_bavVtvgbxHE')),
+  It = {
     title: 'Pasquale De Lucia - Full-stack engineer - 404',
     meta: [
       {
@@ -2920,49 +2947,49 @@ const St = async n =>
       },
     ],
   },
-  It = Object.freeze(
+  Dt = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: Ft, head: At },
+      { __proto__: null, default: Ft, head: It },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   )
-function Ot(n) {
+function Bt(n) {
   const l = 'https://pasqualedelucia.com'
   return `
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${n.map(
-  a => `
+  r => `
     <url>
-        <loc>${l}${a.loc.startsWith('/') ? '' : '/'}${a.loc}</loc>
-        <priority>${a.priority}</priority>
+        <loc>${l}${r.loc.startsWith('/') ? '' : '/'}${r.loc}</loc>
+        <priority>${r.priority}</priority>
     </url>`,
 )}
 </urlset>`.trim()
 }
-const Dt = n => {
-    const l = oe.map(([s]) => s).filter(s => s !== '/'),
-      a = Ot([
+const Et = n => {
+    const l = ue.map(([s]) => s).filter(s => s !== '/'),
+      r = Bt([
         { loc: '/', priority: 1 },
         ...l.map(s => ({ loc: s, priority: 0.9 })),
       ]),
-      i = new Response(a, {
+      i = new Response(r, {
         status: 200,
         headers: { 'Content-Type': 'text/xml' },
       })
     n.send(i)
   },
-  Tt = Object.freeze(
-    Object.defineProperty({ __proto__: null, onGet: Dt }, Symbol.toStringTag, {
+  Rt = Object.freeze(
+    Object.defineProperty({ __proto__: null, onGet: Et }, Symbol.toStringTag, {
       value: 'Module',
     }),
   ),
   Ht = async n => await G({ devToApiKey: n.env.get('DEV_TO_API_KEY') }),
-  K = F(o(Ht, 's_M0p6wqFFl3I')),
-  Rt = () => {
-    const n = K()
-    return r(
-      c,
+  ee = j(o(Ht, 's_M0p6wqFFl3I')),
+  Ut = () => {
+    const n = ee()
+    return a(
+      u,
       {
         children: [
           e(
@@ -2980,15 +3007,15 @@ const Dt = n => {
             'section',
             null,
             { class: 'inner-section' },
-            r(
-              J,
+            a(
+              N,
               {
                 get articles() {
                   return n.value
                 },
                 referrer: 'page-articles',
                 [t]: {
-                  articles: p(l => l.value, [n], 'p0.value'),
+                  articles: m(l => l.value, [n], 'p0.value'),
                   referrer: t,
                 },
               },
@@ -3004,8 +3031,8 @@ const Dt = n => {
       'TQ_1',
     )
   },
-  Bt = d(o(Rt, 's_Uzl3gaAclJA')),
-  Et = {
+  Wt = d(o(Ut, 's_Uzl3gaAclJA')),
+  Zt = {
     title: 'Pasquale De Lucia - Full-stack engineer',
     meta: [
       {
@@ -3015,40 +3042,40 @@ const Dt = n => {
       },
     ],
   },
-  Wt = Object.freeze(
+  $t = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: Bt, head: Et, useArticles: K },
+      { __proto__: null, default: Wt, head: Zt, useArticles: ee },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   )
 function L(n) {
   let l = 1
-  for (let a = 0; a < n; a++) l *= (100 - a) / 100
+  for (let r = 0; r < n; r++) l *= (100 - r) / 100
   return l
 }
-function X(n) {
+function te(n) {
   return Math.floor(Math.random() * n)
 }
-const Zt = () => {
-    const [n, l, a, i] = A(),
-      s = X(100)
+const Vt = () => {
+    const [n, l, r, i] = O(),
+      s = te(100)
     n.value === 100
-      ? ((n.value = 0), (a.value = 100))
-      : (s <= a.value
-          ? (n.value++, a.value--, n.value > l.value && (l.value = n.value))
-          : ((n.value = 0), (a.value = 100)),
-        (i.value = L(a.value)))
+      ? ((n.value = 0), (r.value = 100))
+      : (s <= r.value
+          ? (n.value++, r.value--, n.value > l.value && (l.value = n.value))
+          : ((n.value = 0), (r.value = 100)),
+        (i.value = L(r.value)))
   },
-  $t = () => {
-    const n = f(100)
+  Jt = () => {
+    const n = b(100)
     L(100)
-    const l = f(L(n.value)),
-      a = f(0),
-      i = f(0),
-      s = o(Zt, 's_SqNyGWM7k0k', [a, i, n, l])
-    return r(
-      c,
+    const l = b(L(n.value)),
+      r = b(0),
+      i = b(0),
+      s = o(Vt, 's_SqNyGWM7k0k', [r, i, n, l])
+    return a(
+      u,
       {
         children: [
           e(
@@ -3130,7 +3157,7 @@ const Zt = () => {
     active:translate-y-4
     active:border-b-[0px]
     transition-all duration-150
-    border-[5px] ${a.value === 100 ? 'border-green-400 bg-green-500 active:[box-shadow:0_0px_0_0_#298a09,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#298a09,0_13px_0_0_#1b70f841]' : 'border-red-400 bg-red-500 active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]'}`,
+    border-[5px] ${r.value === 100 ? 'border-green-400 bg-green-500 active:[box-shadow:0_0px_0_0_#298a09,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#298a09,0_13px_0_0_#1b70f841]' : 'border-red-400 bg-red-500 active:[box-shadow:0_0px_0_0_#8a0909,0_0px_0_0_#1b70f841] [box-shadow:0_16px_0_0_#8a0909,0_13px_0_0_#1b70f841]'}`,
                   },
                   { onClick$: s },
                   e(
@@ -3140,7 +3167,7 @@ const Zt = () => {
                       class:
                         'flex flex-col justify-center items-center h-full text-white font-bold text-[5rem] opacity-50',
                     },
-                    p(u => u.value, [a], 'p0.value'),
+                    m(c => c.value, [r], 'p0.value'),
                     3,
                     null,
                   ),
@@ -3151,7 +3178,7 @@ const Zt = () => {
                   'p',
                   null,
                   { class: 'text-xl mt-6' },
-                  ['MAX ', p(u => u.value, [i], 'p0.value')],
+                  ['MAX ', m(c => c.value, [i], 'p0.value')],
                   3,
                   null,
                 ),
@@ -3159,9 +3186,9 @@ const Zt = () => {
                   'p',
                   null,
                   null,
-                  p(
-                    u => (u.value === 100 ? 'HAI VINTO' : ''),
-                    [a],
+                  m(
+                    c => (c.value === 100 ? 'HAI VINTO' : ''),
+                    [r],
                     'p0.value===100?"HAI VINTO":""',
                   ),
                   3,
@@ -3180,8 +3207,8 @@ const Zt = () => {
       'CD_0',
     )
   },
-  Ut = d(o($t, 's_lVhXlSc0AIU')),
-  Vt = {
+  Qt = d(o(Jt, 's_lVhXlSc0AIU')),
+  Nt = {
     title: 'Pasquale De Lucia - Full-stack engineer',
     meta: [
       {
@@ -3191,29 +3218,29 @@ const Zt = () => {
       },
     ],
   },
-  Jt = Object.freeze(
+  Yt = Object.freeze(
     Object.defineProperty(
       {
         __proto__: null,
-        _auto_getRandomInt: X,
+        _auto_getRandomInt: te,
         _auto_probabilityOfSuccess: L,
-        default: Ut,
-        head: Vt,
+        default: Qt,
+        head: Nt,
       },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  ee = pe({ scopeId: '' })
-function Qt(n, l, a, i) {
-  return q(ee.Provider, {
+  le = ve({ scopeId: '' })
+function Gt(n, l, r, i) {
+  return A(le.Provider, {
     value: { el: n, scopeId: l, attachedEl: void 0 },
-    children: q(a, { ...i, children: q(te, null) }),
+    children: A(r, { ...i, children: A(ne, null) }),
   })
 }
-class te extends fe {
+class ne extends we {
   constructor() {
-    super(...arguments), (this.slotC = be())
+    super(...arguments), (this.slotC = xe())
   }
   shouldComponentUpdate() {
     return !1
@@ -3221,15 +3248,15 @@ class te extends fe {
   componentDidMount() {
     const l = this.slotC.current
     if (l) {
-      const { attachedEl: a, el: i } = this.context
+      const { attachedEl: r, el: i } = this.context
       if (i) {
-        if (!a) l.appendChild(i)
-        else if (a !== l) throw new Error('already attached')
+        if (!r) l.appendChild(i)
+        else if (r !== l) throw new Error('already attached')
       }
     }
   }
   render() {
-    return q('q-slotc', {
+    return A('q-slotc', {
       class: this.context.scopeId,
       suppressHydrationWarning: !0,
       dangerouslySetInnerHTML: { __html: '<!--SLOT-->' },
@@ -3237,83 +3264,83 @@ class te extends fe {
     })
   }
 }
-te.contextType = ee
-const Gt = n => {
+ne.contextType = le
+const Kt = n => {
     const l = {}
     return (
-      Object.keys(n).forEach(a => {
-        if (!a.startsWith('client:') && !a.startsWith('host:')) {
-          const i = a.endsWith('$') ? a.slice(0, -1) : a
-          l[i] = n[a]
+      Object.keys(n).forEach(r => {
+        if (!r.startsWith('client:') && !r.startsWith('host:')) {
+          const i = r.endsWith('$') ? r.slice(0, -1) : r
+          l[i] = n[r]
         }
       }),
       l
     )
   },
-  le = n => {
+  ae = n => {
     const l = {}
     return (
-      Object.keys(n).forEach(a => {
-        a.startsWith('host:') && (l[a.slice(Kt.length)] = n[a])
+      Object.keys(n).forEach(r => {
+        r.startsWith('host:') && (l[r.slice(tl.length)] = n[r])
       }),
       l
     )
   },
-  Nt = () => {
-    const [n] = A()
+  Xt = () => {
+    const [n] = O()
     return (n.value = !0)
   },
-  Yt = (n, l = {}) => {
-    const a = f(!1),
-      i = o(Nt, 's_6LYztwGzxAA', [a]),
+  el = (n, l = {}) => {
+    const r = b(!1),
+      i = o(Xt, 's_6LYztwGzxAA', [r]),
       s = !!(n['client:only'] || (l != null && l.clientOnly))
     return (
       (n['client:visible'] ||
         (l == null ? void 0 : l.eagerness) === 'visible') &&
-        j('qvisible', i),
+        C('qvisible', i),
       (n['client:idle'] || (l == null ? void 0 : l.eagerness) === 'idle') &&
-        E('qidle', i),
+        W('qidle', i),
       (n['client:load'] ||
         s ||
         (l == null ? void 0 : l.eagerness) === 'load') &&
-        E('qinit', i),
+        W('qinit', i),
       (n['client:hover'] || (l == null ? void 0 : l.eagerness) === 'hover') &&
-        j('mouseover', i),
-      n['client:event'] && j(n['client:event'], i),
-      l != null && l.event && j(l == null ? void 0 : l.event, i),
-      [a, s, i]
+        C('mouseover', i),
+      n['client:event'] && C(n['client:event'], i),
+      l != null && l.event && C(l == null ? void 0 : l.event, i),
+      [r, s, i]
     )
   },
-  Kt = 'host:'
-async function Xt(n, l, a, i, s, u, b) {
+  tl = 'host:'
+async function ll(n, l, r, i, s, c, p) {
   {
     const z = await l.resolve(),
-      v = Gt(i)
-    Object.assign(b, v)
-    const w = ve(Qt(void 0, a, z, v)),
-      x = w.indexOf('<!--SLOT-->')
-    if (x > 0) {
-      const M = w.slice(0, x),
-        se = w.slice(x + 11)
-      return r(
+      v = Kt(i)
+    Object.assign(p, v)
+    const w = ke(Gt(void 0, r, z, v)),
+      k = w.indexOf('<!--SLOT-->')
+    if (k > 0) {
+      const S = w.slice(0, k),
+        de = w.slice(k + 11)
+      return a(
         n,
         {
           ref: s,
-          ...le(i),
-          children: r(
-            he,
+          ...ae(i),
+          children: a(
+            pe,
             {
               children: async function* () {
-                yield r(I, { data: M }, 3, '0a_3'),
+                yield a(T, { data: S }, 3, '0a_3'),
                   yield e(
                     'q-slot',
-                    { ref: u },
+                    { ref: c },
                     null,
-                    r(S, null, 3, '0a_4'),
+                    a(M, null, 3, '0a_4'),
                     1,
                     null,
                   ),
-                  yield r(I, { data: se }, 3, '0a_5')
+                  yield a(T, { data: de }, 3, '0a_5')
               },
             },
             1,
@@ -3324,12 +3351,12 @@ async function Xt(n, l, a, i, s, u, b) {
         '0a_7',
       )
     }
-    return r(
-      c,
+    return a(
+      u,
       {
         children: [
-          r(n, { ref: s, children: r(I, { data: w }, 3, '0a_8') }, 1, '0a_9'),
-          e('q-slot', { ref: u }, null, r(S, null, 3, '0a_10'), 1, null),
+          a(n, { ref: s, children: a(T, { data: w }, 3, '0a_8') }, 1, '0a_9'),
+          e('q-slot', { ref: c }, null, a(M, null, 3, '0a_10'), 1, null),
         ],
       },
       1,
@@ -3337,63 +3364,69 @@ async function Xt(n, l, a, i, s, u, b) {
     )
   }
 }
-const el = 'q-slot{display:none} q-slotc,q-slotc>q-slot{display:contents}',
-  tl = async ({ track: n }) => {
-    const [l, a, i, s, u, b, z, v, w] = A()
-    n(() => ({ ...u })), n(z)
+const nl = 'q-slot{display:none} q-slotc,q-slotc>q-slot{display:contents}',
+  al = async ({ track: n }) => {
+    const [l, r, i, s, c, p, z, v, w] = O()
+    n(() => ({ ...c })), n(z)
   },
-  ll = n => {
-    const [l, a] = A()
+  rl = n => {
+    const [l, r] = O()
     P()
-    const i = _(o(el, 's_hkT84xKSMLE')),
-      s = f(),
-      u = f(),
-      b = f(),
-      [z, v] = Yt(n, l),
+    const i = _(o(nl, 's_hkT84xKSMLE')),
+      s = b(),
+      c = b(),
+      p = b(),
+      [z, v] = el(n, l),
       w = {},
-      x = (l == null ? void 0 : l.tagName) ?? 'qwik-react'
-    if ((ue(o(tl, 's_EWIT9ENzUX0', [s, w, b, v, n, a, z, u, i])), !v)) {
-      const M = Xt(x, a, i.scopeId, n, s, u, w)
-      return r(B, { children: M }, 1, 2)
+      k = (l == null ? void 0 : l.tagName) ?? 'qwik-react'
+    if ((ge(o(al, 's_EWIT9ENzUX0', [s, w, p, v, n, r, z, c, i])), !v)) {
+      const S = ll(k, r, i.scopeId, n, s, c, w)
+      return a(U, { children: S }, 1, 2)
     }
-    return r(
-      B,
+    return a(
+      U,
       {
         children: [
-          r(
-            x,
+          a(
+            k,
             {
-              ...le(n),
-              ref: M => {
-                s.value = M
+              ...ae(n),
+              ref: S => {
+                s.value = S
               },
-              children: de,
+              children: me,
               [t]: { ref: t },
             },
             1,
             '6S_0',
           ),
-          e('q-slot', { ref: u }, null, r(S, null, 3, '6S_1'), 1, null),
+          e('q-slot', { ref: c }, null, a(M, null, 3, '6S_1'), 1, null),
         ],
       },
       1,
       '6S_2',
     )
   }
-function nl(n, l) {
-  return d(o(ll, 's_zH94hIe0Ick', [l, n]))
+function il(n, l) {
+  return d(o(rl, 's_zH94hIe0Ick', [l, n]))
 }
-function rl(n) {
-  return we(xe, { data: n.data })
+function ol(n) {
+  return ye(_e, { data: n.data })
 }
-const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
-  re = async (n, l) => {
-    const a = `{
+const re = il(o(ol, 's_h5ZUTiJtg0M')),
+  ie = async (n, l) => {
+    const r = `{
     page (filter: { slug: { eq: "${n}" } }) {
       title
       slug
+      subtitle
       content {
         value
+      }
+      seo: _seoMetaTags {
+        attributes
+        content
+        tag
       }
     }
   }`
@@ -3401,19 +3434,61 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
       await fetch('https://graphql.datocms.com/', {
         headers: { Authorization: `Bearer ${l}` },
         method: 'POST',
-        body: JSON.stringify({ query: a }),
+        body: JSON.stringify({ query: r }),
       })
     ).json()
   },
-  al = async n => {
-    const l = n.env.get('DATO_CMS_TOKEN')
-    return re('finance', l || '')
+  sl = async n => {
+    const l = `{
+    allPages(first: 8, filter: { slug: { neq: "finance" } }) {
+      id
+      title
+      slug
+      _status
+      _firstPublishedAt
+    }
+  }`
+    return await (
+      await fetch('https://graphql.datocms.com/', {
+        headers: { Authorization: `Bearer ${n}` },
+        method: 'POST',
+        body: JSON.stringify({ query: l }),
+      })
+    ).json()
   },
-  ae = F(o(al, 's_1R0RUHqtxFA')),
-  il = () => {
-    const n = ae()
-    return r(
-      c,
+  cl = async n => {
+    const l = `{
+        allPages(filter: { slug: { neq: "finance" } }) {
+          slug
+        }
+      }`
+    return await (
+      await fetch('https://graphql.datocms.com/', {
+        headers: { Authorization: `Bearer ${n}` },
+        method: 'POST',
+        body: JSON.stringify({ query: l }),
+      })
+    ).json()
+  },
+  oe = `.finance{p {margin-bottom: 1rem} p {margin-top: 1rem}}
+`,
+  ul = async n => {
+    const l = n.env.get('DATO_CMS_TOKEN')
+    return ie('finance', l || '')
+  },
+  R = j(o(ul, 's_1R0RUHqtxFA')),
+  dl = async n => {
+    const l = n.env.get('DATO_CMS_TOKEN')
+    return sl(l || '')
+  },
+  se = j(o(dl, 's_lhLJSVkjNUY')),
+  hl = () => {
+    J(o(oe, 's_ybemPOcl0BA'))
+    const n = R(),
+      l = se(),
+      r = b(!0)
+    return a(
+      u,
       {
         children: [
           e(
@@ -3421,8 +3496,30 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
             null,
             { class: 'title-section text-center' },
             [
-              e('h1', null, null, 'Finance', 3, null),
-              e('h2', null, null, 'Find out what I write about', 3, null),
+              e(
+                'h1',
+                null,
+                null,
+                m(
+                  i => i.value.data.page.title,
+                  [n],
+                  'p0.value.data.page.title',
+                ),
+                3,
+                null,
+              ),
+              e(
+                'h2',
+                null,
+                null,
+                m(
+                  i => i.value.data.page.subtitle,
+                  [n],
+                  'p0.value.data.page.subtitle',
+                ),
+                3,
+                null,
+              ),
             ],
             3,
             null,
@@ -3430,16 +3527,16 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
           e(
             'section',
             null,
-            { class: 'inner-section' },
-            r(
-              ne,
+            { class: 'inner-section finance' },
+            a(
+              re,
               {
                 get data() {
                   return n.value.data.page.content
                 },
                 [t]: {
-                  data: p(
-                    l => l.value.data.page.content,
+                  data: m(
+                    i => i.value.data.page.content,
                     [n],
                     'p0.value.data.page.content',
                   ),
@@ -3451,33 +3548,161 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
             1,
             null,
           ),
+          e(
+            'section',
+            null,
+            { class: 'inner-section' },
+            [
+              e('h2', null, { class: 'mb-2' }, 'Latest articles', 3, null),
+              e(
+                'div',
+                null,
+                { class: 'grid grid-cols-1 md:grid-cols-2 gap-4' },
+                l.value.data.allPages.map(i =>
+                  e(
+                    'div',
+                    null,
+                    { class: 'card bg-primary text-primary-content' },
+                    e(
+                      'div',
+                      null,
+                      { class: 'card-body' },
+                      [
+                        e(
+                          'h2',
+                          null,
+                          { class: 'card-title' },
+                          h(i, 'title'),
+                          1,
+                          null,
+                        ),
+                        e(
+                          'div',
+                          null,
+                          { class: 'card-actions justify-end' },
+                          a(
+                            g,
+                            {
+                              get href() {
+                                return i.slug
+                              },
+                              class: 'btn',
+                              children: 'Scopri di più',
+                              [t]: { href: x(i, 'slug'), class: t },
+                            },
+                            3,
+                            'UA_1',
+                          ),
+                          1,
+                          null,
+                        ),
+                      ],
+                      1,
+                      null,
+                    ),
+                    1,
+                    'UA_2',
+                  ),
+                ),
+                1,
+                null,
+              ),
+            ],
+            1,
+            null,
+          ),
+          r.value &&
+            e(
+              'div',
+              null,
+              {
+                role: 'alert',
+                class: 'alert alert-info z-[999] fixed bottom-2 w-[98%]',
+              },
+              [
+                e(
+                  'svg',
+                  null,
+                  {
+                    xmlns: 'http://www.w3.org/2000/svg',
+                    fill: 'none',
+                    viewBox: '0 0 24 24',
+                    class: 'h-6 w-6 shrink-0 stroke-current',
+                  },
+                  e(
+                    'path',
+                    null,
+                    {
+                      'stroke-linecap': 'round',
+                      'stroke-linejoin': 'round',
+                      'stroke-width': '2',
+                      d: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+                    },
+                    null,
+                    3,
+                    null,
+                  ),
+                  3,
+                  null,
+                ),
+                e('span', null, null, 'Italian content', 3, null),
+                e(
+                  'div',
+                  null,
+                  null,
+                  e(
+                    'button',
+                    null,
+                    {
+                      class: 'btn btn-sm btn-primary',
+                      onClick$: B('s_l0pvcy0l9l8', [r]),
+                    },
+                    'Close',
+                    3,
+                    null,
+                  ),
+                  3,
+                  null,
+                ),
+              ],
+              3,
+              'UA_3',
+            ),
         ],
       },
       1,
-      'UA_1',
+      'UA_4',
     )
   },
-  ol = d(o(il, 's_ZHlbw7cbduU')),
-  sl = {
-    title: 'Pasquale De Lucia - Full-stack engineer',
-    meta: [
-      {
-        name: 'description',
-        content:
-          'Pasquale De Lucia - Full-stack engineer - Web Wizard and JavaScript Lover',
-      },
-    ],
+  gl = d(o(hl, 's_ZHlbw7cbduU')),
+  ml = ({ resolveValue: n, params: l }) => {
+    const i = n(R).data.page.seo,
+      s = i.find(p => p.tag === 'title'),
+      c = i.filter(p => p.tag === 'meta')
+    return {
+      title: s.content,
+      meta: c.map(p => ({
+        name: p.attributes.property,
+        content: p.attributes.content,
+      })),
+    }
   },
-  cl = Object.freeze(
+  pl = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: ol, head: sl, useArticle: ae },
+      {
+        __proto__: null,
+        default: gl,
+        head: ml,
+        useArticle: R,
+        useLatestArticles: se,
+      },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  ul = () =>
-    r(
-      c,
+  fl = () =>
+    a(
+      u,
       {
         children: [
           e(
@@ -3495,10 +3720,10 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
             'section',
             null,
             { class: 'inner-section' },
-            r(
-              Q,
+            a(
+              Y,
               {
-                items: N,
+                items: K,
                 referrer: 'page-projects',
                 [t]: { items: t, referrer: t },
               },
@@ -3513,8 +3738,8 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
       1,
       'Mg_1',
     ),
-  dl = d(o(ul, 's_yMerZA5h0Vw')),
-  hl = {
+  bl = d(o(fl, 's_yMerZA5h0Vw')),
+  vl = {
     title: 'Pasquale De Lucia - Full-stack engineer',
     meta: [
       {
@@ -3524,23 +3749,30 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
       },
     ],
   },
-  gl = Object.freeze(
+  wl = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: dl, head: hl },
+      { __proto__: null, default: bl, head: vl },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  ml = async n => {
+  xl = async n => {
     const { slug: l } = n.params,
-      a = n.env.get('DATO_CMS_TOKEN')
-    return re(l, a || '')
+      r = n.env.get('DATO_CMS_TOKEN')
+    return ie(l, r || '')
   },
-  ie = F(o(ml, 's_rVGPTjmPMv4')),
-  pl = () => {
-    const n = ie()
-    return r(
-      c,
+  ce = j(o(xl, 's_rVGPTjmPMv4')),
+  kl = async ({ env: n }) => {
+    const l = n.get('DATO_CMS_TOKEN')
+    return {
+      params: (await cl(l ?? '')).data.allPages.map(i => ({ slug: i.slug })),
+    }
+  },
+  yl = () => {
+    J(o(oe, 's_ZyezcyCH0SU'))
+    const n = ce()
+    return a(
+      u,
       {
         children: [
           e(
@@ -3548,8 +3780,30 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
             null,
             { class: 'title-section text-center' },
             [
-              e('h1', null, null, 'Finance', 3, null),
-              e('h2', null, null, 'Find out what I write about', 3, null),
+              e(
+                'h1',
+                null,
+                null,
+                m(
+                  l => l.value.data.page.title,
+                  [n],
+                  'p0.value.data.page.title',
+                ),
+                3,
+                null,
+              ),
+              e(
+                'h2',
+                null,
+                null,
+                m(
+                  l => l.value.data.page.subtitle,
+                  [n],
+                  'p0.value.data.page.subtitle',
+                ),
+                3,
+                null,
+              ),
             ],
             3,
             null,
@@ -3557,15 +3811,15 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
           e(
             'section',
             null,
-            { class: 'inner-section' },
-            r(
-              ne,
+            { class: 'inner-section finance' },
+            a(
+              re,
               {
                 get data() {
                   return n.value.data.page.content
                 },
                 [t]: {
-                  data: p(
+                  data: m(
                     l => l.value.data.page.content,
                     [n],
                     'p0.value.data.page.content',
@@ -3584,8 +3838,8 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
       'kb_1',
     )
   },
-  fl = d(o(pl, 's_mjOPF0JN0c0')),
-  bl = {
+  _l = d(o(yl, 's_mjOPF0JN0c0')),
+  zl = {
     title: 'Pasquale De Lucia - Full-stack engineer',
     meta: [
       {
@@ -3595,73 +3849,79 @@ const ne = nl(o(rl, 's_h5ZUTiJtg0M')),
       },
     ],
   },
-  vl = Object.freeze(
+  Sl = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: fl, head: bl, useArticle: ie },
+      {
+        __proto__: null,
+        default: _l,
+        head: zl,
+        onStaticGenerate: kl,
+        useArticle: ce,
+      },
       Symbol.toStringTag,
       { value: 'Module' },
     ),
   ),
-  wl = [],
-  k = () => Ve,
-  oe = [
-    ['/', [k, () => Lt], '/', ['q-ea584253.js', 'q-3c0cf39a.js']],
+  Ml = [],
+  y = () => Ne,
+  ue = [
+    ['/', [y, () => Ot], '/', ['q-a3767944.js', 'q-474c3e4a.js']],
     [
       '404.html',
-      [k, () => It],
+      [y, () => Dt],
       '/404.html',
-      ['q-ea584253.js', 'q-ccc550a1.js'],
+      ['q-a3767944.js', 'q-f8228b5a.js'],
     ],
     [
       'dynamic-sitemap.xml',
-      [k, () => Tt],
+      [y, () => Rt],
       '/dynamic-sitemap.xml',
-      ['q-ea584253.js', 'q-c31a0420.js'],
+      ['q-a3767944.js', 'q-c31a0420.js'],
     ],
-    ['blog/', [k, () => Wt], '/blog/', ['q-ea584253.js', 'q-245277c4.js']],
+    ['blog/', [y, () => $t], '/blog/', ['q-a3767944.js', 'q-2c047b37.js']],
     [
       'button-game/',
-      [k, () => Jt],
+      [y, () => Yt],
       '/button-game/',
-      ['q-ea584253.js', 'q-22b880c9.js'],
+      ['q-a3767944.js', 'q-22b880c9.js'],
     ],
     [
       'finance/',
-      [k, () => cl],
+      [y, () => pl],
       '/finance/',
-      ['q-ea584253.js', 'q-9efd449a.js'],
+      ['q-a3767944.js', 'q-bdc73ccf.js'],
     ],
     [
       'projects/',
-      [k, () => gl],
+      [y, () => wl],
       '/projects/',
-      ['q-ea584253.js', 'q-cd115fc6.js'],
+      ['q-a3767944.js', 'q-98467757.js'],
     ],
     [
       'finance/[slug]/',
-      [k, () => vl],
+      [y, () => Sl],
       '/finance/[slug]/',
-      ['q-ea584253.js', 'q-32661f06.js'],
+      ['q-a3767944.js', 'q-299a6719.js'],
     ],
   ],
-  xl = [],
-  kl = !0,
-  yl = '/',
-  _l = !0,
-  Pl = {
-    routes: oe,
-    serverPlugins: wl,
-    menus: xl,
-    trailingSlash: kl,
-    basePathname: yl,
-    cacheModules: _l,
+  jl = [],
+  Cl = !0,
+  ql = '/',
+  Al = !0,
+  Bl = {
+    routes: ue,
+    serverPlugins: Ml,
+    menus: jl,
+    trailingSlash: Cl,
+    basePathname: ql,
+    cacheModules: Al,
   }
 export {
-  yl as basePathname,
-  _l as cacheModules,
-  Pl as default,
-  xl as menus,
-  oe as routes,
-  wl as serverPlugins,
-  kl as trailingSlash,
+  ql as basePathname,
+  Al as cacheModules,
+  Bl as default,
+  jl as menus,
+  ue as routes,
+  Ml as serverPlugins,
+  Cl as trailingSlash,
 }

@@ -1,5 +1,7 @@
 const staticPaths = new Set([
+  '/',
   '/.DS_Store',
+  '/404.html/',
   '/OLD_OLD_Pako.jpeg',
   '/OLD_Pako.jpeg',
   '/OLD_resume_me.png',
@@ -8,9 +10,15 @@ const staticPaths = new Set([
   '/Pako.jpg',
   '/Pasquale_De_Lucia-Resume.pdf',
   '/aliens-alien.gif',
+  '/blog/',
+  '/button-game/',
   '/dejizen.svg',
+  '/dynamic-sitemap.xml',
   '/favicon.ico',
   '/favicon.svg',
+  '/finance/',
+  '/finance/budgeting/',
+  '/finance/pension_fund/',
   '/fonts/.DS_Store',
   '/fonts/Poppins-Black.ttf',
   '/fonts/Poppins-BlackItalic.ttf',
@@ -33,6 +41,7 @@ const staticPaths = new Set([
   '/manifest.json',
   '/pako-cartoon.png',
   '/price-list.jpeg',
+  '/projects/',
   '/q-manifest.json',
   '/qwik-logo.png',
   '/qwik-prefetch-service-worker.js',
@@ -40,6 +49,7 @@ const staticPaths = new Set([
   '/rick_and_morty.png',
   '/robots.txt',
   '/service-worker.js',
+  '/sitemap.xml',
 ])
 function isStaticPath(method, url) {
   if (method.toUpperCase() !== 'GET') {
