@@ -21,7 +21,7 @@ export default component$(() => {
           <img
             decoding="async"
             loading="lazy"
-            srcSet="
+            src="
               /aliens-alien.gif"
             width="1200"
             height="1200"

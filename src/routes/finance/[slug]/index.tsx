@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
-import { QDatoText } from '~/react/QDatoText'
+import { QDatoText } from '~/integrations/react/QDatoText'
 import { articleDetailApi } from '~/services/graph-ql.service'
 
 export const useArticle = routeLoader$(async requestEvent => {
