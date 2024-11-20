@@ -1,4 +1,10 @@
-import { component$, useSignal, useStyles$ } from '@builder.io/qwik'
+import {
+  $,
+  component$,
+  useSignal,
+  useStyles$,
+  useVisibleTask$,
+} from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
@@ -11,7 +17,18 @@ interface ItemProps {
 
 export const BlogComponent = component$<ItemProps>(props => {
   useStyles$(styles)
-  const showAlert = useSignal(true)
+
+  const showAlert = useSignal(false)
+
+  const onCloseWarning = $(() => {
+    showAlert.value = false
+    localStorage.setItem('pako-ita-warn', 'closed')
+  })
+
+  useVisibleTask$(() => {
+    const pakoItaWarn = localStorage.getItem('pako-ita-warn')
+    showAlert.value = pakoItaWarn && pakoItaWarn === 'closed' ? false : true
+  })
 
   return (
     <>
@@ -73,10 +90,7 @@ export const BlogComponent = component$<ItemProps>(props => {
           </svg>
           <span>Italian content</span>
           <div>
-            <button
-              class="btn btn-sm btn-primary"
-              onClick$={() => (showAlert.value = false)}
-            >
+            <button class="btn btn-sm btn-primary" onClick$={onCloseWarning}>
               Close
             </button>
           </div>
