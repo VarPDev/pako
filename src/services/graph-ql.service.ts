@@ -4,6 +4,10 @@ export const articleDetailApi = async (slug: string, token: string) => {
       title
       slug
       subtitle
+      cover {
+        alt
+        url
+      }
       content {
         value
       }
@@ -33,6 +37,10 @@ export const latestAsrticles = async (token: string) => {
       id
       title
       slug
+      cover {
+        alt
+        url
+      }
       _status
       _firstPublishedAt
     }
