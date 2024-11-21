@@ -137,7 +137,7 @@ export const Contact = component$<{ referral: string }>(props => {
                             {...props}
                             value={field.value}
                             type="text"
-                            class="grow"
+                            class="grow w-full"
                             placeholder="Name"
                           />
                         </label>
@@ -164,7 +164,7 @@ export const Contact = component$<{ referral: string }>(props => {
                             {...props}
                             value={field.value}
                             type="email"
-                            class="grow"
+                            class="grow w-full"
                             placeholder="Email"
                           />
                         </label>
