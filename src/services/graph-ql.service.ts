@@ -8,6 +8,7 @@ export const articleDetailApi = async (
       title
       slug
       subtitle
+      language
       cover {
         alt
         url

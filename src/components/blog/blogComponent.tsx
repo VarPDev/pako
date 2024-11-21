@@ -73,7 +73,7 @@ export const BlogComponent = component$<ItemProps>(props => {
         </section>
       )}
 
-      {showAlert.value && (
+      {showAlert.value && props.page.language === 'ita' && (
         <div
           role="alert"
           class="alert alert-info z-[999] fixed bottom-2 w-[98%]"
