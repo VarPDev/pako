@@ -5,12 +5,12 @@ import {
   type DocumentHead,
 } from '@builder.io/qwik-city'
 import { articleDetailApi, pagesSlugsApi } from '~/services/graph-ql.service'
-import { BlogComponent } from '../blogComponent'
+import { BlogComponent } from '../../../components/blog/blogComponent'
 
 export const useArticle = routeLoader$(async requestEvent => {
   const { slug } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return articleDetailApi(slug, token || '')
+  return articleDetailApi(slug, 'finance', token || '')
 })
 
 export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
@@ -29,7 +29,7 @@ export default component$(() => {
 
   return (
     <>
-      <BlogComponent page={article.value.data.page} />
+      <BlogComponent showFinanceWarn={true} page={article.value.data.page} />
     </>
   )
 })

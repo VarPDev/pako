@@ -1,0 +1,39 @@
+.blog-content {
+  p {
+    @apply mb-4 mt-4;
+  }
+
+  ul,
+  ol {
+    @apply list-outside ps-8;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  a {
+    @apply text-primary;
+  }
+
+  pre {
+    @apply bg-secondary-content rounded-xl;
+    tab-size: 2;
+  }
+
+  code {
+    font-family: monospace;
+    font-size: inherit;
+  }
+
+  pre code {
+    @apply p-6 block bg-none max-w-full min-w-[100px];
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+  }
+}

@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
+import { format } from 'date-fns'
 interface ItemProps {
   articles: Array<any>
   referrer?: string
@@ -15,8 +16,7 @@ export const Articles = component$<ItemProps>(props => {
           {articles.map(c => (
             // <Link href={`/blog/${c.slug}`} key={c.id}>
             <Link
-              href={c.href}
-              target="_blank"
+              href={'/blog/' + c.slug}
               key={c.id}
               data-goatcounter-click="open-article"
               data-goatcounter-title="Open Article"
@@ -25,12 +25,12 @@ export const Articles = component$<ItemProps>(props => {
               <article class="prose">
                 <h3>{c.title}</h3>
                 <p class="flex items-center gap-2">
-                  {c.date}{' '}
-                  <span class="bg-secondary text-black p-1 text-xs rounded">
-                    {c.lang}
+                  {format(new Date(c._firstPublishedAt), 'MMM d, yyyy')}{' '}
+                  <span class="bg-secondary text-black p-1 text-xs rounded uppercase">
+                    {c.language}
                   </span>
                 </p>
-                <p>{c.description}</p>
+                <p>{c.subtitle}</p>
               </article>
             </Link>
           ))}

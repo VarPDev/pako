@@ -66,7 +66,7 @@ section {
     @apply w-full pb-12 pt-12 md:pb-32 md:pt-32 bg-center bg-cover mb-12 relative bg-primary;
 
     &:before {
-      @apply content-[''] block absolute top-0 left-0 w-full h-full bg-black opacity-60;
+      @apply content-[''] block absolute top-0 left-0 w-full h-full bg-black opacity-70;
     }
 
     .content {

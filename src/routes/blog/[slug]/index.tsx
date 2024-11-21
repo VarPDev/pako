@@ -1,29 +1,35 @@
 import { component$ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
-import { articleDetailApi, latestArticles } from '~/services/graph-ql.service'
-import { BlogComponent } from '../../components/blog/blogComponent'
+import {
+  routeLoader$,
+  StaticGenerateHandler,
+  type DocumentHead,
+} from '@builder.io/qwik-city'
+import { BlogComponent } from '~/components/blog/blogComponent'
+import { articleDetailApi, pagesSlugsApi } from '~/services/graph-ql.service'
 
 export const useArticle = routeLoader$(async requestEvent => {
+  const { slug } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return articleDetailApi('finance', 'finance', token || '')
+  return articleDetailApi(slug, 'dev', token || '')
 })
 
-export const useLatestArticles = routeLoader$(async requestEvent => {
-  const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return latestArticles(token || '', 'finance')
-})
+export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
+  const token = env.get('DATO_CMS_TOKEN')
+  const slugs = await pagesSlugsApi(token ?? '')
+
+  return {
+    params: slugs.data.allPages.map((a: any) => {
+      return { slug: a.slug }
+    }),
+  }
+}
 
 export default component$(() => {
   const article = useArticle()
-  const latestArticle = useLatestArticles()
 
   return (
     <>
-      <BlogComponent
-        page={article.value.data.page}
-        latestArticle={latestArticle.value.data.allPages}
-        showFinanceWarn={true}
-      />
+      <BlogComponent page={article.value.data.page} />
     </>
   )
 })

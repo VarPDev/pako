@@ -8,11 +8,12 @@ import {
 import { Link } from '@builder.io/qwik-city'
 import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
-import styles from './finance.css?inline'
+import styles from './blog.css?inline'
 
 interface ItemProps {
   page: any
   latestArticle?: any[]
+  showFinanceWarn?: boolean
 }
 
 export const BlogComponent = component$<ItemProps>(props => {
@@ -42,11 +43,13 @@ export const BlogComponent = component$<ItemProps>(props => {
         </div>
       </section>
 
-      <section class="title-section">
-        <NoTips />
-      </section>
+      {props.showFinanceWarn && (
+        <section class="title-section">
+          <NoTips />
+        </section>
+      )}
 
-      <section class="inner-section finance">
+      <section class="inner-section blog-content">
         <QDatoText data={props.page.content} />
       </section>
 

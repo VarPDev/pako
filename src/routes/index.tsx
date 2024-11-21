@@ -7,25 +7,30 @@ import { Hero } from '~/components/hero/hero'
 import { LinkItem } from '~/components/linkItem/linkItem'
 import { Stacks } from '~/components/stacks/stacks'
 import { Timeline } from '~/components/timeline/timeline'
-import { getArticles } from '~/repository/articles'
 import { links } from '~/repository/links'
 import { projects } from '~/repository/projects'
 import { backEnd, frontEnd, tools } from '~/repository/stack'
 import { works } from '~/repository/work'
+import { latestArticles } from '~/services/graph-ql.service'
 import styles from './index.css?inline'
 import ImgPR from '/src/media/badge-first-pr.webp?jsx'
 
-export const useArticles = routeLoader$(async requestEvent => {
-  return await getArticles({
-    devToApiKey: requestEvent.env.get('DEV_TO_API_KEY'),
-    limit: 4,
-  })
+// export const useArticles = routeLoader$(async requestEvent => {
+//   return await getArticles({
+//     devToApiKey: requestEvent.env.get('DEV_TO_API_KEY'),
+//     limit: 4,
+//   })
+// })
+
+export const useLatestDevArticles = routeLoader$(async requestEvent => {
+  const token = requestEvent.env.get('DATO_CMS_TOKEN')
+  return latestArticles(token || '', 'dev', 4)
 })
 
 export default component$(() => {
   useStylesScoped$(styles)
 
-  const articles = useArticles()
+  const latestArticles = useLatestDevArticles()
 
   return (
     <>
@@ -78,7 +83,10 @@ export default component$(() => {
       </AnimatedComp>
       <AnimatedComp>
         <section class="inner-section">
-          <Articles articles={articles.value} referrer="index-article" />
+          <Articles
+            articles={latestArticles.value.data.allPages}
+            referrer="index-article"
+          />
 
           <p class="flex justify-center pt-6">
             <Link
