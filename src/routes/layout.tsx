@@ -4,18 +4,25 @@ import {
   useContextProvider,
   useSignal,
 } from '@builder.io/qwik'
-import type { RequestHandler } from '@builder.io/qwik-city'
+import { routeLoader$, type RequestHandler } from '@builder.io/qwik-city'
+import { InitialValues } from '@modular-forms/qwik'
 import { isWithinInterval, set } from 'date-fns'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
 import { Cat } from '~/components/cat/cat'
 import { CatWalk } from '~/components/cat/cat-walk'
-import { Contact } from '~/components/contact/contact'
+import { Contact, ContactForm } from '~/components/contact/contact'
 import { Eggs } from '~/components/eggs/eggs'
 import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
 import { Rudolph } from '~/components/rudolph/rudolph'
 import { Santa } from '~/components/santa/santa'
 import { ShowContext, SnowContext } from '~/services/common.service'
+
+export const useFormLoader = routeLoader$<InitialValues<ContactForm>>(() => ({
+  name: '',
+  email: '',
+  message: '',
+}))
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
