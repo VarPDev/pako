@@ -95,7 +95,7 @@ export default component$(() => {
 
         <AnimatedComp>
           <section class="inner-section">
-            <Contact referral={location.pathname}></Contact>
+            <Contact referral="layout"></Contact>
           </section>
         </AnimatedComp>
       </main>
