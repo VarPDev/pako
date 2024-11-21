@@ -68,28 +68,34 @@ export const Contact = component$(() => {
   })
 
   const handleSubmit = $<SubmitHandler<ContactForm>>(async (values, event) => {
-    // Runs on client
-    sendingNotification.value = true
-    const success = await fetch(
-      import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+    try {
+      // Runs on client
+      sendingNotification.value = true
+      const success = await fetch(
+        import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+          body: JSON.stringify(values),
         },
-        body: JSON.stringify(values),
-      },
-    )
-    sendingNotification.value = false
+      )
+      sendingNotification.value = false
 
-    if (success) {
-      reset(contactForm)
-      showSuccess.value = true
-      setTimeout(() => {
-        showSuccess.value = false
-      }, 3000)
-    } else {
+      if (success) {
+        reset(contactForm)
+        showSuccess.value = true
+        setTimeout(() => {
+          showSuccess.value = false
+        }, 3000)
+      } else {
+        showError.value = true
+      }
+    } catch (e) {
+      console.error('🚀 ~ handleSubmit ~ e:', e)
+      sendingNotification.value = false
       showError.value = true
     }
   })
@@ -195,6 +201,7 @@ export const Contact = component$(() => {
                   <button
                     class="btn btn-primary text-white col-start-2"
                     type="submit"
+                    disabled={sendingNotification.value}
                   >
                     {sendingNotification.value && (
                       <span class="loading loading-spinner"></span>
