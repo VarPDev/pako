@@ -72,15 +72,7 @@ export const Contact = component$<{ referral: string }>(props => {
       // Runs on client
       sendingNotification.value = true
       const success = await fetch(
-        import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-          body: JSON.stringify(values),
-        },
+        `${import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION}?name="${values.name}&email="${values.email}&message="${values.message}`,
       )
       sendingNotification.value = false
 
@@ -94,7 +86,6 @@ export const Contact = component$<{ referral: string }>(props => {
         showError.value = true
       }
     } catch (e) {
-      console.error('🚀 ~ handleSubmit ~ e:', e)
       sendingNotification.value = false
       showError.value = true
     }
