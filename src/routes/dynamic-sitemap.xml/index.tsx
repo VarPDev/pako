@@ -9,12 +9,17 @@ export const onGet: RequestHandler = async ev => {
     .filter(route => route !== '/' && route !== 'finance/[slug]/') // Exclude the '/' route
 
   const token = ev.env.get('DATO_CMS_TOKEN')
-  const allFinancePages = await pagesSlugsApi(token ?? '')
+  const allDevPages = await pagesSlugsApi(token ?? '', 'dev')
+  const allFinancePages = await pagesSlugsApi(token ?? '', 'finance')
 
-  const slugs = allFinancePages.data.allPages.map(
+  const financeSlugs = allFinancePages.data.allPages.map(
     (item: any) => `finance/${item.slug}/`,
   )
-  siteRoutes.push(...slugs)
+
+  const devSlugs = allDevPages.data.allPages.map(
+    (item: any) => `blog/${item.slug}/`,
+  )
+  siteRoutes.push(...financeSlugs, ...devSlugs)
 
   const sitemap = createSitemap([
     { loc: '/', priority: 1 }, // Manually include the root route

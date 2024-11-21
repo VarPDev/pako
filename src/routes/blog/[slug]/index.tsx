@@ -15,7 +15,7 @@ export const useArticle = routeLoader$(async requestEvent => {
 
 export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
   const token = env.get('DATO_CMS_TOKEN')
-  const slugs = await pagesSlugsApi(token ?? '')
+  const slugs = await pagesSlugsApi(token ?? '', 'dev')
 
   return {
     params: slugs.data.allPages.map((a: any) => {
