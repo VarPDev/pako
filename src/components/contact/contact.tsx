@@ -56,7 +56,7 @@ export type ContactForm = InferInput<typeof ContactSchema>
 //   }
 // })
 
-export const Contact = component$(() => {
+export const Contact = component$<{ referral: string }>(props => {
   const sendingNotification = useSignal(false)
   const showError = useSignal(false)
   const showSuccess = useSignal(false)
@@ -202,6 +202,9 @@ export const Contact = component$(() => {
                     class="btn btn-primary text-white col-start-2"
                     type="submit"
                     disabled={sendingNotification.value}
+                    data-goatcounter-click="send-email"
+                    data-goatcounter-title="Send Email"
+                    data-goatcounter-referrer={props.referral}
                   >
                     {sendingNotification.value && (
                       <span class="loading loading-spinner"></span>
