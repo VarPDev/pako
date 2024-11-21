@@ -130,9 +130,9 @@ export const listArticles = async (token: string, blogType: string) => {
   return responseBody
 }
 
-export const pagesSlugsApi = async (token: string) => {
+export const pagesSlugsApi = async (token: string, blogType: string) => {
   const PAGES_QUERY = `{
-        allPages(filter: { slug: { neq: "finance" } }) {
+        allPages(filter: { slug: { neq: "finance" }, blogType: { eq: "${blogType}" } }) {
           slug
         }
       }`
