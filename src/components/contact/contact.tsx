@@ -1,7 +1,5 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
-import { server$ } from '@builder.io/qwik-city'
 import { reset, SubmitHandler, useForm, valiForm$ } from '@modular-forms/qwik'
-import { Telegraf } from 'telegraf'
 import { email, InferInput, minLength, object, pipe, string } from 'valibot'
 import { useFormLoader } from '~/routes/layout'
 
@@ -40,23 +38,23 @@ export type ContactForm = InferInput<typeof ContactSchema>
 //   }
 // }, valiForm$(ContactSchema))
 
-export const sendTelegramNotification = server$(async function (values) {
-  try {
-    const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN!)
-    await bot.telegram.sendMessage(
-      process.env.TELEGRAM_CHANNEL_ID!,
-      `*${values.name}*\n\n${values.email}\n\n${values.message}`.replaceAll(
-        '.',
-        '\\.',
-      ),
-      { parse_mode: 'MarkdownV2' },
-    )
-    return true
-  } catch (error) {
-    console.error('🚀 ~ useFormAction ~ error:', error)
-    return false
-  }
-})
+// export const sendTelegramNotification = server$(async function (values) {
+//   try {
+//     const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN!)
+//     await bot.telegram.sendMessage(
+//       process.env.TELEGRAM_CHANNEL_ID!,
+//       `*${values.name}*\n\n${values.email}\n\n${values.message}`.replaceAll(
+//         '.',
+//         '\\.',
+//       ),
+//       { parse_mode: 'MarkdownV2' },
+//     )
+//     return true
+//   } catch (error) {
+//     console.error('🚀 ~ useFormAction ~ error:', error)
+//     return false
+//   }
+// })
 
 export const Contact = component$(() => {
   const sendingNotification = useSignal(false)
@@ -72,7 +70,17 @@ export const Contact = component$(() => {
   const handleSubmit = $<SubmitHandler<ContactForm>>(async (values, event) => {
     // Runs on client
     sendingNotification.value = true
-    const success = await sendTelegramNotification(values)
+    const success = await fetch(
+      import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify(values),
+      },
+    )
     sendingNotification.value = false
 
     if (success) {
