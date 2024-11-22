@@ -24,10 +24,11 @@ export const Footer = component$(() => {
           </svg>
           <p>Copyright {currentYear} - All right reserved</p>
         </aside>
-        <nav class="w-full flex flex-col items-center md:w-auto md:flex-row gap-4 md:place-self-center md:justify-self-end">
+        <nav class="w-full justify-end grid grid-cols-2 md:grid-cols-none gap-4">
           <Link
             href="https://qwik.builder.io/"
             target="_blank"
+            class="md:row-span-full"
             data-goatcounter-click="open-quik"
             data-goatcounter-title="Open Quik"
             data-goatcounter-referrer="referrer"
@@ -36,6 +37,7 @@ export const Footer = component$(() => {
           </Link>
           <Link
             href="/blog"
+            class="md:row-span-full"
             data-goatcounter-click="open-articles"
             data-goatcounter-title="Open Articles"
             data-goatcounter-referrer="footer"
@@ -44,6 +46,7 @@ export const Footer = component$(() => {
           </Link>
           <Link
             href="/projects"
+            class="md:row-span-full"
             data-goatcounter-click="open-projects"
             data-goatcounter-title="Open Projects"
             data-goatcounter-referrer="footer"
@@ -52,6 +55,7 @@ export const Footer = component$(() => {
           </Link>
           <Link
             href="/button-game"
+            class="md:row-span-full"
             data-goatcounter-click="open-game"
             data-goatcounter-title="Open Game"
             data-goatcounter-referrer="referrer"
@@ -60,6 +64,7 @@ export const Footer = component$(() => {
           </Link>
           <Link
             href="https://www.amazon.it/hz/wishlist/ls/2JT4PUEODMY27?ref_=wl_share"
+            class="md:row-span-full"
             data-goatcounter-click="open-wishlist"
             data-goatcounter-title="Open Wishilist"
             data-goatcounter-referrer="referrer"
@@ -68,7 +73,7 @@ export const Footer = component$(() => {
             Wishlist
           </Link>
           <label
-            class="cursor-pointer"
+            class="cursor-pointer md:row-span-full"
             onClick$={() => (show.value = !show.value)}
             data-goatcounter-click={'cat-mode-' + show.value ? 'open' : 'close'}
             data-goatcounter-title="Cat Mode"
