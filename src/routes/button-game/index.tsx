@@ -64,7 +64,7 @@ export default component$(() => {
           There are 100 levels in this challenge. As you successfully conquer
           each level, the probability of passing the next one decreases by 1%.
           <span
-            class="tooltip ml-2 top-[2px]"
+            class="tooltip tooltip-left ml-2 top-[2px]"
             data-tip="Commencing with a full 100% chance of success for the initial level, each subsequent accomplishment introduces an added layer of difficulty. Navigate through the escalating challenges and witness the diminishing odds, putting your luck to the test with each passing level."
           >
             <svg
