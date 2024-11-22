@@ -30,7 +30,7 @@ export const Hero = component$<ItemProps>(props => {
             <ImgPako
               loading="eager"
               alt="Pasquale De Lucia picture"
-              class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
+              class="lg:max-w-[18rem] xs:max-w-[8rem] max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
             />
             {show.value && snows.value && (
               <>
@@ -41,7 +41,9 @@ export const Hero = component$<ItemProps>(props => {
             )}
           </div>
           <div class="prose m-6 md:my-0">
-            <h1 class="text-5xl font-bold">Pasquale De Lucia</h1>
+            <h1 class="text-4xl md:text-5xl font-bold">
+              Pasquale <br class="md:hidden" /> De Lucia
+            </h1>
             <p class="text-xl text-gradient">
               Web Wizard and <strong>JavaScript Lover</strong>
             </p>
