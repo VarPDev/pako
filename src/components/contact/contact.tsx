@@ -72,7 +72,7 @@ export const Contact = component$<{ referral: string }>(props => {
       // Runs on client
       sendingNotification.value = true
       const success = await fetch(
-        `${import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION}?name="${values.name}&email="${values.email}&message="${values.message}`,
+        `${import.meta.env.PUBLIC_NOTIFICATION_TELEGRAM_FUNCTION}?name=${values.name}&email=${values.email}&message=${values.message}`,
       )
       sendingNotification.value = false
 
