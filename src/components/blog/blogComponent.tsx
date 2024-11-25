@@ -14,6 +14,7 @@ import styles from './blog.css?inline'
 interface ItemProps {
   page: any
   urlBlogBasePath: string
+  blogType: string
   latestArticle?: any[]
   showFinanceWarn?: boolean
 }
@@ -63,10 +64,10 @@ export const BlogComponent = component$<ItemProps>(props => {
 
           <InnerSectionComponent
             showCta={true}
-            ctaHref="/finance/all"
+            ctaHref={'/' + props.urlBlogBasePath + '/all'}
             ctaLabel="Scopri tutti gli articoli"
-            gcClick="more-finance-articles"
-            gcTitle="More Finance Articles"
+            gcClick={'more-' + props.blogType + '-articles'}
+            gcTitle={'More ' + props.blogType + ' Articles'}
             gcReferrer="referrer"
           >
             <Articles

@@ -1,3 +1,5 @@
+import { BlogTypes } from '~/utils/helpers'
+
 export const articleDetailApi = async (
   slug: string,
   blogType: string,
@@ -79,7 +81,7 @@ export const latestArticles = async (
   limit: number = 4,
 ) => {
   const LATEST_QUERY = `{
-    allPages(first: ${limit}, filter: { slug: { neq: "finance" }, blogType: { eq: "${blogType}" } }) {
+    allPages(first: ${limit}, filter: { slug: { notIn: [${BlogTypes}] }, blogType: { eq: "${blogType}" } }) {
       id
       title
       subtitle
@@ -109,7 +111,7 @@ export const latestArticles = async (
 
 export const listArticles = async (token: string, blogType: string) => {
   const LATEST_QUERY = `{
-    allPages(filter: { slug: { neq: "finance" }, blogType: { eq: "${blogType}" } }) {
+    allPages(filter: { slug: { notIn: [${BlogTypes}] }, blogType: { eq: "${blogType}" } }) {
       id
       title
       subtitle
@@ -139,8 +141,9 @@ export const listArticles = async (token: string, blogType: string) => {
 
 export const pagesSlugsApi = async (token: string, blogType: string) => {
   const PAGES_QUERY = `{
-        allPages(filter: { slug: { neq: "finance" }, blogType: { eq: "${blogType}" } }) {
+        allPages(filter: { slug: { notIn: [${BlogTypes}] }, blogType: { eq: "${blogType}" } }) {
           slug
+          blogType
         }
       }`
 

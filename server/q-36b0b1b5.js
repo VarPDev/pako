@@ -10,7 +10,7 @@ var E = (t, e, n) => (gr(t, typeof e != 'symbol' ? e + '' : e, n), n)
  * Copyright Builder.io, Inc. All Rights Reserved.
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://github.com/QwikDev/qwik/blob/main/LICENSE
- */ const Mt = t => t && typeof t.nodeType == 'number',
+ */ const Ct = t => t && typeof t.nodeType == 'number',
   Qs = t => t.nodeType === 9,
   bt = t => t.nodeType === 1,
   Et = t => {
@@ -24,7 +24,7 @@ var E = (t, e, n) => (gr(t, typeof e != 'symbol' ? e + '' : e, n), n)
   it = t => t.nodeType === 111,
   xn = t => t.nodeType === 3,
   de = t => t.nodeType === 8,
-  qt = (t, ...e) => Tn(!1, t, ...e),
+  It = (t, ...e) => Tn(!1, t, ...e),
   vr = (t, ...e) => {
     throw Tn(!1, t, ...e)
   },
@@ -84,19 +84,19 @@ const Ue = t =>
     return new URL(n, o)
   }
 let kn = wr()
-const Ol = t => (kn = t),
-  In = () => kn,
+const Dl = t => (kn = t),
+  qn = () => kn,
   Y = () => kn.isServer,
   He = t => {
     const e = Object.getPrototypeOf(t)
     return e === Object.prototype || e === null
   },
-  Ct = t => !!t && typeof t == 'object',
-  M = t => Array.isArray(t),
+  Mt = t => !!t && typeof t == 'object',
+  C = t => Array.isArray(t),
   yt = t => typeof t == 'string',
   Z = t => typeof t == 'function',
   L = t => t && typeof t.then == 'function',
-  qn = (t, e, n) => {
+  In = (t, e, n) => {
     try {
       const s = t()
       return L(s) ? s.then(e, n) : e(s)
@@ -104,7 +104,7 @@ const Ol = t => (kn = t),
       return n(s)
     }
   },
-  I = (t, e) => (L(t) ? t.then(e) : e(t)),
+  q = (t, e) => (L(t) ? t.then(e) : e(t)),
   An = t => (t.some(L) ? Promise.all(t) : t),
   Qt = t => (t.length > 0 ? Promise.all(t) : t),
   Ws = t => t != null,
@@ -128,12 +128,12 @@ const Ol = t => (kn = t),
   Wt = Symbol('proxy flags'),
   et = Symbol('proxy manager'),
   N = Symbol('IMMUTABLE'),
-  Ge = '_qc_',
+  Ve = '_qc_',
   X = (t, e, n) => t.setAttribute(e, n),
   ot = (t, e) => t.getAttribute(e),
   Rn = t => t.replace(/([A-Z])/g, '-$1').toLowerCase(),
   kr = t => t.replace(/-./g, e => e[1].toUpperCase()),
-  Ir = (t, e, n, s) => {
+  qr = (t, e, n, s) => {
     typeof CustomEvent == 'function' &&
       t &&
       t.dispatchEvent(
@@ -141,21 +141,21 @@ const Ol = t => (kn = t),
       )
   },
   Nn = (t, e, n = 0) =>
-    e.$proxyMap$.get(t) || (n !== 0 && Je(t, n), he(t, e, void 0)),
+    e.$proxyMap$.get(t) || (n !== 0 && Ke(t, n), he(t, e, void 0)),
   he = (t, e, n) => {
     sn(t), e.$proxyMap$.has(t)
     const s = e.$subsManager$.$createManager$(n),
-      o = new Proxy(t, new Gs(e, s))
+      o = new Proxy(t, new Vs(e, s))
     return e.$proxyMap$.set(t, o), o
   },
-  Ve = () => {
+  Ge = () => {
     const t = {}
-    return Je(t, 2), t
+    return Ke(t, 2), t
   },
-  Je = (t, e) => {
+  Ke = (t, e) => {
     Object.defineProperty(t, Wt, { value: e, enumerable: !1 })
   }
-class Gs {
+class Vs {
   constructor(e, n) {
     E(this, '$containerState$')
     E(this, '$manager$')
@@ -166,7 +166,7 @@ class Gs {
     return (
       typeof n == 'string' &&
       delete e[n] &&
-      (this.$manager$.$notifySubs$(M(e) ? void 0 : n), !0)
+      (this.$manager$.$notifySubs$(C(e) ? void 0 : n), !0)
     )
   }
   get(e, n) {
@@ -181,12 +181,12 @@ class Gs {
     if (
       (o && (c = o.$subscriber$),
       !(2 & s) ||
-        (n in e && !qr((l = e[N]) == null ? void 0 : l[n])) ||
+        (n in e && !Ir((l = e[N]) == null ? void 0 : l[n])) ||
         (c = null),
       i ? (($ = i.value), (c = null)) : ($ = e[n]),
       c)
     ) {
-      const a = M(e)
+      const a = C(e)
       this.$manager$.$addSub$(c, a ? void 0 : n)
     }
     return r ? Ar($, this.$containerState$) : $
@@ -196,7 +196,7 @@ class Gs {
     const o = e[Wt] ?? 0
     if (2 & o) throw Q(17)
     const r = 1 & o ? sn(s) : s
-    if (M(e)) return (e[n] = r), this.$manager$.$notifySubs$(), !0
+    if (C(e)) return (e[n] = r), this.$manager$.$notifySubs$(), !0
     const i = e[n]
     return (e[n] = r), i !== r && this.$manager$.$notifySubs$(n), !0
   }
@@ -211,32 +211,32 @@ class Gs {
       const o = st()
       o && (s = o.$subscriber$), s && this.$manager$.$addSub$(s)
     }
-    return M(e)
+    return C(e)
       ? Reflect.ownKeys(e)
       : Reflect.ownKeys(e).map(s =>
           typeof s == 'string' && s.startsWith('$$') ? s.slice(2) : s,
         )
   }
   getOwnPropertyDescriptor(e, n) {
-    return M(e) || typeof n == 'symbol'
+    return C(e) || typeof n == 'symbol'
       ? Object.getOwnPropertyDescriptor(e, n)
       : { enumerable: !0, configurable: !0 }
   }
 }
-const qr = t => t === N || U(t),
+const Ir = t => t === N || U(t),
   Ar = (t, e) => {
-    if (Ct(t)) {
+    if (Mt(t)) {
       if (Object.isFrozen(t)) return t
       const n = sn(t)
-      if (n !== t || Vo(n)) return t
-      if (He(n) || M(n)) return e.$proxyMap$.get(n) || Nn(n, e, 1)
+      if (n !== t || Go(n)) return t
+      if (He(n) || C(n)) return e.$proxyMap$.get(n) || Nn(n, e, 1)
     }
     return t
   },
   Rr = /^(on|window:|document:)/,
-  Vs = 'preventdefault:',
-  Mn = t => t.endsWith('$') && Rr.test(t),
-  Cn = t => {
+  Gs = 'preventdefault:',
+  Cn = t => t.endsWith('$') && Rr.test(t),
+  Mn = t => {
     if (t.length === 0) return ut
     if (t.length === 1) {
       const n = t[0]
@@ -251,7 +251,7 @@ const qr = t => t === N || U(t),
   },
   Pn = (t, e, n, s) => {
     if ((e.endsWith('$'), (e = un(e.slice(0, -1))), n))
-      if (M(n)) {
+      if (C(n)) {
         const o = n
           .flat(1 / 0)
           .filter(r => r != null)
@@ -274,7 +274,7 @@ const qr = t => t === N || U(t),
     return e + ':' + (t = t.startsWith('-') ? Rn(t.slice(1)) : t.toLowerCase())
   },
   hs = (t, e) => (t.$setContainer$(e), t),
-  Mr = (t, e) => {
+  Cr = (t, e) => {
     const n = t.$element$.attributes,
       s = []
     for (let o = 0; o < n.length; o++) {
@@ -294,20 +294,20 @@ const qr = t => t === N || U(t),
     }
     return s
   },
-  Cr = (t, e = 0) => {
+  Mr = (t, e = 0) => {
     for (let n = 0; n < t.length; n++)
       (e = (e << 5) - e + t.charCodeAt(n)), (e |= 0)
     return Number(Math.abs(e)).toString(36)
   },
-  Pr = (t, e) => `${Cr(t.$hash$)}-${e}`,
-  Or = t => '⭐️' + t,
-  Js = t => {
+  Pr = (t, e) => `${Mr(t.$hash$)}-${e}`,
+  Dr = t => '⭐️' + t,
+  Ks = t => {
     const e = t.join('|')
     if (e.length > 0) return e
   },
   Pt = () => {
-    const t = Kn(),
-      e = G(t.$hostElement$, t.$renderCtx$.$static$.$containerState$),
+    const t = Jn(),
+      e = V(t.$hostElement$, t.$renderCtx$.$static$.$containerState$),
       n = e.$seq$ || (e.$seq$ = []),
       s = t.$i$++
     return { val: n[s], set: o => (n[s] = o), i: s, iCtx: t, elCtx: e }
@@ -321,13 +321,13 @@ const qr = t => t === N || U(t),
   me = (t, e) => {
     const { val: n, set: s, iCtx: o, elCtx: r } = Pt()
     if (n !== void 0) return n
-    const i = Ks(t, r, o.$renderCtx$.$static$.$containerState$)
+    const i = Js(t, r, o.$renderCtx$.$static$.$containerState$)
     if (typeof e == 'function') return s(W(void 0, e, i))
     if (i !== void 0) return s(i)
     if (e !== void 0) return s(e)
     throw Q(13, t.id)
   },
-  Dr = (t, e) => {
+  Or = (t, e) => {
     var o
     let n = t,
       s = 1
@@ -336,25 +336,25 @@ const qr = t => t === N || U(t),
         if (de(n)) {
           const r = n.__virtual
           if (r) {
-            const i = r[Ge]
-            if (n === r.open) return i ?? G(r, e)
+            const i = r[Ve]
+            if (n === r.open) return i ?? V(r, e)
             if (i != null && i.$parentCtx$) return i.$parentCtx$
             n = r
             continue
           }
           if (n.data === '/qv') s++
           else if (n.data.startsWith('qv ') && (s--, s === 0))
-            return G(Se(n), e)
+            return V(Se(n), e)
         }
       ;(n = t.parentElement), (t = n)
     }
     return null
   },
   Lr = (t, e) => (
-    t.$parentCtx$ === void 0 && (t.$parentCtx$ = Dr(t.$element$, e)),
+    t.$parentCtx$ === void 0 && (t.$parentCtx$ = Or(t.$element$, e)),
     t.$parentCtx$
   ),
-  Ks = (t, e, n) => {
+  Js = (t, e, n) => {
     var r
     const s = t.id
     if (!e) return
@@ -366,11 +366,11 @@ const qr = t => t === N || U(t),
     }
   },
   zr = ct('qk-error'),
-  On = (t, e, n) => {
+  Dn = (t, e, n) => {
     const s = tt(e)
     if (Y()) throw t
     {
-      const o = Ks(zr, s, n.$static$.$containerState$)
+      const o = Js(zr, s, n.$static$.$containerState$)
       if (o === void 0) throw t
       o.error = t
     }
@@ -422,12 +422,12 @@ const qr = t => t === N || U(t),
     'WebkitLineClamp',
   ]),
   Qr = t => Fr.has(t),
-  Ie = (t, e, n) => {
-    ;(e.$flags$ &= ~Kt), (e.$flags$ |= Vn), (e.$slots$ = []), (e.li.length = 0)
+  qe = (t, e, n) => {
+    ;(e.$flags$ &= ~Jt), (e.$flags$ |= Gn), (e.$slots$ = []), (e.li.length = 0)
     const s = e.$element$,
       o = e.$componentQrl$,
       r = e.$props$,
-      i = V(t.$static$.$locale$, s, void 0, 'qRender'),
+      i = G(t.$static$.$locale$, s, void 0, 'qRender'),
       c = (i.$waitOn$ = []),
       $ = ge(t)
     ;($.$cmpCtx$ = e),
@@ -436,17 +436,17 @@ const qr = t => t === N || U(t),
       (i.$renderCtx$ = t),
       o.$setContainer$(t.$static$.$containerState$.$containerEl$)
     const l = o.getFn(i)
-    return qn(
+    return In(
       () => l(r),
       a =>
-        I(
+        q(
           Y()
-            ? I(Qt(c), () => I(Ti(t.$static$.$containerState$, t), () => Qt(c)))
+            ? q(Qt(c), () => q(Ti(t.$static$.$containerState$, t), () => Qt(c)))
             : Qt(c),
           () => {
             var u
-            if (e.$flags$ & Kt) {
-              if (!(n && n > 100)) return Ie(t, e, n ? n + 1 : 1)
+            if (e.$flags$ & Jt) {
+              if (!(n && n > 100)) return qe(t, e, n ? n + 1 : 1)
               gt(
                 `Infinite loop detected. Element: ${(u = e.$componentQrl$) == null ? void 0 : u.$symbol$}`,
               )
@@ -457,12 +457,12 @@ const qr = t => t === N || U(t),
       a => {
         var u
         if (a === xo) {
-          if (!(n && n > 100)) return I(Qt(c), () => Ie(t, e, n ? n + 1 : 1))
+          if (!(n && n > 100)) return q(Qt(c), () => qe(t, e, n ? n + 1 : 1))
           gt(
             `Infinite loop detected. Element: ${(u = e.$componentQrl$) == null ? void 0 : u.$symbol$}`,
           )
         }
-        return On(a, s, t), { node: Fn, rCtx: $ }
+        return Dn(a, s, t), { node: Fn, rCtx: $ }
       },
     )
   },
@@ -487,28 +487,28 @@ const qr = t => t === N || U(t),
     $cmpCtx$: t.$cmpCtx$,
     $slotCtx$: t.$slotCtx$,
   }),
-  Dn = (t, e) => {
+  On = (t, e) => {
     var n
     return (n = e == null ? void 0 : e.$scopeIds$) != null && n.length
-      ? e.$scopeIds$.join(' ') + ' ' + qe(t)
-      : qe(t)
+      ? e.$scopeIds$.join(' ') + ' ' + Ie(t)
+      : Ie(t)
   },
-  qe = t => {
+  Ie = t => {
     if (!t) return ''
     if (yt(t)) return t.trim()
     const e = []
-    if (M(t))
+    if (C(t))
       for (const n of t) {
-        const s = qe(n)
+        const s = Ie(n)
         s && e.push(s)
       }
     else for (const [n, s] of Object.entries(t)) s && e.push(n.trim())
     return e.join(' ')
   },
-  Ke = t => {
+  Je = t => {
     if (t == null) return ''
     if (typeof t == 'object') {
-      if (M(t)) throw Q(0, t, 'style')
+      if (C(t)) throw Q(0, t, 'style')
       {
         const e = []
         for (const n in t)
@@ -536,7 +536,7 @@ const qr = t => t === N || U(t),
 function Zs(t) {
   return t.startsWith('aria-')
 }
-const js = (t, e) => !!e.key && (!Dt(t) || (!Z(t.type) && t.key != e.key)),
+const js = (t, e) => !!e.key && (!Ot(t) || (!Z(t.type) && t.key != e.key)),
   H = 'dangerouslySetInnerHTML',
   Te = '<!--qkssr-f-->'
 var Nl
@@ -547,9 +547,9 @@ class to {
     this.nodeType = e
   }
 }
-Nl = Ge
+Nl = Ve
 const Ur = () => new to(9),
-  Dl = async (t, e) => {
+  Ol = async (t, e) => {
     var y, g, f
     const n = e.containerTagName,
       s = Ae(1).$element$,
@@ -583,8 +583,8 @@ const Ur = () => new to(9),
     n !== 'html' && (a.class = 'qc📦' + (a.class ? ' ' + a.class : ''))
     const d = (o.$serverData$ = { ...o.$serverData$, ...e.serverData })
     ;(d.containerAttributes = { ...d.containerAttributes, ...a }),
-      (($.$invocationContext$ = V(l)).$renderCtx$ = i)
-    const m = At(n, null, a, h, Kt | St, null)
+      (($.$invocationContext$ = G(l)).$renderCtx$ = i)
+    const m = At(n, null, a, h, Jt | St, null)
     ;(o.$hostsRendering$ = new Set()),
       await Promise.resolve().then(() => Br(m, i, $, e.stream, o, e))
   },
@@ -608,7 +608,7 @@ const Ur = () => new to(9),
       e
     )
   },
-  Gr = async (t, e, n, s, o) => {
+  Vr = async (t, e, n, s, o) => {
     s.write(Te)
     const r = t.props.children
     let i
@@ -627,8 +627,8 @@ const Ur = () => new to(9),
     var y
     const $ = t.props,
       l = $['q:renderFn']
-    if (l) return (e.$componentQrl$ = l), Kr(s, o, r, e, t, i, c)
-    let a = '<!--qv' + Jr($)
+    if (l) return (e.$componentQrl$ = l), Jr(s, o, r, e, t, i, c)
+    let a = '<!--qv' + Kr($)
     const u = 'q:s' in $,
       h = t.key != null ? String(t.key) : null
     u &&
@@ -640,7 +640,7 @@ const Ur = () => new to(9),
     if (d) return r.write(d), void r.write(rn)
     if (n) for (const g of n) Ln(g.type, g.props, r)
     const m = no(t.children, s, o, r, i)
-    return I(m, () => {
+    return q(m, () => {
       var f
       if (!u && !c) return void r.write(rn)
       let g
@@ -655,15 +655,15 @@ const Ur = () => new to(9),
         }
       }
       return (
-        c && (g = I(g, () => c(r))),
-        I(g, () => {
+        c && (g = q(g, () => c(r))),
+        q(g, () => {
           r.write(rn)
         })
       )
     })
   },
   rn = '<!--/qv-->',
-  Vr = t => {
+  Gr = t => {
     let e = ''
     for (const n in t) {
       if (n === H) continue
@@ -672,7 +672,7 @@ const Ur = () => new to(9),
     }
     return e
   },
-  Jr = t => {
+  Kr = t => {
     let e = ''
     for (const n in t) {
       if (n === 'children' || n === H) continue
@@ -682,16 +682,16 @@ const Ur = () => new to(9),
     return e
   },
   Ln = (t, e, n) => {
-    if ((n.write('<' + t + Vr(e) + '>'), ro[t])) return
+    if ((n.write('<' + t + Gr(e) + '>'), ro[t])) return
     const s = e[H]
     s != null && n.write(s), n.write(`</${t}>`)
   },
-  Kr = (t, e, n, s, o, r, i) => (
+  Jr = (t, e, n, s, o, r, i) => (
     Yr(t, s, o.props.props),
-    I(Ie(t, s), c => {
+    q(qe(t, s), c => {
       const $ = s.$element$,
         l = c.rCtx,
-        a = V(e.$static$.$locale$, $, void 0)
+        a = G(e.$static$.$locale$, $, void 0)
       ;(a.$subscriber$ = [0, $]), (a.$renderCtx$ = l)
       const u = {
           $static$: e.$static$,
@@ -715,7 +715,7 @@ const Ur = () => new to(9),
           )
       }
       const d = ie(t),
-        m = s.$scopeIds$ ? Js(s.$scopeIds$) : void 0,
+        m = s.$scopeIds$ ? Ks(s.$scopeIds$) : void 0,
         y = dt(o.type, { [_r]: m, [Tr]: d, children: c.node }, 0, o.key)
       return (
         (s.$id$ = d),
@@ -727,7 +727,7 @@ const Ur = () => new to(9),
             p.push(...s.li), (s.$flags$ &= ~St), (S.$id$ = ie(t))
             const b = { type: 'placeholder', hidden: '', 'q:id': S.$id$ }
             e.$static$.$contexts$.push(S)
-            const x = Cn(p)
+            const x = Mn(p)
             for (const k of x) {
               const w = io(k[0])
               ;(b[w] = rs(k[1], t.$static$.$containerState$, S)),
@@ -754,7 +754,7 @@ const Ur = () => new to(9),
               x = ge(p)
             ;(x.$slotCtx$ = s), (v = nt(S, x, b, g, 0, void 0))
           }
-          return i ? I(v, () => i(g)) : v
+          return i ? q(v, () => i(g)) : v
         })
       )
     })
@@ -765,7 +765,7 @@ const Ur = () => new to(9),
     const s = {}
     for (const o of n) {
       let r = ''
-      Dt(o) && (r = o.props[j] || ''), (s[r] || (s[r] = [])).push(o)
+      Ot(o) && (r = o.props[j] || ''), (s[r] || (s[r] = [])).push(o)
     }
     return s
   },
@@ -789,26 +789,26 @@ const Ur = () => new to(9),
         v = !1,
         S = '',
         p = null
-      const b = (w, _, q) => {
+      const b = (w, _, I) => {
         if (w === 'ref') return void (_ !== void 0 && (Yn(_, m), (v = !0)))
-        if (Mn(w)) return void Pn(d.li, w, _, void 0)
+        if (Cn(w)) return void Pn(d.li, w, _, void 0)
         if (
           (U(_) &&
             ((_ = ht(
               _,
-              q ? [1, m, _, c.$element$, w] : [2, c.$element$, _, m, w],
+              I ? [1, m, _, c.$element$, w] : [2, c.$element$, _, m, w],
             )),
             (f = !0)),
           w === H)
         )
           return void (p = _)
         let R
-        w.startsWith(Vs) && fn(w.slice(15), e.$static$.$containerState$)
+        w.startsWith(Gs) && fn(w.slice(15), e.$static$.$containerState$)
         const P = w === 'htmlFor' ? 'for' : w
         P === 'class' || P === 'className'
-          ? (S = qe(_))
+          ? (S = Ie(_))
           : P === 'style'
-            ? (R = Ke(_))
+            ? (R = Je(_))
             : Zs(P) || P === 'draggable' || P === 'spellcheck'
               ? ((R = _ != null ? String(_) : null), (_ = R))
               : (R = _ === !1 || _ == null ? null : String(_)),
@@ -819,9 +819,9 @@ const Ur = () => new to(9),
       }
       for (const w in u) {
         let _ = !1,
-          q
-        w in h ? ((_ = !0), (q = h[w]), q === N && (q = u[w])) : (q = u[w]),
-          b(w, q, _)
+          I
+        w in h ? ((_ = !0), (I = h[w]), I === N && (I = u[w])) : (I = u[w]),
+          b(w, I, _)
       }
       for (const w in h) {
         if (w in u) continue
@@ -843,12 +843,12 @@ const Ur = () => new to(9),
         S && (g += ' class="' + Ut(S) + '"'),
         x.length > 0)
       ) {
-        const w = Cn(x),
+        const w = Mn(x),
           _ = !!(16 & o)
-        for (const q of w) {
-          const R = _ ? io(q[0]) : q[0]
+        for (const I of w) {
+          const R = _ ? io(I[0]) : I[0]
           ;(g +=
-            ' ' + R + '="' + rs(q[1], e.$static$.$containerState$, d) + '"'),
+            ' ' + R + '="' + rs(I[1], e.$static$.$containerState$, d) + '"'),
             fn(R, e.$static$.$containerState$)
         }
       }
@@ -865,13 +865,13 @@ const Ur = () => new to(9),
       if (p != null) return s.write(String(p)), void s.write(`</${i}>`)
       i === 'html' ? (o |= 4) : (o &= -5), 2 & t.flags && (o |= 1024)
       const k = nt(t.children, e, n, s, o)
-      return I(k, () => {
+      return q(k, () => {
         if (y) {
           for (const w of n.$static$.$headNodes$) Ln(w.type, w.props, s)
           n.$static$.$headNodes$.length = 0
         }
         if (r)
-          return I(r(s), () => {
+          return q(r(s), () => {
             s.write(`</${i}>`)
           })
         s.write(`</${i}>`)
@@ -883,12 +883,12 @@ const Ur = () => new to(9),
         e.$slotCtx$
           ? ((a.$parentCtx$ = e.$slotCtx$), (a.$realParentCtx$ = e.$cmpCtx$))
           : (a.$parentCtx$ = e.$cmpCtx$),
-        c && c.$flags$ & Jn && oi(c, a),
+        c && c.$flags$ & Kn && oi(c, a),
         eo(t, a, void 0, e, n, s, o, r)
       )
     }
     if (i === co) return void s.write(t.props.data)
-    if (i === Qn) return Gr(t, e, n, s, o)
+    if (i === Qn) return Vr(t, e, n, s, o)
     const $ = W(n.$invocationContext$, i, t.props, t.key, t.flags, t.dev)
     return js($, t)
       ? zn(dt(pt, { children: $ }, 0, t.key), e, n, s, o, r)
@@ -898,8 +898,8 @@ const Ur = () => new to(9),
     var i
     if (t != null && typeof t != 'boolean') {
       if (!yt(t) && typeof t != 'number') {
-        if (Dt(t)) return zn(t, e, n, s, o, r)
-        if (M(t)) return no(t, e, n, s, o)
+        if (Ot(t)) return zn(t, e, n, s, o, r)
+        if (C(t)) return no(t, e, n, s, o)
         if (U(t)) {
           const c = 8 & o,
             $ = (i = e.$cmpCtx$) == null ? void 0 : i.$element$
@@ -936,7 +936,7 @@ const Ur = () => new to(9),
   },
   no = (t, e, n, s, o) => {
     if (t == null) return
-    if (!M(t)) return nt(t, e, n, s, o)
+    if (!C(t)) return nt(t, e, n, s, o)
     const r = t.length
     if (r === 1) return nt(t[0], e, n, s, o)
     if (r === 0) return
@@ -977,13 +977,13 @@ const Ur = () => new to(9),
   so = (t, e) => {
     if (t == null) return null
     const n = oo(t, e),
-      s = M(n) ? n : [n]
+      s = C(n) ? n : [n]
     return s.length === 0 ? null : s
   },
   oo = (t, e) => {
     if (t == null) return null
-    if (M(t)) return t.flatMap(n => oo(n, e))
-    if (Dt(t) && Z(t.type) && t.type !== co && t.type !== Qn && t.type !== pt) {
+    if (C(t)) return t.flatMap(n => oo(n, e))
+    if (Ot(t) && Z(t.type) && t.type !== co && t.type !== Qn && t.type !== pt) {
       const n = W(e.$invocationContext$, t.type, t.props, t.key, t.flags)
       return so(n, e)
     }
@@ -991,7 +991,7 @@ const Ur = () => new to(9),
   },
   Yr = (t, e, n) => {
     const s = Object.keys(n),
-      o = Ve()
+      o = Ge()
     if (((e.$props$ = he(o, t.$static$.$containerState$)), s.length === 0))
       return
     const r = (o[N] = n[N] ?? F)
@@ -1024,7 +1024,7 @@ const Ur = () => new to(9),
   },
   ti = /[&<>'"]/g,
   fn = (t, e) => {
-    e.$events$.add(Io(t))
+    e.$events$.add(qo(t))
   },
   Ut = t =>
     t.replace(ti, e => {
@@ -1060,7 +1060,7 @@ const Ur = () => new to(9),
   },
   At = (t, e, n, s, o, r) => {
     const i = r == null ? null : String(r)
-    return new Ot(t, e || F, n, s, o, i)
+    return new Dt(t, e || F, n, s, o, i)
   },
   ii = (t, e, n, s, o, r) => {
     let i = null
@@ -1081,7 +1081,7 @@ const Ur = () => new to(9),
         u !== N && (delete i[a], (i[a] = u))
       return At(t, null, i, l, n, s)
     }
-    const c = new Ot(t, i, null, i.children, n, r)
+    const c = new Dt(t, i, null, i.children, n, r)
     return typeof t == 'string' && e && delete e.children, c
   },
   ms = (t, e, n) => {
@@ -1094,10 +1094,10 @@ const Ur = () => new to(9),
       yt(t) &&
         'className' in e &&
         ((e.class = e.className), delete e.className),
-      new Ot(t, e, null, o, 0, s)
+      new Dt(t, e, null, o, 0, s)
     )
   }
-class Ot {
+class Dt {
   constructor(e, n, s, o, r, i = null) {
     E(this, 'type')
     E(this, 'props')
@@ -1115,24 +1115,24 @@ class Ot {
   }
 }
 const pt = t => t.children,
-  ci = (t, e) => new Ot(pt, F, null, t.children, 2, e),
-  Dt = t => t instanceof Ot,
+  ci = (t, e) => new Dt(pt, F, null, t.children, 2, e),
+  Ot = t => t instanceof Dt,
   Re = t => t.children,
   Fn = Symbol('skip render'),
   co = () => null,
   zl = (t, e) => ms(ci, { children: ms(Qn, t) }, e),
   Qn = () => null,
   Wn = (t, e, n) => {
-    const s = !(e.$flags$ & Vn),
+    const s = !(e.$flags$ & Gn),
       o = e.$element$,
       r = t.$static$.$containerState$
     return (
       r.$hostsStaging$.delete(e),
       r.$subsManager$.$clearSub$(o),
-      I(Ie(t, e), i => {
+      q(qe(t, e), i => {
         const c = t.$static$,
           $ = i.rCtx,
-          l = V(t.$static$.$locale$, o)
+          l = G(t.$static$.$locale$, o)
         if (
           (c.$hostElements$.add(o),
           (l.$subscriber$ = [0, o]),
@@ -1141,17 +1141,17 @@ const pt = t => t.children,
         )
           for (const u of e.$appendStyles$) gc(c, u)
         const a = vt(i.node, l)
-        return I(a, u => {
+        return q(a, u => {
           const h = $i(o, u),
             d = Un(e)
-          return I(Oe($, d, h, n), () => {
+          return q(De($, d, h, n), () => {
             e.$vdom$ = h
           })
         })
       })
     )
   },
-  Un = t => (t.$vdom$ || (t.$vdom$ = De(t.$element$)), t.$vdom$)
+  Un = t => (t.$vdom$ || (t.$vdom$ = Oe(t.$element$)), t.$vdom$)
 class ft {
   constructor(e, n, s, o, r, i) {
     E(this, '$type$')
@@ -1197,14 +1197,14 @@ const $o = (t, e) => {
     }
     let l = ut
     return r != null
-      ? I(
+      ? q(
           vt(r, e),
-          a => (a !== void 0 && (l = M(a) ? a : [a]), new ft($, o, c, l, i, n)),
+          a => (a !== void 0 && (l = C(a) ? a : [a]), new ft($, o, c, l, i, n)),
         )
       : new ft($, o, c, l, i, n)
   },
   $i = (t, e) => {
-    const n = e === void 0 ? ut : M(e) ? e : [e],
+    const n = e === void 0 ? ut : C(e) ? e : [e],
       s = new ft(':virtual', {}, null, n, 0, null)
     return (s.$elm$ = t), s
   },
@@ -1214,14 +1214,14 @@ const $o = (t, e) => {
         const n = new ft('#text', F, null, ut, 0, null)
         return (n.$text$ = String(t)), n
       }
-      if (Dt(t)) return $o(t, e)
+      if (Ot(t)) return $o(t, e)
       if (U(t)) {
         const n = new ft('#signal', F, null, ut, 0, null)
         return (n.$signal$ = t), n
       }
-      if (M(t)) {
+      if (C(t)) {
         const n = An(t.flatMap(s => vt(s, e)))
-        return I(n, s => s.flat(100).filter(Ws))
+        return q(n, s => s.flat(100).filter(Ws))
       }
       return L(t)
         ? t.then(n => vt(n, e))
@@ -1246,7 +1246,7 @@ const $o = (t, e) => {
     if (s === void 0 || o === void 0) return null
     let r = {},
       i = {}
-    if (Mt(e) && Et(e)) {
+    if (Ct(e) && Et(e)) {
       const l = Xn(e)
       l && ((i = Zt(l)), (r = l.ownerDocument))
     }
@@ -1309,9 +1309,9 @@ const $o = (t, e) => {
           if (de(w)) {
             if (!w.isConnected) return void d.set(f, void 0)
             const _ = Se(w)
-            return d.set(f, _), G(_, r), _
+            return d.set(f, _), V(_, r), _
           }
-          return bt(w) ? (d.set(f, w), G(w, r), w) : (d.set(f, w), w)
+          return bt(w) ? (d.set(f, w), V(w, r), w) : (d.set(f, w), w)
         }
         if (f.startsWith('@')) {
           const x = f.slice(1),
@@ -1347,7 +1347,7 @@ const $o = (t, e) => {
     ;(r.$elementIndex$ = 1e5),
       (r.$pauseCtx$ = { getObject: y, meta: e.ctx, refs: e.refs }),
       X(t, 'q:container', 'resumed'),
-      Ir(t, 'qresume', void 0, !0)
+      qr(t, 'qresume', void 0, !0)
   },
   fi = (t, e, n, s, o, r) => {
     const i = n[e]
@@ -1360,7 +1360,7 @@ const $o = (t, e) => {
           const a = A$(l, s)
           a && c.push(a)
         }
-      if (($ > 0 && Je(t, $), !r.subs(t, c))) {
+      if (($ > 0 && Ke(t, $), !r.subs(t, c))) {
         const l = o.$proxyMap$.get(t)
         l ? B(l).$addSubs$(c) : he(t, o, c)
       }
@@ -1368,7 +1368,7 @@ const $o = (t, e) => {
   },
   uo = (t, e, n) => {
     if (!n.fill(t, e) && t && typeof t == 'object') {
-      if (M(t)) for (let s = 0; s < t.length; s++) t[s] = e(t[s])
+      if (C(t)) for (let s = 0; s < t.length; s++) t[s] = e(t[s])
       else if (He(t)) for (const s in t) t[s] = e(t[s])
     }
   },
@@ -1389,7 +1389,7 @@ const $o = (t, e) => {
     }
   },
   mi = t => {
-    t.qwik = { pause: () => Mc(t), state: Zt(t) }
+    t.qwik = { pause: () => Cc(t), state: Zt(t) }
   },
   gi = t => {
     const e = t.indexOf('q:id=')
@@ -1403,7 +1403,7 @@ const $o = (t, e) => {
       const n = t.$element$,
         s = Xn(n)
       ;(e = tn(decodeURIComponent(String(t.$url$)), s)), ao(s)
-      const o = G(n, Zt(s))
+      const o = V(n, Zt(s))
       Wo(e, o)
     }
     return e.$captureRef$
@@ -1423,7 +1423,7 @@ const $o = (t, e) => {
             $ = o.namespaceURI === ve
           s.$containerState$.$subsManager$.$clearSignal$(e)
           let l = ht(e[2], e.slice(0, -1))
-          c === 'class' ? (l = Dn(l, tt(r))) : c === 'style' && (l = Ke(l))
+          c === 'class' ? (l = On(l, tt(r))) : c === 'style' && (l = Je(l))
           const a = Un(i)
           return c in a.$props$ && a.$props$[c] === l
             ? void 0
@@ -1436,16 +1436,16 @@ const $o = (t, e) => {
             s.$containerState$.$subsManager$.$clearSignal$(e)
             const r = void 0
             let i = ht(e[2], e.slice(0, -1))
-            const c = M$()
-            Array.isArray(i) && (i = new Ot(pt, {}, null, i, 0, null))
+            const c = C$()
+            Array.isArray(i) && (i = new Dt(pt, {}, null, i, 0, null))
             let $ = vt(i, r)
-            if (L($)) qt('Rendering promises in JSX signals is not supported')
+            if (L($)) It('Rendering promises in JSX signals is not supported')
             else {
               $ === void 0 && ($ = vt('', r))
               const l = Ao(o),
                 a = vi(e[1])
               if (
-                ((t.$cmpCtx$ = G(a, t.$static$.$containerState$)),
+                ((t.$cmpCtx$ = V(a, t.$static$.$containerState$)),
                 l.$type$ == $.$type$ && l.$key$ == $.$key$ && l.$id$ == $.$id$)
               )
                 zt(t, l, $, 0)
@@ -1454,7 +1454,7 @@ const $o = (t, e) => {
                   h = l.$elm$,
                   d = kt(t, $, 0, u)
                 u.length &&
-                  qt('Rendering promises in JSX signals is not supported'),
+                  It('Rendering promises in JSX signals is not supported'),
                   (c[3] = d),
                   Bt(t.$static$, o.parentElement, d, h),
                   h && es(s, h)
@@ -1475,15 +1475,15 @@ function vi(t) {
 const Si = (t, e) => {
     if (t[0] === 0) {
       const n = t[1]
-      Gn(n) ? Hn(n, e) : wi(n, e)
+      Vn(n) ? Hn(n, e) : wi(n, e)
     } else bi(t, e)
   },
   wi = (t, e) => {
     const n = Y()
     n || ao(e.$containerEl$)
-    const s = G(t, e)
-    if ((s.$componentQrl$, !(s.$flags$ & Kt)))
-      if (((s.$flags$ |= Kt), e.$hostsRendering$ !== void 0))
+    const s = V(t, e)
+    if ((s.$componentQrl$, !(s.$flags$ & Jt)))
+      if (((s.$flags$ |= Jt), e.$hostsRendering$ !== void 0))
         e.$hostsStaging$.add(s)
       else {
         if (n) return void gt()
@@ -1503,7 +1503,7 @@ const Si = (t, e) => {
   },
   Bn = t => (
     t.$renderPromise$ === void 0 &&
-      (t.$renderPromise$ = In().nextTick(() => fo(t))),
+      (t.$renderPromise$ = qn().nextTick(() => fo(t))),
     t.$renderPromise$
   ),
   Ei = () => {
@@ -1526,7 +1526,7 @@ const Si = (t, e) => {
       const i = Array.from(t.$opsNext$)
       t.$opsNext$.clear()
       const c = Array.from(r)
-      Ii(c),
+      qi(c),
         !t.$styleMoved$ &&
           c.length > 0 &&
           ((t.$styleMoved$ = !0),
@@ -1542,7 +1542,7 @@ const Si = (t, e) => {
           try {
             await Wn(s, $, xi(l.parentElement))
           } catch (a) {
-            qt(a)
+            It(a)
           }
         }
       }
@@ -1556,14 +1556,14 @@ const Si = (t, e) => {
           : (await ac(o), ks(o), gs(t, s))
       )
     } catch (s) {
-      qt(s)
+      It(s)
     }
   },
   xi = t => {
     let e = 0
     return (
       t &&
-        (t.namespaceURI === ve && (e |= K), t.tagName === 'HEAD' && (e |= Ce)),
+        (t.namespaceURI === ve && (e |= J), t.tagName === 'HEAD' && (e |= Me)),
       e
     )
   },
@@ -1587,30 +1587,30 @@ const Si = (t, e) => {
       o = []
     t.$taskNext$.forEach(r => {
       dn(r) &&
-        (o.push(I(r.$qrl$.$resolveLazy$(n), () => r)), t.$taskNext$.delete(r)),
+        (o.push(q(r.$qrl$.$resolveLazy$(n), () => r)), t.$taskNext$.delete(r)),
         ys(r) &&
-          (s.push(I(r.$qrl$.$resolveLazy$(n), () => r)), t.$taskNext$.delete(r))
+          (s.push(q(r.$qrl$.$resolveLazy$(n), () => r)), t.$taskNext$.delete(r))
     })
     do
       if (
         (t.$taskStaging$.forEach(r => {
           dn(r)
-            ? o.push(I(r.$qrl$.$resolveLazy$(n), () => r))
+            ? o.push(q(r.$qrl$.$resolveLazy$(n), () => r))
             : ys(r)
-              ? s.push(I(r.$qrl$.$resolveLazy$(n), () => r))
+              ? s.push(q(r.$qrl$.$resolveLazy$(n), () => r))
               : t.$taskNext$.add(r)
         }),
         t.$taskStaging$.clear(),
         o.length > 0)
       ) {
         const r = await Promise.all(o)
-        Ne(r), await Promise.all(r.map(i => Me(i, t, e))), (o.length = 0)
+        Ne(r), await Promise.all(r.map(i => Ce(i, t, e))), (o.length = 0)
       }
     while (t.$taskStaging$.size > 0)
     if (s.length > 0) {
       const r = await Promise.all(s)
       Ne(r)
-      for (const i of r) Me(i, t, e)
+      for (const i of r) Ce(i, t, e)
     }
   },
   Ti = (t, e) => {
@@ -1622,7 +1622,7 @@ const Si = (t, e) => {
     const i = () => {
       if (
         (s.forEach(c => {
-          dn(c) && o.push(I(c.$qrl$.$resolveLazy$(n), () => c))
+          dn(c) && o.push(q(c.$qrl$.$resolveLazy$(n), () => c))
         }),
         s.clear(),
         o.length > 0)
@@ -1630,7 +1630,7 @@ const Si = (t, e) => {
         return Promise.all(o).then(async c => {
           if (
             (Ne(c),
-            await Promise.all(c.map($ => Me($, t, e))),
+            await Promise.all(c.map($ => Ce($, t, e))),
             (o.length = 0),
             --r && s.size > 0)
           )
@@ -1648,7 +1648,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       o = t.$containerEl$
     t.$taskNext$.forEach(r => {
       n(r, !1) &&
-        (r.$el$.isConnected && s.push(I(r.$qrl$.$resolveLazy$(o), () => r)),
+        (r.$el$.isConnected && s.push(q(r.$qrl$.$resolveLazy$(o), () => r)),
         t.$taskNext$.delete(r))
     })
     do
@@ -1656,7 +1656,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
         (t.$taskStaging$.forEach(r => {
           r.$el$.isConnected &&
             (n(r, !0)
-              ? s.push(I(r.$qrl$.$resolveLazy$(o), () => r))
+              ? s.push(q(r.$qrl$.$resolveLazy$(o), () => r))
               : t.$taskNext$.add(r))
         }),
         t.$taskStaging$.clear(),
@@ -1664,12 +1664,12 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       ) {
         const r = await Promise.all(s)
         Ne(r)
-        for (const i of r) Me(i, t, e)
+        for (const i of r) Ce(i, t, e)
         s.length = 0
       }
     while (t.$taskStaging$.size > 0)
   },
-  Ii = t => {
+  qi = t => {
     t.sort((e, n) =>
       2 & e.$element$.compareDocumentPosition(ze(n.$element$)) ? 1 : -1,
     )
@@ -1686,7 +1686,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
           : -1,
     )
   },
-  qi = (t, e) => {
+  Ii = (t, e) => {
     ho(po(t, void 0), e)
   },
   vs = (t, e) => {
@@ -1698,8 +1698,8 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
   },
   ho = (t, e) => {
     if (e) {
-      const n = Kn(),
-        s = G(n.$hostElement$, n.$renderCtx$.$static$.$containerState$)
+      const n = Jn(),
+        s = V(n.$hostElement$, n.$renderCtx$.$static$.$containerState$)
       typeof t == 'string'
         ? s.li.push([un(t), e])
         : s.li.push(...t.map(o => [un(o), e])),
@@ -1709,7 +1709,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
   Ai = t => {
     const e = Bi(),
       n = Z(t) && !$s(t) ? W(void 0, t) : t
-    return Ki(n, e, 0)
+    return Ji(n, e, 0)
   },
   Ri = t => {
     const { val: e, set: n } = Pt()
@@ -1729,7 +1729,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       t.$resolveLazy$(c.$containerEl$),
       i.$tasks$ || (i.$tasks$ = []),
       i.$tasks$.push($),
-      Vi(o, () => So($, c, o.$renderCtx$)),
+      Gi(o, () => So($, c, o.$renderCtx$)),
       Y() && pn($, e == null ? void 0 : e.eagerness)
   },
   Fl = (t, e) => {
@@ -1745,13 +1745,13 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       Y() || (t.$resolveLazy$(l.$containerEl$), Hn($, l))
   },
   vo = t => !!(t.$flags$ & yo),
-  Mi = t => !!(8 & t.$flags$),
-  Me = async (t, e, n) => (
-    t.$flags$ & Rt, vo(t) ? Ci(t, e, n) : Mi(t) ? Pi(t, e, n) : So(t, e, n)
+  Ci = t => !!(8 & t.$flags$),
+  Ce = async (t, e, n) => (
+    t.$flags$ & Rt, vo(t) ? Mi(t, e, n) : Ci(t) ? Pi(t, e, n) : So(t, e, n)
   ),
-  Ci = (t, e, n, s) => {
+  Mi = (t, e, n, s) => {
     ;(t.$flags$ &= ~Rt), $e(t)
-    const o = V(n.$static$.$locale$, t.$el$, void 0, 'qTask'),
+    const o = G(n.$static$.$locale$, t.$el$, void 0, 'qTask'),
       { $subsManager$: r } = e
     o.$renderCtx$ = n
     const i = t.$qrl$.getFn(o, () => {
@@ -1763,7 +1763,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       a = {
         track: (f, v) => {
           if (Z(f)) {
-            const p = V()
+            const p = G()
             return (p.$renderCtx$ = n), (p.$subscriber$ = [0, t]), W(p, f)
           }
           const S = B(f)
@@ -1810,8 +1810,8 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       (t.$destroy$ = nn(() => {
         ;(d = !0), c.forEach(f => f())
       }))
-    const y = qn(
-        () => I(s, () => i(a)),
+    const y = In(
+        () => q(s, () => i(a)),
         f => {
           m(!0, f)
         },
@@ -1832,7 +1832,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
   So = (t, e, n) => {
     ;(t.$flags$ &= ~Rt), $e(t)
     const s = t.$el$,
-      o = V(n.$static$.$locale$, s, void 0, 'qTask')
+      o = G(n.$static$.$locale$, s, void 0, 'qTask')
     o.$renderCtx$ = n
     const { $subsManager$: r } = e,
       i = t.$qrl$.getFn(o, () => {
@@ -1845,7 +1845,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
     const $ = {
       track: (l, a) => {
         if (Z(l)) {
-          const h = V()
+          const h = G()
           return (h.$subscriber$ = [0, t]), W(h, l)
         }
         const u = B(l)
@@ -1858,20 +1858,20 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
         c.push(l)
       },
     }
-    return qn(
+    return In(
       () => i($),
       l => {
         Z(l) && c.push(l)
       },
       l => {
-        On(l, s, n)
+        Dn(l, s, n)
       },
     )
   },
   Pi = (t, e, n) => {
     t.$state$, (t.$flags$ &= ~Rt), $e(t)
     const s = t.$el$,
-      o = V(n.$static$.$locale$, s, void 0, 'qComputed')
+      o = G(n.$static$.$locale$, s, void 0, 'qComputed')
     ;(o.$subscriber$ = [0, t]), (o.$renderCtx$ = n)
     const { $subsManager$: r } = e,
       i = t.$qrl$.getFn(o, () => {
@@ -1884,10 +1884,10 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
         })
       },
       $ = l => {
-        On(l, s, n)
+        Dn(l, s, n)
       }
     try {
-      return I(t.$qrl$.$resolveLazy$(e.$containerEl$), () => {
+      return q(t.$qrl$.$resolveLazy$(e.$containerEl$), () => {
         const l = i()
         if (L(l)) {
           const a =
@@ -1908,7 +1908,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       try {
         e()
       } catch (n) {
-        qt(n)
+        It(n)
       }
     }
   },
@@ -1917,7 +1917,7 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
   },
   pn = (t, e) => {
     e === 'visible' || e === 'intersection-observer'
-      ? qi('qvisible', $n(t))
+      ? Ii('qvisible', $n(t))
       : e === 'load' || e === 'document-ready'
         ? vs('qinit', $n(t))
         : (e !== 'idle' && e !== 'document-idle') || vs('qidle', $n(t))
@@ -1927,12 +1927,12 @@ ${Array.from(s).map($ => `  ${$.$qrl$.$symbol$}`).join(`
       n = we(e.$chunk$, '_hW', Ei, null, null, [t], e.$symbol$)
     return e.dev && (n.dev = e.dev), n
   },
-  Gn = t => Ct(t) && t instanceof Ye,
-  Oi = (t, e) => {
+  Vn = t => Mt(t) && t instanceof Ye,
+  Di = (t, e) => {
     let n = `${Nt(t.$flags$)} ${Nt(t.$index$)} ${e(t.$qrl$)} ${e(t.$el$)}`
     return t.$state$ && (n += ` ${e(t.$state$)}`), n
   },
-  Di = t => {
+  Oi = t => {
     const [e, n, s, o, r] = t.split(' ')
     return new Ye(rt(e), rt(n), o, s, r)
   }
@@ -1956,12 +1956,12 @@ function Li(t) {
 function zi(t) {
   return t && typeof t.nodeType == 'number'
 }
-const Kt = 1,
+const Jt = 1,
   St = 2,
-  Vn = 4,
-  Jn = 8,
-  tt = t => t[Ge],
-  G = (t, e) => {
+  Gn = 4,
+  Kn = 8,
+  tt = t => t[Ve],
+  V = (t, e) => {
     const n = tt(t)
     if (n) return n
     const s = Ze(t),
@@ -1974,7 +1974,7 @@ const Kt = 1,
           const l = $[o]
           l &&
             ((s.$refMap$ = l.split(' ').map(i)),
-            (s.li = Mr(s, e.$containerEl$)))
+            (s.li = Cr(s, e.$containerEl$)))
         } else {
           const l = t.getAttribute('q:sstyle')
           s.$scopeIds$ = l ? l.split('|') : null
@@ -1997,10 +1997,10 @@ const Kt = 1,
             }
             if (h) {
               const [y, g] = h.split(' ')
-              if (((s.$flags$ = Vn), y && (s.$componentQrl$ = i(y)), g)) {
+              if (((s.$flags$ = Gn), y && (s.$componentQrl$ = i(y)), g)) {
                 const f = i(g)
-                ;(s.$props$ = f), Je(f, 2), (f[N] = Fi(f))
-              } else s.$props$ = he(Ve(), e)
+                ;(s.$props$ = f), Ke(f, 2), (f[N] = Fi(f))
+              } else s.$props$ = he(Ge(), e)
             }
           }
         }
@@ -2034,7 +2034,7 @@ const Kt = 1,
       $parentCtx$: void 0,
       $realParentCtx$: void 0,
     }
-    return (t[Ge] = e), e
+    return (t[Ve] = e), e
   },
   Qi = (t, e) => {
     var n
@@ -2046,32 +2046,32 @@ const Kt = 1,
       (t.$seq$ = null),
       (t.$tasks$ = null)
   }
-let Gt
+let Vt
 function Wi(t) {
-  if (Gt === void 0) {
+  if (Vt === void 0) {
     const e = st()
     if (e && e.$locale$) return e.$locale$
     if (t !== void 0) return t
     throw new Error('Reading `locale` outside of context.')
   }
-  return Gt
+  return Vt
 }
 function Ss(t, e) {
-  const n = Gt
+  const n = Vt
   try {
-    return (Gt = t), e()
+    return (Vt = t), e()
   } finally {
-    Gt = n
+    Vt = n
   }
 }
 function Ui(t) {
-  Gt = t
+  Vt = t
 }
 let ne
 const st = () => {
     if (!ne) {
       const t = typeof document < 'u' && document && document.__q_context__
-      return t ? (M(t) ? (document.__q_context__ = bo(t)) : t) : void 0
+      return t ? (C(t) ? (document.__q_context__ = bo(t)) : t) : void 0
     }
     return ne
   },
@@ -2080,16 +2080,16 @@ const st = () => {
     if (!t) throw Q(14)
     return t
   },
-  Kn = () => {
+  Jn = () => {
     const t = st()
     if (!t || t.$event$ !== 'qRender') throw Q(20)
     return t.$hostElement$, t.$waitOn$, t.$renderCtx$, t.$subscriber$, t
   },
-  Bi = () => Kn().$renderCtx$.$static$.$containerState$
+  Bi = () => Jn().$renderCtx$.$static$.$containerState$
 function W(t, e, ...n) {
-  return Gi.call(this, t, e, n)
+  return Vi.call(this, t, e, n)
 }
-function Gi(t, e, n) {
+function Vi(t, e, n) {
   const s = ne
   let o
   try {
@@ -2099,7 +2099,7 @@ function Gi(t, e, n) {
   }
   return o
 }
-const Vi = (t, e) => {
+const Gi = (t, e) => {
     const n = t.$waitOn$
     if (n.length === 0) {
       const s = e()
@@ -2109,9 +2109,9 @@ const Vi = (t, e) => {
   bo = ([t, e, n]) => {
     const s = t.closest('[q\\:container]'),
       o = (s == null ? void 0 : s.getAttribute('q:locale')) || void 0
-    return o && Ui(o), V(o, void 0, t, e, n)
+    return o && Ui(o), G(o, void 0, t, e, n)
   },
-  V = (t, e, n, s, o) => ({
+  G = (t, e, n, s, o) => ({
     $url$: o,
     $i$: 0,
     $hostElement$: e,
@@ -2126,20 +2126,20 @@ const Vi = (t, e) => {
   }),
   Xn = t => t.closest('[q\\:container]'),
   se = t => W(void 0, t),
-  ws = V(void 0, void 0, void 0, 'qRender'),
+  ws = G(void 0, void 0, void 0, 'qRender'),
   ht = (t, e) => ((ws.$subscriber$ = e), W(ws, () => t.value)),
-  Ji = t => {
+  Ki = t => {
     const e = st()
     return (
       e &&
         e.$hostElement$ &&
         e.$renderCtx$ &&
-        (G(e.$hostElement$, e.$renderCtx$.$static$.$containerState$).$flags$ |=
-          Jn),
+        (V(e.$hostElement$, e.$renderCtx$.$static$.$containerState$).$flags$ |=
+          Kn),
       t
     )
   },
-  Ki = (t, e, n, s) => {
+  Ji = (t, e, n, s) => {
     const o = e.$subsManager$.$createManager$(s)
     return new le(t, o, n)
   },
@@ -2148,13 +2148,13 @@ const Vi = (t, e) => {
   Eo = 2,
   xo = Symbol('unassigned signal')
 class ye {}
-var Ml, Cl
+var Cl, Ml
 class le extends ye {
   constructor(n, s, o) {
     super()
     E(this, 'untrackedValue')
-    E(this, Ml)
-    E(this, Cl, 0)
+    E(this, Cl)
+    E(this, Ml, 0)
     ;(this.untrackedValue = n), (this[et] = s), (this[oe] = o)
   }
   valueOf() {}
@@ -2177,7 +2177,7 @@ class le extends ye {
       ((this.untrackedValue = n), s.$notifySubs$())
   }
 }
-;(Ml = et), (Cl = oe)
+;(Cl = et), (Ml = oe)
 class hn extends ye {
   constructor(n, s, o) {
     super()
@@ -2210,7 +2210,7 @@ class mn extends ye {
 const U = t => t instanceof ye,
   _o = (t, e) => {
     var o, r
-    if (!Ct(t)) return t[e]
+    if (!Mt(t)) return t[e]
     if (t instanceof ye) return t
     const n = jt(t)
     if (n) {
@@ -2271,22 +2271,22 @@ const U = t => t instanceof ye,
   Zi = t => bt(t) && t.hasAttribute('q:container'),
   Nt = t => t.toString(36),
   rt = t => parseInt(t, 36),
-  Io = t => {
+  qo = t => {
     const e = t.indexOf(':')
     return t && kr(t.slice(e + 1))
   },
   ve = 'http://www.w3.org/2000/svg',
-  K = 1,
-  Ce = 2,
+  J = 1,
+  Me = 2,
   Pe = [],
-  Oe = (t, e, n, s) => {
+  De = (t, e, n, s) => {
     e.$elm$
     const o = n.$children$
     if (o.length === 1 && o[0].$type$ === ':skipRender')
       return void (n.$children$ = e.$children$)
     const r = e.$elm$
     let i = Le
-    e.$children$ === Pe && r.nodeName === 'HEAD' && ((i = ec), (s |= Ce))
+    e.$children$ === Pe && r.nodeName === 'HEAD' && ((i = ec), (s |= Me))
     const c = ji(e, i)
     return c.length > 0 && o.length > 0
       ? tc(t, r, c, o, s)
@@ -2298,7 +2298,7 @@ const U = t => t instanceof ye,
   },
   ji = (t, e) => {
     const n = t.$children$
-    return n === Pe ? (t.$children$ = qo(t.$elm$, e)) : n
+    return n === Pe ? (t.$children$ = Io(t.$elm$, e)) : n
   },
   tc = (t, e, n, s, o) => {
     let r = 0,
@@ -2345,7 +2345,7 @@ const U = t => t instanceof ye,
           Bt(f, e, S, $ == null ? void 0 : $.$elm$)
         } else if (((y = n[m]), y.$type$ !== u.$type$)) {
           const S = kt(t, u, o, g)
-          I(S, p => {
+          q(S, p => {
             Bt(f, e, p, $ == null ? void 0 : $.$elm$)
           })
         } else
@@ -2360,7 +2360,7 @@ const U = t => t instanceof ye,
     let v = An(g)
     return (
       r <= c &&
-        (v = I(v, () => {
+        (v = q(v, () => {
           Zn(f, n, r, c)
         })),
       v
@@ -2373,12 +2373,12 @@ const U = t => t instanceof ye,
     for (; (o = ns(o)) && (e(o) && s.push(o), (o = o.nextSibling), o !== n); );
     return s
   },
-  qo = (t, e) => Ht(t, e).map(Ao),
+  Io = (t, e) => Ht(t, e).map(Ao),
   Ao = t => {
     var e
-    return bt(t) ? (((e = tt(t)) == null ? void 0 : e.$vdom$) ?? De(t)) : De(t)
+    return bt(t) ? (((e = tt(t)) == null ? void 0 : e.$vdom$) ?? Oe(t)) : Oe(t)
   },
-  De = t => {
+  Oe = t => {
     if (Et(t)) {
       const e = new ft(t.localName, {}, null, Pe, 0, yn(t))
       return (e.$elm$ = t), e
@@ -2433,36 +2433,36 @@ const U = t => t instanceof ye,
     if (r === '#signal') return
     const l = n.$props$,
       a = n.$flags$,
-      u = G(o, c)
+      u = V(o, c)
     if (r !== Xt) {
-      let h = !!(s & K)
-      if ((h || r !== 'svg' || ((s |= K), (h = !0)), l !== F)) {
+      let h = !!(s & J)
+      if ((h || r !== 'svg' || ((s |= J), (h = !0)), l !== F)) {
         1 & a || (u.li.length = 0)
         const d = e.$props$
         n.$props$ = d
         for (const m in l) {
           let y = l[m]
           if (m !== 'ref')
-            if (Mn(m)) {
+            if (Cn(m)) {
               const g = Pn(u.li, m, y, c.$containerEl$)
               Po(i, o, g)
             } else
               U(y) && (y = ht(y, [1, $.$element$, y, o, m])),
-                m === 'class' ? (y = Dn(y, $)) : m === 'style' && (y = Ke(y)),
+                m === 'class' ? (y = On(y, $)) : m === 'style' && (y = Je(y)),
                 d[m] !== y && ((d[m] = y), jn(i, o, m, y, h))
           else y !== void 0 && Yn(y, o)
         }
       }
       return 2 & a ||
-        (h && r === 'foreignObject' && (s &= ~K), l[H] !== void 0) ||
+        (h && r === 'foreignObject' && (s &= ~J), l[H] !== void 0) ||
         r === 'textarea'
         ? void 0
-        : Oe(t, e, n, s)
+        : De(t, e, n, s)
     }
     if ('q:renderFn' in l) {
       const h = l.props
       lc(c, u, h)
-      let d = !!(u.$flags$ & Kt)
+      let d = !!(u.$flags$ & Jt)
       return (
         d ||
           u.$componentQrl$ ||
@@ -2471,22 +2471,22 @@ const U = t => t instanceof ye,
           (u.$componentQrl$ = h['q:renderFn']),
           u.$componentQrl$,
           (d = !0)),
-        d ? I(Wn(t, u, s), () => Es(t, u, n, s)) : Es(t, u, n, s)
+        d ? q(Wn(t, u, s), () => Es(t, u, n, s)) : Es(t, u, n, s)
       )
     }
     if ('q:s' in l) return $.$slots$, void $.$slots$.push(n)
     if (H in l) wt(i, o, 'innerHTML', l[H])
-    else if (!(2 & a)) return Oe(t, e, n, s)
+    else if (!(2 & a)) return De(t, e, n, s)
   },
   Es = (t, e, n, s) => {
     if (2 & n.$flags$) return
     const o = t.$static$,
       r = Ro(n.$children$),
-      i = Co(e)
+      i = Mo(e)
     for (const c in i.slots)
       if (!r[c]) {
         const $ = i.slots[c],
-          l = qo($, Le)
+          l = Io($, Le)
         if (l.length > 0) {
           const a = tt($)
           a && a.$vdom$ && (a.$vdom$.$children$ = []), Zn(o, l, 0, l.length - 1)
@@ -2499,15 +2499,15 @@ const U = t => t instanceof ye,
     return An(
       Object.keys(r).map(c => {
         const $ = r[c],
-          l = Mo(o, i, e, c, t.$static$.$containerState$),
+          l = Co(o, i, e, c, t.$static$.$containerState$),
           a = Un(l),
           u = ge(t),
           h = l.$element$
         ;(u.$slotCtx$ = l), (l.$vdom$ = $), ($.$elm$ = h)
-        let d = s & ~K
-        h.isSvg && (d |= K)
+        let d = s & ~J
+        h.isSvg && (d |= J)
         const m = o.$addSlots$.findIndex(y => y[0] === h)
-        return m >= 0 && o.$addSlots$.splice(m, 1), Oe(u, a, $, d)
+        return m >= 0 && o.$addSlots$.splice(m, 1), De(u, a, $, d)
       }),
     )
   },
@@ -2526,11 +2526,11 @@ const U = t => t instanceof ye,
       o && (o.$elm$, es(t, o.$elm$))
     }
   },
-  Mo = (t, e, n, s, o) => {
+  Co = (t, e, n, s, o) => {
     const r = e.slots[s]
-    if (r) return G(r, o)
+    if (r) return V(r, o)
     const i = e.templates[s]
-    if (i) return G(i, o)
+    if (i) return V(i, o)
     const c = zo(t.$doc$, s),
       $ = Ze(c)
     return ($.$parentCtx$ = n), vc(t, n.$element$, c), (e.templates[s] = c), $
@@ -2544,7 +2544,7 @@ const U = t => t instanceof ye,
     if (o === '#signal') {
       const g = e.$signal$,
         f = g.value
-      if (Dt(f)) {
+      if (Ot(f)) {
         const v = vt(f)
         if (U(v)) throw new Error('NOT IMPLEMENTED: Promise')
         if (Array.isArray(v)) throw new Error('NOT IMPLEMENTED: Array')
@@ -2565,8 +2565,8 @@ const U = t => t instanceof ye,
       }
     }
     let c,
-      $ = !!(n & K)
-    $ || o !== 'svg' || ((n |= K), ($ = !0))
+      $ = !!(n & J)
+    $ || o !== 'svg' || ((n |= J), ($ = !0))
     const l = o === Xt,
       a = e.$props$,
       u = t.$static$,
@@ -2574,8 +2574,8 @@ const U = t => t instanceof ye,
     l
       ? (c = _c(r, $))
       : o === 'head'
-        ? ((c = r.head), (n |= Ce))
-        : ((c = ts(r, o, $)), (n &= ~Ce)),
+        ? ((c = r.head), (n |= Me))
+        : ((c = ts(r, o, $)), (n &= ~Me)),
       2 & e.$flags$ && (n |= 4),
       (e.$elm$ = c)
     const d = Ze(c)
@@ -2587,9 +2587,9 @@ const U = t => t instanceof ye,
     ) {
       if ('q:renderFn' in a) {
         const g = a['q:renderFn'],
-          f = Ve(),
+          f = Ge(),
           v = h.$subsManager$.$createManager$(),
-          S = new Proxy(f, new Gs(h, v)),
+          S = new Proxy(f, new Vs(h, v)),
           p = a.props
         if ((h.$proxyMap$.set(f, S), (d.$props$ = S), p !== F)) {
           const x = (f[N] = p[N] ?? F)
@@ -2600,26 +2600,26 @@ const U = t => t instanceof ye,
             }
         }
         Ys(t, d), (d.$componentQrl$ = g)
-        const b = I(Wn(t, d, n), () => {
+        const b = q(Wn(t, d, n), () => {
           let x = e.$children$
           if (x.length === 0) return
           x.length === 1 &&
             x[0].$type$ === ':skipRender' &&
             (x = x[0].$children$)
-          const k = Co(d),
+          const k = Mo(d),
             w = [],
             _ = Ro(x)
-          for (const q in _) {
-            const R = _[q],
-              P = Mo(u, k, d, q, u.$containerState$),
-              D = ge(t),
+          for (const I in _) {
+            const R = _[I],
+              P = Co(u, k, d, I, u.$containerState$),
+              O = ge(t),
               Lt = P.$element$
-            ;(D.$slotCtx$ = P), (P.$vdom$ = R), (R.$elm$ = Lt)
-            let J = n & ~K
-            Lt.isSvg && (J |= K)
-            for (const O of R.$children$) {
-              const te = kt(D, O, J, w)
-              O.$elm$, O.$elm$, Lo(u, Lt, te)
+            ;(O.$slotCtx$ = P), (P.$vdom$ = R), (R.$elm$ = Lt)
+            let K = n & ~J
+            Lt.isSvg && (K |= J)
+            for (const D of R.$children$) {
+              const te = kt(O, D, K, w)
+              D.$elm$, D.$elm$, Lo(u, Lt, te)
             }
           }
           return Qt(w)
@@ -2656,7 +2656,7 @@ const U = t => t instanceof ye,
           : a
         e.$props$ = Ts(u, d, i, g, $, !1)
       }
-      if (($ && o === 'foreignObject' && (($ = !1), (n &= ~K)), i)) {
+      if (($ && o === 'foreignObject' && (($ = !1), (n &= ~J)), i)) {
         const g = i.$scopeIds$
         g &&
           g.forEach(f => {
@@ -2666,7 +2666,7 @@ const U = t => t instanceof ye,
       }
       for (const g of d.li) Po(u, c, g[0])
       if (a[H] !== void 0) return c
-      $ && o === 'foreignObject' && (($ = !1), (n &= ~K))
+      $ && o === 'foreignObject' && (($ = !1), (n &= ~J))
     }
     let m = e.$children$
     if (m.length === 0) return c
@@ -2679,7 +2679,7 @@ const U = t => t instanceof ye,
     const e = t.$slots$
     return e || (t.$element$.parentElement, (t.$slots$ = oc(t)))
   },
-  Co = t => {
+  Mo = t => {
     const e = sc(t),
       n = {},
       s = {},
@@ -2690,7 +2690,7 @@ const U = t => t instanceof ye,
   },
   oc = t => {
     const e = t.$element$.parentElement
-    return qc(e, 'q:sref', t.$id$).map(De)
+    return Ic(e, 'q:sref', t.$id$).map(Oe)
   },
   rc = (t, e, n) => (wt(t, e.style, 'cssText', n), !0),
   xs = (t, e, n) => (
@@ -2725,7 +2725,7 @@ const U = t => t instanceof ye,
     const r = $c[n]
     ;(r && r(t, e, s, n)) ||
       (o || !(n in e)
-        ? (n.startsWith(Vs) && Oo(n.slice(15)), ue(t, e, n, s))
+        ? (n.startsWith(Gs) && Do(n.slice(15)), ue(t, e, n, s))
         : wt(t, e, n, s))
   },
   Ts = (t, e, n, s, o, r) => {
@@ -2734,7 +2734,7 @@ const U = t => t instanceof ye,
     for (const $ in s) {
       let l = s[$]
       if ($ !== 'ref')
-        if (Mn($)) Pn(e.li, $, l, t.$containerState$.$containerEl$)
+        if (Cn($)) Pn(e.li, $, l, t.$containerState$.$containerEl$)
         else {
           if (
             (U(l) &&
@@ -2744,8 +2744,8 @@ const U = t => t instanceof ye,
               )),
             $ === 'class')
           ) {
-            if (((l = Dn(l, n)), !l)) continue
-          } else $ === 'style' && (l = Ke(l))
+            if (((l = On(l, n)), !l)) continue
+          } else $ === 'style' && (l = Je(l))
           ;(i[$] = l), jn(t, c, $, l, o)
         }
       else l !== void 0 && Yn(l, c)
@@ -2754,7 +2754,7 @@ const U = t => t instanceof ye,
   },
   lc = (t, e, n) => {
     let s = e.$props$
-    if ((s || (e.$props$ = s = he(Ve(), t)), n === F)) return
+    if ((s || (e.$props$ = s = he(Ge(), t)), n === F)) return
     const o = B(s),
       r = jt(s),
       i = (r[N] = n[N] ?? F)
@@ -2800,11 +2800,11 @@ const U = t => t instanceof ye,
     return s
   },
   Po = (t, e, n) => {
-    n.startsWith('on:') || ue(t, e, n, ''), Oo(n)
+    n.startsWith('on:') || ue(t, e, n, ''), Do(n)
   },
-  Oo = t => {
+  Do = t => {
     {
-      const e = Io(t)
+      const e = qo(t)
       try {
         ;(globalThis.qwikevents || (globalThis.qwikevents = [])).push(e)
       } catch {}
@@ -2821,16 +2821,16 @@ const U = t => t instanceof ye,
     }
   },
   wt = (t, e, n, s) => {
-    t.$operations$.push({ $operation$: Do, $args$: [e, n, s] })
+    t.$operations$.push({ $operation$: Oo, $args$: [e, n, s] })
   },
   hc = (t, e, n, s) => {
-    t.$postOperations$.push({ $operation$: Do, $args$: [e, n, s] })
+    t.$postOperations$.push({ $operation$: Oo, $args$: [e, n, s] })
   },
-  Do = (t, e, n) => {
+  Oo = (t, e, n) => {
     try {
-      ;(t[e] = n ?? ''), n == null && Mt(t) && bt(t) && t.removeAttribute(e)
+      ;(t[e] = n ?? ''), n == null && Ct(t) && bt(t) && t.removeAttribute(e)
     } catch (s) {
-      qt(Ue(6), e, { node: t, value: n }, s)
+      It(Ue(6), e, { node: t, value: n }, s)
     }
   },
   ts = (t, e, n) => (n ? t.createElementNS(ve, e) : t.createElement(e)),
@@ -2943,15 +2943,15 @@ const U = t => t instanceof ye,
       e.join(' ')
     )
   },
-  Ic = (t, e, n) =>
+  qc = (t, e, n) =>
     t.ownerDocument.createTreeWalker(t, 128, {
       acceptNode(s) {
         const o = Se(s)
         return o && ot(o, e) === n ? 1 : 2
       },
     }),
-  qc = (t, e, n) => {
-    const s = Ic(t, e, n),
+  Ic = (t, e, n) => {
+    const s = qc(t, e, n),
       o = []
     let r = null
     for (; (r = s.nextNode()); ) o.push(Se(r))
@@ -3026,10 +3026,10 @@ class Fo {
     return e in this.$attributes$
   }
   setAttribute(e, n) {
-    ;(this.$attributes$[e] = n), (this.open.data = Is(this.$attributes$))
+    ;(this.$attributes$[e] = n), (this.open.data = qs(this.$attributes$))
   }
   removeAttribute(e) {
-    delete this.$attributes$[e], (this.open.data = Is(this.$attributes$))
+    delete this.$attributes$[e], (this.open.data = qs(this.$attributes$))
   }
   matches(e) {
     return !1
@@ -3099,7 +3099,7 @@ class Fo {
     return this.open.parentElement
   }
 }
-const Is = t => `qv ${kc(t)}`,
+const qs = t => `qv ${kc(t)}`,
   ns = t => {
     if (t == null) return null
     if (de(t)) {
@@ -3134,7 +3134,7 @@ const Is = t => `qv ${kc(t)}`,
     return null
   },
   ze = t => (t == null ? null : it(t) ? t.open : t),
-  Mc = async t => {
+  Cc = async t => {
     const e = pe(t),
       n = e.documentElement,
       s = Qs(t) ? n : t
@@ -3147,15 +3147,15 @@ const Is = t => `qv ${kc(t)}`,
       const h = u.$element$,
         d = u.li
       if (u.$scopeIds$) {
-        const m = Js(u.$scopeIds$)
+        const m = Ks(u.$scopeIds$)
         m && h.setAttribute('q:sstyle', m)
       }
       if ((u.$id$ && h.setAttribute('q:id', u.$id$), bt(h) && d.length > 0)) {
-        const m = Cn(d)
+        const m = Mn(d)
         for (const y of m) h.setAttribute(y[0], rs(y[1], r, u))
       }
     }
-    const c = await Cc(i, r, u => (Mt(u) && xn(u) ? Vc(u, r) : null)),
+    const c = await Mc(i, r, u => (Ct(u) && xn(u) ? Gc(u, r) : null)),
       $ = e.createElement('script')
     X($, 'type', 'qwik/json'),
       ($.textContent = Fc(JSON.stringify(c.state, void 0, void 0))),
@@ -3168,9 +3168,9 @@ const Is = t => `qv ${kc(t)}`,
       c
     )
   },
-  Cc = async (t, e, n, s) => {
+  Mc = async (t, e, n, s) => {
     var S
-    const o = Dc(e)
+    const o = Oc(e)
     s == null ||
       s.forEach((p, b) => {
         o.$seen$.add(b)
@@ -3186,7 +3186,7 @@ const Is = t => `qv ${kc(t)}`,
         if (bt(b)) {
           const w = k[1],
             _ = w.$captureRef$
-          if (_) for (const q of _) A(q, o, !0)
+          if (_) for (const I of _) A(I, o, !0)
           o.$qrls$.push(w), (r = !0)
         }
     }
@@ -3205,7 +3205,7 @@ const Is = t => `qv ${kc(t)}`,
     const c = o.$elements$.length > 0
     if (c) {
       for (const p of o.$deferElements$) ss(p, o, p.$element$)
-      for (const p of t) Oc(p, o)
+      for (const p of t) Dc(p, o)
     }
     for (; (i = o.$promises$).length > 0; )
       (o.$promises$ = []), await Promise.all(i)
@@ -3219,17 +3219,17 @@ const Is = t => `qv ${kc(t)}`,
           if (!w) return null
           ;(p = w.value), (b += w.resolved ? '~' : '_')
         }
-        if (Ct(p)) {
+        if (Mt(p)) {
           const w = jt(p)
           if (w) (b += '!'), (p = w)
           else if (Et(p)) {
-            const _ = (q => {
-              let R = $.get(q)
+            const _ = (I => {
+              let R = $.get(I)
               return (
                 R === void 0 &&
-                  ((R = Gc(q)),
-                  R || console.warn('Missing ID', q),
-                  $.set(q, R)),
+                  ((R = Vc(I)),
+                  R || console.warn('Missing ID', I),
+                  $.set(I, R)),
                 R
               )
             })(p)
@@ -3256,12 +3256,12 @@ const Is = t => `qv ${kc(t)}`,
     for (const p of l) {
       const b = (S = Bc(p, e)) == null ? void 0 : S.$subs$
       if (!b) continue
-      const x = Ko(p) ?? 0,
+      const x = Jo(p) ?? 0,
         k = []
       1 & x && k.push(x)
       for (const w of b) {
         const _ = w[1]
-        ;(w[0] === 0 && Mt(_) && it(_) && !o.$elements$.includes(tt(_))) ||
+        ;(w[0] === 0 && Ct(_) && it(_) && !o.$elements$.includes(tt(_))) ||
           k.push(w)
       }
       k.length > 0 && d.set(p, k)
@@ -3277,10 +3277,10 @@ const Is = t => `qv ${kc(t)}`,
     for (const p of l) {
       const b = d.get(p)
       if (b == null) break
-      y.push(b.map(x => (typeof x == 'number' ? `_${x}` : q$(x, u))).filter(Ws))
+      y.push(b.map(x => (typeof x == 'number' ? `_${x}` : I$(x, u))).filter(Ws))
     }
     y.length, d.size
-    const g = Jc(l, h, u, o, e),
+    const g = Kc(l, h, u, o, e),
       f = {},
       v = {}
     for (const p of t) {
@@ -3289,41 +3289,41 @@ const Is = t => `qv ${kc(t)}`,
         k = p.$refMap$,
         w = p.$props$,
         _ = p.$contexts$,
-        q = p.$tasks$,
+        I = p.$tasks$,
         R = p.$componentQrl$,
         P = p.$seq$,
-        D = {},
+        O = {},
         Lt = it(b) && o.$elements$.includes(p)
       if (k.length > 0) {
-        const J = It(k, h, ' ')
-        J && (v[x] = J)
+        const K = qt(k, h, ' ')
+        K && (v[x] = K)
       } else if (c) {
-        let J = !1
+        let K = !1
         if (Lt) {
-          const O = u(w)
-          ;(D.h = h(R) + (O ? ' ' + O : '')), (J = !0)
+          const D = u(w)
+          ;(O.h = h(R) + (D ? ' ' + D : '')), (K = !0)
         } else {
-          const O = u(w)
-          O && ((D.h = ' ' + O), (J = !0))
+          const D = u(w)
+          D && ((O.h = ' ' + D), (K = !0))
         }
-        if (q && q.length > 0) {
-          const O = It(q, u, ' ')
-          O && ((D.w = O), (J = !0))
+        if (I && I.length > 0) {
+          const D = qt(I, u, ' ')
+          D && ((O.w = D), (K = !0))
         }
         if (Lt && P && P.length > 0) {
-          const O = It(P, h, ' ')
-          ;(D.s = O), (J = !0)
+          const D = qt(P, h, ' ')
+          ;(O.s = D), (K = !0)
         }
         if (_) {
-          const O = []
+          const D = []
           _.forEach((pr, hr) => {
             const fs = u(pr)
-            fs && O.push(`${hr}=${fs}`)
+            fs && D.push(`${hr}=${fs}`)
           })
-          const te = O.join(' ')
-          te && ((D.c = te), (J = !0))
+          const te = D.join(' ')
+          te && ((O.c = te), (K = !0))
         }
-        J && (f[x] = D)
+        K && (f[x] = O)
       }
     }
     return {
@@ -3335,7 +3335,7 @@ const Is = t => `qv ${kc(t)}`,
       mode: c ? 'render' : 'listeners',
     }
   },
-  It = (t, e, n) => {
+  qt = (t, e, n) => {
     let s = ''
     for (const o of t) {
       const r = e(o)
@@ -3357,7 +3357,7 @@ const Is = t => `qv ${kc(t)}`,
     for (; o.nextNode(); );
     return n
   },
-  Oc = (t, e) => {
+  Dc = (t, e) => {
     var o
     const n = t.$realParentCtx$ || t.$parentCtx$,
       s = t.$props$
@@ -3367,11 +3367,11 @@ const Is = t => `qv ${kc(t)}`,
       if (r)
         for (const [c, $] of r)
           c === 0
-            ? ($ !== i && Yt(B(s), e, !1), Mt($) ? zc($, e) : A($, e, !0))
+            ? ($ !== i && Yt(B(s), e, !1), Ct($) ? zc($, e) : A($, e, !0))
             : (A(s, e, !1), Yt(B(s), e, !1))
     }
   },
-  Dc = t => {
+  Oc = t => {
     const e = []
     return (
       t.$inlineFns$.forEach((n, s) => {
@@ -3397,7 +3397,7 @@ const Is = t => `qv ${kc(t)}`,
     const n = tt(t)
     e.$elements$.includes(n) ||
       (e.$elements$.push(n),
-      n.$flags$ & Jn
+      n.$flags$ & Kn
         ? (e.$prefetch$++, ss(n, e, !0), e.$prefetch$--)
         : e.$deferElements$.push(n))
   },
@@ -3421,10 +3421,10 @@ const Is = t => `qv ${kc(t)}`,
       const s = e.$containerState$.$subsManager$.$groupToManagers$
       for (const o of t.$tasks$) s.has(o) && A(o, e, n)
     }
-    if (n === !0 && (qs(t, e), t.$dynamicSlots$))
-      for (const s of t.$dynamicSlots$) qs(s, e)
+    if (n === !0 && (Is(t, e), t.$dynamicSlots$))
+      for (const s of t.$dynamicSlots$) Is(s, e)
   },
-  qs = (t, e) => {
+  Is = (t, e) => {
     for (; t; ) {
       if (t.$contexts$) for (const n of t.$contexts$.values()) A(n, e, !0)
       t = t.$parentCtx$
@@ -3438,7 +3438,7 @@ const Is = t => `qv ${kc(t)}`,
     for (const o of s)
       if ((o[0] > 0 && A(o[2], e, n), n === !0)) {
         const r = o[1]
-        Mt(r) && it(r) ? o[0] === 0 && Lc(r, e) : A(r, e, !0)
+        Ct(r) && it(r) ? o[0] === 0 && Lc(r, e) : A(r, e, !0)
       }
   },
   vn = Symbol(),
@@ -3455,13 +3455,13 @@ const Is = t => `qv ${kc(t)}`,
         case 'function':
         case 'object': {
           if (e.$seen$.has(t)) return
-          if ((e.$seen$.add(t), Vo(t)))
+          if ((e.$seen$.add(t), Go(t)))
             return e.$objSet$.add(void 0), void e.$noSerialize$.push(t)
           const o = t,
             r = jt(t)
           if (r) {
-            const i = !(2 & Ko((t = r)))
-            if ((n && i && Yt(B(o), e, n), Jo(o))) return void e.$objSet$.add(t)
+            const i = !(2 & Jo((t = r)))
+            if ((n && i && Yt(B(o), e, n), Ko(o))) return void e.$objSet$.add(t)
           }
           if (E$(t, e, n)) return void e.$objSet$.add(t)
           if (L(t))
@@ -3471,8 +3471,8 @@ const Is = t => `qv ${kc(t)}`,
               }),
             )
           if (s === 'object') {
-            if (Mt(t)) return
-            if (M(t)) for (let i = 0; i < t.length; i++) A(o[i], e, n)
+            if (Ct(t)) return
+            if (C(t)) for (let i = 0; i < t.length; i++) A(o[i], e, n)
             else if (He(t)) for (const i in t) A(o[i], e, n)
           }
           break
@@ -3490,16 +3490,16 @@ const Is = t => `qv ${kc(t)}`,
     }
   },
   Bc = (t, e) => {
-    if (!Ct(t)) return
+    if (!Mt(t)) return
     if (t instanceof le) return B(t)
     const n = e.$proxyMap$.get(t)
     return n ? B(n) : void 0
   },
-  Gc = t => {
+  Vc = t => {
     const e = tt(t)
     return e ? e.$id$ : null
   },
-  Vc = (t, e) => {
+  Gc = (t, e) => {
     const n = t.previousSibling
     if (n && de(n) && n.data.startsWith('t=')) return '#' + n.data.slice(2)
     const s = t.ownerDocument,
@@ -3510,7 +3510,7 @@ const Is = t => `qv ${kc(t)}`,
     return c.insertBefore(r, t), c.insertBefore(i, t.nextSibling), '#' + o
   },
   Qo = t => Object.keys(t).length === 0
-function Jc(t, e, n, s, o) {
+function Kc(t, e, n, s, o) {
   return t.map(r => {
     if (r === null) return null
     const i = typeof r
@@ -3529,7 +3529,7 @@ function Jc(t, e, n, s, o) {
     const c = x$(r, e, s, o)
     if (c !== void 0) return c
     if (i === 'object') {
-      if (M(r)) return r.map(e)
+      if (C(r)) return r.map(e)
       if (He(r)) {
         const $ = {}
         for (const l in r)
@@ -3544,13 +3544,13 @@ function Jc(t, e, n, s, o) {
   })
 }
 const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
-  Kc = (t, e = ut) => we(null, t, null, null, null, e, null),
+  Jc = (t, e = ut) => we(null, t, null, null, null, e, null),
   os = (t, e = {}) => {
     var l, a
     let n = t.$symbol$,
       s = t.$chunk$
     const o = t.$refSymbol$ ?? n,
-      r = In()
+      r = qn()
     if (r) {
       const u = r.chunkForSymbol(o, s, (l = t.dev) == null ? void 0 : l.file)
       u
@@ -3564,7 +3564,7 @@ const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
           )
     }
     if (s == null) throw Q(31, t.$symbol$)
-    if ((s.startsWith('./') && (s = s.slice(2)), C$(t)))
+    if ((s.startsWith('./') && (s = s.slice(2)), M$(t)))
       if (e.$containerState$) {
         const u = t.resolved,
           h = e.$containerState$,
@@ -3579,8 +3579,8 @@ const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
     return (
       $ && $.length
         ? e.$getObjId$
-          ? (i += `[${It($, e.$getObjId$, ' ')}]`)
-          : e.$addRefMap$ && (i += `[${It($, e.$addRefMap$, ' ')}]`)
+          ? (i += `[${qt($, e.$getObjId$, ' ')}]`)
+          : e.$addRefMap$ && (i += `[${qt($, e.$addRefMap$, ' ')}]`)
         : c && c.length > 0 && (i += `[${c.join(' ')}]`),
       i
     )
@@ -3588,7 +3588,7 @@ const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
   rs = (t, e, n) => {
     n.$element$
     const s = { $containerState$: e, $addRefMap$: o => Xc(n.$refMap$, o) }
-    return It(
+    return qt(
       t,
       o => os(o, s),
       `
@@ -3634,7 +3634,7 @@ const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
     _timeout: (t == null ? void 0 : t.timeout) ?? -1,
     _cache: 0,
   }),
-  Zc = t => Ct(t) && t.__brand === 'resource',
+  Zc = t => Mt(t) && t.__brand === 'resource',
   jc = (t, e) => {
     const n = t._state
     return n === 'resolved'
@@ -3661,7 +3661,7 @@ const at = (t, e, n = ut) => we(null, e, t, null, null, n, null),
   },
   fe = t => dt(pt, { [Us]: '' }, 0, t.name ?? ''),
   en = ''
-function C(t) {
+function M(t) {
   return {
     $prefixCode$: t.$prefix$.charCodeAt(0),
     $prefixChar$: t.$prefix$,
@@ -3673,7 +3673,7 @@ function C(t) {
     $subs$: t.$subs$,
   }
 }
-const e$ = C({
+const e$ = M({
     $prefix$: '',
     $test$: t => cs(t),
     $collect$: (t, e, n) => {
@@ -3688,24 +3688,24 @@ const e$ = C({
         ((t.$captureRef$ = t.$capture$.map(e)), (t.$capture$ = null))
     },
   }),
-  n$ = C({
+  n$ = M({
     $prefix$: '',
-    $test$: t => Gn(t),
+    $test$: t => Vn(t),
     $collect$: (t, e, n) => {
       A(t.$qrl$, e, n),
         t.$state$ &&
           (A(t.$state$, e, n),
           n === !0 && t.$state$ instanceof le && Yt(t.$state$[et], e, !0))
     },
-    $serialize$: (t, e) => Oi(t, e),
-    $prepare$: t => Di(t),
+    $serialize$: (t, e) => Di(t, e),
+    $prepare$: t => Oi(t),
     $fill$: (t, e) => {
       ;(t.$el$ = e(t.$el$)),
         (t.$qrl$ = e(t.$qrl$)),
         t.$state$ && (t.$state$ = e(t.$state$))
     },
   }),
-  s$ = C({
+  s$ = M({
     $prefix$: '',
     $test$: t => Zc(t),
     $collect$: (t, e, n) => {
@@ -3722,19 +3722,19 @@ const e$ = C({
       }
     },
   }),
-  o$ = C({
+  o$ = M({
     $prefix$: '',
     $test$: t => t instanceof URL,
     $serialize$: t => t.href,
     $prepare$: t => new URL(t),
   }),
-  r$ = C({
+  r$ = M({
     $prefix$: '',
     $test$: t => t instanceof Date,
     $serialize$: t => t.toISOString(),
     $prepare$: t => new Date(t),
   }),
-  i$ = C({
+  i$ = M({
     $prefix$: '\x07',
     $test$: t => t instanceof RegExp,
     $serialize$: t => `${t.flags} ${t.source}`,
@@ -3745,7 +3745,7 @@ const e$ = C({
       return new RegExp(n, s)
     },
   }),
-  c$ = C({
+  c$ = M({
     $prefix$: '',
     $test$: t => t instanceof Error,
     $serialize$: t => t.message,
@@ -3754,13 +3754,13 @@ const e$ = C({
       return (e.stack = void 0), e
     },
   }),
-  $$ = C({
+  $$ = M({
     $prefix$: '',
     $test$: t => !!t && typeof t == 'object' && Qs(t),
     $prepare$: (t, e, n) => n,
   }),
   Fe = Symbol('serializable-data'),
-  l$ = C({
+  l$ = M({
     $prefix$: '',
     $test$: t => $s(t),
     $serialize$: (t, e) => {
@@ -3779,7 +3779,7 @@ const e$ = C({
         ((n.$captureRef$ = n.$capture$.map(e)), (n.$capture$ = null))
     },
   }),
-  a$ = C({
+  a$ = M({
     $prefix$: '',
     $test$: t => t instanceof hn,
     $collect$: (t, e, n) => {
@@ -3791,7 +3791,7 @@ const e$ = C({
       return (
         o < 0 &&
           ((o = n.$inlinedFunctions$.length), n.$inlinedFunctions$.push(s)),
-        It(t.$args$, e, ' ') + ' @' + Nt(o)
+        qt(t.$args$, e, ' ') + ' @' + Nt(o)
       )
     },
     $prepare$: t => {
@@ -3804,7 +3804,7 @@ const e$ = C({
       t.$func$, (t.$func$ = e(t.$func$)), (t.$args$ = t.$args$.map(e))
     },
   }),
-  u$ = C({
+  u$ = M({
     $prefix$: '',
     $test$: t => t instanceof le,
     $collect$: (t, e, n) => (
@@ -3830,11 +3830,11 @@ const e$ = C({
       t.untrackedValue = e(t.untrackedValue)
     },
   }),
-  f$ = C({
+  f$ = M({
     $prefix$: '',
     $test$: t => t instanceof mn,
     $collect$(t, e, n) {
-      if ((A(t.ref, e, n), Jo(t.ref))) {
+      if ((A(t.ref, e, n), Ko(t.ref))) {
         const s = B(t.ref)
         T$(e.$containerState$.$subsManager$, s, n) && A(t.ref[t.prop], e, n)
       }
@@ -3849,19 +3849,19 @@ const e$ = C({
       t.ref = e(t.ref)
     },
   }),
-  d$ = C({
+  d$ = M({
     $prefix$: '',
     $test$: t => typeof t == 'number',
     $serialize$: t => String(t),
     $prepare$: t => Number(t),
   }),
-  p$ = C({
+  p$ = M({
     $prefix$: '',
     $test$: t => t instanceof URLSearchParams,
     $serialize$: t => t.toString(),
     $prepare$: t => new URLSearchParams(t),
   }),
-  h$ = C({
+  h$ = M({
     $prefix$: '',
     $test$: t => typeof FormData < 'u' && t instanceof globalThis.FormData,
     $serialize$: t => {
@@ -3880,9 +3880,9 @@ const e$ = C({
       return n
     },
   }),
-  m$ = C({
+  m$ = M({
     $prefix$: '',
-    $test$: t => Dt(t),
+    $test$: t => Ot(t),
     $collect$: (t, e, n) => {
       A(t.children, e, n),
         A(t.props, e, n),
@@ -3900,7 +3900,7 @@ const e$ = C({
     },
     $prepare$: t => {
       const [e, n, s, o, r, i] = t.split(' ')
-      return new Ot(e, n, s, r, parseInt(i, 10), o)
+      return new Dt(e, n, s, r, parseInt(i, 10), o)
     },
     $fill$: (t, e) => {
       ;(t.type = k$(e(t.type))),
@@ -3910,13 +3910,13 @@ const e$ = C({
         (t.children = e(t.children))
     },
   }),
-  g$ = C({
+  g$ = M({
     $prefix$: '',
     $test$: t => typeof t == 'bigint',
     $serialize$: t => t.toString(),
     $prepare$: t => BigInt(t),
   }),
-  y$ = C({
+  y$ = M({
     $prefix$: '',
     $test$: t => t instanceof Uint8Array,
     $serialize$: t => {
@@ -3933,8 +3933,8 @@ const e$ = C({
     },
     $fill$: void 0,
   }),
-  Vt = Symbol(),
-  v$ = C({
+  Gt = Symbol(),
+  v$ = M({
     $prefix$: '',
     $test$: t => t instanceof Set,
     $collect$: (t, e, n) => {
@@ -3943,16 +3943,16 @@ const e$ = C({
     $serialize$: (t, e) => Array.from(t).map(e).join(' '),
     $prepare$: t => {
       const e = new Set()
-      return (e[Vt] = t), e
+      return (e[Gt] = t), e
     },
     $fill$: (t, e) => {
-      const n = t[Vt]
-      t[Vt] = void 0
+      const n = t[Gt]
+      t[Gt] = void 0
       const s = n.length === 0 ? [] : n.split(' ')
       for (const o of s) t.add(e(o))
     },
   }),
-  S$ = C({
+  S$ = M({
     $prefix$: '',
     $test$: t => t instanceof Map,
     $collect$: (t, e, n) => {
@@ -3971,17 +3971,17 @@ const e$ = C({
     },
     $prepare$: t => {
       const e = new Map()
-      return (e[Vt] = t), e
+      return (e[Gt] = t), e
     },
     $fill$: (t, e) => {
-      const n = t[Vt]
-      t[Vt] = void 0
+      const n = t[Gt]
+      t[Gt] = void 0
       const s = n.length === 0 ? [] : n.split(' ')
       s.length % 2
       for (let o = 0; o < s.length; o += 2) t.set(e(s[o]), e(s[o + 1]))
     },
   }),
-  w$ = C({
+  w$ = M({
     $prefix$: '\x1B',
     $test$: t => !!Uo(t) || t === en,
     $serialize$: t => t,
@@ -4074,16 +4074,16 @@ const b$ = is.filter(t => t.$collect$),
   },
   k$ = t => (t === ':slot' ? fe : t === ':fragment' ? Re : t),
   Bo = new WeakSet(),
-  Go = new WeakSet(),
-  Vo = t => Bo.has(t),
-  Jo = t => Go.has(t),
+  Vo = new WeakSet(),
+  Go = t => Bo.has(t),
+  Ko = t => Vo.has(t),
   nn = t => (t != null && Bo.add(t), t),
-  I$ = t => (Go.add(t), t),
-  sn = t => (Ct(t) ? (jt(t) ?? t) : t),
+  q$ = t => (Vo.add(t), t),
+  sn = t => (Mt(t) ? (jt(t) ?? t) : t),
   jt = t => t[an],
   B = t => t[et],
-  Ko = t => t[Wt],
-  q$ = (t, e) => {
+  Jo = t => t[Wt],
+  I$ = (t, e) => {
     const n = t[0],
       s = typeof t[1] == 'string' ? t[1] : e(t[1])
     if (!s) return
@@ -4106,7 +4106,7 @@ const b$ = is.filter(t => t.$collect$),
       s = parseInt(n[0], 10)
     n.length >= 2
     const o = e(n[1])
-    if (!o || (Gn(o) && !o.$el$)) return
+    if (!o || (Vn(o) && !o.$el$)) return
     const r = [s, o]
     return (
       s === 0
@@ -4201,15 +4201,15 @@ class N$ {
   }
 }
 let Xo
-function M$() {
+function C$() {
   return Xo
 }
 const Ns = t => {
-    if (t == null) throw qt('must be non null', t)
+    if (t == null) throw It('must be non null', t)
     return t
   },
   cs = t => typeof t == 'function' && typeof t.getSymbol == 'function',
-  C$ = t => cs(t) && t.$symbol$ == '<sync>',
+  M$ = t => cs(t) && t.$symbol$ == '<sync>',
   we = (t, e, n, s, o, r, i) => {
     let c
     const $ = async function (...f) {
@@ -4234,7 +4234,7 @@ const Ns = t => {
                 }
               }
               return (
-                (S = V()),
+                (S = G()),
                 (S.$qrl$ = $),
                 (S.$event$ = this),
                 W.call(this, S, f, ...v)
@@ -4247,12 +4247,12 @@ const Ns = t => {
             b = Bs(c.ownerDocument, p)
           return ($.resolved = n = b[Number(e)])
         }
-        const v = D$(),
+        const v = O$(),
           S = st()
         if (s !== null) n = s().then(p => ($.resolved = n = a(p[e])))
         else {
-          const p = In().importSymbol(c, t, e)
-          n = I(p, b => ($.resolved = n = a(b)))
+          const p = qn().importSymbol(c, t, e)
+          n = q(p, b => ($.resolved = n = a(b)))
         }
         return (
           typeof n == 'object' &&
@@ -4271,14 +4271,14 @@ const Ns = t => {
       h = f => (n !== null ? n : u(f))
     function d(f, v) {
       return (...S) =>
-        I(h(), p => {
+        q(h(), p => {
           if (!Z(p)) throw Q(10)
           if (v && v() === !1) return
           const b = m(f)
           return W.call(this, b, p, ...S)
         })
     }
-    const m = f => (f == null ? V() : M(f) ? bo(f) : f),
+    const m = f => (f == null ? G() : C(f) ? bo(f) : f),
       y = i ?? e,
       g = Yo(y)
     return (
@@ -4299,7 +4299,7 @@ const Ns = t => {
         dev: null,
         resolved: void 0,
       }),
-      n && (n = I(n, f => ($.resolved = n = a(f)))),
+      n && (n = q(n, f => ($.resolved = n = a(f)))),
       $
     )
   },
@@ -4307,17 +4307,17 @@ const Ns = t => {
     const e = t.lastIndexOf('_')
     return e > -1 ? t.slice(e + 1) : t
   }
-const Ms = new Set(),
+const Cs = new Set(),
   P$ = (t, e, n) => {
-    Ms.has(t) ||
-      (Ms.add(t), O$('qsymbol', { symbol: t, element: e, reqTime: n }))
+    Cs.has(t) ||
+      (Cs.add(t), D$('qsymbol', { symbol: t, element: e, reqTime: n }))
   },
-  O$ = (t, e) => {
+  D$ = (t, e) => {
     Y() ||
       typeof document != 'object' ||
       document.dispatchEvent(new CustomEvent(t, { bubbles: !1, detail: e }))
   },
-  D$ = () => (Y() ? 0 : typeof performance == 'object' ? performance.now() : 0),
+  O$ = () => (Y() ? 0 : typeof performance == 'object' ? performance.now() : 0),
   L$ = t => t,
   Zo = function (t, e) {
     return (
@@ -4362,10 +4362,10 @@ function ls(t, e) {
       : s.$static$.$containerState$.$serverData$[t]) ?? e
   )
 }
-const Cs = new Map(),
+const Ms = new Map(),
   z$ = (t, e) => {
-    let n = Cs.get(e)
-    return n || Cs.set(e, (n = F$(t, e))), n
+    let n = Ms.get(e)
+    return n || Ms.set(e, (n = F$(t, e))), n
   },
   F$ = (t, e) => {
     const n = t.length,
@@ -4373,23 +4373,23 @@ const Cs = new Map(),
       o = []
     let r = 0,
       i = r,
-      c = Jt,
+      c = Kt,
       $ = 0
     for (; r < n; ) {
       const d = r
       let m = t.charCodeAt(r++)
-      m === K$ && (r++, (m = or))
+      m === J$ && (r++, (m = or))
       const y = tl[c]
       for (let g = 0; g < y.length; g++) {
         const f = y[g],
           [v, S, p] = f
         if (
-          (v === $ || v === T || (v === Qe && ke($)) || (v === Sn && Os($))) &&
+          (v === $ || v === T || (v === Qe && ke($)) || (v === Sn && Ds($))) &&
           (S === m ||
             S === T ||
             (S === Qe && ke(m)) ||
             (S === lt && !ke(m) && m !== us) ||
-            (S === Sn && Os(m))) &&
+            (S === Sn && Ds(m))) &&
           (f.length == 3 || u(f))
         ) {
           if ((f.length > 3 && (m = t.charCodeAt(r - 1)), p === z || p == _t)) {
@@ -4398,11 +4398,11 @@ const Cs = new Map(),
                 ? Ps(m) || a(r - (S == lt ? 1 : S == wn ? 2 : 0))
                 : (Ps(m) ? l(r - 2) : a(r - 2), i++)),
               S === lt && (r--, (m = $))
-            do (c = o.pop() || Jt), c === Tt && (l(r - 1), i++)
+            do (c = o.pop() || Kt), c === Tt && (l(r - 1), i++)
             while (Q$(c))
           } else
             o.push(c),
-              c === Tt && p === Jt ? (l(r - 8), (i = r)) : p === tr && a(d),
+              c === Tt && p === Kt ? (l(r - 8), (i = r)) : p === tr && a(d),
               (c = p)
           break
         }
@@ -4438,16 +4438,16 @@ const Cs = new Map(),
     }
   },
   ke = t =>
-    (t >= G$ && t <= V$) ||
-    (t >= or && t <= J$) ||
+    (t >= V$ && t <= G$) ||
+    (t >= or && t <= K$) ||
     (t >= Z$ && t <= j$) ||
     t >= 128 ||
     t === X$ ||
     t === bn,
   Ps = t => t === Ft || t === us || t === rr || t === sr || ke(t),
   Q$ = t => t === er || t === as || t === nr || t === Tt,
-  Os = t => t === B$ || t === W$ || t === U$ || t === H$,
-  Jt = 0,
+  Ds = t => t === B$ || t === W$ || t === U$ || t === H$,
+  Kt = 0,
   jo = 2,
   Tt = 5,
   tr = 6,
@@ -4468,13 +4468,13 @@ const Cs = new Map(),
   wn = 41,
   bn = 45,
   us = 46,
-  G$ = 48,
-  V$ = 57,
+  V$ = 48,
+  G$ = 57,
   Ft = 58,
   or = 65,
-  J$ = 90,
+  K$ = 90,
   rr = 91,
-  K$ = 92,
+  J$ = 92,
   X$ = 95,
   Y$ = 32,
   Z$ = 97,
@@ -4508,7 +4508,7 @@ const Cs = new Map(),
     [[T, lt, _t]],
     [[T, lt, _t]],
     [
-      [T, 40, Jt],
+      [T, 40, Kt],
       [T, lt, _t],
     ],
     [
@@ -4516,7 +4516,7 @@ const Cs = new Map(),
       [T, lt, _t],
     ],
     [
-      [T, 40, Jt],
+      [T, 40, Kt],
       [T, lt, z],
     ],
     [[T, lt, z]],
@@ -4528,7 +4528,7 @@ const Cs = new Map(),
     [[T, wn, z], ...xt],
     [[T, 125, z], ...xt],
     [[T, 125, z], [Sn, Qe, 1], [T, Ft, Tt, 'global'], [T, 123, 13], ...xt],
-    [[T, 123, Jt], [T, 59, z], ...xt],
+    [[T, 123, Kt], [T, 59, z], ...xt],
     [[T, 59, z], [T, 123, 9], ...xt],
     [[T, 125, z], [T, 123, 13], [T, 40, 8], ...xt],
     [[T, 39, z]],
@@ -4548,7 +4548,7 @@ const Cs = new Map(),
       (o($),
       c.$appendStyles$ || (c.$appendStyles$ = []),
       c.$scopeIds$ || (c.$scopeIds$ = []),
-      n && c.$scopeIds$.push(Or($)),
+      n && c.$scopeIds$.push(Dr($)),
       l.$styleIds$.has($))
     )
       return $
@@ -4571,20 +4571,20 @@ const Cs = new Map(),
   ol = ct('qc-a'),
   rl = ct('qc-ir'),
   il = ct('qc-p'),
-  cl = L$(Kc('s_1xmY1GPKbGU')),
+  cl = L$(Jc('s_iX0Wv91fJIY')),
   $l = () => {
     if (!ls('containerAttributes'))
       throw new Error(
         'PrefetchServiceWorker component must be rendered on the server.',
       )
-    Ji()
+    Ki()
     const e = me($r)
     if (e.value && e.value.length > 0) {
       const n = e.value.length
       let s = null
       for (let o = n - 1; o >= 0; o--)
         e.value[o].default &&
-          (s = dt(e.value[o].default, { children: s }, 1, 'xO_0'))
+          (s = dt(e.value[o].default, { children: s }, 1, 'PC_0'))
       return dt(
         Re,
         {
@@ -4609,20 +4609,20 @@ const Cs = new Map(),
               null,
               null,
               2,
-              'xO_1',
+              'PC_1',
             ),
           ],
         },
         1,
-        'xO_2',
+        'PC_2',
       )
     }
     return Fn
   },
-  Wl = on(at($l, 's_mvZ0o0x6mlM')),
+  Wl = on(at($l, 's_8jOBWsjxgB8')),
   Ee = new Map(),
   ll = 'qaction',
-  Ds = t => t.pathname + t.search + t.hash,
+  Os = t => t.pathname + t.search + t.hash,
   mt = (t, e) => new URL(t, e.href),
   En = (t, e) => t.origin === e.origin,
   Ls = t => (t.endsWith('/') ? t : t + '/'),
@@ -4645,11 +4645,11 @@ const Cs = new Map(),
       try {
         const s = mt(n.trim(), e.url),
           o = mt('', e.url)
-        if (En(s, o)) return Ds(s)
+        if (En(s, o)) return Os(s)
       } catch (s) {
         console.error(s)
       }
-    else if (t.reload) return Ds(mt('', e.url))
+    else if (t.reload) return Os(mt('', e.url))
     return null
   },
   dl = (t, e) => {
@@ -4850,30 +4850,30 @@ const Cs = new Map(),
         ((S = new URL(m.dest, u.url)), (b = r.loadedRoute), (p = r.response), b)
       ) {
         const [x, k, w, _] = b,
-          q = w,
-          R = q[q.length - 1],
+          I = w,
+          R = I[I.length - 1],
           P = v === 'form' && !We(S, f)
         m.dest.search && !P && (S.search = m.dest.search),
           (u.prevUrl = f),
           (u.url = S),
           (u.params = { ...k }),
           (a.untrackedValue = { type: v, dest: S })
-        const D = ml(p, u, q, g)
+        const O = ml(p, u, I, g)
         ;(n.headings = R.headings),
           (n.menu = _),
-          (s.value = nn(q)),
-          (o.links = D.links),
-          (o.meta = D.meta),
-          (o.styles = D.styles),
-          (o.scripts = D.scripts),
-          (o.title = D.title),
-          (o.frontmatter = D.frontmatter)
+          (s.value = nn(I)),
+          (o.links = O.links),
+          (o.meta = O.meta),
+          (o.styles = O.styles),
+          (o.scripts = O.scripts),
+          (o.title = O.title),
+          (o.frontmatter = O.frontmatter)
       }
     }
     return h()
   },
   kl = t => {
-    el(at(El, 's_fmb2t7vTfK4'))
+    el(at(El, 's_DBNWDwXgCow'))
     const e = bl()
     if (!(e != null && e.params))
       throw new Error(
@@ -4887,7 +4887,7 @@ const Cs = new Map(),
         { deep: !1 },
       ),
       r = {},
-      i = I$(be(e.response.loaders, { deep: !1 })),
+      i = q$(be(e.response.loaders, { deep: !1 })),
       c = cn({
         type: 'initial',
         dest: s,
@@ -4909,8 +4909,8 @@ const Cs = new Map(),
             }
           : void 0,
       ),
-      m = at(xl, 's_PoiYXOcjt2Q'),
-      y = at(_l, 's_aH6gC3O3NjI', [d, r, c, o])
+      m = at(xl, 's_wxKQczXDgGA'),
+      y = at(_l, 's_SHMqyqh5H4E', [d, r, c, o])
     return (
       $t(sl, l),
       $t($r, a),
@@ -4921,12 +4921,12 @@ const Cs = new Map(),
       $t(ol, d),
       $t(rl, c),
       $t(il, m),
-      Ni(at(Tl, 's_nl5HISeg0wo', [d, l, a, $, e, y, i, r, t, c, o])),
-      dt(fe, null, 3, 'xO_3')
+      Ni(at(Tl, 's_7V8C6m30W8E', [d, l, a, $, e, y, i, r, t, c, o])),
+      dt(fe, null, 3, 'PC_3')
     )
   },
-  Hl = on(at(kl, 's_M0r1Ml4RS8Y')),
-  Il = (t, e) => {
+  Hl = on(at(kl, 's_D4XD62ic8NY')),
+  ql = (t, e) => {
     var n
     if (!((n = navigator.connection) != null && n.saveData) && e && e.href) {
       const s = new URL(e.href)
@@ -4935,7 +4935,7 @@ const Cs = new Map(),
           yl(s, e, { prefetchSymbols: !1, isPrefetch: !0 })
     }
   },
-  ql = async (t, e) => {
+  Il = async (t, e) => {
     const [n, s, o, r] = Xe()
     t.defaultPrevented &&
       (e.hasAttribute('q:nbs')
@@ -4960,7 +4960,7 @@ const Cs = new Map(),
     $.href = l || t.href
     const a = se(() => (!!l && o !== !1 && o !== 'js' && dl(l, n)) || void 0),
       h = se(() => a || (!!l && o !== !1 && pl(l, n)))
-        ? at(Il, 's_IzYFpmvIvqg')
+        ? at(ql, 's_JQka7qFSgTA')
         : void 0,
       d = l
         ? Zo((y, g) => {
@@ -4977,28 +4977,28 @@ const Cs = new Map(),
         'q:link': !!l,
         ...$,
         'data-prefetch': a,
-        children: dt(fe, null, 3, 'xO_5'),
-        onClick$: [d, s, l ? at(ql, 's_etOD00CvXIA', [e, r, i, c]) : void 0],
+        children: dt(fe, null, 3, 'PC_5'),
+        onClick$: [d, s, l ? at(Il, 's_hKb0i0wO1HM', [e, r, i, c]) : void 0],
         onMouseOver$: [$.onMouseOver$, h],
         onFocus$: [$.onFocus$, h],
         onQVisible$: [$.onQVisible$, h],
       },
       null,
       0,
-      'xO_6',
+      'PC_6',
     )
   },
-  Bl = on(at(Al, 's_vF5JWJgPaqg')),
-  Gl = t =>
+  Bl = on(at(Al, 's_9C3L9HsfW0c')),
+  Vl = t =>
     At(
       'script',
       { nonce: Yi(t, 'nonce') },
       { dangerouslySetInnerHTML: nl },
       null,
       3,
-      'xO_7',
+      'PC_7',
     ),
-  Vl = (t, ...e) => {
+  Gl = (t, ...e) => {
     const { id: n, validators: s } = Rl(e, t)
     function o() {
       return me(cr, r => {
@@ -5038,14 +5038,16 @@ const Cs = new Map(),
     )
   }
 export {
-  Cc as A,
-  Ol as B,
-  Ul as C,
-  Sl as D,
-  ii as E,
+  co as A,
+  el as B,
+  ms as C,
+  Ol as D,
+  Mc as E,
   Re as F,
-  Wl as G,
-  Gl as H,
+  Dl as G,
+  Ul as H,
+  Wl as I,
+  Vl as J,
   Bl as L,
   Hl as Q,
   ci as R,
@@ -5054,27 +5056,27 @@ export {
   Fl as a,
   At as b,
   on as c,
-  Kc as d,
+  Jc as d,
   Ql as e,
-  N as f,
-  ct as g,
-  me as h,
+  Xe as f,
+  ii as g,
+  N as h,
   at as i,
-  Ll as j,
-  Ji as k,
-  $t as l,
-  Yi as m,
-  _o as n,
-  Xe as o,
-  Ni as p,
-  Fn as q,
-  Vl as r,
-  qi as s,
-  vs as t,
+  be as j,
+  Yi as k,
+  Ll as l,
+  ct as m,
+  nn as n,
+  me as o,
+  Ki as p,
+  $t as q,
+  Gl as r,
+  _o as s,
+  Sl as t,
   cn as u,
-  zl as v,
-  co as w,
-  el as x,
-  ms as y,
-  Dl as z,
+  Ni as v,
+  Fn as w,
+  Ii as x,
+  vs as y,
+  zl as z,
 }

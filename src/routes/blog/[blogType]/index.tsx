@@ -1,29 +1,49 @@
 import { component$ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import {
+  routeLoader$,
+  StaticGenerateHandler,
+  useLocation,
+  type DocumentHead,
+} from '@builder.io/qwik-city'
+import { BlogComponent } from '~/components/blog/blogComponent'
 import { articleDetailApi, latestArticles } from '~/services/graph-ql.service'
-import { BlogComponent } from '../../components/blog/blogComponent'
+import { BlogTypes } from '~/utils/helpers'
+
+export const onStaticGenerate: StaticGenerateHandler = () => {
+  return {
+    params: BlogTypes.map(blogType => {
+      return {
+        blogType,
+      }
+    }),
+  }
+}
 
 export const useArticle = routeLoader$(async requestEvent => {
+  const { blogType } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return articleDetailApi('finance', 'finance', token || '')
+  return articleDetailApi(blogType, blogType, token || '')
 })
 
 export const useLatestArticles = routeLoader$(async requestEvent => {
+  const { blogType } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return latestArticles(token || '', 'finance')
+  return latestArticles(token || '', blogType)
 })
 
 export default component$(() => {
+  const loc = useLocation()
   const article = useArticle()
   const latestArticle = useLatestArticles()
 
   return (
     <>
       <BlogComponent
-        urlBlogBasePath="finance"
+        urlBlogBasePath={'blog/' + loc.params.blogType}
+        blogType={loc.params.blogType}
         page={article.value.data.page}
         latestArticle={latestArticle.value.data.allPages}
-        showFinanceWarn={true}
+        showFinanceWarn={loc.params.blogType === 'finance'}
       />
     </>
   )

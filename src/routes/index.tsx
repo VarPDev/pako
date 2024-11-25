@@ -79,14 +79,14 @@ export default component$(() => {
       <AnimatedComp>
         <InnerSectionComponent
           showCta={true}
-          ctaHref="/blog"
+          ctaHref="/blog/dev"
           ctaLabel="Read more articles"
           gcClick="more-articles"
           gcTitle="More Articles"
           gcReferrer="referrer"
         >
           <Articles
-            urlBlogBasePath="blog"
+            urlBlogBasePath="blog/dev"
             articles={latestArticles.value.data.allPages}
             referrer="index-article"
           />

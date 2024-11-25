@@ -1,8 +1,8 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
 import { Articles } from '~/components/articles/articles'
-import { useListDevArticles } from '~/routes/blog'
-import { useListFinanceArticles } from '~/routes/finance/all'
+import { useListArticles } from '~/routes/blog/[blogType]/all'
+import { BlogInfo } from '~/utils/helpers'
 import { InnerSectionComponent } from '../inner-section/innerSectionComponent'
 
 interface ItemProps {
@@ -11,10 +11,7 @@ interface ItemProps {
 }
 
 export default component$<ItemProps>(props => {
-  const articles =
-    props.blogType === 'finance'
-      ? useListFinanceArticles()
-      : useListDevArticles()
+  const articles = useListArticles()
   const filteredArticles = useSignal([...articles.value.data.allPages])
 
   const search = useSignal('')
@@ -39,7 +36,7 @@ export default component$<ItemProps>(props => {
   return (
     <>
       <section class="title-section flex flex-col items-center gap-4">
-        <h1>Prsonal Finance</h1>
+        <h1>{BlogInfo[props.blogType].title}</h1>
         <h2>Find out what I write about</h2>
         <label class="input flex items-center gap-2 w-full max-w-xs">
           <input

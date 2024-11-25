@@ -1,17 +1,27 @@
 import { component$ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import {
+  routeLoader$,
+  useLocation,
+  type DocumentHead,
+} from '@builder.io/qwik-city'
 import BlogHomeComponent from '~/components/blog/blogHomeComponent'
 import { listArticles } from '~/services/graph-ql.service'
 
-export const useListDevArticles = routeLoader$(async requestEvent => {
+export const useListArticles = routeLoader$(async requestEvent => {
+  const { blogType } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return listArticles(token || '', 'dev')
+  return listArticles(token || '', blogType)
 })
 
 export default component$(() => {
+  const loc = useLocation()
+
   return (
     <>
-      <BlogHomeComponent urlBlogBasePath="blog" blogType={'dev'} />
+      <BlogHomeComponent
+        urlBlogBasePath={'blog/' + loc.params.blogType}
+        blogType={loc.params.blogType}
+      />
     </>
   )
 })
