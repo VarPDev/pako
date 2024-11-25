@@ -1,7 +1,12 @@
-import { component$ } from '@builder.io/qwik'
+import { $, component$ } from '@builder.io/qwik'
 import { Link } from '@builder.io/qwik-city'
 
 export const Header = component$(() => {
+  const handleItemCLick = $(() => {
+    // eslint-disable-next-line no-extra-semi
+    ;(document?.activeElement as any).blur()
+  })
+
   return (
     <>
       <div class="navbar bg-base-100">
@@ -28,10 +33,13 @@ export const Header = component$(() => {
               class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link href="/">Homepage</Link>
+                <Link onClick$={handleItemCLick} href="/">
+                  Homepage
+                </Link>
               </li>
               <li>
                 <Link
+                  onClick$={handleItemCLick}
                   href="/blog/dev"
                   data-goatcounter-click="open-articles"
                   data-goatcounter-title="Open Articles"
@@ -42,6 +50,7 @@ export const Header = component$(() => {
               </li>
               <li>
                 <Link
+                  onClick$={handleItemCLick}
                   href="/projects"
                   data-goatcounter-click="open-projects"
                   data-goatcounter-title="Open Projects"
@@ -52,6 +61,7 @@ export const Header = component$(() => {
               </li>
               <li>
                 <Link
+                  onClick$={handleItemCLick}
                   href="/Pasquale_De_Lucia-Resume.pdf"
                   target="_blank"
                   data-goatcounter-click="get-resume"
@@ -63,6 +73,7 @@ export const Header = component$(() => {
               </li>
               <li>
                 <Link
+                  onClick$={handleItemCLick}
                   href="/blog/finance"
                   data-goatcounter-click="open-finance"
                   data-goatcounter-title="Open Finance"
