@@ -96,7 +96,7 @@ export const Contact = component$<{ referral: string }>(props => {
       <div class="container mx-auto">
         <div class="card bg-base-100 shadow-xl image-full w-full">
           <div class="card-body">
-            <div class="flex items-center gap-8 flex-col md:flex-row">
+            <div class="flex items-center justify-around gap-8 flex-col md:flex-row">
               <svg
                 class="w-16 md:w-40 rotate-[270deg]"
                 xmlns="http://www.w3.org/2000/svg"
