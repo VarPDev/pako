@@ -21,7 +21,7 @@ export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
 
   for (const type of BlogTypes) {
     const res = await pagesSlugsApi(token ?? '', type)
-    slugs.push(...res.data.allPages)
+    slugs.push(...res.data.allPages, { slug: 'all', blogType: type })
   }
 
   return {

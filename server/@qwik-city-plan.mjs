@@ -5119,7 +5119,7 @@ const qa = Oa(d(Ia, 's_h5ZUTiJtg0M')),
       a = []
     for (const r of H) {
       const i = await ae(t ?? '', r)
-      a.push(...i.data.allPages)
+      a.push(...i.data.allPages, { slug: 'all', blogType: r })
     }
     return { params: a.map(r => ({ slug: r.slug, blogType: r.blogType })) }
   },
