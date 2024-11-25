@@ -25,7 +25,7 @@ function DatoText(content: any) {
             return (
               <a
                 {...transformedMeta}
-                href={`/${record.blogType}/${record.slug}`}
+                href={`/blog/${record.blogType}/${record.slug}`}
               >
                 {children}
               </a>
