@@ -32,7 +32,7 @@ export const Header = component$(() => {
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="/blog/dev"
                   data-goatcounter-click="open-articles"
                   data-goatcounter-title="Open Articles"
                   data-goatcounter-referrer="header"

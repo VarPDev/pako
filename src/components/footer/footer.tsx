@@ -36,7 +36,7 @@ export const Footer = component$(() => {
             made with qwik
           </Link>
           <Link
-            href="/blog"
+            href="/blog/dev"
             class="md:row-span-full"
             data-goatcounter-click="open-articles"
             data-goatcounter-title="Open Articles"
