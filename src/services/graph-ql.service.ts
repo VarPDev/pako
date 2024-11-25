@@ -45,6 +45,12 @@ export const articleDetailApi = async (
             id
             __typename
           }
+          ... on PageRecord {
+            id
+            slug
+            blogType
+            __typename
+          }
         }
       }
       seo: _seoMetaTags {

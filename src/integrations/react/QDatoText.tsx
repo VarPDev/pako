@@ -19,6 +19,21 @@ function DatoText(content: any) {
             return null
         }
       }}
+      renderLinkToRecord={({ record, children, transformedMeta }) => {
+        switch (record.__typename) {
+          case 'PageRecord':
+            return (
+              <a
+                {...transformedMeta}
+                href={`/${record.blogType}/${record.slug}`}
+              >
+                {children}
+              </a>
+            )
+          default:
+            return null
+        }
+      }}
     />
   )
 }
