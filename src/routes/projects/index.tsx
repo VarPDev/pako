@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { Cards } from '~/components/cards/cards'
+import { InnerSectionComponent } from '~/components/inner-section/innerSectionComponent'
 import { projects } from '~/repository/projects'
 
 export default component$(() => {
@@ -11,9 +12,9 @@ export default component$(() => {
         <h2>Check out my projects</h2>
       </section>
 
-      <section class="inner-section">
+      <InnerSectionComponent showCta={false}>
         <Cards items={projects} referrer="page-projects" />
-      </section>
+      </InnerSectionComponent>
     </>
   )
 })

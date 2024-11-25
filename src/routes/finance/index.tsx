@@ -20,6 +20,7 @@ export default component$(() => {
   return (
     <>
       <BlogComponent
+        urlBlogBasePath="finance"
         page={article.value.data.page}
         latestArticle={latestArticle.value.data.allPages}
         showFinanceWarn={true}

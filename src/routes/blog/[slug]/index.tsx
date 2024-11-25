@@ -29,7 +29,7 @@ export default component$(() => {
 
   return (
     <>
-      <BlogComponent page={article.value.data.page} />
+      <BlogComponent urlBlogBasePath="blog" page={article.value.data.page} />
     </>
   )
 })

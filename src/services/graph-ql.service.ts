@@ -70,7 +70,7 @@ export const articleDetailApi = async (
 export const latestArticles = async (
   token: string,
   blogType: string,
-  limit: number = 8,
+  limit: number = 4,
 ) => {
   const LATEST_QUERY = `{
     allPages(first: ${limit}, filter: { slug: { neq: "finance" }, blogType: { eq: "${blogType}" } }) {

@@ -5,13 +5,15 @@ import {
   useStyles$,
   useVisibleTask$,
 } from '@builder.io/qwik'
-import { Link } from '@builder.io/qwik-city'
 import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
+import { Articles } from '../articles/articles'
+import { InnerSectionComponent } from '../inner-section/innerSectionComponent'
 import styles from './blog.css?inline'
 
 interface ItemProps {
   page: any
+  urlBlogBasePath: string
   latestArticle?: any[]
   showFinanceWarn?: boolean
 }
@@ -49,28 +51,31 @@ export const BlogComponent = component$<ItemProps>(props => {
         </section>
       )}
 
-      <section class="inner-section blog-content">
+      <InnerSectionComponent showCta={false} sectionClass="blog-content">
         <QDatoText data={props.page.content} />
-      </section>
+      </InnerSectionComponent>
 
       {props.latestArticle && (
-        <section class="inner-section">
-          <h2 class="mb-2">Latest articles</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {props.latestArticle.map((a: any) => (
-              <div class="card bg-primary text-primary-content">
-                <div class="card-body">
-                  <h2 class="card-title">{a.title}</h2>
-                  <div class="card-actions justify-end">
-                    <Link href={a.slug} class="btn">
-                      Scopri di più
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <>
+          <section class="title-section text-center">
+            <h2 class="font-bold text-3xl uppercase">Latest articles</h2>
+          </section>
+
+          <InnerSectionComponent
+            showCta={true}
+            ctaHref="/finance/all"
+            ctaLabel="Scopri tutti gli articoli"
+            gcClick="more-finance-articles"
+            gcTitle="More Finance Articles"
+            gcReferrer="referrer"
+          >
+            <Articles
+              urlBlogBasePath={props.urlBlogBasePath}
+              articles={props.latestArticle}
+              referrer="index-article"
+            />
+          </InnerSectionComponent>
+        </>
       )}
 
       {showAlert.value && props.page.language === 'ita' && (

@@ -14,6 +14,7 @@ import { Contact, ContactForm } from '~/components/contact/contact'
 import { Eggs } from '~/components/eggs/eggs'
 import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
+import { InnerSectionComponent } from '~/components/inner-section/innerSectionComponent'
 import { Rudolph } from '~/components/rudolph/rudolph'
 import { Santa } from '~/components/santa/santa'
 import { ShowContext, SnowContext } from '~/services/common.service'
@@ -94,9 +95,9 @@ export default component$(() => {
         <Slot />
 
         <AnimatedComp>
-          <section class="inner-section">
+          <InnerSectionComponent showCta={false}>
             <Contact referral="layout"></Contact>
-          </section>
+          </InnerSectionComponent>
         </AnimatedComp>
       </main>
       <Footer />

@@ -3,6 +3,7 @@ import { Link } from '@builder.io/qwik-city'
 import { format } from 'date-fns'
 interface ItemProps {
   articles: Array<any>
+  urlBlogBasePath: string
   referrer?: string
 }
 
@@ -12,11 +13,11 @@ export const Articles = component$<ItemProps>(props => {
   return (
     <>
       <div class="container mx-auto">
-        <div class="grid md:grid-cols-2 justify-items-center gap-12">
+        <div class="grid md:grid-cols-2 justify-items-start gap-12">
           {articles.map(c => (
             // <Link href={`/blog/${c.slug}`} key={c.id}>
             <Link
-              href={'/blog/' + c.slug}
+              href={'/' + props.urlBlogBasePath + '/' + c.slug}
               key={c.id}
               data-goatcounter-click="open-article"
               data-goatcounter-title="Open Article"

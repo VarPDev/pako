@@ -1,11 +1,12 @@
 import { component$ } from '@builder.io/qwik'
 import { Link, type DocumentHead } from '@builder.io/qwik-city'
+import { InnerSectionComponent } from '~/components/inner-section/innerSectionComponent'
 // import ImgAliensAlien from "~/media/aliens-alien.gif?jsx";
 
 export default component$(() => {
   return (
     <>
-      <section class="inner-section">
+      <InnerSectionComponent showCta={false}>
         <div class="flex flex-col gap-12 items-center justify-center">
           <h1 class="mb-6">OPSS!</h1>
           <p>
@@ -27,7 +28,7 @@ export default component$(() => {
             height="1200"
           ></img>
         </div>
-      </section>
+      </InnerSectionComponent>
     </>
   )
 })

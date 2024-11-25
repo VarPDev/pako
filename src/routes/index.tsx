@@ -1,9 +1,10 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik'
-import { Link, routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
+import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
 import { Articles } from '~/components/articles/articles'
 import { Cards } from '~/components/cards/cards'
 import { Hero } from '~/components/hero/hero'
+import { InnerSectionComponent } from '~/components/inner-section/innerSectionComponent'
 import { LinkItem } from '~/components/linkItem/linkItem'
 import { Stacks } from '~/components/stacks/stacks'
 import { Timeline } from '~/components/timeline/timeline'
@@ -45,22 +46,16 @@ export default component$(() => {
         </section>
       </AnimatedComp>
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent
+          showCta={true}
+          ctaHref="/projects"
+          ctaLabel="See more projects"
+          gcClick="more-projects"
+          gcTitle="More Projects"
+          gcReferrer="referrer"
+        >
           <Cards items={projects} limit={3} referrer="index-project" />
-
-          <p class="flex justify-center pt-6">
-            <Link
-              href="/projects"
-              aria-label="See more projects"
-              class="btn btn-primary text-white"
-              data-goatcounter-click="more-projects"
-              data-goatcounter-title="More Projects"
-              data-goatcounter-referrer="referrer"
-            >
-              See more projects
-            </Link>
-          </p>
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       <AnimatedComp>
@@ -77,30 +72,25 @@ export default component$(() => {
 
       <AnimatedComp>
         <section class="title-section text-center">
-          <h2>Latest articles</h2>
+          <h2 class="font-bold">Latest articles</h2>
           {/* <h3>All my jobs</h3> */}
         </section>
       </AnimatedComp>
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent
+          showCta={true}
+          ctaHref="/blog"
+          ctaLabel="Read more articles"
+          gcClick="more-articles"
+          gcTitle="More Articles"
+          gcReferrer="referrer"
+        >
           <Articles
+            urlBlogBasePath="blog"
             articles={latestArticles.value.data.allPages}
             referrer="index-article"
           />
-
-          <p class="flex justify-center pt-6">
-            <Link
-              href="/blog"
-              aria-label="Read more articles"
-              class="btn btn-primary text-white"
-              data-goatcounter-click="more-articles"
-              data-goatcounter-title="More Articles"
-              data-goatcounter-referrer="referrer"
-            >
-              Read more articles
-            </Link>
-          </p>
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       <AnimatedComp>
@@ -112,23 +102,23 @@ export default component$(() => {
 
       {/* front end */}
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent showCta={false}>
           <Stacks title="Front end" stacks={frontEnd} />
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       {/* back end */}
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent showCta={false}>
           <Stacks title="Back end" stacks={backEnd} />
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       {/* tools end */}
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent showCta={false}>
           <Stacks title="Tools" stacks={tools} />
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       <AnimatedComp>
@@ -138,14 +128,14 @@ export default component$(() => {
       </AnimatedComp>
 
       <AnimatedComp>
-        <section class="inner-section">
+        <InnerSectionComponent showCta={false}>
           <div class="flex items-center justify-center">
             <ImgPR
               alt="My first PR"
               class="max-w-[18rem] xs:max-w-[8rem] sm:max-w-[12rem] md:max-w-xs rounded-lg shadow-2xl"
             />
           </div>
-        </section>
+        </InnerSectionComponent>
       </AnimatedComp>
 
       <AnimatedComp>

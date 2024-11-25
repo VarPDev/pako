@@ -29,7 +29,11 @@ export default component$(() => {
 
   return (
     <>
-      <BlogComponent showFinanceWarn={true} page={article.value.data.page} />
+      <BlogComponent
+        urlBlogBasePath="finance"
+        showFinanceWarn={true}
+        page={article.value.data.page}
+      />
     </>
   )
 })

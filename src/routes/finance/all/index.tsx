@@ -3,15 +3,21 @@ import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
 import BlogHomeComponent from '~/components/blog/blogHomeComponent'
 import { listArticles } from '~/services/graph-ql.service'
 
-export const useListDevArticles = routeLoader$(async requestEvent => {
+// export const useArticles = routeLoader$(async requestEvent => {
+//   return await getArticles({
+//     devToApiKey: requestEvent.env.get('DEV_TO_API_KEY'),
+//   })
+// })
+
+export const useListFinanceArticles = routeLoader$(async requestEvent => {
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return listArticles(token || '', 'dev')
+  return listArticles(token || '', 'finance')
 })
 
 export default component$(() => {
   return (
     <>
-      <BlogHomeComponent urlBlogBasePath="blog" blogType={'dev'} />
+      <BlogHomeComponent urlBlogBasePath="finance" blogType={'finance'} />
     </>
   )
 })
