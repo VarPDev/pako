@@ -5,6 +5,7 @@ import {
   useStyles$,
   useVisibleTask$,
 } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
 import { Articles } from '../articles/articles'
@@ -43,6 +44,26 @@ export const BlogComponent = component$<ItemProps>(props => {
         <div class="content">
           <h1>{props.page.title}</h1>
           <h2>{props.page.subtitle}</h2>
+        </div>
+      </section>
+
+      <section class="title-section">
+        <div class="breadcrumbs text-sm">
+          <ul>
+            <li>
+              <Link href={'/'}>Home</Link>
+            </li>
+            <li>
+              {props.page.slug === 'finance' || props.page.slug === 'dev' ? (
+                'Blog'
+              ) : (
+                <Link href={'/' + props.urlBlogBasePath}>Blog</Link>
+              )}
+            </li>
+            {props.page.slug !== 'finance' && props.page.slug !== 'dev' && (
+              <li>{props.page.title}</li>
+            )}
+          </ul>
         </div>
       </section>
 
