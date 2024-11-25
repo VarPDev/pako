@@ -38,7 +38,7 @@ export const BlogComponent = component$<ItemProps>(props => {
   return (
     <>
       <section
-        class="cover-section text-center"
+        class="cover-section text-center blog-content"
         style={"background-image: url('" + props.page.cover?.url + "')"}
       >
         <div class="content">
