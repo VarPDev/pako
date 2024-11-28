@@ -114,8 +114,8 @@ export const Newsletter = component$<{ referral: string; blogType: string }>(
                       class="btn btn-primary text-white col-start-2"
                       type="submit"
                       disabled={loading.value}
-                      data-goatcounter-click="send-email"
-                      data-goatcounter-title="Send Email"
+                      data-goatcounter-click="subscribe-newsletter"
+                      data-goatcounter-title="Subscribe Newsletter"
                       data-goatcounter-referrer={props.referral}
                     >
                       {loading.value && (
