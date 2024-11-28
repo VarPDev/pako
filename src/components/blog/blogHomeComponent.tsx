@@ -1,7 +1,7 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
 import { Articles } from '~/components/articles/articles'
-import { useListArticles } from '~/routes/blog/[blogType]/all'
+import { useListArticles } from '~/routes/blog/[blogType]/all/index@blog'
 import { BlogInfo } from '~/utils/helpers'
 import { InnerSectionComponent } from '../inner-section/innerSectionComponent'
 
