@@ -18,26 +18,26 @@ functions.http('send', async (req, res) => {
 
         const cover = await client.uploads.find(req.body.entity.attributes.cover.upload_id);
 
-        // This timout need to wait site will be updated before send email
+        // This timeout need to wait site will be updated before send email
         setTimeout(() => {
             for (const user of listUsers) {
                 const extra = JSON.parse(user.extra)
                 const type = extra.types.find(
-                item => item.blogType === req.body.entity.attributes.blog_type,
+                    item => item.blogType === req.body.entity.attributes.blog_type,
                 )
 
                 if (!!type && type.enabled) {
                 // TODO: send email
-                resend.emails.send({
-                    from: 'newsletter@pasqualedelucia.com',
-                    to: user.email,
-                    subject: getEmailSubject(req),
-                    html: getEmailTemplate(req, cover, user),
-                })
+                    resend.emails.send({
+                        from: 'newsletter@pasqualedelucia.com',
+                        to: user.email,
+                        subject: getEmailSubject(req),
+                        html: getEmailTemplate(req, cover, user),
+                    })
                 }
             }
         }, 1000 * 60 * 5)
-
+        
         res.send({success: true});
     } catch (e) {
         console.error('🚀 ~ send newsletter ~ error:', e)
