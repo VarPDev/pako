@@ -8,9 +8,9 @@ import {
 import { Link } from '@builder.io/qwik-city'
 import { NoTips } from '~/components/finance/no-tips/no-tips'
 import { QDatoText } from '~/integrations/react/QDatoText'
+import styles from '../../blog.css?inline'
 import { Articles } from '../articles/articles'
 import { InnerSectionComponent } from '../inner-section/innerSectionComponent'
-import styles from './blog.css?inline'
 
 interface ItemProps {
   page: any

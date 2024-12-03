@@ -1,0 +1,568 @@
+module.exports = function EmailDevIta(baseUrl, article, cover, user) {
+  return `
+        <!doctype html>
+        <html>
+        <head>
+            <title>Pasquale De Lucia NewsLetter</title>
+            <link rel="shortcut icon" href="favicon.ico" />
+            <style type="text/css">
+            table[name='blk_permission'],
+            table[name='blk_footer'] {
+                display: none;
+            }
+            </style>
+            <meta name="googlebot" content="noindex" />
+            <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+            <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        </head>
+  
+        <body
+            marginheight="0"
+            marginwidth="0"
+            topmargin="0"
+            leftmargin="0"
+            style="
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            min-width: 100%;
+            "
+        >
+            <table
+            name="bmeMainBody"
+            style="background-color: #252b3c"
+            width="100%"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            bgcolor="#ededed"
+            >
+            <tbody>
+                <tr>
+                <td width="100%" valign="top" align="center">
+                    <table
+                    name="bmeMainColumnParentTable"
+                    cellspacing="0"
+                    cellpadding="0"
+                    border="0"
+                    >
+                    <tbody>
+                        <tr>
+                        <td
+                            name="bmeMainColumnParent"
+                            style="
+                            border: 0px none transparent;
+                            border-radius: 0px;
+                            border-collapse: separate;
+                            "
+                        >
+                            <table
+                            name="bmeMainColumn"
+                            class="bmeHolder"
+                            style="
+                                max-width: 600px;
+                                overflow: visible;
+                                border-radius: 0px;
+                                border-collapse: separate;
+                                border-spacing: 0px;
+                            "
+                            cellspacing="0"
+                            cellpadding="0"
+                            border="0"
+                            align="center"
+                            >
+                            <tbody>
+                                <tr>
+                                <td
+                                    class="bmeHolder"
+                                    name="bmeMainContentParent"
+                                    style="
+                                    border: 0px none rgb(102, 102, 102);
+                                    border-radius: 0px;
+                                    border-collapse: separate;
+                                    border-spacing: 0px;
+                                    overflow: hidden;
+                                    "
+                                    width="100%"
+                                    valign="top"
+                                    align="center"
+                                >
+                                    <table
+                                    name="bmeMainContent"
+                                    style="
+                                        border-radius: 0px;
+                                        border-collapse: separate;
+                                        border-spacing: 0px;
+                                        border: 0px none transparent;
+                                    "
+                                    width="100%"
+                                    cellspacing="0"
+                                    cellpadding="0"
+                                    border="0"
+                                    align="center"
+                                    >
+                                    <tbody>
+                                        <tr>
+                                        <td
+                                            class="blk_container bmeHolder"
+                                            name="bmeBody"
+                                            style="
+                                            color: rgb(56, 56, 56);
+                                            border: 0px none transparent;
+                                            background-color: #252b3c;
+                                            "
+                                            width="100%"
+                                            valign="top"
+                                            bgcolor="#ffffff"
+                                            align="center"
+                                        >
+                                            <div id="dv_3" class="blk_wrapper">
+                                            <table
+                                                class="blk"
+                                                name="blk_image"
+                                                width="600"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                    <table
+                                                        width="100%"
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                    >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td
+                                                            class="bmeImage"
+                                                            style="
+                                                                border-collapse: collapse;
+                                                                padding: 0px;
+                                                            "
+                                                            align="center"
+                                                            >
+                                                            <img
+                                                                src="${cover.url}"
+                                                                style="
+                                                                max-width: 1196px;
+                                                                display: block;
+                                                                width: 600px;
+                                                                "
+                                                                alt=""
+                                                                width="600"
+                                                                border="0"
+                                                            />
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                            <div id="dv_6" class="blk_wrapper">
+                                            <table
+                                                class="blk"
+                                                name="blk_divider"
+                                                style=""
+                                                width="600"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td
+                                                    class="tblCellMain"
+                                                    style="padding: 10px 20px"
+                                                    >
+                                                    <table
+                                                        class="tblLine"
+                                                        style="
+                                                        border-top-width: 0px;
+                                                        border-top-style: none;
+                                                        min-width: 1px;
+                                                        "
+                                                        width="100%"
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                    >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><span></span></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                            <div id="dv_1" class="blk_wrapper">
+                                            <table
+                                                class="blk"
+                                                name="blk_text"
+                                                width="600"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                    <table
+                                                        class="bmeContainerRow"
+                                                        width="100%"
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                    >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td
+                                                            class="tdPart"
+                                                            valign="top"
+                                                            align="center"
+                                                            >
+                                                            <table
+                                                                name="tblText"
+                                                                style="
+                                                                float: left;
+                                                                background-color: transparent;
+                                                                "
+                                                                width="600"
+                                                                cellspacing="0"
+                                                                cellpadding="0"
+                                                                border="0"
+                                                                align="left"
+                                                            >
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td
+                                                                    name="tblCell"
+                                                                    style="
+                                                                        padding: 20px;
+                                                                        font-family: Arial,
+                                                                        Helvetica,
+                                                                        sans-serif;
+                                                                        font-size: 14px;
+                                                                        font-weight: normal;
+                                                                        color: rgb(
+                                                                        56,
+                                                                        56,
+                                                                        56
+                                                                        );
+                                                                        text-align: left;
+                                                                    "
+                                                                    valign="top"
+                                                                    align="left"
+                                                                    >
+                                                                    <div
+                                                                        style="
+                                                                        line-height: 200%;
+                                                                        "
+                                                                    >
+                                                                        <span
+                                                                        style="
+                                                                            font-size: 20px;
+                                                                            font-family: Helvetica,
+                                                                            Arial,
+                                                                            sans-serif;
+                                                                            color: #ffffff;
+                                                                            line-height: 200%;
+                                                                        "
+                                                                        ><strong
+                                                                            >${article.attributes.title}</strong
+                                                                        ></span
+                                                                        ><br /><br /><span
+                                                                        style="
+                                                                            font-size: 14px;
+                                                                            font-family: Helvetica,
+                                                                            Arial,
+                                                                            sans-serif;
+                                                                            color: #ffffff;
+                                                                            line-height: 200%;
+                                                                        "
+                                                                        >${article.attributes.subtitle}</span
+                                                                        ><br /><br />
+                                                                    </div>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td
+                                            class="blk_container bmeHolder"
+                                            name="bmePreFooter"
+                                            style="
+                                            border: 0px none transparent;
+                                            background-color: #252b3c;
+                                            "
+                                            width="100%"
+                                            valign="top"
+                                            bgcolor="#ffffff"
+                                            align="center"
+                                        >
+                                            <div id="dv_4" class="blk_wrapper">
+                                            <table
+                                                class="blk"
+                                                name="blk_button"
+                                                style=""
+                                                width="600"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td width="20"></td>
+                                                    <td align="center">
+                                                    <table
+                                                        class="tblContainer"
+                                                        width="100%"
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                    >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td height="20"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">
+                                                            <table
+                                                                class="bmeButton"
+                                                                style="
+                                                                border-collapse: separate;
+                                                                "
+                                                                cellspacing="0"
+                                                                cellpadding="0"
+                                                                border="0"
+                                                            >
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td
+                                                                    style="
+                                                                        border-radius: 20px;
+                                                                        border: 0px none
+                                                                        transparent;
+                                                                        text-align: center;
+                                                                        font-family: Arial,
+                                                                        Helvetica,
+                                                                        sans-serif;
+                                                                        font-size: 14px;
+                                                                        padding: 10px
+                                                                        25px;
+                                                                        font-weight: bold;
+                                                                        background-color: #f402f7;
+                                                                    "
+                                                                    class="bmeButtonText"
+                                                                    >
+                                                                    <span
+                                                                        style="
+                                                                        font-family: Helvetica,
+                                                                            Arial,
+                                                                            sans-serif;
+                                                                        font-size: 14px;
+                                                                        color: rgb(
+                                                                            255,
+                                                                            255,
+                                                                            255
+                                                                        );
+                                                                        "
+                                                                        ><a
+                                                                        style="
+                                                                            color: #ffffff;
+                                                                            text-decoration: none;
+                                                                        "
+                                                                        target="_blank"
+                                                                        href="${baseUrl}/blog/${article.attributes.blog_type}/${article.attributes.slug}"
+                                                                        >READ
+                                                                        ARTICLE</a
+                                                                        ></span
+                                                                    >
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="20"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </td>
+                                                    <td width="20"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                            <div id="dv_5" class="blk_wrapper">
+                                            <table
+                                                class="blk"
+                                                name="blk_divider"
+                                                style=""
+                                                width="600"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td
+                                                    class="tblCellMain"
+                                                    style="
+                                                        padding-top: 20px;
+                                                        padding-bottom: 20px;
+                                                        padding-left: 20px;
+                                                        padding-right: 20px;
+                                                    "
+                                                    >
+                                                    <table
+                                                        class="tblLine"
+                                                        style="
+                                                        border-top-width: 0px;
+                                                        border-top-style: none;
+                                                        min-width: 1px;
+                                                        "
+                                                        width="100%"
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                    >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><span></span></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td
+                                    class="blk_container bmeHolder"
+                                    name="bmeFooter"
+                                    style="
+                                    color: rgb(102, 102, 102);
+                                    border: 0px none transparent;
+                                    "
+                                    width="100%"
+                                    valign="top"
+                                    bgcolor=""
+                                    align="center"
+                                >
+                                    <div id="dv_10" class="blk_wrapper">
+                                    <table
+                                        class="blk"
+                                        name="blk_footer"
+                                        style=""
+                                        width="600"
+                                        cellspacing="0"
+                                        cellpadding="0"
+                                        border="0"
+                                    >
+                                        <tbody>
+                                        <tr>
+                                            <td
+                                            name="tblCell"
+                                            style="padding: 20px"
+                                            valign="top"
+                                            align="left"
+                                            >
+                                            <table
+                                                width="100%"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                border="0"
+                                            >
+                                                <tbody>
+                                                <tr>
+                                                    <td
+                                                    name="bmeBadgeText"
+                                                    style="
+                                                        text-align: left;
+                                                        word-break: break-all;
+                                                    "
+                                                    align="left"
+                                                    >
+                                                    <span
+                                                        id="spnFooterText"
+                                                        style="
+                                                        font-family: Arial, Helvetica,
+                                                            sans-serif;
+                                                        font-weight: normal;
+                                                        font-size: 11px;
+                                                        line-height: 140%;
+                                                        "
+                                                        ><span
+                                                        style="
+                                                            font-family: Arial,
+                                                            Helvetica, sans-serif;
+                                                            font-weight: normal;
+                                                            font-size: 11px;
+                                                            line-height: 140%;
+                                                        "
+                                                        ><var type="BME_LINKS"
+                                                            ><a
+                                                            href="https://europe-west8-nyruchi.cloudfunctions.net/unsubscribe-newsletter-dato?email=${user.email}"
+                                                            ><span
+                                                                style="
+                                                                text-decoration: underline;
+                                                                "
+                                                                >Unsubscribe</span
+                                                            ></a
+                                                            ></var
+                                                        ><br
+                                                        /></span>
+                                                    </span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </body>
+        </html>`
+}

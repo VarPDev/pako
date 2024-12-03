@@ -81,6 +81,15 @@ export const Footer = component$(() => {
           >
             CLick me
           </label>
+          <Link
+            href="/privacy-policy/eng/"
+            class="md:row-span-full"
+            data-goatcounter-click="open-privacy-policy"
+            data-goatcounter-title="Open Privacy Policy"
+            data-goatcounter-referrer="referrer"
+          >
+            Privacy Policy
+          </Link>
         </nav>
       </footer>
     </>
