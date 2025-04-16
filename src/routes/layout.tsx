@@ -65,8 +65,8 @@ export default component$(() => {
   })
 
   const easterEnd = set(today, {
-    month: 3,
-    date: 5,
+    month: 4,
+    date: 1,
   })
 
   const easterInRange = isWithinInterval(today, {
