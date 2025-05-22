@@ -24,8 +24,11 @@ const staticPaths = new Set([
   '/blog/dev/web-components-debut/',
   '/blog/finance/',
   '/blog/finance/all/',
+  '/blog/finance/bitcoin-raggiungie-100000-dollari/',
   '/blog/finance/budgeting/',
   '/blog/finance/crypto-cashback/',
+  '/blog/finance/evitare-acquisti-impuslivi/',
+  '/blog/finance/la-magia-del-conto-deposito/',
   '/blog/finance/motivi-per-avere-diverse-banche/',
   '/blog/finance/pac/',
   '/blog/finance/pension_fund/',
@@ -56,6 +59,8 @@ const staticPaths = new Set([
   '/manifest.json',
   '/pako-cartoon.png',
   '/price-list.jpeg',
+  '/privacy-policy/eng/',
+  '/privacy-policy/ita/',
   '/projects/',
   '/q-manifest.json',
   '/qwik-logo.png',
@@ -65,6 +70,8 @@ const staticPaths = new Set([
   '/robots.txt',
   '/service-worker.js',
   '/sitemap.xml',
+  '/unsubscribed-failed/',
+  '/unsubscribed/',
 ])
 function isStaticPath(method, url) {
   if (method.toUpperCase() !== 'GET') {

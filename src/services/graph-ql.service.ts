@@ -7,6 +7,7 @@ export const articleDetailApi = async (
 ) => {
   const PAGE_QUERY = `{
     page (filter: { slug: { eq: "${slug}" }, blogType: { eq: "${blogType}" } }) {
+      id
       title
       slug
       subtitle
@@ -153,6 +154,34 @@ export const pagesSlugsApi = async (token: string, blogType: string) => {
     },
     method: 'POST',
     body: JSON.stringify({ query: PAGES_QUERY }),
+  })
+
+  const responseBody = await response.json()
+  return responseBody
+}
+
+export const commentsByPageSlugApi = async (token: string, pageId: string) => {
+  const COMMENTS_QUERY = `{
+    allComments (filter: {pageLink: {eq: "${pageId}"}}) {
+      _createdAt
+      _updatedAt
+      id
+      name
+      message
+      likes
+      dislikes
+      parentComment {
+        id
+      }
+    }
+  }`
+
+  const response = await fetch('https://graphql.datocms.com/', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method: 'POST',
+    body: JSON.stringify({ query: COMMENTS_QUERY }),
   })
 
   const responseBody = await response.json()

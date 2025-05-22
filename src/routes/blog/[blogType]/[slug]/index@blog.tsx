@@ -6,13 +6,23 @@ import {
   type DocumentHead,
 } from '@builder.io/qwik-city'
 import { BlogComponent } from '~/components/blog/blogComponent'
-import { articleDetailApi, pagesSlugsApi } from '~/services/graph-ql.service'
+import {
+  articleDetailApi,
+  commentsByPageSlugApi,
+  pagesSlugsApi,
+} from '~/services/graph-ql.service'
 import { BlogTypes } from '~/utils/helpers'
 
 export const useArticle = routeLoader$(async requestEvent => {
   const { slug, blogType } = requestEvent.params
   const token = requestEvent.env.get('DATO_CMS_TOKEN')
-  return articleDetailApi(slug, blogType, token || '')
+
+  const article = articleDetailApi(slug, blogType, token || '')
+  const comments = commentsByPageSlugApi(
+    token || '',
+    (await article).data.page.id,
+  )
+  return { article: await article, comments: await comments }
 })
 
 export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
@@ -33,7 +43,7 @@ export const onStaticGenerate: StaticGenerateHandler = async ({ env }) => {
 
 export default component$(() => {
   const loc = useLocation()
-  const article = useArticle()
+  const resArticle = useArticle()
 
   return (
     <>
@@ -41,15 +51,16 @@ export default component$(() => {
         urlBlogBasePath={'blog/' + loc.params.blogType}
         blogType={loc.params.blogType}
         showFinanceWarn={loc.params.blogType === 'finance'}
-        page={article.value.data.page}
+        page={resArticle.value.article.data.page}
+        comments={resArticle.value.comments.data.allComments}
       />
     </>
   )
 })
 
 export const head: DocumentHead = ({ resolveValue, params }) => {
-  const article = resolveValue(useArticle)
-  const seo = article.data.page.seo
+  const resArticle = resolveValue(useArticle)
+  const seo = resArticle.article.data.page.seo
   const metaTile = seo.find((item: any) => item.tag === 'title')
   const metas = seo.filter((item: any) => item.tag === 'meta')
   return {

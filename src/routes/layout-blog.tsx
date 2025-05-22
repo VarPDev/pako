@@ -11,6 +11,7 @@ import {
 } from '@builder.io/qwik-city'
 import { InitialValues } from '@modular-forms/qwik'
 import { AnimatedComp } from '~/components/animated-component/animated-component'
+import { CommentForm } from '~/components/blog/blogComponent'
 import { Footer } from '~/components/footer/footer'
 import { Header } from '~/components/header/header'
 import { InnerSectionComponent } from '~/components/inner-section/innerSectionComponent'
@@ -20,6 +21,13 @@ import { ShowContext } from '~/services/common.service'
 export const useNewsFormLoader = routeLoader$<InitialValues<NewsletterForm>>(
   () => ({
     email: '',
+  }),
+)
+
+export const useCommentFormLoader = routeLoader$<InitialValues<CommentForm>>(
+  () => ({
+    name: '',
+    message: '',
   }),
 )
 
