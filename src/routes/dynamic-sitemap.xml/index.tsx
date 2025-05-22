@@ -6,18 +6,18 @@ import { createSitemap } from './create-sitemap'
 export const onGet: RequestHandler = async ev => {
   const siteRoutes = routes
     .map(([route]) => route as string)
-    .filter(route => route !== '/' && route !== 'finance/[slug]/') // Exclude the '/' route
+    .filter(route => route !== '/' && !route.includes('blog/[blogType]')) // Exclude the '/' route
 
   const token = ev.env.get('DATO_CMS_TOKEN')
   const allDevPages = await pagesSlugsApi(token ?? '', 'dev')
   const allFinancePages = await pagesSlugsApi(token ?? '', 'finance')
 
   const financeSlugs = allFinancePages.data.allPages.map(
-    (item: any) => `finance/${item.slug}/`,
+    (item: any) => `blog/finance/${item.slug}/`,
   )
 
   const devSlugs = allDevPages.data.allPages.map(
-    (item: any) => `blog/${item.slug}/`,
+    (item: any) => `blog/dev/${item.slug}/`,
   )
   siteRoutes.push(...financeSlugs, ...devSlugs)
 
