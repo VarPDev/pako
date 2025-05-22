@@ -300,7 +300,7 @@ export const BlogComponent = component$<ItemProps>(props => {
       {props.showComment &&
         commentList &&
         commentList.value &&
-        commentList.value.length && (
+        !!commentList.value.length && (
           <InnerSectionComponent showCta={false} sectionClass="blog-comments">
             {commentList.value.map(comment => {
               return (
