@@ -53,6 +53,7 @@ export default component$(() => {
         showFinanceWarn={loc.params.blogType === 'finance'}
         page={resArticle.value.article.data.page}
         comments={resArticle.value.comments.data.allComments}
+        showComment={true}
       />
     </>
   )
