@@ -70,6 +70,7 @@ interface ItemProps {
   latestArticle?: any[]
   comments?: any[]
   showFinanceWarn?: boolean
+  showComment?: boolean
 }
 
 function buildCommentTree(comments: any[]): any[] {
@@ -234,84 +235,92 @@ export const BlogComponent = component$<ItemProps>(props => {
         <QDatoText data={props.page.content} />
       </InnerSectionComponent>
 
-      <InnerSectionComponent showCta={false} sectionClass="blog-write-comment">
-        {answerTo.value && (
-          <div class="mb-2">
-            You are responding to:{' '}
-            <span class="font-bold">{answerTo.value.name}</span>
-          </div>
-        )}
-        <Form
-          onSubmit$={handleSubmit}
-          id="comment-form"
-          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+      {props.showComment && (
+        <InnerSectionComponent
+          showCta={false}
+          sectionClass="blog-write-comment"
         >
-          <Field name="name">
-            {(field, props) => (
-              <div class="flex flex-col gap-2 col-span-2 md:col-span-1">
-                <label class="input input-bordered flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="h-4 w-4 opacity-70"
-                  >
-                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-                  </svg>
-                  <input
+          {answerTo.value && (
+            <div class="mb-2">
+              You are responding to:{' '}
+              <span class="font-bold">{answerTo.value.name}</span>
+            </div>
+          )}
+          <Form
+            onSubmit$={handleSubmit}
+            id="comment-form"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <Field name="name">
+              {(field, props) => (
+                <div class="flex flex-col gap-2 col-span-2 md:col-span-1">
+                  <label class="input input-bordered flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="h-4 w-4 opacity-70"
+                    >
+                      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                    </svg>
+                    <input
+                      {...props}
+                      value={field.value}
+                      type="text"
+                      class="grow w-full"
+                      placeholder="Name"
+                    />
+                  </label>
+                  {field.error && <div class="text-red-500">{field.error}</div>}
+                </div>
+              )}
+            </Field>
+            <Field name="message">
+              {(field, props) => (
+                <div class="flex flex-col gap-2 col-span-2">
+                  <textarea
                     {...props}
                     value={field.value}
-                    type="text"
-                    class="grow w-full"
-                    placeholder="Name"
-                  />
-                </label>
-                {field.error && <div class="text-red-500">{field.error}</div>}
-              </div>
-            )}
-          </Field>
-          <Field name="message">
-            {(field, props) => (
-              <div class="flex flex-col gap-2 col-span-2">
-                <textarea
-                  {...props}
-                  value={field.value}
-                  placeholder="Message"
-                  class="textarea textarea-bordered textarea-lg w-full"
-                ></textarea>
-                {field.error && <div class="text-red-500">{field.error}</div>}
-              </div>
-            )}
-          </Field>
-          <button
-            class="btn btn-primary text-white col-start-2"
-            type="submit"
-            disabled={sendingComment.value}
-            data-goatcounter-click="send-comment"
-            data-goatcounter-title="Send Comment"
-            data-goatcounter-referrer="referrer"
-          >
-            {sendingComment.value && (
-              <span class="loading loading-spinner"></span>
-            )}
-            Comment
-          </button>
-        </Form>
-      </InnerSectionComponent>
-
-      {commentList && commentList.value && commentList.value.length && (
-        <InnerSectionComponent showCta={false} sectionClass="blog-comments">
-          {commentList.value.map(comment => {
-            return (
-              <CommentItem
-                key={comment.id}
-                comment={comment}
-                onAnswer={$onAnswer}
-              />
-            )
-          })}
+                    placeholder="Message"
+                    class="textarea textarea-bordered textarea-lg w-full"
+                  ></textarea>
+                  {field.error && <div class="text-red-500">{field.error}</div>}
+                </div>
+              )}
+            </Field>
+            <button
+              class="btn btn-primary text-white col-start-2"
+              type="submit"
+              disabled={sendingComment.value}
+              data-goatcounter-click="send-comment"
+              data-goatcounter-title="Send Comment"
+              data-goatcounter-referrer="referrer"
+            >
+              {sendingComment.value && (
+                <span class="loading loading-spinner"></span>
+              )}
+              Comment
+            </button>
+          </Form>
         </InnerSectionComponent>
       )}
+
+      {props.showComment &&
+        commentList &&
+        commentList.value &&
+        !!commentList.value.length && (
+          <InnerSectionComponent showCta={false} sectionClass="blog-comments">
+            {commentList.value.map(comment => {
+              return (
+                <CommentItem
+                  key={comment.id}
+                  comment={comment}
+                  onAnswer={$onAnswer}
+                />
+              )
+            })}
+          </InnerSectionComponent>
+        )}
 
       {props.latestArticle && (
         <>
