@@ -131,6 +131,14 @@ export const BlogComponent = component$<ItemProps>(props => {
         const data = await res.json()
 
         if (data.success) {
+          fetch(
+            `${import.meta.env.PUBLIC_NOTIFICATION_COMMENT_TELEGRAM_FUNCTION}?name=${values.name}&page=https://pasqualedelucia.com/blog/${props.blogType}/${props.page.slug}&message=${values.message}`,
+          )
+            .then()
+            .catch(e => {
+              console.error('🚀 ~ send telegram notification ~ e:', e)
+            })
+
           reset(commentForm)
 
           const newComment = {
