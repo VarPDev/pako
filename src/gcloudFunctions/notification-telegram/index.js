@@ -16,10 +16,9 @@ functions.http('send', async (req, res) => {
       const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN)
       await bot.telegram.sendMessage(
         process.env.TELEGRAM_CHANNEL_ID,
-        `*${req.query.name}*\n\n${req.query.email}\n\n${req.query.message}`.replaceAll(
-          '.',
-          '\\.',
-        ),
+        `From Pako Website:\n\n*${req.query.name}*\n\n${req.query.email}\n\n${req.query.message}`
+          .replaceAll('.', '\\.')
+          .replaceAll('-', '\\-'),
         { parse_mode: 'MarkdownV2' },
       )
       res.send(true)
