@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: 6,
+    id: 7,
     title: 'Qwik',
     description: 'I joined this open source project as a contributor',
     altImage: 'Qwik logo picture',
@@ -11,7 +11,7 @@ export const projects = [
     href: 'https://qwik.builder.io/',
   },
   {
-    id: 5,
+    id: 6,
     title: 'PLMaker',
     description: 'Price list generator with some utilities',
     altImage: 'price list maker',
@@ -20,6 +20,17 @@ export const projects = [
     type: 'NextJS | Angular',
     color: 'orange-600',
     href: 'https://plmaker.dejizen.com/',
+  },
+  {
+    id: 5,
+    title: 'Ape Time Run',
+    description: 'For fun runnig group',
+    altImage: 'running',
+    image: '/apetimerun.webp',
+    action: 'Try it',
+    type: 'Nuxt',
+    color: 'orange-600',
+    href: 'https://apetimerun.eu/',
   },
   {
     id: 4,
