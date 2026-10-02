@@ -1,5 +1,50 @@
 import { BlogTypes } from '~/utils/helpers'
 
+const DATO_CMS_ENDPOINT = 'https://graphql.datocms.com/'
+
+/**
+ * Runs a GraphQL query against DatoCMS and fails loudly on any problem,
+ * so a build (SSG) breaks with the real cause instead of a later
+ * "undefined is not iterable" on a missing `data` field.
+ */
+const datoQuery = async (token: string, query: string) => {
+  if (!token) {
+    throw new Error(
+      'DatoCMS: DATO_CMS_TOKEN is empty. Set it in the environment used for the build (e.g. Vercel > Settings > Environment Variables).',
+    )
+  }
+
+  const response = await fetch(DATO_CMS_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify({ query }),
+  })
+
+  const rawBody = await response.text()
+  let body: any
+  try {
+    body = JSON.parse(rawBody)
+  } catch {
+    throw new Error(
+      `DatoCMS: non-JSON response (HTTP ${response.status}): ${rawBody.slice(0, 500)}`,
+    )
+  }
+
+  if (!response.ok || body?.errors?.length || !body?.data) {
+    const messages = Array.isArray(body?.errors)
+      ? body.errors.map((e: any) => e?.message ?? JSON.stringify(e)).join('; ')
+      : rawBody.slice(0, 500)
+    throw new Error(
+      `DatoCMS: request failed (HTTP ${response.status}): ${messages}`,
+    )
+  }
+
+  return body
+}
+
 export const articleDetailApi = async (
   slug: string,
   blogType: string,
@@ -64,16 +109,7 @@ export const articleDetailApi = async (
     }
   }`
 
-  const response = await fetch('https://graphql.datocms.com/', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({ query: PAGE_QUERY }),
-  })
-
-  const responseBody = await response.json()
-  return responseBody
+  return datoQuery(token, PAGE_QUERY)
 }
 
 export const latestArticles = async (
@@ -98,16 +134,7 @@ export const latestArticles = async (
     }
   }`
 
-  const response = await fetch('https://graphql.datocms.com/', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({ query: LATEST_QUERY }),
-  })
-
-  const responseBody = await response.json()
-  return responseBody
+  return datoQuery(token, LATEST_QUERY)
 }
 
 export const listArticles = async (token: string, blogType: string) => {
@@ -128,16 +155,7 @@ export const listArticles = async (token: string, blogType: string) => {
     }
   }`
 
-  const response = await fetch('https://graphql.datocms.com/', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({ query: LATEST_QUERY }),
-  })
-
-  const responseBody = await response.json()
-  return responseBody
+  return datoQuery(token, LATEST_QUERY)
 }
 
 export const pagesSlugsApi = async (token: string, blogType: string) => {
@@ -148,16 +166,7 @@ export const pagesSlugsApi = async (token: string, blogType: string) => {
         }
       }`
 
-  const response = await fetch('https://graphql.datocms.com/', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({ query: PAGES_QUERY }),
-  })
-
-  const responseBody = await response.json()
-  return responseBody
+  return datoQuery(token, PAGES_QUERY)
 }
 
 export const commentsByPageSlugApi = async (token: string, pageId: string) => {
@@ -176,14 +185,5 @@ export const commentsByPageSlugApi = async (token: string, pageId: string) => {
     }
   }`
 
-  const response = await fetch('https://graphql.datocms.com/', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({ query: COMMENTS_QUERY }),
-  })
-
-  const responseBody = await response.json()
-  return responseBody
+  return datoQuery(token, COMMENTS_QUERY)
 }
