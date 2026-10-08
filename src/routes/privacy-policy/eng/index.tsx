@@ -140,8 +140,8 @@ export default component$(() => {
           <p>
             You can exercise these rights by contacting me via email at{' '}
             <strong>
-              <a href="mailto:pasquale.delucia96@gmail.com">
-                pasquale.delucia96@gmail.com
+              <a href="mailto:mail@pasqualedelucia.com">
+                mail@pasqualedelucia.com
               </a>
             </strong>
             .
@@ -181,8 +181,8 @@ export default component$(() => {
           <ul>
             <li>
               <strong>Email</strong>:{' '}
-              <a href="mailto:pasquale.delucia96@gmail.com">
-                pasquale.delucia96@gmail.com
+              <a href="mailto:mail@pasqualedelucia.com">
+                mail@pasqualedelucia.com
               </a>
             </li>
           </ul>

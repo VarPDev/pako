@@ -13,8 +13,8 @@ export default component$(() => {
       <InnerSectionComponent showCta={false}>
         <p class="text-xl text-center">
           Write to{' '}
-          <a class="text-primary" href="mailto:pasquale.delucia96@gmail.com">
-            pasquale.delucia96@gmail.com
+          <a class="text-primary" href="mailto:mail@pasqualedelucia.com">
+            mail@pasqualedelucia.com
           </a>{' '}
           to Unsubscribe.
         </p>

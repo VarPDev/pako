@@ -184,9 +184,9 @@ export const Contact = component$<{ referral: string }>(props => {
                     Write directly to{' '}
                     <a
                       class="underline"
-                      href="mailto:pasquale.delucia96@gmail.com"
+                      href="mailto:mail@pasqualedelucia.com"
                     >
-                      pasquale.delucia96@gmail.com
+                      mail@pasqualedelucia.com
                     </a>
                   </div>
                 </div>
