@@ -379,10 +379,7 @@ export const BlogComponent = component$<ItemProps>(props => {
                   <div>There was an error during comment send.</div>
                   <div>
                     Write directly to{' '}
-                    <a
-                      class="underline"
-                      href="mailto:mail@pasqualedelucia.com"
-                    >
+                    <a class="underline" href="mailto:mail@pasqualedelucia.com">
                       mail@pasqualedelucia.com
                     </a>
                   </div>

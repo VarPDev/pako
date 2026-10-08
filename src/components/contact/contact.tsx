@@ -182,10 +182,7 @@ export const Contact = component$<{ referral: string }>(props => {
                   <div>There was an error during message send.</div>
                   <div>
                     Write directly to{' '}
-                    <a
-                      class="underline"
-                      href="mailto:mail@pasqualedelucia.com"
-                    >
+                    <a class="underline" href="mailto:mail@pasqualedelucia.com">
                       mail@pasqualedelucia.com
                     </a>
                   </div>
